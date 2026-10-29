@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBC 6 Minute English - Full Transcript & Speaking Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .phrase-highlight {
+      background: linear-gradient(120deg, #fef08a 0%, #fef08a 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 38%;
+      background-position: 0 88%;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1e293b;
+      padding: 1px 3px;
+      border-radius: 3px;
+      display: inline;
+    }
+    .phrase-highlight:hover {
+      background-size: 100% 100%;
+      background-color: #fde047;
+      color: #0f172a;
+    }
+    .phrase-highlight.active {
+      background: #f59e0b !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 5px rgba(245, 158, 11, 0.4);
+      border-radius: 4px;
+    }
+    /* Smooth custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .tab-btn.active {
+      border-bottom: 2px solid #2563eb;
+      color: #2563eb;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm backdrop-blur-md bg-white/95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-indigo-600 flex items-center justify-center text-white shadow-md">
+          <i class="fa-solid fa-heart-crack text-lg"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold tracking-wider uppercase text-rose-600 bg-rose-50 px-2 py-0.5 rounded">BBC 6 Minute English (Full Transcript)</span>
+          <h1 class="text-sm sm:text-base font-bold text-slate-800 leading-tight">Why does heartbreak hurt so much?</h1>
+        </div>
+      </div>
+      
+      <!-- Top Action Navigation -->
+      <nav class="flex items-center space-x-1 sm:space-x-2">
+        <button onclick="switchTab('study')" id="tabNav-study" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-blue-600 bg-blue-50 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Toàn Văn & Cụm Từ</span>
+        </button>
+        <button onclick="switchTab('practice')" id="tabNav-practice" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-vial"></i>
+          <span>Tình Huống Thực Tế</span>
+          <span id="quizBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">6</span>
+        </button>
+        <button onclick="switchTab('speaking')" id="tabNav-speaking" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-microphone-lines"></i>
+          <span>Luyện Speaking Hub</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 lg:p-8">
+
+    <!-- TAB 1: STUDY & FULL TRANSCRIPT EXPLORER -->
+    <section id="section-study" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- Left Column: Full Unabridged Transcript (7 Cols) -->
+      <div class="lg:col-span-7 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col h-[calc(100vh-140px)]">
+        
+        <!-- Controls Header -->
+        <div class="px-5 py-3 border-b border-slate-200 bg-slate-50 flex items-center justify-between flex-wrap gap-2">
+          <div class="flex items-center space-x-2 text-slate-700 font-bold text-xs sm:text-sm">
+            <i class="fa-solid fa-file-lines text-blue-600"></i>
+            <span>Toàn văn 100% Transcript (6 Trang PDF)</span>
+          </div>
+          <div class="flex items-center space-x-3 text-xs">
+            <span class="inline-flex items-center gap-1 text-slate-500 text-[11px]">
+              <span class="w-3 h-3 rounded-full bg-yellow-300 inline-block border border-yellow-400"></span> 
+              Bấm cụm vàng để xem phân tích
+            </span>
+            <button onclick="playAllPodcastSpeech()" title="Đọc toàn bộ văn bản bằng âm thanh" class="text-slate-700 hover:text-blue-600 transition flex items-center gap-1.5 font-medium bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-xs">
+              <i class="fa-solid fa-circle-play text-blue-600"></i> <span id="fullAudioBtnText">Nghe đọc toàn bài</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Transcript Body: 100% COMPLETE TURNS -->
+        <div id="transcriptBody" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 leading-relaxed text-slate-700 text-sm sm:text-base">
+          
+          <!-- Turn 1 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>Hi Georgie.</p>
+          </div>
+
+          <!-- Turn 2 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>Hi Neil.</p>
+          </div>
+
+          <!-- Turn 3 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Now, I want you to 
+              <span class="phrase-highlight" data-phrase-id="think-back-to">think back to</span> 
+              the last time you 
+              <span class="phrase-highlight" data-phrase-id="had-your-heart-broken">had your heart broken</span>. 
+              How did it feel?
+            </p>
+          </div>
+
+          <!-- Turn 4 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              It was 
+              <span class="phrase-highlight" data-phrase-id="a-couple-of-years-ago">a couple of years ago</span>. 
+              And I just remember a really 
+              <span class="phrase-highlight" data-phrase-id="intense-sad-emotion">intense, sad emotion</span>. 
+              But it also sometimes feels like a 
+              <span class="phrase-highlight" data-phrase-id="physical-pain">physical pain</span> 
+              in your stomach, doesn't it?
+            </p>
+          </div>
+
+          <!-- Turn 5 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              It does. It's like real pain, isn't it? And today, in 6 Minute English, we're talking about 
+              <span class="phrase-highlight" data-phrase-id="heartbreak">heartbreak</span>. 
+              Now, heartbreak is the feeling of sadness we get when we 
+              <span class="phrase-highlight" data-phrase-id="lose-someone-we-love">lose someone we love</span>. 
+              And that pain you feel, 
+              <span class="phrase-highlight" data-phrase-id="not-just-imaginary">it's not just imaginary</span>. 
+              In this podcast, we'll be understanding how our brains change when we 
+              <span class="phrase-highlight" data-phrase-id="fall-in-love">fall in love</span> 
+              and asking the question, why does heartbreak hurt so much?
+            </p>
+          </div>
+
+          <!-- Turn 6 (Page 1 ending) -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              And as usual, we'll be learning some useful new vocabulary. You can find the full list and the definitions at bbclearningenglish.com.
+            </p>
+          </div>
+
+          <!-- Turn 7 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Georgie, we're going to start with a quiz question. Are you ready?
+            </p>
+          </div>
+
+          <!-- Turn 8 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              I am very ready.
+            </p>
+          </div>
+
+          <!-- Turn 9 (Page 2: Quiz Question) -->
+          <div class="p-3.5 rounded-xl bg-blue-50/50 hover:bg-blue-50 transition border border-blue-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil (BBC Quiz Question)
+            </div>
+            <p>
+              So, in the 1950s, psychologists noticed a link between children's 
+              <span class="phrase-highlight" data-phrase-id="early-bonds">early bonds</span> 
+              with their parents and their 
+              <span class="phrase-highlight" data-phrase-id="romantic-relationships">romantic relationships</span> 
+              as adults, but what is this theory called? Is it:
+              <br><span class="inline-block ml-4 mt-1 font-medium text-slate-800">a) contraction theory,</span>
+              <br><span class="inline-block ml-4 font-medium text-slate-800">b) <span class="phrase-highlight" data-phrase-id="attachment-theory">attachment theory</span>, or</span>
+              <br><span class="inline-block ml-4 font-medium text-slate-800">c) superstition theory?</span>
+            </p>
+          </div>
+
+          <!-- Turn 10 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              I think it's b) attachment theory.
+            </p>
+          </div>
+
+          <!-- Turn 11 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              OK. Well, we will find out at the end of the programme.
+            </p>
+          </div>
+
+          <!-- Turn 12 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              What's going on in our brains when we fall in love?
+            </p>
+          </div>
+
+          <!-- Turn 13 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Well, scientists have scanned people's brains while they're looking at a photo of their 
+              <span class="phrase-highlight" data-phrase-id="romantic-partner">romantic partner</span>. 
+              And they found that looking at someone you're in love with 
+              <span class="phrase-highlight" data-phrase-id="activates-a-part-of-the-brain">activates a part of the brain</span> 
+              that also reminds us to eat and drink.
+            </p>
+          </div>
+
+          <!-- Turn 14 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              And do scientists know why being in love impacts our brain in this way?
+            </p>
+          </div>
+
+          <!-- Turn 15 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              So, <span class="phrase-highlight" data-phrase-id="all-about-survival">it's all about survival</span>. 
+              Our brains have evolved to be this way. Dr Lucy Brown explains more to the BBC World Service.
+            </p>
+          </div>
+
+          <!-- Turn 16 (Dr Lucy Brown quote) -->
+          <div class="p-4 rounded-xl bg-amber-50/60 hover:bg-amber-50 transition border-l-4 border-amber-500 shadow-2xs">
+            <div class="font-bold text-xs uppercase tracking-wider text-amber-800 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-600"></span> Dr Lucy Brown (BBC World Service)
+            </div>
+            <p class="italic text-slate-800">
+              "This is a 
+              <span class="phrase-highlight" data-phrase-id="survival-system">survival system</span>. 
+              Nature gave us these systems to be 
+              <span class="phrase-highlight" data-phrase-id="addicted-to">addicted to each other</span> 
+              - for 
+              <span class="phrase-highlight" data-phrase-id="reproduction-protection">reproduction, for protection</span>. 
+              You're 
+              <span class="phrase-highlight" data-phrase-id="oriented-towards">oriented completely toward</span> 
+              the other person. 
+              <span class="phrase-highlight" data-phrase-id="like-hunger-or-thirst">It's like hunger or thirst</span>."
+            </p>
+          </div>
+
+          <!-- Turn 17 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Lucy says our brains make us addicted to our romantic partners. If you're addicted to something, you want more of it. You can literally be addicted to things like drugs or alcohol, but we also 
+              <span class="phrase-highlight" data-phrase-id="use-it-metaphorically">use it metaphorically</span> 
+              to talk about things we love.
+            </p>
+          </div>
+
+          <!-- Turn 18 (Page 3) -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              She says that romantic partners are oriented to each other, which in British English we say orientated, and it means they are pointed towards each other. They 
+              <span class="phrase-highlight" data-phrase-id="think-of-each-other-before-other-people">think of each other before other people</span>.
+            </p>
+          </div>
+
+          <!-- Turn 19 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Neil, is there anything else scientists have discovered from scanning the brains of people in love?
+            </p>
+          </div>
+
+          <!-- Turn 20 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Well, being in love doesn't just change the way we think. It 
+              <span class="phrase-highlight" data-phrase-id="changes-our-whole-identity">changes our whole identity</span>. 
+              A 2013 study showed us more about this. People were shown statements about themselves - for example, Neil is kind - and the part of the brain we use to think about ourselves 
+              <span class="phrase-highlight" data-phrase-id="lit-up">lit up</span>. 
+              When showing the same statements about their partner, the same part of the brain was active not the part of the brain we generally use to think about others.
+            </p>
+          </div>
+
+          <!-- Turn 21 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              So, Neil, are all of these brain changes that come with being in love actually good for us?
+            </p>
+          </div>
+
+          <!-- Turn 22 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Well, studies suggest that 
+              <span class="phrase-highlight" data-phrase-id="good-social-connections">good social connections</span> 
+              help 
+              <span class="phrase-highlight" data-phrase-id="manage-stress">manage stress</span> 
+              and 
+              <span class="phrase-highlight" data-phrase-id="support-our-immune-system">support our immune system</span>. 
+              Professor Zoe Donaldson explained more to the BBC World Service.
+            </p>
+          </div>
+
+          <!-- Turn 23 (Prof Zoe Donaldson quote) -->
+          <div class="p-4 rounded-xl bg-purple-50/60 hover:bg-purple-50 transition border-l-4 border-purple-500 shadow-2xs">
+            <div class="font-bold text-xs uppercase tracking-wider text-purple-800 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-purple-600"></span> Professor Zoe Donaldson (BBC World Service)
+            </div>
+            <p class="italic text-slate-800">
+              "Having really 
+              <span class="phrase-highlight" data-phrase-id="strong-social-bonds">strong social bonds</span> 
+              increases your likelihood that you'll 
+              <span class="phrase-highlight" data-phrase-id="survive-from-just-about-anything">survive from just about anything</span>, 
+              whether that be cancer, depression, etc. And it overall is the 
+              <span class="phrase-highlight" data-phrase-id="number-one-predictor">number one predictor of longevity</span>. 
+              So, if you are 
+              <span class="phrase-highlight" data-phrase-id="lonely">lonely</span> 
+              and you don't have bonds, then your 
+              <span class="phrase-highlight" data-phrase-id="mortality-risk">mortality risk</span> 
+              goes up in a way that's 
+              <span class="phrase-highlight" data-phrase-id="equivalent-to">equivalent to</span> 
+              being obese or smoking."
+            </p>
+          </div>
+
+          <!-- Turn 24 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              So, having strong social bonds or close relationships with other people makes you more likely to survive disease, according to Zoe.
+            </p>
+          </div>
+
+          <!-- Turn 25 (Page 3 bottom) -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Yes, it's an important factor in our 
+              <span class="phrase-highlight" data-phrase-id="longevity">longevity</span>, 
+              which means how long we live. In fact, Zoe says, being lonely and not having good social bonds increases your mortality risk, your risk of dying, by as much as being obese or smoking.
+            </p>
+          </div>
+
+          <!-- Turn 26 (Page 4) -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              OK. So, what happens when these bonds are broken, when we experience heartbreak?
+            </p>
+          </div>
+
+          <!-- Turn 27 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Well, scientists have been looking at this by asking people to look at photos of their 
+              <span class="phrase-highlight" data-phrase-id="exes">exes</span>, 
+              their 
+              <span class="phrase-highlight" data-phrase-id="former-partners">former partners</span>, 
+              and scanning their brains. They found that heartbreak activates parts of the brain we use when we're 
+              <span class="phrase-highlight" data-phrase-id="in-danger-or-in-pain">in danger or in pain</span>. 
+              Professor Zoe Donaldson explains more.
+            </p>
+          </div>
+
+          <!-- Turn 28 (Prof Zoe Donaldson second quote) -->
+          <div class="p-4 rounded-xl bg-purple-50/60 hover:bg-purple-50 transition border-l-4 border-purple-500 shadow-2xs">
+            <div class="font-bold text-xs uppercase tracking-wider text-purple-800 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-purple-600"></span> Professor Zoe Donaldson (BBC World Service)
+            </div>
+            <p class="italic text-slate-800">
+              "It's 
+              <span class="phrase-highlight" data-phrase-id="literal-pain">literal pain</span> 
+              in your brain. So, if you look at the parts of the brain that light up, they 
+              <span class="phrase-highlight" data-phrase-id="overlap-with">overlap with</span> 
+              the same brain regions that are activated when you feel 
+              <span class="phrase-highlight" data-phrase-id="visceral-pain">visceral pain</span> 
+              - when you feel actual, you know... like you get a burn, or you break a... you break a bone."
+            </p>
+          </div>
+
+          <!-- Turn 29 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              OK. So, now it's time for the answer to the quiz question I asked you. It was about a theory developed by psychologists in the 1950s, which says that children's early relationships with their parents impact their relationships as adults. What's the name of the theory?
+            </p>
+          </div>
+
+          <!-- Turn 30 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              I was 
+              <span class="phrase-highlight" data-phrase-id="quite-confident-about">quite confident about</span> 
+              this, wasn't I, Neil? I said attachment theory.
+            </p>
+          </div>
+
+          <!-- Turn 31 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Well, you had a reason to be confident because you are correct.
+            </p>
+          </div>
+
+          <!-- Turn 32 (Page 4-5: Official Vocabulary Recap) -->
+          <div class="p-3.5 rounded-xl bg-emerald-50/60 hover:bg-emerald-50 transition border border-emerald-200">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-700 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie (Vocabulary Recap)
+            </div>
+            <p>
+              Yay! OK. Let's 
+              <span class="phrase-highlight" data-phrase-id="recap-the-vocabulary">recap the vocabulary</span> 
+              we learnt in this programme, starting with heartbreak, which is the feeling you experience after you lose someone you love.
+            </p>
+          </div>
+
+          <!-- Turn 33 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              If you're addicted to someone or something, you want more of it all the time.
+            </p>
+          </div>
+
+          <!-- Turn 34 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Oriented or orientated towards is used metaphorically to mean that someone or something is your main focus.
+            </p>
+          </div>
+
+          <!-- Turn 35 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Social bonds are the close relationships we have with family, friends and romantic partners.
+            </p>
+          </div>
+
+          <!-- Turn 36 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Longevity means how long you'll live.
+            </p>
+          </div>
+
+          <!-- Turn 37 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              And an ex is a past romantic partner that you are no longer in a relationship with.
+            </p>
+          </div>
+
+          <!-- Turn 38 (Outro) -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Once again, our six minutes are up, but you can test what you've learned with the worksheet on our website. Go to bbclearningenglish.com.
+            </p>
+          </div>
+
+          <!-- Turn 39 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
+            </div>
+            <p>
+              Thanks for joining us and goodbye.
+            </p>
+          </div>
+
+          <!-- Turn 40 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Goodbye.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Detail Definition & Collocation Inspector (5 Cols) -->
+      <div class="lg:col-span-5 flex flex-col h-[calc(100vh-140px)]">
+        <div id="definitionCard" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6 flex-1 flex flex-col justify-between overflow-y-auto">
+          
+          <!-- Empty State (Placeholder) -->
+          <div id="emptyDefinitionState" class="h-full flex flex-col items-center justify-center text-center p-4 text-slate-400">
+            <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center mb-4 text-2xl shadow-inner">
+              <i class="fa-solid fa-highlighter"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 text-lg mb-1">Chạm vào bất kỳ cụm từ màu vàng nào</h3>
+            <p class="text-xs sm:text-sm max-w-xs text-slate-500 leading-relaxed">
+              Toàn bộ cụm từ hay dùng trong Speaking từ 6 trang bài nghe đã được lập chỉ mục kèm phiên âm IPA, giải nghĩa chi tiết, cấu trúc câu mẫu và mẹo ghi điểm trong IELTS Speaking.
+            </p>
+          </div>
+
+          <!-- Populated Phrase Detail Content -->
+          <div id="phraseDetailContent" class="hidden space-y-4">
+            
+            <!-- Header with word, type, and sound -->
+            <div class="border-b border-slate-100 pb-3">
+              <div class="flex items-center justify-between">
+                <span id="phraseTypeBadge" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-blue-100 text-blue-700">
+                  Collocation
+                </span>
+                <button id="pronounceBtn" class="w-9 h-9 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white flex items-center justify-center transition shadow-xs" title="Nghe phát âm chuẩn">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+              <h2 id="detailPhrase" class="text-xl sm:text-2xl font-black text-slate-800 mt-2">...</h2>
+              <p id="detailIpa" class="text-xs font-mono text-slate-400 mt-0.5">/ ... /</p>
+            </div>
+
+            <!-- Vietnamese & English Meaning -->
+            <div class="space-y-2">
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-3 rounded-r-lg">
+                <p class="text-[11px] font-bold text-amber-900 uppercase tracking-wide">Ý nghĩa tiếng Việt</p>
+                <p id="detailVietnamese" class="text-slate-800 font-semibold text-xs sm:text-sm mt-0.5 leading-snug">...</p>
+              </div>
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">English BBC Definition</p>
+                <p id="detailEnglish" class="text-slate-600 text-xs mt-0.5 leading-relaxed">...</p>
+              </div>
+            </div>
+
+            <!-- Collocations & Structure Patterns -->
+            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+              <p class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                <i class="fa-solid fa-shapes text-indigo-500"></i> Cấu trúc câu & Cụm đi kèm (Collocations)
+              </p>
+              <div id="detailStructures" class="text-xs text-indigo-950 font-medium space-y-1">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Speaking Application Box -->
+            <div>
+              <p class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                <i class="fa-solid fa-comment-dots text-emerald-500"></i> Ứng dụng trong Speaking (IELTS & Daily)
+              </p>
+              <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-xl p-3 text-xs text-emerald-950 space-y-2">
+                <div>
+                  <span class="font-bold text-emerald-800 block mb-0.5">🎯 Speaking Sample:</span>
+                  <p id="detailSpeakingSample" class="italic text-slate-700 leading-relaxed">"..."</p>
+                </div>
+                <div class="border-t border-emerald-200/50 pt-1.5 text-slate-600">
+                  <span class="font-bold text-emerald-800">💡 Speaking Tip:</span>
+                  <span id="detailSpeakingTip">...</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button Jump to Practice -->
+            <button onclick="jumpToPracticeFromPhrase()" class="w-full py-2 px-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow-xs transition">
+              <i class="fa-solid fa-pencil"></i> Thực hành tình huống với cụm từ này
+            </button>
+          </div>
+
+          <!-- Bottom Summary Indicator -->
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+            <span>Đã lập chỉ mục: <strong class="text-slate-700">22+ cụm từ chọn lọc</strong></span>
+            <button onclick="cycleNextPhrase()" class="text-blue-600 hover:underline font-semibold flex items-center gap-1">
+              <span>Cụm tiếp theo</span> &rarr;
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SCENARIO-BASED PRACTICE -->
+    <section id="section-practice" class="hidden space-y-6">
+      <!-- Practice Intro Header Banner -->
+      <div class="bg-gradient-to-r from-indigo-700 via-purple-700 to-rose-600 rounded-2xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl">
+          <span class="px-2.5 py-1 rounded bg-white/20 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">Thực hành phản xạ</span>
+          <h2 class="text-xl sm:text-3xl font-extrabold mt-2">Bài tập tình huống đời sống (Scenario Challenges)</h2>
+          <p class="text-purple-100 text-xs sm:text-base mt-2">
+            Thay vì dịch từng từ đơn lẻ, hãy đặt các cụm từ vừa học vào đúng tình huống tâm lý, cảm xúc, sức khỏe não bộ và giao tiếp thực tiễn.
+          </p>
+        </div>
+        <div class="absolute right-4 bottom-2 text-white/10 text-9xl font-black pointer-events-none select-none">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+      </div>
+
+      <!-- Practice Filters & Score Tracker -->
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3 flex-wrap gap-2">
+        <div class="flex items-center space-x-2">
+          <span class="text-xs font-bold uppercase text-slate-400">Chủ đề:</span>
+          <button onclick="setQuizFilter('all')" class="quiz-filter-btn px-3 py-1 rounded-lg text-xs font-bold bg-slate-900 text-white" id="filter-all">Tất cả (6)</button>
+          <button onclick="setQuizFilter('emotional')" class="quiz-filter-btn px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200" id="filter-emotional">Cảm xúc & Tâm lý</button>
+          <button onclick="setQuizFilter('science')" class="quiz-filter-btn px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200" id="filter-science">Khoa học thần kinh & Y khoa</button>
+        </div>
+        <div class="text-xs text-slate-500 font-semibold bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+          Điểm của bạn: <span id="userScore" class="text-blue-600 font-bold text-sm">0</span> / <span id="totalQuestions">6</span>
+        </div>
+      </div>
+
+      <!-- Scenario Cards Grid -->
+      <div id="quizContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Mini Dialogue Role-Play -->
+      <div class="mt-8 bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <span class="text-xs font-bold uppercase text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Interactive Mini Role-Play</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-1">Hoàn thành đoạn hội thoại an ủi bạn thân bằng kiến thức khoa học</h3>
+          </div>
+          <button onclick="resetDialogueRoleplay()" class="text-xs font-semibold text-slate-500 hover:text-slate-800">
+            <i class="fa-solid fa-rotate-right"></i> Làm lại
+          </button>
+        </div>
+        <div class="space-y-4 max-w-3xl text-sm">
+          <div class="flex gap-3 items-start">
+            <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs shrink-0">Alex</div>
+            <div class="bg-rose-50/80 p-3.5 rounded-2xl rounded-tl-none border border-rose-100 text-slate-700">
+              "Mình vừa chia tay với người yêu sau 4 năm bên nhau. Tim mình cảm giác đau thắt lại như thể bị gãy xương thật vậy..."
+            </div>
+          </div>
+
+          <div class="flex gap-3 items-start flex-row-reverse">
+            <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs shrink-0">Bạn</div>
+            <div class="bg-blue-50/80 p-4 rounded-2xl rounded-tr-none border border-blue-100 text-slate-800 w-full">
+              <p class="mb-3 text-slate-700">Hãy chọn câu phản hồi khôn ngoan và đúng cơ chế não bộ nhất:</p>
+              
+              <div class="space-y-2" id="dialogueOptions">
+                <button onclick="checkDialogueOption(0)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
+                  A. "Đừng hoảng sợ, các nhà khoa học đã quét não và chứng minh khi bạn trải qua <strong>heartbreak</strong>, não bộ sẽ kích hoạt vùng nhận tín hiệu <strong>visceral pain</strong> y như vết thương thể xác thật. Hãy cho mình thời gian để hồi phục nhé!"
+                </button>
+                <button onclick="checkDialogueOption(1)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
+                  B. "Hãy uống thật nhiều rượu vào để quên đi vì rượu giúp bạn tăng <strong>mortality risk</strong> đấy."
+                </button>
+                <button onclick="checkDialogueOption(2)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
+                  C. "Chuyện bình thường thôi, bạn hãy <strong>think back to</strong> tất cả những tật xấu của người ấy mỗi ngày nhé."
+                </button>
+              </div>
+
+              <div id="dialogueFeedback" class="hidden mt-3 p-3 rounded-lg text-xs font-medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SPEAKING PRACTICE LAB -->
+    <section id="section-speaking" class="hidden space-y-6">
+      
+      <!-- Sub-tabs Navigation -->
+      <div class="flex border-b border-slate-200 gap-4 sm:gap-6 overflow-x-auto">
+        <button onclick="switchSpeakingSubTab('ielts')" id="subtab-ielts" class="tab-btn active pb-3 text-xs sm:text-sm font-semibold transition whitespace-nowrap">
+          <i class="fa-solid fa-graduation-cap mr-1.5"></i> IELTS Speaking Part 2 & 3
+        </button>
+        <button onclick="switchSpeakingSubTab('shadowing')" id="subtab-shadowing" class="tab-btn pb-3 text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-800 transition whitespace-nowrap">
+          <i class="fa-solid fa-headphones mr-1.5"></i> Shadowing & Fluency Drills
+        </button>
+        <button onclick="switchSpeakingSubTab('recorder')" id="subtab-recorder" class="tab-btn pb-3 text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-800 transition whitespace-nowrap">
+          <i class="fa-solid fa-record-vinyl mr-1.5"></i> Phòng Thu Nhận Diện Từ Mục Tiêu
+        </button>
+      </div>
+
+      <!-- SUB-TAB A: IELTS SPEAKING SIMULATOR -->
+      <div id="speaking-ielts-view" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Cue Card Left (7 Cols) -->
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-5">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">IELTS Speaking Part 2</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-1">Topic: A difficult emotional experience</h3>
+            </div>
+            <!-- Timer Controller -->
+            <div class="flex items-center space-x-2 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
+              <i class="fa-regular fa-clock text-slate-500"></i>
+              <span id="speakingTimer" class="font-mono font-bold text-slate-800 text-sm sm:text-base">01:00</span>
+              <button id="timerToggleBtn" onclick="toggleSpeakingTimer()" class="text-xs bg-blue-600 text-white px-2.5 py-1 rounded font-semibold hover:bg-blue-700 transition">
+                Bắt đầu 1p chuẩn bị
+              </button>
+            </div>
+          </div>
+
+          <!-- Cue Card Question Prompt -->
+          <div class="bg-amber-50/50 border border-amber-200 rounded-xl p-4 sm:p-5 text-slate-800 space-y-2.5">
+            <h4 class="font-bold text-sm sm:text-base text-amber-950">Describe a time when you or a close friend experienced emotional pain or heartbreak.</h4>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">You should say:</p>
+            <ul class="list-disc list-inside text-xs sm:text-sm space-y-1.5 text-slate-700">
+              <li>When this happened and who was involved</li>
+              <li>How the experience physically and mentally felt</li>
+              <li>What you or that person did to overcome the sadness</li>
+              <li>And explain what you learned about human relationships from it.</li>
+            </ul>
+          </div>
+
+          <!-- Target Collocations Checklist -->
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              Các cụm từ cần lồng ghép để đạt Band 7.5+ Lexical:
+            </h4>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># think back to</span>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># had my heart broken</span>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># visceral pain</span>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># survival system</span>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># addicted to</span>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># number one predictor of longevity</span>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold border border-blue-100"># strong social bonds</span>
+            </div>
+          </div>
+
+          <!-- IELTS Part 3 Follow-up Questions -->
+          <div class="border-t border-slate-100 pt-3 space-y-2">
+            <h4 class="text-xs sm:text-sm font-bold text-slate-800 flex items-center gap-1.5">
+              <i class="fa-solid fa-comments text-indigo-600"></i> Part 3 Discussion Questions (Thảo luận chuyên sâu):
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <p class="font-bold text-slate-800">1. Why do you think romantic relationships have such a massive impact on people's mental health?</p>
+                <p class="text-slate-500 mt-1 italic">Gợi ý trả lời: Dùng các ý từ podcast: "human brains evolved for survival", "nature made us addicted to each other for protection", "changes our whole identity".</p>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <p class="font-bold text-slate-800">2. In modern society, are people lonelier despite being digitally connected?</p>
+                <p class="text-slate-500 mt-1 italic">Gợi ý trả lời: Nhắc tới nghiên cứu của GS Zoe Donaldson: "loneliness elevates mortality risk equivalent to smoking or obesity", "superficial online contacts vs strong real social bonds".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Model Band 8.0 Answer (5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Model Answer Band 8.0</span>
+              <button onclick="playModelAudio()" class="text-xs text-blue-600 font-semibold hover:underline flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Nghe mẫu
+              </button>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3 max-h-96 overflow-y-auto pr-1">
+              <p>
+                "If I <strong>think back to</strong> a couple of years ago, I vividly remember when my best friend <strong>had his heart broken</strong> after an abrupt break-up with his <strong>ex</strong>. At that time, it was not merely an emotional sorrow; he suffered from genuine <strong>visceral pain</strong> in his chest, as if he had broken a bone."
+              </p>
+              <p>
+                "From what I have learned from neuroscience, when we <strong>fall in love</strong>, our brain treats the partnership as a crucial <strong>survival system</strong>. We become deeply <strong>addicted to</strong> each other, and our brain regions are <strong>oriented completely towards</strong> that person, mirroring primal needs like hunger or thirst."
+              </p>
+              <p>
+                "To support him, our friend circle rallied together to reinforce <strong>strong social bonds</strong>. Medical science shows that having close social connections is the <strong>number one predictor of longevity</strong> and prevents an elevated <strong>mortality risk</strong>. Eventually, that love and connection helped him rebuild his identity and fully recover."
+              </p>
+            </div>
+          </div>
+
+          <!-- Evaluation criteria -->
+          <div class="bg-indigo-50/70 border border-indigo-200 rounded-2xl p-4 text-xs text-indigo-950 space-y-1.5">
+            <h5 class="font-bold text-xs uppercase text-indigo-900 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-indigo-600"></i> Tiêu chí chấm điểm giám khảo đánh giá cao:
+            </h5>
+            <p class="text-slate-600">
+              • <strong>Coherence:</strong> Sử dụng Discourse markers để bắt đầu mượt mà (<em>If I think back to..., From what I understand...</em>).
+            </p>
+            <p class="text-slate-600">
+              • <strong>Collocations:</strong> Không lặp lại từ đơn "breakup" hay "sad", dùng thay thế bằng <em>had one's heart broken, visceral pain, survival system, predictor of longevity</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TAB B: SHADOWING PRACTICE -->
+      <div id="speaking-shadowing-view" class="hidden space-y-4">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+          <div class="max-w-2xl mb-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-800">Phương pháp Shadowing (Nhại giọng & Ngữ điệu chuẩn BBC)</h3>
+            <p class="text-xs sm:text-sm text-slate-500">
+              Bấm nghe từng câu tiêu biểu trích từ bài nói của Neil, Georgie, Dr Lucy Brown và GS Zoe Donaldson. Nhại lại nhịp điệu ngắt nghỉ (chunking) và nhấn trọng âm từ.
+            </p>
+          </div>
+
+          <div class="space-y-3" id="shadowingList">
+            <!-- Populated via Javascript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TAB C: RECORDING STUDIO & TARGET PHRASE CHECKER -->
+      <div id="speaking-recorder-view" class="hidden">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 shadow-sm max-w-4xl mx-auto space-y-6">
+          <div class="text-center space-y-2">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 text-2xl mb-1 shadow-inner">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-800">Phòng Thu Thực Hành & Nhận Diện Cụm Từ Tự Động</h3>
+            <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
+              Nhấn micro và bắt đầu trình bày về chủ đề "Heartbreak & Social Bonds". Hệ thống sẽ nhận diện giọng nói và tự động phát hiện các cụm từ mục tiêu bạn đã sử dụng thành công!
+            </p>
+          </div>
+
+          <!-- Recording Controls -->
+          <div class="flex flex-col items-center justify-center space-y-2.5 py-3">
+            <button id="recordBtn" onclick="toggleSpeechRecording()" class="w-20 h-20 rounded-full bg-rose-600 hover:bg-rose-700 text-white flex flex-col items-center justify-center shadow-lg hover:shadow-rose-200 transition transform active:scale-95">
+              <i id="recordIcon" class="fa-solid fa-microphone text-2xl"></i>
+              <span id="recordLabel" class="text-[10px] uppercase font-bold tracking-wider mt-1">Bắt đầu</span>
+            </button>
+            <div id="recordingStatus" class="text-xs text-slate-400 font-medium">Nhấn mic để bắt đầu nói tiếng Anh</div>
+          </div>
+
+          <!-- Target phrase tracker badges -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+              Các cụm từ mục tiêu cần xuất hiện trong bài nói:
+            </p>
+            <div id="trackerBadges" class="flex flex-wrap gap-2 text-xs">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Live Transcript Output Box -->
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span>Lời bạn vừa nói (Live Speech Recognition):</span>
+              <button onclick="clearRecordedText()" class="text-slate-400 hover:text-slate-600 text-xs">Xoá làm lại</button>
+            </div>
+            <div id="recordedTranscript" class="min-h-[120px] p-4 rounded-xl bg-slate-900 text-slate-100 font-mono text-xs sm:text-sm leading-relaxed border border-slate-800">
+              <span class="text-slate-500 italic">Văn bản nhận diện giọng nói sẽ hiển thị tại đây khi bạn nói...</span>
+            </div>
+          </div>
+
+          <!-- Instant Feedback result -->
+          <div id="recordingFeedback" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    /* COMPREHENSIVE PHRASES DATABASE (Every key phrase from the 6-page transcript) */
+    const phrasesData = {
+      "think-back-to": {
+        phrase: "think back to",
+        type: "Phrasal Verb",
+        ipa: "/θɪŋk bæk tuː/",
+        vietnamese: "Hồi tưởng lại, nhớ lại một thời điểm hay sự kiện trong quá khứ",
+        english: "to recall, reflect upon, or remember something that happened in your past",
+        structures: [
+          "think back to + [time / event / person]",
+          "When I think back to my school days...",
+          "It made me think back to the last time I..."
+        ],
+        sample: "When I think back to that heartbreak, I realize how much it taught me about emotional maturity.",
+        speakingTip: "Discourse marker hoàn hảo để mở đầu trong IELTS Speaking Part 2 ('Describe a time when...'). Giúp câu nói tự nhiên hơn rất nhiều so với 'In the past'."
+      },
+      "had-your-heart-broken": {
+        phrase: "have one's heart broken",
+        type: "Idiom / Passive Collocation",
+        ipa: "/hæv wʌnz hɑːt ˈbrəʊ.kən/",
+        vietnamese: "Bị tổn thương sâu sắc, bị tan nát cõi lòng vì chuyện tình cảm",
+        english: "to suffer intense emotional anguish because someone you love has broken up with you or rejected you",
+        structures: [
+          "have / get your heart broken (by someone)",
+          "break someone's heart (dạng chủ động)",
+          "heartbreaking (adj): vô cùng đau xót"
+        ],
+        sample: "Having your heart broken at least once is an almost universal human experience.",
+        speakingTip: "Dùng dạng bị động 'have your heart broken' thể hiện sự tự nhiên và văn phong bản xứ cao cấp hơn cụm 'my lover broke up with me'."
+      },
+      "a-couple-of-years-ago": {
+        phrase: "a couple of years ago",
+        type: "Time Expression",
+        ipa: "/ə ˈkʌp.əl əv jɪəz əˈɡəʊ/",
+        vietnamese: "Khoảng hai ba năm trước / vài năm về trước",
+        english: "approximately two or three years in the past",
+        structures: [
+          "a couple of [days / weeks / years] ago",
+          "just a couple of years back"
+        ],
+        sample: "A couple of years ago, I took a solo backpacking trip across Southeast Asia.",
+        speakingTip: "Cách xác định mốc thời gian ước lượng linh hoạt, giúp bạn nói trôi chảy mà không bị khựng lại để nhớ chính xác năm nào."
+      },
+      "intense-sad-emotion": {
+        phrase: "intense, sad emotion",
+        type: "Adjective + Noun Collocation",
+        ipa: "/ɪnˈtens sæd ɪˈməʊ.ʃən/",
+        vietnamese: "Cảm xúc đau buồn dữ dội / mãnh liệt",
+        english: "an overwhelmingly strong and acute feeling of profound sorrow",
+        structures: [
+          "experience an intense, sad emotion",
+          "trigger an intense emotion",
+          "process intense negative emotions"
+        ],
+        sample: "Grief isn't just quiet contemplation; it often strikes as an intense, sad emotion that overwhelms you.",
+        speakingTip: "Nâng cấp từ 'very sad' đơn điệu lên 'intense, sad emotion' để tăng điểm tiêu chí Lexical Resource."
+      },
+      "physical-pain": {
+        phrase: "physical pain",
+        type: "Noun Collocation",
+        ipa: "/ˈfɪz.ɪ.kəl peɪn/",
+        vietnamese: "Cơn đau thể xác / đau đớn thể chất",
+        english: "actual bodily discomfort, ache, or suffering as opposed to purely psychological distress",
+        structures: [
+          "experience / endure physical pain",
+          "manifest as physical pain in your stomach/chest",
+          "distinguish physical pain from mental anguish"
+        ],
+        sample: "People often dismiss heartbreak as merely emotional, unaware that it causes genuine physical pain.",
+        speakingTip: "Rất hay dùng để so sánh đối lập với 'emotional suffering' hoặc 'mental distress'."
+      },
+      "heartbreak": {
+        phrase: "heartbreak",
+        type: "Topic Noun",
+        ipa: "/ˈhɑːt.breɪk/",
+        vietnamese: "Sự tan nát cõi lòng, nỗi đau đớn tột cùng khi mất đi tình yêu",
+        english: "a feeling of intense, painful sadness after the end of a relationship or loss of a loved one",
+        structures: [
+          "experience / suffer from / heal from heartbreak",
+          "overcome the agony of heartbreak",
+          "heartbreak hurts because of neurological pathways"
+        ],
+        sample: "Recovering from heartbreak requires patience, self-compassion, and support from good friends.",
+        speakingTip: "Từ vựng trọng tâm của chủ đề này. Luôn kết hợp với các động từ tự nhiên như 'heal from', 'navigate', 'cope with'."
+      },
+      "lose-someone-we-love": {
+        phrase: "lose someone we love",
+        type: "Verb Phrase Collocation",
+        ipa: "/luːz ˈsʌm.wʌn wiː lʌv/",
+        vietnamese: "Mất đi người mà ta yêu thương",
+        english: "to no longer have someone dear in one's life due to separation, a breakup, or bereavement",
+        structures: [
+          "the fear of losing someone you love",
+          "grieving when you lose someone you love"
+        ],
+        sample: "Nothing in life quite prepares you for the deep void left when you lose someone you love.",
+        speakingTip: "Cụm diễn đạt đắt giá, thể hiện chiều sâu cảm xúc trong phần thi Speaking Part 2."
+      },
+      "not-just-imaginary": {
+        phrase: "it's not just imaginary",
+        type: "Conversational Phrase",
+        ipa: "/ɪts nɒt dʒʌst ɪˈmædʒ.ɪ.nər.i/",
+        vietnamese: "Không phải chỉ là do tưởng tượng ra / đó là có thật",
+        english: "real and scientifically verifiable, rather than merely existing in one's mind",
+        structures: [
+          "it is not just imaginary, it is biologically real",
+          "prove that the symptoms are not just imaginary"
+        ],
+        sample: "The chest tightness you feel after a breakup is not just imaginary; it reflects genuine neurological arousal.",
+        speakingTip: "Dùng để bác bỏ một hiểu lầm phổ biến khi bạn muốn nhấn mạnh tính xác thực của vấn đề."
+      },
+      "fall-in-love": {
+        phrase: "fall in love (with someone)",
+        type: "Idiom",
+        ipa: "/fɔːl ɪn lʌv/",
+        vietnamese: "Phải lòng, đem lòng yêu ai",
+        english: "to develop deep romantic feelings and affection for someone",
+        structures: [
+          "fall head over heels in love",
+          "fall in love at first sight",
+          "fall out of love (hết yêu)"
+        ],
+        sample: "When we fall in love, neurochemicals like dopamine flood our brains and create a state of euphoria.",
+        speakingTip: "Có thể bổ sung trạng từ tự nhiên: 'fall deeply in love', 'fall unexpectedly in love'."
+      },
+      "early-bonds": {
+        phrase: "early bonds",
+        type: "Academic Collocation",
+        ipa: "/ˈɜː.li bɒndz/",
+        vietnamese: "Mối liên kết gắn bó thuở ấu thơ (giữa con cái và cha mẹ)",
+        english: "the initial emotional attachments formed between children and their primary caregivers",
+        structures: [
+          "early bonds with parents",
+          "form / establish early bonds",
+          "disruptions in early childhood bonds"
+        ],
+        sample: "Psychologists emphasize that the early bonds forged with our parents lay the foundation for how we relate to partners later in life.",
+        speakingTip: "Cụm danh từ học thuật cực kỳ ăn điểm trong IELTS Speaking Part 3 (Chủ đề Family & Childhood)."
+      },
+      "romantic-relationships": {
+        phrase: "romantic relationships",
+        type: "Topic Collocation",
+        ipa: "/rəʊˈmæn.tɪk rɪˈleɪ.ʃən.ʃɪps/",
+        vietnamese: "Mối quan hệ yêu đương lãng mạn",
+        english: "relationships characterized by mutual romantic love, intimacy, and commitment",
+        structures: [
+          "foster / sustain a healthy romantic relationship",
+          "long-term romantic relationships",
+          "navigating difficulties in romantic relationships"
+        ],
+        sample: "Open communication is the cornerstone of any successful romantic relationship.",
+        speakingTip: "Dùng từ này thay cho từ 'love' chung chung để câu văn mang tính học thuật và rõ ràng hơn."
+      },
+      "attachment-theory": {
+        phrase: "attachment theory",
+        type: "Psychological Concept",
+        ipa: "/əˈtætʃ.mənt ˈθɪə.ri/",
+        vietnamese: "Thuyết gắn bó (Bowlby & Ainsworth)",
+        english: "a psychological model describing how early childhood attachments shape adult relationship dynamics",
+        structures: [
+          "according to attachment theory",
+          "secure / anxious / avoidant attachment styles",
+          "the tenets of attachment theory"
+        ],
+        sample: "According to attachment theory, individuals with secure attachment styles tend to recover faster from romantic heartbreaks.",
+        speakingTip: "Nhắc đến các khái niệm tâm lý học chuẩn xác như thế này trong Speaking Part 3 sẽ gây ấn tượng mạnh với giám khảo."
+      },
+      "romantic-partner": {
+        phrase: "romantic partner",
+        type: "Collocation",
+        ipa: "/rəʊˈmæn.tɪk ˈpɑːt.nər/",
+        vietnamese: "Bạn đời, người yêu, đối tác tình cảm",
+        english: "a person with whom one is involved in a romantic relationship",
+        structures: [
+          "choose a romantic partner",
+          "depend on one's romantic partner",
+          "cohabit with a romantic partner"
+        ],
+        sample: "Spending quality time with your romantic partner strengthens interpersonal intimacy.",
+        speakingTip: "Từ vựng trang trọng, trung tính, phù hợp cho cả văn phong nói học thuật lẫn giao tiếp lịch sự."
+      },
+      "activates-a-part-of-the-brain": {
+        phrase: "activates a part of the brain",
+        type: "Scientific Collocation",
+        ipa: "/ˈæk.tɪ.veɪts ə pɑːt əv ðə breɪn/",
+        vietnamese: "Kích hoạt một vùng trong não bộ",
+        english: "causes a specific neural region or neural circuit in the brain to become functionally active",
+        structures: [
+          "activate specific regions / parts of the brain",
+          "brain areas activated by emotional stimuli"
+        ],
+        sample: "Looking at a photograph of someone you adore activates a part of the brain linked to basic survival drives.",
+        speakingTip: "Cụm động từ chính xác khi giải thích các hiện tượng phản ứng tâm lý và hành vi dưới góc nhìn khoa học."
+      },
+      "all-about-survival": {
+        phrase: "it's all about survival",
+        type: "Idiomatic Expression",
+        ipa: "/ɪts ɔːl əˈbaʊt səˈvaɪ.vəl/",
+        vietnamese: "Tất cả đều vì mục đích sinh tồn",
+        english: "primarily driven by the biological necessity to stay alive and perpetuate the species",
+        structures: [
+          "it's fundamentally all about survival",
+          "evolutionary biology is all about survival"
+        ],
+        sample: "Our emotional attachment to human companionship is not a luxury; it's all about survival.",
+        speakingTip: "Cách diễn đạt ngắn gọn, súc tích để đưa ra kết luận cốt lõi cho một câu hỏi nguyên nhân ('Why?')."
+      },
+      "survival-system": {
+        phrase: "survival system",
+        type: "Compound Noun",
+        ipa: "/səˈvaɪ.vəl ˈsɪs.təm/",
+        vietnamese: "Cơ chế sinh tồn / hệ thống bảo vệ sự sống",
+        english: "an innate biological mechanism developed through evolution to keep humans alive and protected",
+        structures: [
+          "trigger the body's survival system",
+          "hardwired survival system",
+          "part of our evolutionary survival system"
+        ],
+        sample: "Falling in love triggers an evolutionary survival system that drives us to protect and nurture one another.",
+        speakingTip: "Từ vựng C1/C2 dùng để giải thích căn nguyên sinh học đằng sau các cảm xúc mãnh liệt của con người."
+      },
+      "addicted-to": {
+        phrase: "addicted to (each other)",
+        type: "Adjective + Preposition",
+        ipa: "/əˈdɪk.tɪd tuː/",
+        vietnamese: "Nghiện, phụ thuộc và khao khát có được người kia mọi lúc",
+        english: "physically or emotionally dependent on someone or something and craving more of it continually",
+        structures: [
+          "be addicted to someone/something",
+          "become addicted to the emotional rush",
+          "addicted to love"
+        ],
+        sample: "Nature designed our reward pathways to become addicted to our partners for mutual protection.",
+        speakingTip: "Chú ý luôn đi kèm giới từ 'to', phía sau là một Noun hoặc Gerund (V-ing)."
+      },
+      "reproduction-protection": {
+        phrase: "for reproduction, for protection",
+        type: "Parallel Noun Phrase",
+        ipa: "/fɔː ˌriː.prəˈdʌk.ʃən fɔː prəˈtek.ʃən/",
+        vietnamese: "Để duy trì nòi giống và để được bảo vệ",
+        english: "for producing offspring and ensuring physical security from dangers",
+        structures: [
+          "serve the purpose of reproduction and protection",
+          "evolutionary drives for reproduction and safety"
+        ],
+        sample: "Early human tribes relied on romantic fidelity for reproduction and mutual protection against predators.",
+        speakingTip: "Cấu trúc song hành (parallel structure) giúp câu nói nhịp nhàng, hùng hồn và học thuật hơn."
+      },
+      "oriented-towards": {
+        phrase: "oriented towards / orientated to",
+        type: "Phrasal Adjective",
+        ipa: "/ˈɔː.ri.ən.tɪd təˈwɔːdz/",
+        vietnamese: "Hướng toàn bộ sự chú ý/tâm trí về phía đối phương",
+        english: "directing one's primary attention, care, and thoughts towards a particular individual",
+        structures: [
+          "be oriented towards someone/something",
+          "orientated towards (British English)",
+          "a goal-oriented / family-oriented mindset"
+        ],
+        sample: "When a mother holds her newborn, her thoughts are oriented completely towards the child's comfort.",
+        speakingTip: "Tiếng Anh-Anh thường dùng 'orientated towards', còn Anh-Mỹ chuộng 'oriented towards'."
+      },
+      "like-hunger-or-thirst": {
+        phrase: "like hunger or thirst",
+        type: "Simile / Analogy",
+        ipa: "/laɪk ˈhʌŋ.ɡər ɔː θɜːst/",
+        vietnamese: "Giống như cơn đói hay cơn khát (nhu cầu sinh lý nguyên thủy)",
+        english: "comparing romantic craving to primary physiological drives necessary for life",
+        structures: [
+          "crave affection like hunger or thirst",
+          "as instinctive as hunger or thirst"
+        ],
+        sample: "Dr Brown points out that love is not a mere soft emotion; it is an urge as primal as hunger or thirst.",
+        speakingTip: "Sử dụng biện pháp so sánh (simile) giúp bài nói sống động, hình tượng và dễ thuyết phục người nghe."
+      },
+      "use-it-metaphorically": {
+        phrase: "use it metaphorically",
+        type: "Collocation (Verb + Adverb)",
+        ipa: "/juːz ɪt ˌmet.əˈfɒr.ɪ.kəl.i/",
+        vietnamese: "Sử dụng từ này theo nghĩa bóng / nghĩa ẩn dụ",
+        english: "to employ a word in a figurative sense rather than its literal medical or physical meaning",
+        structures: [
+          "use the term metaphorically",
+          "speak metaphorically",
+          "metaphorical meaning vs literal meaning"
+        ],
+        sample: "When people say they are addicted to chocolate or romance, they use the word metaphorically.",
+        speakingTip: "Rất hữu ích khi bạn muốn giải thích cách dùng từ trong Speaking: 'If I can use this phrase metaphorically...'."
+      },
+      "think-of-each-other-before-other-people": {
+        phrase: "think of each other before other people",
+        type: "Explanatory Phrase",
+        ipa: "/θɪŋk əv iːtʃ ˈʌð.ər bɪˈfɔːr ˈʌð.ər ˈpiː.pəl/",
+        vietnamese: "Luôn nghĩ về nhau trước mọi người khác (đặt đối phương lên hàng đầu)",
+        english: "prioritizing one's romantic partner's feelings, comfort, and thoughts above everyone else",
+        structures: [
+          "put each other first",
+          "think of your partner before anyone else"
+        ],
+        sample: "In a dedicated partnership, couples naturally think of each other before other people when making life decisions.",
+        speakingTip: "Cách giải thích tự nhiên, giản dị khi làm rõ nghĩa của cụm 'orientated towards each other'."
+      },
+      "changes-our-whole-identity": {
+        phrase: "changes our whole identity",
+        type: "High-impact Collocation",
+        ipa: "/ˈtʃeɪn.dʒɪz ˈaʊə həʊl aɪˈden.tə.ti/",
+        vietnamese: "Làm thay đổi toàn bộ bản sắc / nhân dạng của chúng ta",
+        english: "fundamentally reshapes how an individual perceives who they are in relation to the world",
+        structures: [
+          "change / reshape / redefine one's whole identity",
+          "integrate another person into one's identity"
+        ],
+        sample: "Being in a deeply bonded relationship changes our whole identity, blurring the line between 'me' and 'we'.",
+        speakingTip: "Dùng để diễn tả một sự kiện mang tính bước ngoặt, làm thay đổi sâu sắc con người bạn."
+      },
+      "lit-up": {
+        phrase: "light up (lit up)",
+        type: "Phrasal Verb",
+        ipa: "/laɪt ʌp/ (lɪt ʌp)",
+        vietnamese: "Phát sáng / (vùng não) bừng sáng, kích hoạt mạnh",
+        english: "became illuminated or showed a surge in neurological/metabolic activity on a brain scan",
+        structures: [
+          "the brain regions lit up",
+          "her face lit up with delight (nghĩa bóng)",
+          "light up under fMRI scans"
+        ],
+        sample: "When subjects were shown statements about their soulmate, the self-referential parts of their brain lit up.",
+        speakingTip: "Có thể dùng cả theo nghĩa khoa học thần kinh (brain scans) lẫn nghĩa biểu cảm khuôn mặt."
+      },
+      "good-social-connections": {
+        phrase: "good social connections",
+        type: "Collocation",
+        ipa: "/ɡʊd ˈsəʊ.ʃəl kəˈnek.ʃənz/",
+        vietnamese: "Các mối quan hệ kết nối xã hội tốt đẹp",
+        english: "healthy, positive, and supportive relationships with people in one's social network",
+        structures: [
+          "build / cultivate good social connections",
+          "rely on good social connections",
+          "the absence of social connections"
+        ],
+        sample: "Cultivating good social connections is one of the most effective buffers against chronic anxiety.",
+        speakingTip: "Dùng thay cho từ 'friends' để bài nói mang tính bao quát và học thuật hơn."
+      },
+      "manage-stress": {
+        phrase: "manage stress",
+        type: "Collocation",
+        ipa: "/ˈmæn.ɪdʒ stres/",
+        vietnamese: "Kiểm soát / quản lý căng thẳng",
+        english: "to successfully cope with or reduce psychological tension and emotional strain",
+        structures: [
+          "manage stress effectively",
+          "strategies to manage stress",
+          "alleviate and manage stress"
+        ],
+        sample: "Regular exercise and heartfelt conversations with loved ones help manage stress substantially.",
+        speakingTip: "Cụm từ tiêu chuẩn cho mọi chủ đề về Mental Health, Work-Life Balance và Well-being."
+      },
+      "support-our-immune-system": {
+        phrase: "support our immune system",
+        type: "Medical Collocation",
+        ipa: "/səˈpɔːt ˈaʊər ɪˈmjuːn ˈsɪs.təm/",
+        vietnamese: "Hỗ trợ / củng cố hệ thống miễn dịch của chúng ta",
+        english: "to strengthen the body's biological defenses against illness and infection",
+        structures: [
+          "boost / strengthen / support the immune system",
+          "a compromised immune system"
+        ],
+        sample: "Scientific evidence shows that warm companionship can directly support our immune system.",
+        speakingTip: "Rất hay dùng khi bàn về mối liên hệ mật thiết giữa sức khỏe tinh thần và thể chất."
+      },
+      "strong-social-bonds": {
+        phrase: "strong social bonds",
+        type: "Academic Collocation",
+        ipa: "/strɒŋ ˈsəʊ.ʃəl bɒndz/",
+        vietnamese: "Những mối liên kết xã hội bền chặt (gia đình, bạn bè, đối tác)",
+        english: "deep, resilient, and dependable relationships that provide mutual emotional and practical support",
+        structures: [
+          "forge / maintain strong social bonds",
+          "foster strong social bonds within communities",
+          "rely on strong social bonds during crises"
+        ],
+        sample: "Individuals blessed with strong social bonds have been shown to recover from illness noticeably faster.",
+        speakingTip: "Cụm từ vàng cho mọi chủ đề IELTS Speaking về Friendship, Community, Society."
+      },
+      "survive-from-just-about-anything": {
+        phrase: "survive from just about anything",
+        type: "Informal Idiomatic Phrase",
+        ipa: "/səˈvaɪv frəm dʒʌst əˈbaʊt ˈen.i.θɪŋ/",
+        vietnamese: "Vượt qua và sống sót trước hầu như mọi căn bệnh/biến cố",
+        english: "to endure, overcome, and outlive almost any severe disease or life threat",
+        structures: [
+          "help patients survive from just about anything",
+          "give you the resilience to survive anything"
+        ],
+        sample: "Professor Donaldson noted that having strong bonds gives people the biological tenacity to survive from just about anything.",
+        speakingTip: "Cách nói nhấn mạnh rất sinh động của người bản xứ ('just about anything' = hầu như mọi thứ)."
+      },
+      "number-one-predictor": {
+        phrase: "number one predictor (of longevity)",
+        type: "High-level Collocation",
+        ipa: "/ˈnʌm.bər wʌn prɪˈdɪk.tər əv lɒnˈdʒev.ə.ti/",
+        vietnamese: "Yếu tố dự báo hàng đầu (cho việc sống thọ)",
+        english: "the single most reliable and potent statistical indicator forecasting a long lifespan",
+        structures: [
+          "the number one predictor of [success / happiness / longevity]",
+          "serve as a powerful predictor",
+          "a reliable predictor of future health"
+        ],
+        sample: "Social connectedness has emerged as the number one predictor of longevity in modern epidemiological research.",
+        speakingTip: "Cấu trúc ăn điểm cực mạnh ở tiêu chí Coherence và Lexical: 'It is widely acknowledged as the number one predictor of...'."
+      },
+      "lonely": {
+        phrase: "lonely",
+        type: "Adjective",
+        ipa: "/ˈləʊn.li/",
+        vietnamese: "Cô đơn, thiếu vắng sự kết nối sẻ chia",
+        english: "unhappy because one has no friends or people to talk to; socially disconnected",
+        structures: [
+          "feel intensely lonely",
+          "chronic loneliness",
+          "being lonely damages cardiovascular health"
+        ],
+        sample: "You can be surrounded by a crowd in a bustling city and still feel utterly lonely.",
+        speakingTip: "Phân biệt 'lonely' (cảm giác cô đơn buồn bã) với 'alone' (chỉ trạng thái thể chất ở một mình)."
+      },
+      "mortality-risk": {
+        phrase: "mortality risk",
+        type: "Epidemiological Collocation",
+        ipa: "/mɔːˈtæl.ə.ti rɪsk/",
+        vietnamese: "Nguy cơ tử vong",
+        english: "the statistical probability or rate of dying within a given timeframe",
+        structures: [
+          "increase / elevate one's mortality risk",
+          "reduce premature mortality risk",
+          "an elevated mortality risk equivalent to smoking"
+        ],
+        sample: "Prolonged social isolation can spike your mortality risk as severely as smoking fifteen cigarettes a day.",
+        speakingTip: "Cụm danh từ cao cấp trong các bài thảo luận về sức khỏe cộng đồng và dịch tễ học."
+      },
+      "equivalent-to": {
+        phrase: "equivalent to",
+        type: "Adjective + Preposition",
+        ipa: "/ɪˈkwɪv.əl.ənt tuː/",
+        vietnamese: "Tương đương với, ngang bằng với",
+        english: "equal in value, measure, effect, or significance to something else",
+        structures: [
+          "be roughly equivalent to...",
+          "have consequences equivalent to...",
+          "the emotional equivalent of..."
+        ],
+        sample: "The cardiovascular damage of chronic loneliness is roughly equivalent to being obese or a heavy smoker.",
+        speakingTip: "Nâng tầm câu so sánh của bạn, chuyên nghiệp hơn hẳn so với 'the same as'."
+      },
+      "longevity": {
+        phrase: "longevity",
+        type: "Academic Vocabulary",
+        ipa: "/lɒnˈdʒev.ə.ti/",
+        vietnamese: "Tuổi thọ, sự sống lâu",
+        english: "long duration of individual life; the length of time someone lives",
+        structures: [
+          "promote longevity",
+          "the key to human longevity",
+          "longevity and healthy aging"
+        ],
+        sample: "Adopting a balanced Mediterranean diet combined with strong social ties promotes longevity.",
+        speakingTip: "Từ vựng học thuật C1 để thay thế cho cụm từ thông thường 'a long life'."
+      },
+      "exes": {
+        phrase: "exes (an ex)",
+        type: "Informal Noun",
+        ipa: "/ˈek.sɪz/",
+        vietnamese: "Người yêu cũ, vợ/chồng cũ",
+        english: "former partners with whom someone was previously in a romantic or marital relationship",
+        structures: [
+          "talk about one's exes",
+          "bump into an ex",
+          "remain amicable with an ex"
+        ],
+        sample: "It is often wise to establish emotional boundaries before trying to become friends with an ex.",
+        speakingTip: "Thuật ngữ phổ biến trong văn phong giao tiếp hàng ngày."
+      },
+      "former-partners": {
+        phrase: "former partners",
+        type: "Formal Collocation",
+        ipa: "/ˈfɔː.mər ˈpɑːt.nəz/",
+        vietnamese: "Các đối tác/bạn đời trước đây (cách gọi trang trọng của 'exes')",
+        english: "previous spouses or romantic partners",
+        structures: [
+          "maintain civil relations with former partners",
+          "the history between former partners"
+        ],
+        sample: "Unlike the slang 'ex', the term 'former partner' is preferred in formal psychological assessments.",
+        speakingTip: "Sử dụng từ này khi bạn muốn nói một cách trang trọng, tôn trọng đối phương trong bài thi Speaking."
+      },
+      "in-danger-or-in-pain": {
+        phrase: "in danger or in pain",
+        type: "Idiomatic Prepositional Phrase",
+        ipa: "/ɪn ˈdeɪn.dʒər ɔːr ɪn peɪn/",
+        vietnamese: "Gặp nguy hiểm hoặc chịu đau đớn",
+        english: "experiencing immediate physical peril or suffering physical agony",
+        structures: [
+          "react as if you are in danger or in pain",
+          "alarm centers alert us when in danger or in pain"
+        ],
+        sample: "When looking at pictures of exes, our brain fires alarm signals identical to being in danger or in pain.",
+        speakingTip: "Cụm từ mô tả phản xạ tự vệ khẩn cấp của não bộ khi gặp đe dọa sinh tồn."
+      },
+      "literal-pain": {
+        phrase: "literal pain",
+        type: "Collocation",
+        ipa: "/ˈlɪt.ər.əl peɪn/",
+        vietnamese: "Cơn đau thực sự theo nghĩa đen (chứ không phải chỉ là ví von)",
+        english: "actual, tangible neurological and sensory pain, rather than just a dramatic metaphor",
+        structures: [
+          "cause literal pain in your brain",
+          "experience literal pain vs figurative pain"
+        ],
+        sample: "Neuroimaging confirms that rejection triggers literal pain pathways in the dorsal anterior cingulate cortex.",
+        speakingTip: "Dùng từ 'literal' khi bạn muốn khẳng định chắc chắn điều đó hoàn toàn là sự thật khách quan."
+      },
+      "overlap-with": {
+        phrase: "overlap with",
+        type: "Phrasal Verb",
+        ipa: "/ˌəʊ.vəˈlæp wɪð/",
+        vietnamese: "Trùng khớp với, giao thoa với, trùng lặp với",
+        english: "to cover or share the same area, characteristics, or neural circuits as something else",
+        structures: [
+          "overlap with other brain regions",
+          "exhibit significant overlap with...",
+          "where science and psychology overlap"
+        ],
+        sample: "The neural pathways that register social heartbreak directly overlap with those that process physical burns.",
+        speakingTip: "Động từ học thuật rất được ưa chuộng khi nói về các đồ thị, nghiên cứu, hoặc các khái niệm giao nhau."
+      },
+      "visceral-pain": {
+        phrase: "visceral pain",
+        type: "Medical / High-level Collocation",
+        ipa: "/ˈvɪs.ər.əl peɪn/",
+        vietnamese: "Cơn đau buốt từ nội tạng, cảm giác đau thắt ruột gan (như gãy xương)",
+        english: "deep, aching pain originating from internal organs, often agonizing and hard to pinpoint",
+        structures: [
+          "experience visceral pain in the gut",
+          "evoke a visceral reaction (nghĩa bóng: phản ứng bản năng sâu sắc)",
+          "visceral distress of heartbreak"
+        ],
+        sample: "Heartbreak is not an airy metaphor; it induces visceral pain comparable to a broken bone or severe burn.",
+        speakingTip: "Từ 'visceral' có thể dùng cho cả nghĩa bóng: 'a visceral reaction' (một phản xạ dữ dội từ tận đáy lòng)."
+      },
+      "quite-confident-about": {
+        phrase: "quite confident about",
+        type: "Conversational Phrase",
+        ipa: "/kwaɪt ˈkɒn.fɪ.dənt əˈbaʊt/",
+        vietnamese: "Khá tự tin / chắc chắn về điều gì",
+        english: "feeling reasonably certain and assured of one's knowledge or decision",
+        structures: [
+          "be quite confident about one's chances",
+          "feel confident about an answer"
+        ],
+        sample: "I was quite confident about my examination results because I had prepared meticulously.",
+        speakingTip: "Dùng để diễn tả mức độ tự tin một cách khiêm tốn nhưng đĩnh đạc trong giao tiếp."
+      },
+      "recap-the-vocabulary": {
+        phrase: "recap the vocabulary",
+        type: "Presentation Collocation",
+        ipa: "/ˈriː.kæp ðə vəˈkæb.jə.lər.i/",
+        vietnamese: "Điểm lại / ôn lại toàn bộ từ vựng đã học",
+        english: "to summarize and review the primary terms introduced in a lesson or session",
+        structures: [
+          "let's recap the vocabulary we learnt",
+          "give a quick recap of the key terms"
+        ],
+        sample: "Before wrapping up our seminar, let's take two minutes to recap the vocabulary.",
+        speakingTip: "Cụm từ rất chuẩn khi làm thuyết trình (Presentation) để tóm lược các ý chính trước khi kết thúc."
+      }
+    };
+
+    /* SCENARIO QUIZZES DATABASE */
+    const quizDatabase = [
+      {
+        id: 1,
+        category: "emotional",
+        situation: "Bạn của bạn vừa chia tay người yêu và cảm thấy đau quặn ở bụng, tức ngực như thể vừa bị gãy xương. Theo nghiên cứu của BBC và GS Zoe Donaldson, cụm từ khoa học nào mô tả chính xác nhất cơn đau này?",
+        targetPhrase: "visceral pain",
+        options: [
+          { text: "Visceral pain (cơn đau buốt tận nội tạng, trùng khớp với cơn đau thể xác thực sự)", correct: true },
+          { text: "Imaginary illusion (chỉ là ảo giác do tâm lý yếu đuối tưởng tượng ra)", correct: false },
+          { text: "Superstition theory (nỗi sợ mang tính mê tín thời cổ đại)", correct: false },
+          { text: "Metaphorical relaxation (cảm giác thư giãn theo nghĩa bóng)", correct: false }
+        ],
+        explanation: "Giáo sư Zoe Donaldson chỉ ra rằng khi quét não, các vùng sáng lên khi chia tay trùng khớp với vùng cảm nhận 'visceral pain' - cơn đau buốt nội tạng giống như khi bị bỏng hoặc gãy xương!"
+      },
+      {
+        id: 2,
+        category: "science",
+        situation: "Trong bài nói IELTS Speaking Part 3, bạn muốn khẳng định việc duy trì các mối quan hệ xã hội thân thiết là 'yếu tố dự báo hàng đầu quyết định tuổi thọ của con người', cụm từ nào ăn điểm cao nhất?",
+        targetPhrase: "number one predictor of longevity",
+        options: [
+          { text: "Early bonds of addiction", correct: false },
+          { text: "The number one predictor of longevity", correct: true },
+          { text: "Literal pain of mortality", correct: false },
+          { text: "Survival system of exes", correct: false }
+        ],
+        explanation: "'The number one predictor of longevity' là cụm collocation C1/C2 nghĩa là 'yếu tố dự báo số một cho việc kéo dài tuổi thọ'."
+      },
+      {
+        id: 3,
+        category: "emotional",
+        situation: "Tiến sĩ Lucy Brown giải thích rằng khi mới yêu say đắm, hệ thống sinh tồn khiến chúng ta hướng toàn bộ tâm trí, sự chăm sóc và ưu tiên về phía đối phương. Cụm từ nào trong bài mô tả điều này?",
+        targetPhrase: "oriented towards",
+        options: [
+          { text: "Pointed away from the partner", correct: false },
+          { text: "Oriented completely toward the other person (như đói hoặc khát)", correct: true },
+          { text: "Broken bones with the person", correct: false },
+          { text: "Smoking equivalent", correct: false }
+        ],
+        explanation: "'Oriented towards' (tiếng Anh-Anh: 'orientated towards') nghĩa là đặt toàn bộ sự tập trung vào đối phương, nghĩ về họ trước tất cả mọi người khác."
+      },
+      {
+        id: 4,
+        category: "science",
+        situation: "Theo GS Zoe Donaldson trong bài nghe BBC, một người sống cô đơn, thiếu thốn các mối liên kết xã hội bền chặt thì nguy cơ tử vong (mortality risk) tăng cao tương đương với điều gì?",
+        targetPhrase: "equivalent to being obese or smoking",
+        options: [
+          { text: "Tương đương với việc bị béo phì hoặc hút thuốc lá thường xuyên (equivalent to being obese or smoking)", correct: true },
+          { text: "Tương đương với việc không uống đủ 2 lít nước mỗi ngày", correct: false },
+          { text: "Tương đương với việc xem điện thoại vào ban đêm", correct: false },
+          { text: "Không gây hại thể chất, chỉ gây buồn nhẹ", correct: false }
+        ],
+        explanation: "Bài nghe nêu rõ: 'your mortality risk goes up in a way that's equivalent to being obese or smoking'."
+      },
+      {
+        id: 5,
+        category: "emotional",
+        situation: "Khi giám khảo IELTS hỏi: 'Describe an emotional event from your past', cách mở đầu nào sau đây tự nhiên, đúng chất người bản xứ nhất?",
+        targetPhrase: "think back to",
+        options: [
+          { text: "If I think back to a couple of years ago...", correct: true },
+          { text: "I have heart broken a couple of years ago...", correct: false },
+          { text: "Being addicted to three years ago...", correct: false },
+          { text: "Literal pain to three years ago...", correct: false }
+        ],
+        explanation: "'If I think back to...' là discourse marker hoàn hảo để lùi lại quá khứ một cách mượt mà và tự nhiên."
+      },
+      {
+        id: 6,
+        category: "science",
+        situation: "Nghiên cứu quét não năm 2013 được Neil nhắc tới chứng minh rằng khi người ta nhìn các phát biểu về người yêu của mình, điều kỳ diệu gì đã xảy ra trong não bộ?",
+        targetPhrase: "changes our whole identity",
+        options: [
+          { text: "Vùng não dùng để nghĩ về bản thân sáng lên, cho thấy người yêu đã hòa nhập vào danh tính của chính mình (changes our whole identity)", correct: true },
+          { text: "Não bộ tắt hoàn toàn các dây thần kinh cảm giác", correct: false },
+          { text: "Người ta quên mất tên của chính bản thân mình", correct: false },
+          { text: "Chỉ có vùng nhớ về thức ăn và nước uống hoạt động", correct: false }
+        ],
+        explanation: "Neil giải thích: 'being in love doesn't just change the way we think. It changes our whole identity. The part of the brain we use to think about ourselves lit up'."
+      }
+    ];
+
+    /* SHADOWING DRILLS DATABASE (Carefully picked from transcript) */
+    const shadowingSentences = [
+      {
+        speaker: "Neil (BBC Presenter)",
+        text: "I want you to think back to the last time you had your heart broken. How did it feel?",
+        notes: "Ngắt nhẹ sau 'think back to', hạ giọng lắng đọng ở cuối câu hỏi 'How did it feel?'."
+      },
+      {
+        speaker: "Georgie (BBC Presenter)",
+        text: "It also sometimes feels like a physical pain in your stomach, doesn't it?",
+        notes: "Nhấn mạnh từ 'physical pain' và nâng nhẹ ngữ điệu ở câu hỏi đuôi 'doesn't it?'."
+      },
+      {
+        speaker: "Dr Lucy Brown (Neuroscientist)",
+        text: "Nature gave us these systems to be addicted to each other - for reproduction, for protection.",
+        notes: "Ngắt nhịp song hành: 'for reproduction, for protection'."
+      },
+      {
+        speaker: "Neil (Explaining Orientation)",
+        text: "She says that romantic partners are orientated to each other. They think of each other before other people.",
+        notes: "Nhấn mạnh 'orientated to each other' và ngắt dứt khoát trước 'before other people'."
+      },
+      {
+        speaker: "Professor Zoe Donaldson",
+        text: "Having really strong social bonds is the number one predictor of longevity.",
+        notes: "Nối âm nhẹ giữa 'number one' và 'predictor of', ngân vang ở từ 'longevity'."
+      },
+      {
+        speaker: "Professor Zoe Donaldson (Visceral Pain)",
+        text: "It's literal pain in your brain. It overlaps with the same regions activated when you feel visceral pain - like when you break a bone.",
+        notes: "Giọng điệu nghiêm túc, nhấn vào 'literal pain' và 'visceral pain'."
+      }
+    ];
+
+    /* Target key phrases for the Speech Studio */
+    const targetKeyPhrases = [
+      "think back to",
+      "heartbreak",
+      "had your heart broken",
+      "visceral pain",
+      "survival system",
+      "strong social bonds",
+      "addicted to",
+      "oriented towards",
+      "predictor of longevity",
+      "mortality risk",
+      "fall in love",
+      "changes our whole identity"
+    ];
+
+    /* State variables */
+    let currentActivePhraseId = null;
+    let userQuizScore = 0;
+    let answeredQuestions = new Set();
+    let currentQuizFilter = 'all';
+    let isRecording = false;
+    let speechRecognition = null;
+    let finalTranscribedText = "";
+    let detectedPhrases = new Set();
+    let timerInterval = null;
+    let prepSecondsLeft = 60;
+    let isTimerRunning = false;
+    let isReadingAll = false;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initPhraseClicks();
+      renderScenarioQuizzes();
+      renderShadowingDrills();
+      renderTrackerBadges();
+      setupSpeechRecognition();
+
+      // Set default selected phrase
+      selectPhrase("heartbreak");
+    });
+
+    /* Switch between main tabs */
+    function switchTab(tabId) {
+      document.getElementById('section-study').classList.add('hidden');
+      document.getElementById('section-practice').classList.add('hidden');
+      document.getElementById('section-speaking').classList.add('hidden');
+
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-blue-50', 'text-blue-600');
+        btn.classList.add('text-slate-600', 'hover:bg-slate-100');
+      });
+
+      const activeNavBtn = document.getElementById(`tabNav-${tabId}`);
+      if (activeNavBtn) {
+        activeNavBtn.classList.add('bg-blue-50', 'text-blue-600');
+        activeNavBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
+      }
+
+      const activeSection = document.getElementById(`section-${tabId}`);
+      if (activeSection) {
+        activeSection.classList.remove('hidden');
+      }
+    }
+
+    /* Sub-tabs switcher inside Speaking section */
+    function switchSpeakingSubTab(subTab) {
+      document.getElementById('speaking-ielts-view').classList.add('hidden');
+      document.getElementById('speaking-shadowing-view').classList.add('hidden');
+      document.getElementById('speaking-recorder-view').classList.add('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      if (subTab === 'ielts') {
+        document.getElementById('speaking-ielts-view').classList.remove('hidden');
+        document.getElementById('subtab-ielts').classList.add('active');
+      } else if (subTab === 'shadowing') {
+        document.getElementById('speaking-shadowing-view').classList.remove('hidden');
+        document.getElementById('subtab-shadowing').classList.add('active');
+      } else if (subTab === 'recorder') {
+        document.getElementById('speaking-recorder-view').classList.remove('hidden');
+        document.getElementById('subtab-recorder').classList.add('active');
+      }
+    }
+
+    function initPhraseClicks() {
+      const phraseElements = document.querySelectorAll('.phrase-highlight');
+      phraseElements.forEach(el => {
+        el.addEventListener('click', () => {
+          const phraseId = el.getAttribute('data-phrase-id');
+          selectPhrase(phraseId);
+        });
+      });
+    }
+
+    function selectPhrase(phraseId) {
+      const data = phrasesData[phraseId];
+      if (!data) return;
+
+      currentActivePhraseId = phraseId;
+
+      // Highlight in transcript
+      document.querySelectorAll('.phrase-highlight').forEach(el => {
+        if (el.getAttribute('data-phrase-id') === phraseId) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Update right panel definition
+      document.getElementById('emptyDefinitionState').classList.add('hidden');
+      const detailContainer = document.getElementById('phraseDetailContent');
+      detailContainer.classList.remove('hidden');
+
+      document.getElementById('detailPhrase').textContent = data.phrase;
+      document.getElementById('phraseTypeBadge').textContent = data.type;
+      document.getElementById('detailIpa').textContent = data.ipa;
+      document.getElementById('detailVietnamese').textContent = data.vietnamese;
+      document.getElementById('detailEnglish').textContent = data.english;
+
+      // Render structures
+      const structuresContainer = document.getElementById('detailStructures');
+      structuresContainer.innerHTML = '';
+      data.structures.forEach(st => {
+        const item = document.createElement('div');
+        item.className = "flex items-start gap-1.5 text-slate-700";
+        item.innerHTML = `<span class="text-blue-500 font-bold">•</span> <span>${st}</span>`;
+        structuresContainer.appendChild(item);
+      });
+
+      // Render speaking context
+      document.getElementById('detailSpeakingSample').textContent = `"${data.sample}"`;
+      document.getElementById('detailSpeakingTip').textContent = ` ${data.speakingTip}`;
+
+      // Bind speech synthesis audio button
+      const soundBtn = document.getElementById('pronounceBtn');
+      soundBtn.onclick = () => {
+        speakText(data.phrase);
+      };
+    }
+
+    function cycleNextPhrase() {
+      const keys = Object.keys(phrasesData);
+      let currentIndex = keys.indexOf(currentActivePhraseId);
+      let nextIndex = (currentIndex + 1) % keys.length;
+      selectPhrase(keys[nextIndex]);
+    }
+
+    function jumpToPracticeFromPhrase() {
+      switchTab('practice');
+    }
+
+    /* TTS using SpeechSynthesis browser native API */
+    function speakText(text, rate = 0.9) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-GB';
+        utterance.rate = rate;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    function playAllPodcastSpeech() {
+      const btn = document.getElementById('fullAudioBtnText');
+      if (isReadingAll) {
+        window.speechSynthesis.cancel();
+        isReadingAll = false;
+        btn.textContent = "Nghe đọc toàn bài";
+      } else {
+        const summaryText = "Hi Georgie. Hi Neil. Now, I want you to think back to the last time you had your heart broken. How did it feel? It was a couple of years ago, and I remember an intense, sad emotion like physical pain. Today we're talking about heartbreak. Why does it hurt so much? Dr Lucy Brown explains: This is a survival system. Nature gave us these systems to be addicted to each other for reproduction and protection. Having strong social bonds is the number one predictor of longevity. Heartbreak causes literal pain, overlapping with visceral pain.";
+        speakText(summaryText, 0.92);
+        isReadingAll = true;
+        btn.textContent = "Dừng đọc";
+        
+        const checkEnd = setInterval(() => {
+          if (!window.speechSynthesis.speaking) {
+            isReadingAll = false;
+            btn.textContent = "Nghe đọc toàn bài";
+            clearInterval(checkEnd);
+          }
+        }, 500);
+      }
+    }
+
+    function renderScenarioQuizzes() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      const filtered = quizDatabase.filter(q => {
+        if (currentQuizFilter === 'all') return true;
+        return q.category === currentQuizFilter;
+      });
+
+      document.getElementById('totalQuestions').textContent = quizDatabase.length;
+
+      filtered.forEach((q) => {
+        const isAnswered = answeredQuestions.has(q.id);
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-4 flex flex-col justify-between";
+        card.id = `quiz-card-${q.id}`;
+
+        let optionsHtml = q.options.map((opt, optIndex) => `
+          <button 
+            onclick="handleQuizAnswer(${q.id}, ${optIndex})" 
+            id="opt-${q.id}-${optIndex}"
+            class="quiz-option-btn w-full text-left p-3 rounded-xl border border-slate-200 text-xs font-medium hover:bg-slate-50 transition flex items-center justify-between text-slate-700"
+            ${isAnswered ? 'disabled' : ''}
+          >
+            <span>${opt.text}</span>
+            <i class="quiz-check-icon fa-regular fa-circle text-slate-300"></i>
+          </button>
+        `).join('');
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${q.category === 'emotional' ? 'bg-rose-50 text-rose-600' : 'bg-indigo-50 text-indigo-600'}">
+                ${q.category === 'emotional' ? 'Tình huống Cảm xúc' : 'Khoa học Thần kinh'}
+              </span>
+              <span class="text-xs font-semibold text-slate-400">Tình huống ${q.id}</span>
+            </div>
+            <h4 class="text-xs sm:text-sm font-bold text-slate-800 leading-snug">${q.situation}</h4>
+            <div class="space-y-2 mt-4">
+              ${optionsHtml}
+            </div>
+          </div>
+          <div id="feedback-${q.id}" class="hidden p-3 rounded-xl text-xs font-medium bg-slate-50 border border-slate-200 mt-2">
+            <span class="font-bold text-slate-800">💡 Giải thích chi tiết: </span>
+            <span class="text-slate-600">${q.explanation}</span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleQuizAnswer(questionId, optionIndex) {
+      if (answeredQuestions.has(questionId)) return;
+
+      const question = quizDatabase.find(q => q.id === questionId);
+      if (!question) return;
+
+      answeredQuestions.add(questionId);
+      const isCorrect = question.options[optionIndex].correct;
+
+      const selectedBtn = document.getElementById(`opt-${questionId}-${optionIndex}`);
+      const icon = selectedBtn.querySelector('.quiz-check-icon');
+
+      if (isCorrect) {
+        userQuizScore += 1;
+        document.getElementById('userScore').textContent = userQuizScore;
+        selectedBtn.classList.remove('border-slate-200');
+        selectedBtn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-900', 'font-bold');
+        icon.className = "fa-solid fa-circle-check text-emerald-600";
+      } else {
+        selectedBtn.classList.remove('border-slate-200');
+        selectedBtn.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-900');
+        icon.className = "fa-solid fa-circle-xmark text-rose-600";
+
+        // Highlight correct answer
+        question.options.forEach((opt, idx) => {
+          if (opt.correct) {
+            const correctBtn = document.getElementById(`opt-${questionId}-${idx}`);
+            correctBtn.classList.add('border-emerald-400', 'bg-emerald-50/60');
+          }
+        });
+      }
+
+      // Show explanation
+      const feedbackBox = document.getElementById(`feedback-${questionId}`);
+      feedbackBox.classList.remove('hidden');
+
+      // Disable all buttons in question
+      question.options.forEach((_, idx) => {
+        const btn = document.getElementById(`opt-${questionId}-${idx}`);
+        btn.setAttribute('disabled', 'true');
+      });
+    }
+
+    function setQuizFilter(filterName) {
+      currentQuizFilter = filterName;
+      document.querySelectorAll('.quiz-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-slate-900', 'text-white');
+        btn.classList.add('text-slate-600');
+      });
+      document.getElementById(`filter-${filterName}`).classList.add('bg-slate-900', 'text-white');
+      renderScenarioQuizzes();
+    }
+
+    /* Dialogue Role-Play Logic */
+    function checkDialogueOption(choiceIndex) {
+      const feedback = document.getElementById('dialogueFeedback');
+      feedback.classList.remove('hidden');
+
+      if (choiceIndex === 0) {
+        feedback.className = "mt-3 p-3.5 rounded-xl text-xs font-medium bg-emerald-50 text-emerald-900 border border-emerald-200";
+        feedback.innerHTML = `
+          <strong>🎉 Hoàn hảo! Bạn là người bạn đầy thấu cảm & khoa học!</strong><br>
+          Bạn đã dùng chính xác cụm từ <em>"heartbreak"</em> và <em>"visceral pain"</em> để giúp Alex hiểu rằng việc cảm thấy đau thắt ngực là do não bộ kích hoạt cùng một vùng tín hiệu đau thể xác thực sự, chứ không phải do bạn ấy tưởng tượng ra!
+        `;
+      } else {
+        feedback.className = "mt-3 p-3.5 rounded-xl text-xs font-medium bg-rose-50 text-rose-900 border border-rose-200";
+        feedback.innerHTML = `
+          <strong>Chưa chính xác!</strong> Lời đáp này dùng sai ngữ cảnh hoặc có hại cho tâm lý bạn thân. Hãy chọn phương án A để xem cách người bản xứ an ủi nhau bằng kiến thức khoa học nhé!
+        `;
+      }
+    }
+
+    function resetDialogueRoleplay() {
+      const feedback = document.getElementById('dialogueFeedback');
+      feedback.classList.add('hidden');
+    }
+
+    function renderShadowingDrills() {
+      const container = document.getElementById('shadowingList');
+      container.innerHTML = '';
+
+      shadowingSentences.forEach((s) => {
+        const row = document.createElement('div');
+        row.className = "p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4";
+        
+        row.innerHTML = `
+          <div class="space-y-1 max-w-2xl">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">${s.speaker}</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">"${s.text}"</p>
+            <p class="text-xs text-slate-500 italic">💡 Hướng dẫn nhịp điệu: ${s.notes}</p>
+          </div>
+          <div class="flex items-center space-x-2 shrink-0">
+            <button onclick="speakText('${s.text.replace(/'/g, "\\'")}', 0.75)" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-blue-400 text-slate-700 text-xs font-semibold flex items-center gap-1 shadow-2xs">
+              <i class="fa-solid fa-play text-blue-600"></i> Chậm (0.75x)
+            </button>
+            <button onclick="speakText('${s.text.replace(/'/g, "\\'")}', 1.0)" class="px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold flex items-center gap-1 shadow-2xs">
+              <i class="fa-solid fa-forward-step"></i> Chuẩn (1.0x)
+            </button>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function playModelAudio() {
+      const text = "If I think back to a couple of years ago, I vividly remember when my best friend had his heart broken. Neuroscience reveals that when we fall in love, our brain treats the partnership as a crucial survival system. Having really strong social bonds is the number one predictor of longevity and protects us from visceral pain.";
+      speakText(text, 0.95);
+    }
+
+    /* Speaking timer controller for Part 2 prep */
+    function toggleSpeakingTimer() {
+      const btn = document.getElementById('timerToggleBtn');
+      const display = document.getElementById('speakingTimer');
+
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        btn.textContent = "Tiếp tục";
+        btn.className = "text-xs bg-emerald-600 text-white px-2.5 py-1 rounded font-semibold hover:bg-emerald-700 transition";
+      } else {
+        if (prepSecondsLeft <= 0) prepSecondsLeft = 60;
+        isTimerRunning = true;
+        btn.textContent = "Tạm dừng";
+        btn.className = "text-xs bg-rose-600 text-white px-2.5 py-1 rounded font-semibold hover:bg-rose-700 transition";
+
+        timerInterval = setInterval(() => {
+          prepSecondsLeft--;
+          let mins = Math.floor(prepSecondsLeft / 60);
+          let secs = prepSecondsLeft % 60;
+          display.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+          if (prepSecondsLeft <= 0) {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            display.textContent = "Hết 1 phút! Hãy nói ngay!";
+            btn.textContent = "Làm lại (1:00)";
+            btn.className = "text-xs bg-blue-600 text-white px-2.5 py-1 rounded font-semibold";
+          }
+        }, 1000);
+      }
+    }
+
+    function renderTrackerBadges() {
+      const container = document.getElementById('trackerBadges');
+      container.innerHTML = '';
+
+      targetKeyPhrases.forEach(phrase => {
+        const badge = document.createElement('span');
+        badge.id = `badge-${phrase.replace(/\s+/g, '-')}`;
+        badge.className = "px-2.5 py-1 rounded-lg bg-slate-100 text-slate-500 font-medium border border-slate-200 transition text-[11px]";
+        badge.innerHTML = `<i class="fa-regular fa-circle text-[9px] mr-1"></i> ${phrase}`;
+        container.appendChild(badge);
+      });
+    }
+
+    function setupSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        speechRecognition = new SpeechRecognition();
+        speechRecognition.continuous = true;
+        speechRecognition.interimResults = true;
+        speechRecognition.lang = 'en-US';
+
+        speechRecognition.onresult = (event) => {
+          let interimTranscript = '';
+          for (let i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+              finalTranscribedText += event.results[i][0].transcript + ' ';
+            } else {
+              interimTranscript += event.results[i][0].transcript;
+            }
+          }
+
+          const fullText = (finalTranscribedText + interimTranscript).trim();
+          updateLiveTranscriptUI(fullText);
+          analyzeTargetPhrasesInText(fullText.toLowerCase());
+        };
+
+        speechRecognition.onerror = (event) => {
+          console.log("Speech recognition error:", event.error);
+          document.getElementById('recordingStatus').textContent = "Micro chưa được cấp quyền hoặc trình duyệt chặn âm thanh.";
+          stopRecordingUI();
+        };
+
+        speechRecognition.onend = () => {
+          if (isRecording) {
+            stopRecordingUI();
+          }
+        };
+      } else {
+        document.getElementById('recordingStatus').textContent = "Trình duyệt hiện tại chưa hỗ trợ Web Speech API. Bấm nút mic để chạy bài mẫu mô phỏng.";
+      }
+    }
+
+    function toggleSpeechRecording() {
+      if (!speechRecognition) {
+        simulateSpeakingDemo();
+        return;
+      }
+
+      if (!isRecording) {
+        try {
+          finalTranscribedText = "";
+          detectedPhrases.clear();
+          renderTrackerBadges();
+          speechRecognition.start();
+          isRecording = true;
+          startRecordingUI();
+        } catch (e) {
+          console.error(e);
+          simulateSpeakingDemo();
+        }
+      } else {
+        speechRecognition.stop();
+        isRecording = false;
+        stopRecordingUI();
+      }
+    }
+
+    function startRecordingUI() {
+      const btn = document.getElementById('recordBtn');
+      const label = document.getElementById('recordLabel');
+      const icon = document.getElementById('recordIcon');
+      const status = document.getElementById('recordingStatus');
+
+      btn.classList.add('bg-slate-900', 'animate-pulse');
+      btn.classList.remove('bg-rose-600');
+      label.textContent = "Đang thu...";
+      icon.className = "fa-solid fa-stop text-2xl text-rose-500";
+      status.textContent = "Đang lắng nghe bài nói tiếng Anh của bạn...";
+      status.className = "text-xs text-rose-600 font-bold animate-pulse";
+    }
+
+    function stopRecordingUI() {
+      isRecording = false;
+      const btn = document.getElementById('recordBtn');
+      const label = document.getElementById('recordLabel');
+      const icon = document.getElementById('recordIcon');
+      const status = document.getElementById('recordingStatus');
+
+      btn.classList.remove('bg-slate-900', 'animate-pulse');
+      btn.classList.add('bg-rose-600');
+      label.textContent = "Bắt đầu";
+      icon.className = "fa-solid fa-microphone text-2xl text-white";
+      status.textContent = "Đã hoàn thành lượt nói! Xem đánh giá bên dưới:";
+      status.className = "text-xs text-slate-500 font-medium";
+
+      showRecordingFeedback();
+    }
+
+    function updateLiveTranscriptUI(text) {
+      const box = document.getElementById('recordedTranscript');
+      if (!text) {
+        box.innerHTML = `<span class="text-slate-500 italic">Văn bản nhận diện giọng nói sẽ hiển thị tại đây khi bạn nói...</span>`;
+        return;
+      }
+
+      let highlighted = text;
+      targetKeyPhrases.forEach(kp => {
+        const regex = new RegExp(`(${kp})`, 'gi');
+        highlighted = highlighted.replace(regex, `<mark class="bg-yellow-400 text-slate-900 font-bold px-1 rounded">$1</mark>`);
+      });
+
+      box.innerHTML = highlighted;
+    }
+
+    function analyzeTargetPhrasesInText(cleanLowerText) {
+      targetKeyPhrases.forEach(phrase => {
+        if (cleanLowerText.includes(phrase.toLowerCase())) {
+          detectedPhrases.add(phrase);
+          const badge = document.getElementById(`badge-${phrase.replace(/\s+/g, '-')}`);
+          if (badge) {
+            badge.className = "px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 text-[11px]";
+            badge.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> ${phrase}`;
+          }
+        }
+      });
+    }
+
+    function showRecordingFeedback() {
+      const feedbackBox = document.getElementById('recordingFeedback');
+      feedbackBox.classList.remove('hidden');
+
+      const count = detectedPhrases.size;
+      let reviewMsg = "";
+
+      if (count >= 5) {
+        reviewMsg = `<strong>Xuất sắc (Band 8.0+ Lexical)!</strong> Bạn đã đưa thành công ${count} cụm từ đắt giá vào bài nói một cách rất tự nhiên và thuyết phục.`;
+      } else if (count >= 3) {
+        reviewMsg = `<strong>Rất tốt (Band 7.0)!</strong> Bạn đã dùng được ${count} cụm từ mục tiêu. Hãy thử kết hợp thêm các thuật ngữ như 'visceral pain' hoặc 'changes our whole identity' để bài nói sâu sắc hơn.`;
+      } else {
+        reviewMsg = `Bạn đã sử dụng được ${count} cụm từ mục tiêu. Hãy nhìn danh sách gợi ý và thử nói lại một lượt nữa nhé!`;
+      }
+
+      feedbackBox.innerHTML = `
+        <div class="flex items-center gap-2 mb-1">
+          <i class="fa-solid fa-chart-line text-emerald-600 text-base"></i>
+          <span class="font-bold text-sm">Đánh giá khả năng vận dụng từ vựng:</span>
+        </div>
+        <p>${reviewMsg}</p>
+      `;
+    }
+
+    function clearRecordedText() {
+      finalTranscribedText = "";
+      detectedPhrases.clear();
+      renderTrackerBadges();
+      updateLiveTranscriptUI("");
+      document.getElementById('recordingFeedback').classList.add('hidden');
+    }
+
+    /* Fallback simulation if speech recognition is unavailable in iframe */
+    function simulateSpeakingDemo() {
+      startRecordingUI();
+      const mockSpeech = "When I think back to a difficult breakup, I experienced profound heartbreak. My mentor told me that when we fall in love, it is a survival system where we become addicted to each other. Losing them triggers visceral pain, but cultivating strong social bonds is the best predictor of longevity.";
+      
+      let index = 0;
+      const interval = setInterval(() => {
+        index += 18;
+        const currentSlice = mockSpeech.slice(0, index);
+        updateLiveTranscriptUI(currentSlice);
+        analyzeTargetPhrasesInText(currentSlice.toLowerCase());
+
+        if (index >= mockSpeech.length) {
+          clearInterval(interval);
+          setTimeout(() => {
+            stopRecordingUI();
+          }, 800);
+        }
+      }, 300);
+    }
+  </script>
+</body>
+</html>

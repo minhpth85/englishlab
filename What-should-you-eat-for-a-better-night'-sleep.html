@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBC 6 Minute English - What should you eat for a better night's sleep?</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .phrase-highlight {
+      background: linear-gradient(120deg, #fef08a 0%, #fef08a 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 38%;
+      background-position: 0 88%;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1e293b;
+      padding: 1px 3px;
+      border-radius: 3px;
+      display: inline;
+    }
+    .phrase-highlight:hover {
+      background-size: 100% 100%;
+      background-color: #fde047;
+      color: #0f172a;
+    }
+    .phrase-highlight.active {
+      background: #f59e0b !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 5px rgba(245, 158, 11, 0.4);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .tab-btn.active {
+      border-bottom: 2px solid #2563eb;
+      color: #2563eb;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm backdrop-blur-md bg-white/95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md">
+          <i class="fa-solid fa-moon text-lg"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold tracking-wider uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">BBC 6 Minute English (Full Transcript)</span>
+          <h1 class="text-sm sm:text-base font-bold text-slate-800 leading-tight">What should you eat for a better night's sleep?</h1>
+        </div>
+      </div>
+      
+      <!-- Top Action Navigation -->
+      <nav class="flex items-center space-x-1 sm:space-x-2">
+        <button onclick="switchTab('study')" id="tabNav-study" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-blue-600 bg-blue-50 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Toàn Văn & Cụm Từ</span>
+        </button>
+        <button onclick="switchTab('practice')" id="tabNav-practice" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-vial"></i>
+          <span>Tình Huống Thực Tế</span>
+          <span id="quizBadge" class="bg-emerald-600 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">6</span>
+        </button>
+        <button onclick="switchTab('speaking')" id="tabNav-speaking" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-microphone-lines"></i>
+          <span>Luyện Speaking Hub</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 lg:p-8">
+
+    <!-- TAB 1: STUDY & FULL TRANSCRIPT EXPLORER -->
+    <section id="section-study" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- Left Column: Full Unabridged Transcript (7 Cols) -->
+      <div class="lg:col-span-7 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col h-[calc(100vh-140px)]">
+        
+        <!-- Controls Header -->
+        <div class="px-5 py-3 border-b border-slate-200 bg-slate-50 flex items-center justify-between flex-wrap gap-2">
+          <div class="flex items-center space-x-2 text-slate-700 font-bold text-xs sm:text-sm">
+            <i class="fa-solid fa-file-lines text-emerald-600"></i>
+            <span>Toàn văn 100% Transcript (5 Trang)</span>
+          </div>
+          <div class="flex items-center space-x-3 text-xs">
+            <span class="inline-flex items-center gap-1 text-slate-500 text-[11px]">
+              <span class="w-3 h-3 rounded-full bg-yellow-300 inline-block border border-yellow-400"></span> 
+              Bấm cụm vàng để xem phân tích
+            </span>
+            <button onclick="playAllPodcastSpeech()" title="Đọc bài bằng âm thanh" class="text-slate-700 hover:text-emerald-700 transition flex items-center gap-1.5 font-medium bg-white px-2.5 py-1 rounded-md border border-slate-200 shadow-xs">
+              <i class="fa-solid fa-circle-play text-emerald-600"></i> <span id="fullAudioBtnText">Nghe đọc tóm lược</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Transcript Body: 100% COMPLETE TURNS -->
+        <div id="transcriptBody" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 leading-relaxed text-slate-700 text-sm sm:text-base">
+          
+          <!-- Turn 1 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>Hi Georgie.</p>
+          </div>
+
+          <!-- Turn 2 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Hi Phil. Now, Phil, do you ever 
+              <span class="phrase-highlight" data-phrase-id="struggle-to-sleep">struggle to get a good night's sleep</span>?
+            </p>
+          </div>
+
+          <!-- Turn 3 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              You know, I do sometimes. If I've been thinking about something a lot, or even worse, if I've had a cup of coffee later than I should, sometimes I can 
+              <span class="phrase-highlight" data-phrase-id="lie-there-for-hours">lie there for hours</span>.
+            </p>
+          </div>
+
+          <!-- Turn 4 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Yes. Well, many of us will 
+              <span class="phrase-highlight" data-phrase-id="be-familiar-with">be familiar with that feeling</span> 
+              of lying in bed, feeling really tired, but just not being able to go to sleep, but what causes us to struggle to sleep and is there anything we can do about it? Well, researchers have for a while been interested in the 
+              <span class="phrase-highlight" data-phrase-id="link-between">link between what we eat and how we sleep</span>. 
+              Today on 6 Minute English, we'll be talking about this and asking, "What should you eat for a better night's sleep?" OK. Phil, let's start with a quiz question. So, adults need between 7-9 hours sleep a night to 
+              <span class="phrase-highlight" data-phrase-id="stay-healthy">stay healthy</span>, 
+              according to experts, but what percentage of people in the UK say they get less than this? Is it:
+              <br><span class="inline-block ml-4 mt-1 font-medium text-slate-800">a) 15%,</span>
+              <br><span class="inline-block ml-4 font-medium text-slate-800">b) 25%, or</span>
+              <br><span class="inline-block ml-4 font-medium text-slate-800">c) 35%?</span>
+            </p>
+          </div>
+
+          <!-- Turn 5 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              OK. I think people find sleeping hard, so I think it's going to be c) 35%.
+            </p>
+          </div>
+
+          <!-- Turn 6 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              OK. Well, we'll find out the answer later in the programme.
+            </p>
+          </div>
+
+          <!-- Turn 7 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              Georgie, you've been looking at the research on this. Do scientists think that what we eat affects how we sleep?
+            </p>
+          </div>
+
+          <!-- Turn 8 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Yes, they do. Scientists have done some 
+              <span class="phrase-highlight" data-phrase-id="long-term-studies">long-term studies</span>. 
+              So, looking at large groups of people over a long period of time, and they found that a 
+              <span class="phrase-highlight" data-phrase-id="healthier-diet">healthier diet</span> 
+              is 
+              <span class="phrase-highlight" data-phrase-id="associated-with">associated with</span> 
+              <span class="phrase-highlight" data-phrase-id="better-quality-sleep">better quality sleep</span>. 
+              They've also done some smaller studies looking in more detail at exactly what people are eating and then studying how they sleep in a laboratory.
+            </p>
+          </div>
+
+          <!-- Turn 9 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              OK. And in these studies, have they found that particular foods are better for our sleep than others?
+            </p>
+          </div>
+
+          <!-- Turn 10 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Well, it's less about particular foods and more about particular 
+              <span class="phrase-highlight" data-phrase-id="nutrients">nutrients</span>. 
+              So, nutrients means important things your body needs to survive and be healthy. For example, protein is a nutrient. BBC World Service programme The Food Chain has been speaking to researcher Professor Marie-Pierre St-Onge about which nutrients are important for sleep.
+            </p>
+          </div>
+
+          <!-- Turn 11 (Marie-Pierre St-Onge quote) -->
+          <div class="p-4 rounded-xl bg-teal-50/60 hover:bg-teal-50 transition border-l-4 border-teal-600 shadow-2xs">
+            <div class="font-bold text-xs uppercase tracking-wider text-teal-800 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-teal-600"></span> Marie-Pierre St-Onge (BBC The Food Chain)
+            </div>
+            <p class="italic text-slate-800">
+              "So, diets that look more like a 
+              <span class="phrase-highlight" data-phrase-id="mediterranean-diet">Mediterranean pattern</span> 
+              higher in fruits and vegetables, 
+              <span class="phrase-highlight" data-phrase-id="whole-grains">whole grains</span>, 
+              lower in 
+              <span class="phrase-highlight" data-phrase-id="animal-based-foods">animal-based foods</span>, 
+              lower in sugar. But then from our own research, where we evaluate food intakes in the lab, we see different... similar patterns, really. But when we talk about nutrients, diets that are higher in 
+              <span class="phrase-highlight" data-phrase-id="fibre">fibre</span>, 
+              which we find in fruits and vegetables and whole grains, and lower in 
+              <span class="phrase-highlight" data-phrase-id="saturated-fats">saturated fats</span>, 
+              which we find in more plant-based types of foods, are associated with more 
+              <span class="phrase-highlight" data-phrase-id="deep-sleep">deep sleep</span> 
+              at night."
+            </p>
+          </div>
+
+          <!-- Turn 12 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Marie-Pierre says that Mediterranean-style diets are associated with good sleep. A Mediterranean diet includes lots of vegetables and less animal-based foods such as meat and dairy.
+            </p>
+          </div>
+
+          <!-- Turn 13 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              Yes, and Marie-Pierre's own research shows that some nutrients, such as fibre, are important for sleep and others, such as saturated fats, are less important. Saturated fat is a type of fat mainly found in meat and dairy that's thought to be bad for your health.
+            </p>
+          </div>
+
+          <!-- Turn 14 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Right. And according to Marie-Pierre, eating less saturated fat and more nutrients like fibre is associated with more deep sleep at night. A deep sleep is when you are more fully asleep and your body is able to rest.
+            </p>
+          </div>
+
+          <!-- Turn 15 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              So, Georgie, it sounds like thinking about our diets is important if we want to improve our sleep. And now I've heard that certain foods have a lot of nutrients that can be helpful for sleep. Is that true?
+            </p>
+          </div>
+
+          <!-- Turn 16 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Well, there is some limited research on specific foods and their impact on sleep. So, for example, scientists have been studying kiwi fruits and also tart cherry juice. And you may also see adverts for 
+              <span class="phrase-highlight" data-phrase-id="supplements">supplements</span> 
+              that claim to improve sleep. Supplements are tablets you take, which contain particular nutrients that you might not get in your everyday diet. But experts say that 
+              <span class="phrase-highlight" data-phrase-id="focusing-on-whole-diet">focusing on our whole diet</span>, 
+              rather than one particular fruit or supplement, is going to be the most effective. Here's sleep doctor Allie Hare explaining more to BBC World Service programme The Food Chain.
+            </p>
+          </div>
+
+          <!-- Turn 17 (Dr Allie Hare quote) -->
+          <div class="p-4 rounded-xl bg-amber-50/60 hover:bg-amber-50 transition border-l-4 border-amber-500 shadow-2xs">
+            <div class="font-bold text-xs uppercase tracking-wider text-amber-800 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-600"></span> Allie Hare (Sleep Doctor, The Food Chain)
+            </div>
+            <p class="italic text-slate-800">
+              "I think people are looking for the one supplement often or the... you know, 
+              <span class="phrase-highlight" data-phrase-id="fed-information">we're fed a lot of these things</span>, 
+              aren't we, on social media? This magical powder or this magical tablet that you can take that will, you know, help you sleep better immediately from tonight. And of course, you know, Marie-Pierre and I know that there is 
+              <span class="phrase-highlight" data-phrase-id="no-magic-bullet">no such magic bullet</span>, 
+              unfortunately. And if there was, I'm sure, you know, we would be... 
+              <span class="phrase-highlight" data-phrase-id="doing-very-well-for-ourselves">we would be doing very well for ourselves</span>."
+            </p>
+          </div>
+
+          <!-- Turn 18 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              Allie says people are looking for a supplement that can help them sleep.
+            </p>
+          </div>
+
+          <!-- Turn 19 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Yes. She says we are fed information on social media about magical tablets. If you are fed information, you are given lots of it in a continuous way.
+            </p>
+          </div>
+
+          <!-- Turn 20 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              But Allie argues that experts know there's no 
+              <span class="phrase-highlight" data-phrase-id="magic-bullet">magic bullet</span> 
+              to help you sleep, and a magic bullet refers to a simple and effective solution to a problem that's usually one that doesn't exist. OK. Well, now I think it's time to find out the answer to your quiz question, Georgie.
+            </p>
+          </div>
+
+          <!-- Turn 21 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Yes. I asked you what percentage of UK adults say they get less than seven hours sleep a night.
+            </p>
+          </div>
+
+          <!-- Turn 22 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              And I said I thought it was c) 35%.
+            </p>
+          </div>
+
+          <!-- Turn 23 (Quiz Answer & Vocab Recap) -->
+          <div class="p-3.5 rounded-xl bg-emerald-50/60 hover:bg-emerald-50 transition border border-emerald-200">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-700 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie (Quiz Result & Vocabulary Recap)
+            </div>
+            <p>
+              You are correct, Phil. Yes, 35% of adults say they get six hours or less sleep a night, according to a study by YouGov. OK. Let's recap the vocabulary we learned in this programme, starting with nutrients, which are important things your body needs to survive and be healthy.
+            </p>
+          </div>
+
+          <!-- Turn 24 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              Saturated fats are fats mainly found in meat and dairy products that are thought to be bad for our health.
+            </p>
+          </div>
+
+          <!-- Turn 25 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              A deep sleep is when your body is fully asleep and able to rest.
+            </p>
+          </div>
+
+          <!-- Turn 26 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              Supplements are tablets or other things which contain particular nutrients you might not get in your everyday diet.
+            </p>
+          </div>
+
+          <!-- Turn 27 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              To feed information means to give lots of it in a continuous way.
+            </p>
+          </div>
+
+          <!-- Turn 28 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              And a magic bullet is a simple and effective solution, and it's often one that doesn't exist.
+            </p>
+          </div>
+
+          <!-- Turn 29 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Once again, our six minutes are up, but don't forget you can test what you've learned with the worksheet on our website. Go to bbclearningenglish.com.
+            </p>
+          </div>
+
+          <!-- Turn 30 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Phil
+            </div>
+            <p>
+              Thanks for joining us and goodbye.
+            </p>
+          </div>
+
+          <!-- Turn 31 -->
+          <div class="p-3 rounded-xl bg-slate-50/70 hover:bg-slate-50 transition border border-slate-100">
+            <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
+            </div>
+            <p>
+              Goodbye!
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Detail Definition & Collocation Inspector (5 Cols) -->
+      <div class="lg:col-span-5 flex flex-col h-[calc(100vh-140px)]">
+        <div id="definitionCard" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6 flex-1 flex flex-col justify-between overflow-y-auto">
+          
+          <!-- Empty State (Placeholder) -->
+          <div id="emptyDefinitionState" class="h-full flex flex-col items-center justify-center text-center p-4 text-slate-400">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 text-2xl shadow-inner">
+              <i class="fa-solid fa-highlighter"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 text-lg mb-1">Chạm vào bất kỳ cụm từ màu vàng nào</h3>
+            <p class="text-xs sm:text-sm max-w-xs text-slate-500 leading-relaxed">
+              Toàn bộ từ vựng & cụm từ đắt giá về giấc ngủ, dinh dưỡng và lối sống lành mạnh đã được lập chỉ mục kèm IPA, nghĩa Anh - Việt, collocations và bí quyết đạt điểm cao trong IELTS Speaking.
+            </p>
+          </div>
+
+          <!-- Populated Phrase Detail Content -->
+          <div id="phraseDetailContent" class="hidden space-y-4">
+            
+            <!-- Header with word, type, and sound -->
+            <div class="border-b border-slate-100 pb-3">
+              <div class="flex items-center justify-between">
+                <span id="phraseTypeBadge" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-100 text-emerald-800">
+                  Collocation
+                </span>
+                <button id="pronounceBtn" class="w-9 h-9 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition shadow-xs" title="Nghe phát âm">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+              <h2 id="detailPhrase" class="text-xl sm:text-2xl font-black text-slate-800 mt-2">...</h2>
+              <p id="detailIpa" class="text-xs font-mono text-slate-400 mt-0.5">/ ... /</p>
+            </div>
+
+            <!-- Vietnamese & English Meaning -->
+            <div class="space-y-2">
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-3 rounded-r-lg">
+                <p class="text-[11px] font-bold text-amber-900 uppercase tracking-wide">Ý nghĩa tiếng Việt</p>
+                <p id="detailVietnamese" class="text-slate-800 font-semibold text-xs sm:text-sm mt-0.5 leading-snug">...</p>
+              </div>
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">English BBC Definition</p>
+                <p id="detailEnglish" class="text-slate-600 text-xs mt-0.5 leading-relaxed">...</p>
+              </div>
+            </div>
+
+            <!-- Collocations & Structure Patterns -->
+            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+              <p class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                <i class="fa-solid fa-shapes text-teal-600"></i> Cấu trúc câu & Cụm đi kèm (Collocations)
+              </p>
+              <div id="detailStructures" class="text-xs text-slate-800 font-medium space-y-1">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Speaking Application Box -->
+            <div>
+              <p class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                <i class="fa-solid fa-comment-dots text-emerald-600"></i> Ứng dụng trong Speaking (IELTS & Daily)
+              </p>
+              <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-xl p-3 text-xs text-emerald-950 space-y-2">
+                <div>
+                  <span class="font-bold text-emerald-800 block mb-0.5">🎯 Speaking Sample:</span>
+                  <p id="detailSpeakingSample" class="italic text-slate-700 leading-relaxed">"..."</p>
+                </div>
+                <div class="border-t border-emerald-200/50 pt-1.5 text-slate-600">
+                  <span class="font-bold text-emerald-800">💡 Speaking Tip:</span>
+                  <span id="detailSpeakingTip">...</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button Jump to Practice -->
+            <button onclick="jumpToPracticeFromPhrase()" class="w-full py-2 px-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow-xs transition">
+              <i class="fa-solid fa-pencil"></i> Thực hành tình huống với cụm từ này
+            </button>
+          </div>
+
+          <!-- Bottom Summary Indicator -->
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+            <span>Đã trích xuất: <strong class="text-slate-700">18 cụm từ học thuật C1/B2</strong></span>
+            <button onclick="cycleNextPhrase()" class="text-emerald-700 hover:underline font-semibold flex items-center gap-1">
+              <span>Cụm tiếp theo</span> &rarr;
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SCENARIO-BASED PRACTICE -->
+    <section id="section-practice" class="hidden space-y-6">
+      <!-- Practice Intro Header Banner -->
+      <div class="bg-gradient-to-r from-emerald-800 via-teal-700 to-slate-800 rounded-2xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl">
+          <span class="px-2.5 py-1 rounded bg-white/20 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">Thực hành phản xạ</span>
+          <h2 class="text-xl sm:text-3xl font-extrabold mt-2">Bài tập tình huống đời sống (Scenario Challenges)</h2>
+          <p class="text-emerald-100 text-xs sm:text-base mt-2">
+            Vận dụng kiến thức khoa học giấc ngủ và các cụm từ vựng chuẩn xác để giải quyết các vấn đề sức khỏe, dinh dưỡng hàng ngày.
+          </p>
+        </div>
+        <div class="absolute right-4 bottom-2 text-white/10 text-9xl font-black pointer-events-none select-none">
+          <i class="fa-solid fa-bed"></i>
+        </div>
+      </div>
+
+      <!-- Practice Filters & Score Tracker -->
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3 flex-wrap gap-2">
+        <div class="flex items-center space-x-2">
+          <span class="text-xs font-bold uppercase text-slate-400">Chủ đề:</span>
+          <button onclick="setQuizFilter('all')" class="quiz-filter-btn px-3 py-1 rounded-lg text-xs font-bold bg-slate-900 text-white" id="filter-all">Tất cả (6)</button>
+          <button onclick="setQuizFilter('nutrition')" class="quiz-filter-btn px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200" id="filter-nutrition">Dinh dưỡng & Bữa ăn</button>
+          <button onclick="setQuizFilter('science')" class="quiz-filter-btn px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200" id="filter-science">Khoa học & Thực phẩm chức năng</button>
+        </div>
+        <div class="text-xs text-slate-500 font-semibold bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+          Điểm của bạn: <span id="userScore" class="text-emerald-700 font-bold text-sm">0</span> / <span id="totalQuestions">6</span>
+        </div>
+      </div>
+
+      <!-- Scenario Cards Grid -->
+      <div id="quizContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Mini Dialogue Role-Play -->
+      <div class="mt-8 bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <span class="text-xs font-bold uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Interactive Mini Role-Play</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-1">Khuyên bạn bè trước ma trận quảng cáo thuốc bổ trên mạng xã hội</h3>
+          </div>
+          <button onclick="resetDialogueRoleplay()" class="text-xs font-semibold text-slate-500 hover:text-slate-800">
+            <i class="fa-solid fa-rotate-right"></i> Làm lại
+          </button>
+        </div>
+        <div class="space-y-4 max-w-3xl text-sm">
+          <div class="flex gap-3 items-start">
+            <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0">Huy</div>
+            <div class="bg-amber-50/80 p-3.5 rounded-2xl rounded-tl-none border border-amber-100 text-slate-700">
+              "Dạo này tớ mất ngủ quá. Lên TikTok thấy người ta quảng cáo loại 'bột ngủ tiên dược' uống vào là ngủ sâu ngay trong đêm nay. Tớ định mua thử hộp 1 triệu..."
+            </div>
+          </div>
+
+          <div class="flex gap-3 items-start flex-row-reverse">
+            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0">Bạn</div>
+            <div class="bg-emerald-50/80 p-4 rounded-2xl rounded-tr-none border border-emerald-100 text-slate-800 w-full">
+              <p class="mb-3 text-slate-700">Hãy chọn câu phản hồi khoa học và thuyết phục nhất theo ý kiến bác sĩ Allie Hare:</p>
+              
+              <div class="space-y-2" id="dialogueOptions">
+                <button onclick="checkDialogueOption(0)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
+                  A. "Cậu cẩn thận đấy, trên mạng xã hội chúng ta liên tục bị <strong>fed information</strong> về mấy loại thuốc thần kỳ. Các bác sĩ khẳng định không có <strong>magic bullet</strong> nào đâu! Cậu nên <strong>focus on your whole diet</strong> với chế độ Địa Trung Hải nhiều <strong>fibre</strong> và giảm <strong>saturated fats</strong> thì hơn."
+                </button>
+                <button onclick="checkDialogueOption(1)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
+                  B. "Mua ngay đi, các loại <strong>supplements</strong> đó sẽ giúp tăng lượng <strong>saturated fats</strong> cần thiết để cậu có <strong>deep sleep</strong> ngay lập tức đấy!"
+                </button>
+                <button onclick="checkDialogueOption(2)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
+                  C. "Uống cà phê thật muộn vào buổi tối đi, để cậu có thể <strong>lie there for hours</strong> và suy ngẫm về cuộc đời."
+                </button>
+              </div>
+
+              <div id="dialogueFeedback" class="hidden mt-3 p-3 rounded-lg text-xs font-medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SPEAKING PRACTICE LAB -->
+    <section id="section-speaking" class="hidden space-y-6">
+      
+      <!-- Sub-tabs Navigation -->
+      <div class="flex border-b border-slate-200 gap-4 sm:gap-6 overflow-x-auto">
+        <button onclick="switchSpeakingSubTab('ielts')" id="subtab-ielts" class="tab-btn active pb-3 text-xs sm:text-sm font-semibold transition whitespace-nowrap">
+          <i class="fa-solid fa-graduation-cap mr-1.5"></i> IELTS Speaking Part 2 & 3
+        </button>
+        <button onclick="switchSpeakingSubTab('shadowing')" id="subtab-shadowing" class="tab-btn pb-3 text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-800 transition whitespace-nowrap">
+          <i class="fa-solid fa-headphones mr-1.5"></i> Shadowing & Fluency Drills
+        </button>
+        <button onclick="switchSpeakingSubTab('recorder')" id="subtab-recorder" class="tab-btn pb-3 text-xs sm:text-sm font-semibold text-slate-500 hover:text-slate-800 transition whitespace-nowrap">
+          <i class="fa-solid fa-record-vinyl mr-1.5"></i> Phòng Thu Nhận Diện Từ Mục Tiêu
+        </button>
+      </div>
+
+      <!-- SUB-TAB A: IELTS SPEAKING SIMULATOR -->
+      <div id="speaking-ielts-view" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Cue Card Left (7 Cols) -->
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-5">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">IELTS Speaking Part 2</span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-1">Topic: Health & Sleep Habits</h3>
+            </div>
+            <!-- Timer Controller -->
+            <div class="flex items-center space-x-2 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
+              <i class="fa-regular fa-clock text-slate-500"></i>
+              <span id="speakingTimer" class="font-mono font-bold text-slate-800 text-sm sm:text-base">01:00</span>
+              <button id="timerToggleBtn" onclick="toggleSpeakingTimer()" class="text-xs bg-emerald-600 text-white px-2.5 py-1 rounded font-semibold hover:bg-emerald-700 transition">
+                Bắt đầu 1p chuẩn bị
+              </button>
+            </div>
+          </div>
+
+          <!-- Cue Card Question Prompt -->
+          <div class="bg-amber-50/50 border border-amber-200 rounded-xl p-4 sm:p-5 text-slate-800 space-y-2.5">
+            <h4 class="font-bold text-sm sm:text-base text-amber-950">Describe a healthy lifestyle habit you adopted to improve your sleep or well-being.</h4>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">You should say:</p>
+            <ul class="list-disc list-inside text-xs sm:text-sm space-y-1.5 text-slate-700">
+              <li>What habit it is and when you started doing it</li>
+              <li>How you found out about it (diet, exercise, or routine)</li>
+              <li>Whether you ever struggled to get a good night's sleep before</li>
+              <li>And explain how this change has affected the quality of your sleep.</li>
+            </ul>
+          </div>
+
+          <!-- Target Collocations Checklist -->
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              Các cụm từ cần lồng ghép để đạt Band 7.0 - 8.0:
+            </h4>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># struggle to get a good night's sleep</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># lie there for hours</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># associated with better quality sleep</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># Mediterranean pattern</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># higher in fibre</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># lower in saturated fats</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># deep sleep</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># no magic bullet</span>
+            </div>
+          </div>
+
+          <!-- IELTS Part 3 Follow-up Questions -->
+          <div class="border-t border-slate-100 pt-3 space-y-2">
+            <h4 class="text-xs sm:text-sm font-bold text-slate-800 flex items-center gap-1.5">
+              <i class="fa-solid fa-comments text-teal-600"></i> Part 3 Discussion Questions (Thảo luận chuyên sâu):
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <p class="font-bold text-slate-800">1. Why do so many people in modern society struggle with sleep deprivation?</p>
+                <p class="text-slate-500 mt-1 italic">Gợi ý trả lời: Nhắc tới nghiên cứu 35% người trưởng thành ngủ ít hơn 7 tiếng; thói quen dùng caffeine muộn, stress công việc và việc ăn nhiều thực phẩm chế biến sẵn chứa saturated fats.</p>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <p class="font-bold text-slate-800">2. Should consumers rely on sleep supplements advertised on social media?</p>
+                <p class="text-slate-500 mt-1 italic">Gợi ý trả lời: Nhấn mạnh cảnh báo của Dr Allie Hare: "we are constantly fed information on social media", "there is no magic bullet", giải pháp bền vững nhất là "focus on our whole diet".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Model Band 8.0 Answer (5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Model Answer Band 8.0</span>
+              <button onclick="playModelAudio()" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Nghe mẫu
+              </button>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3 max-h-96 overflow-y-auto pr-1">
+              <p>
+                "A couple of years ago, I used to <strong>struggle to get a good night's sleep</strong>. Whenever I drank coffee late or experienced heavy work stress, I would just <strong>lie there for hours</strong> feeling utterly exhausted yet unable to drift off."
+              </p>
+              <p>
+                "Everything changed when I learned that dietary choices are directly <strong>associated with better quality sleep</strong>. Rather than falling for online <strong>supplements</strong> that claim to be a <strong>magic bullet</strong>, I decided to <strong>focus on my whole diet</strong> by shifting towards a <strong>Mediterranean pattern</strong>."
+              </p>
+              <p>
+                "I cut down on <strong>animal-based foods</strong> and processed snacks loaded with <strong>saturated fats</strong>, and started incorporating abundant <strong>whole grains</strong> and legumes <strong>higher in fibre</strong>. Within just three weeks, I noticed a dramatic increase in my restorative <strong>deep sleep</strong>, waking up refreshed and ready for the day."
+              </p>
+            </div>
+          </div>
+
+          <!-- Evaluation criteria -->
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 text-xs text-emerald-950 space-y-1.5">
+            <h5 class="font-bold text-xs uppercase text-emerald-900 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-emerald-600"></i> Điểm cộng Lexical & Coherence:
+            </h5>
+            <p class="text-slate-600">
+              • <strong>Diễn đạt tự nhiên:</strong> Dùng <em>"drift off", "lie there for hours"</em> thay vì lặp từ <em>"cannot sleep"</em>.
+            </p>
+            <p class="text-slate-600">
+              • <strong>Topic-specific collocations:</strong> Sử dụng chuẩn xác <em>"Mediterranean pattern", "higher in fibre", "saturated fats", "no magic bullet", "restorative deep sleep"</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TAB B: SHADOWING PRACTICE -->
+      <div id="speaking-shadowing-view" class="hidden space-y-4">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+          <div class="max-w-2xl mb-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-800">Phương pháp Shadowing (Nhại giọng & Ngữ điệu chuẩn BBC)</h3>
+            <p class="text-xs sm:text-sm text-slate-500">
+              Luyện nói theo các câu nói chuẩn của Georgie, Phil, GS Marie-Pierre St-Onge và Bác sĩ Allie Hare. Chú ý ngắt nghỉ (chunking) theo từng cụm nghĩa.
+            </p>
+          </div>
+
+          <div class="space-y-3" id="shadowingList">
+            <!-- Populated via Javascript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TAB C: RECORDING STUDIO & TARGET PHRASE CHECKER -->
+      <div id="speaking-recorder-view" class="hidden">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 shadow-sm max-w-4xl mx-auto space-y-6">
+          <div class="text-center space-y-2">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 text-2xl mb-1 shadow-inner">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-800">Phòng Thu Thực Hành & Nhận Diện Cụm Từ Tự Động</h3>
+            <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
+              Nhấn micro và bắt đầu trình bày về thói quen ăn uống và giấc ngủ của bạn. Hệ thống sẽ tự động đối chiếu và highlight các cụm từ đắt giá bạn đã nói thành công!
+            </p>
+          </div>
+
+          <!-- Recording Controls -->
+          <div class="flex flex-col items-center justify-center space-y-2.5 py-3">
+            <button id="recordBtn" onclick="toggleSpeechRecording()" class="w-20 h-20 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-200 transition transform active:scale-95">
+              <i id="recordIcon" class="fa-solid fa-microphone text-2xl"></i>
+              <span id="recordLabel" class="text-[10px] uppercase font-bold tracking-wider mt-1">Bắt đầu</span>
+            </button>
+            <div id="recordingStatus" class="text-xs text-slate-400 font-medium">Nhấn mic để bắt đầu nói tiếng Anh</div>
+          </div>
+
+          <!-- Target phrase tracker badges -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+              Các cụm từ mục tiêu cần xuất hiện trong bài nói:
+            </p>
+            <div id="trackerBadges" class="flex flex-wrap gap-2 text-xs">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Live Transcript Output Box -->
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span>Lời bạn vừa nói (Live Speech Recognition):</span>
+              <button onclick="clearRecordedText()" class="text-slate-400 hover:text-slate-600 text-xs">Xoá làm lại</button>
+            </div>
+            <div id="recordedTranscript" class="min-h-[120px] p-4 rounded-xl bg-slate-900 text-slate-100 font-mono text-xs sm:text-sm leading-relaxed border border-slate-800">
+              <span class="text-slate-500 italic">Văn bản nhận diện giọng nói sẽ hiển thị tại đây khi bạn nói...</span>
+            </div>
+          </div>
+
+          <!-- Instant Feedback result -->
+          <div id="recordingFeedback" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    /* DATABASE 18 CỤM TỪ VÀNG TỪ TRANSCRIPT */
+    const phrasesData = {
+      "struggle-to-sleep": {
+        phrase: "struggle to get a good night's sleep",
+        type: "Verb Phrase Collocation",
+        ipa: "/ˈstrʌɡ.əl tuː ɡet ə ɡʊd naɪts sliːp/",
+        vietnamese: "Trằn trọc, chật vật để có được một giấc ngủ ngon",
+        english: "to find it very difficult or challenging to fall asleep and sleep restfully throughout the night",
+        structures: [
+          "struggle to get a good night's sleep",
+          "struggle to sleep",
+          "struggle with insomnia / sleeplessness"
+        ],
+        sample: "Whenever I work late into the night, I always struggle to get a good night's sleep.",
+        speakingTip: "Diễn đạt tự nhiên hơn rất nhiều so with 'cannot sleep well' trong IELTS Speaking Part 1 & 2."
+      },
+      "lie-there-for-hours": {
+        phrase: "lie there for hours",
+        type: "Descriptive Collocation",
+        ipa: "/laɪ ðeər fɔːr ˈaʊəz/",
+        vietnamese: "Nằm thao thức suốt nhiều tiếng đồng hồ",
+        english: "to remain awake in bed for extended periods unable to drift off to sleep",
+        structures: [
+          "lie in bed for hours",
+          "just lie there tossing and turning for hours"
+        ],
+        sample: "Drinking a strong latte at 7 PM made me lie there for hours staring at the ceiling.",
+        speakingTip: "Cách miêu tả cảm giác mất ngủ rất hình tượng và giàu tính liên tưởng (vivid imagery)."
+      },
+      "be-familiar-with": {
+        phrase: "be familiar with (that feeling)",
+        type: "Adjective Pattern",
+        ipa: "/biː fəˈmɪl.i.ər wɪð/",
+        vietnamese: "Quá quen thuộc với (cảm giác đó)",
+        english: "having a good knowledge of or experience with a particular feeling or situation",
+        structures: [
+          "many of us will be familiar with...",
+          "be all too familiar with the sensation of..."
+        ],
+        sample: "Most office workers are all too familiar with that feeling of chronic exhaustion.",
+        speakingTip: "Cụm dẫn nhập đồng cảm (empathetic phrase) rất tốt để tương tác với người nghe hoặc giám khảo."
+      },
+      "link-between": {
+        phrase: "the link between what we eat and how we sleep",
+        type: "Academic Noun Phrase",
+        ipa: "/ðə lɪŋk bɪˈtwiːn wɒt wiː iːt ænd haʊ wiː sliːp/",
+        vietnamese: "Mối liên hệ giữa chế độ ăn uống và chất lượng giấc ngủ",
+        english: "the scientific correlation or causal relationship connecting nutrition and sleep patterns",
+        structures: [
+          "the link between [A] and [B]",
+          "explore the intricate link between diet and health",
+          "establish a clear link between..."
+        ],
+        sample: "Recent nutritional research sheds light on the undeniable link between what we eat and how we sleep.",
+        speakingTip: "Cụm từ C1 giúp nâng cấp các câu nói về nguyên nhân - kết quả trong Part 3."
+      },
+      "stay-healthy": {
+        phrase: "stay healthy",
+        type: "Collocation",
+        ipa: "/steɪ ˈhel.θi/",
+        vietnamese: "Duy trì sức khỏe tốt, giữ gìn thể trạng khỏe mạnh",
+        english: "to maintain good physical and mental health over time",
+        structures: [
+          "stay healthy and fit",
+          "crucial steps to stay healthy",
+          "help the body stay healthy"
+        ],
+        sample: "Adults genuinely require seven to nine hours of restful slumber every night to stay healthy.",
+        speakingTip: "Thường đi kèm các động từ khuyên nhủ như 'strive to stay healthy', 'prioritize sleep to stay healthy'."
+      },
+      "long-term-studies": {
+        phrase: "long-term studies",
+        type: "Academic Collocation",
+        ipa: "/ˈlɒŋ.tɜːm ˈstʌd.iz/",
+        vietnamese: "Các công trình nghiên cứu dài hạn / theo dõi thời gian dài",
+        english: "scientific research conducted over extended durations to observe lasting effects and patterns",
+        structures: [
+          "conduct / carry out long-term studies",
+          "evidence from long-term clinical studies"
+        ],
+        sample: "Long-term studies demonstrate that consistent sleep routines protect cardiovascular health.",
+        speakingTip: "Dùng để trích dẫn bằng chứng một cách thuyết phục và học thuật trong Speaking Part 3."
+      },
+      "healthier-diet": {
+        phrase: "healthier diet",
+        type: "Collocation",
+        ipa: "/ˈhel.θi.ər ˈdaɪ.ət/",
+        vietnamese: "Chế độ ăn uống lành mạnh hơn",
+        english: "a nutritional regimen that is more wholesome, balanced, and nutritious",
+        structures: [
+          "adopt / transition to a healthier diet",
+          "reap the benefits of a healthier diet"
+        ],
+        sample: "Transitioning to a healthier diet packed with organic greens has significantly improved my stamina.",
+        speakingTip: "Nên kết hợp với động từ như 'shift towards', 'embrace' thay vì chỉ dùng 'eat better'."
+      },
+      "associated-with": {
+        phrase: "associated with",
+        type: "Academic Passive Phrase",
+        ipa: "/əˈsəʊ.si.eɪ.tɪd wɪð/",
+        vietnamese: "Gắn liền với, có mối liên quan mật thiết với",
+        english: "connected with something else in thought, evidence, or cause",
+        structures: [
+          "be closely / positively associated with...",
+          "factors associated with poor sleep hygiene"
+        ],
+        sample: "A wholesome Mediterranean dietary pattern is strongly associated with enhanced cognitive vitality.",
+        speakingTip: "Từ vựng Academic C1 thay thế xuất sắc cho 'connected with' hoặc 'related to'."
+      },
+      "better-quality-sleep": {
+        phrase: "better quality sleep",
+        type: "Noun Collocation",
+        ipa: "/ˈbet.ər ˈkwɒl.ə.ti sliːp/",
+        vietnamese: "Giấc ngủ có chất lượng tốt hơn (sâu và phục hồi tốt hơn)",
+        english: "sleep that is more restorative, undisturbed, and deeply refreshing",
+        structures: [
+          "enjoy / achieve better quality sleep",
+          "promote better quality sleep"
+        ],
+        sample: "Regular daytime exercise without evening screen exposure guarantees better quality sleep.",
+        speakingTip: "Nhấn mạnh vào 'quality' chứ không chỉ là số giờ ngủ ('quantity of sleep')."
+      },
+      "nutrients": {
+        phrase: "nutrients",
+        type: "Topic Academic Noun",
+        ipa: "/ˈnjuː.tri.ənts/",
+        vietnamese: "Các chất dinh dưỡng thiết yếu (protein, vitamin, khoáng chất...)",
+        english: "important substances that living organisms need to grow, survive, and remain healthy",
+        structures: [
+          "essential nutrients for the human body",
+          "rich in vital nutrients",
+          "absorb nutrients efficiently"
+        ],
+        sample: "Whole foods provide an abundance of micronutrients and essential nutrients that synthetic pills lack.",
+        speakingTip: "Từ vựng trọng tâm về sức khỏe và sinh học. Tránh dùng từ 'food' chung chung."
+      },
+      "mediterranean-diet": {
+        phrase: "Mediterranean diet / pattern",
+        type: "Nutritional Term",
+        ipa: "/ˌmed.ɪ.tərˈeɪ.ni.ən ˈdaɪ.ət/",
+        vietnamese: "Chế độ ăn Địa Trung Hải (nhiều rau quả, ngũ cốc nguyên hạt, dầu olive, ít thịt đỏ)",
+        english: "a diet inspired by traditional eating habits around the Mediterranean, emphasizing fruits, vegetables, whole grains, and olive oil with minimal red meat and refined sugar",
+        structures: [
+          "follow / adopt a Mediterranean diet",
+          "the proven benefits of the Mediterranean diet"
+        ],
+        sample: "Nutritionists consistently rank the Mediterranean diet as the gold standard for cardiac and sleep health.",
+        speakingTip: "Rất hay gặp trong các bài nói IELTS về Diet, Nutrition, Healthy Lifestyle."
+      },
+      "whole-grains": {
+        phrase: "whole grains",
+        type: "Compound Noun",
+        ipa: "/həʊl ɡreɪnz/",
+        vietnamese: "Ngũ cốc nguyên hạt (yến mạch, gạo lứt, lúa mạch...)",
+        english: "grains that retain all three original parts (bran, germ, and endosperm), providing high fiber and micronutrients",
+        structures: [
+          "incorporate whole grains into meals",
+          "switch refined carbs for whole grains"
+        ],
+        sample: "Replacing white rice with whole grains helps stabilize blood glucose and facilitates deep sleep.",
+        speakingTip: "Collocation ăn điểm cao khi thảo luận về dinh dưỡng thay cho 'cereal' hay 'bread'."
+      },
+      "animal-based-foods": {
+        phrase: "animal-based foods",
+        type: "Compound Noun Phrase",
+        ipa: "/ˈæn.ɪ.məl beɪst fuːdz/",
+        vietnamese: "Thực phẩm có nguồn gốc từ động vật (thịt, sữa, mỡ động vật)",
+        english: "foods derived directly from animals, such as meat, poultry, seafood, dairy, and eggs",
+        structures: [
+          "limit the consumption of animal-based foods",
+          "shift from animal-based foods to plant-based diets"
+        ],
+        sample: "Excessive consumption of greasy animal-based foods close to bedtime can hamper digestion and impair sleep.",
+        speakingTip: "Đối lập với 'plant-based foods'. Thuật ngữ học thuật rất chuẩn xác."
+      },
+      "fibre": {
+        phrase: "fibre (fiber)",
+        type: "Nutritional Noun",
+        ipa: "/ˈfaɪ.bər/",
+        vietnamese: "Chất xơ tự nhiên trong rau củ, trái cây và ngũ cốc",
+        english: "plant material that cannot be broken down by human enzymes, crucial for digestive and metabolic health",
+        structures: [
+          "diets high in dietary fibre",
+          "fiber-rich vegetables",
+          "intake of soluble and insoluble fibre"
+        ],
+        sample: "Diets higher in dietary fibre are scientifically proven to enhance the proportion of restorative deep sleep.",
+        speakingTip: "Chính tả tiếng Anh-Anh là 'fibre', tiếng Anh-Mỹ là 'fiber'."
+      },
+      "saturated-fats": {
+        phrase: "saturated fats",
+        type: "Nutritional Science Collocation",
+        ipa: "/ˈsætʃ.ər.eɪ.tɪd fæts/",
+        vietnamese: "Chất béo bão hòa (chất béo xấu có trong mỡ động vật, bơ, đồ chiên rán)",
+        english: "types of fatty acids mainly found in meat and full-fat dairy that can elevate cholesterol and disrupt rest",
+        structures: [
+          "lower in saturated fats",
+          "foods high in saturated fats",
+          "cut down on saturated fats"
+        ],
+        sample: "Cardiologists advise curtailing saturated fats to safeguard your arterial and cardiovascular health.",
+        speakingTip: "Collocation C1 cần thiết khi nói về các bệnh lý lối sống hoặc thói quen ăn uống lành mạnh."
+      },
+      "deep-sleep": {
+        phrase: "deep sleep",
+        type: "Scientific Collocation",
+        ipa: "/diːp sliːp/",
+        vietnamese: "Giấc ngủ sâu (giai đoạn sóng chậm giúp não bộ và cơ thể phục hồi hoàn toàn)",
+        english: "the stage of sleep characterized by slow delta brainwaves when the body repairs tissues and restores physical energy",
+        structures: [
+          "fall into a deep sleep",
+          "prolong the duration of deep sleep",
+          "the restorative benefits of deep sleep"
+        ],
+        sample: "Without sufficient deep sleep, your immune cells cannot regenerate effectively.",
+        speakingTip: "Cụm từ đắt giá phân biệt giữa ngủ chập chờn (light sleep) và ngủ sâu phục hồi (deep/restorative sleep)."
+      },
+      "supplements": {
+        phrase: "supplements",
+        type: "Topic Noun",
+        ipa: "/ˈsʌp.lɪ.mənts/",
+        vietnamese: "Thực phẩm chức năng, viên uống bổ sung dinh dưỡng",
+        english: "tablets, powders, or liquids taken orally to supply nutrients missing or insufficient in one's routine diet",
+        structures: [
+          "take dietary supplements",
+          "rely heavily on supplements",
+          "over-the-counter sleep supplements"
+        ],
+        sample: "Rather than splurging on unproven supplements, people should focus on wholesome balanced nutrition.",
+        speakingTip: "Lưu ý trọng âm rơi vào âm tiết đầu tiên: /ˈsʌp.lɪ.mənt/."
+      },
+      "focusing-on-whole-diet": {
+        phrase: "focusing on our whole diet",
+        type: "Verbal Phrase / Philosophy",
+        ipa: "/ˈfəʊ.kəs.ɪŋ ɒn ˈaʊə həʊl ˈdaɪ.ət/",
+        vietnamese: "Tập trung vào bức tranh tổng thể của toàn bộ chế độ ăn",
+        english: "prioritizing the overall dietary pattern and comprehensive eating habits rather than obsessing over single superfoods",
+        structures: [
+          "focus on one's whole diet",
+          "a holistic approach focusing on the whole diet"
+        ],
+        sample: "Sleep doctors stress that focusing on our whole diet yields vastly superior results to relying on individual magic pills.",
+        speakingTip: "Cụm từ thể hiện tư duy toàn diện (holistic thinking), gây ấn tượng rất mạnh với giám khảo."
+      },
+      "fed-information": {
+        phrase: "be fed information (on social media)",
+        type: "Idiomatic Passive Collocation",
+        ipa: "/biː fed ˌɪn.fəˈmeɪ.ʃən/",
+        vietnamese: "Bị nhồi nhét / tiếp nhận thông tin liên tục một cách thụ động",
+        english: "to be given massive quantities of persuasive content or data in a continuous, passive manner",
+        structures: [
+          "we are fed misleading information daily",
+          "be spoon-fed information by algorithms"
+        ],
+        sample: "Netizens are constantly fed information and hyped-up marketing regarding miracle sleep remedies.",
+        speakingTip: "Dùng thể bị động 'be fed' để phê phán tình trạng người dùng bị mạng xã hội thao túng nhận thức."
+      },
+      "no-magic-bullet": {
+        phrase: "there is no magic bullet",
+        type: "High-impact Idiom",
+        ipa: "/ðeər ɪz nəʊ ˈmædʒ.ɪk ˈbʊl.ɪt/",
+        vietnamese: "Không có phương thuốc vạn năng / không có giải pháp thần kỳ dễ dàng",
+        english: "an idiom meaning that there is no quick, effortless, or miraculous cure-all solution to a complex issue",
+        structures: [
+          "there is no silver bullet / magic bullet for...",
+          "realize that no single magic bullet exists"
+        ],
+        sample: "When it comes to achieving optimal well-being, doctors insist there is no magic bullet.",
+        speakingTip: "Thành ngữ C2 đỉnh cao dùng để kết luận phản biện một quan điểm ngây thơ hoặc sai lầm."
+      },
+      "doing-very-well-for-ourselves": {
+        phrase: "doing very well for ourselves",
+        type: "Idiom",
+        ipa: "/ˈduː.ɪŋ ˈver.i wel fɔːr ˌaʊəˈselvz/",
+        vietnamese: "Kiếm được bộn tiền / cực kỳ phát đạt và giàu có",
+        english: "making a substantial amount of money, achieving tremendous financial or career prosperity",
+        structures: [
+          "be doing very well for oneself",
+          "if we invented that cure, we'd be doing very well for ourselves"
+        ],
+        sample: "Had the scientist patented that miracle sleeping tablet, she would be doing exceptionally well for herself.",
+        speakingTip: "Lối nói dí dỏm, tự nhiên của người bản ngữ khi nói về sự thành công tài chính."
+      }
+    };
+
+    /* BỘ CÂU HỎI TÌNH HUỐNG THỰC TẾ */
+    const quizDatabase = [
+      {
+        id: 1,
+        category: "nutrition",
+        situation: "Một người đồng nghiệp thường xuyên bị mất ngủ và nhờ bạn tư vấn chế độ ăn để cải thiện giấc ngủ sâu. Dựa vào nghiên cứu của GS Marie-Pierre St-Onge trong bài nghe, lời khuyên nào chính xác nhất?",
+        targetPhrase: "higher in fibre, lower in saturated fats",
+        options: [
+          { text: "Nên áp dụng chế độ Địa Trung Hải: tăng cường thực phẩm giàu chất xơ (fibre) và giảm tối đa chất béo bão hòa (saturated fats) từ thịt đỏ, bơ sữa.", correct: true },
+          { text: "Nên ăn thật nhiều thịt nướng và uống nhiều sữa béo trước giờ ngủ để có năng lượng.", correct: false },
+          { text: "Chỉ cần ăn một quả kiwi duy nhất và không cần quan tâm đến các bữa ăn còn lại.", correct: false },
+          { text: "Uống một tách cà phê lớn vào lúc 8 giờ tối để não bộ tập trung ngủ.", correct: false }
+        ],
+        explanation: "GS Marie-Pierre St-Onge chỉ ra rằng chế độ ăn nhiều chất xơ (từ trái cây, rau, ngũ cốc nguyên hạt) và ít chất béo bão hòa (saturated fats) có mối tương quan trực tiếp với việc có nhiều giấc ngủ sâu (deep sleep) hơn."
+      },
+      {
+        id: 2,
+        category: "science",
+        situation: "Bác sĩ giấc ngủ Allie Hare đã dùng thành ngữ nào để dập tắt ảo tưởng của mọi người về các loại 'thuốc bột thần kỳ' giúp ngủ ngon ngay lập tức được quảng cáo trên mạng xã hội?",
+        targetPhrase: "there is no magic bullet",
+        options: [
+          { text: "There is no magic bullet (không có giải pháp thần kỳ dễ dàng nào cả)", correct: true },
+          { text: "There is no long-term study", correct: false },
+          { text: "There is no whole grain", correct: false },
+          { text: "There is no animal-based food", correct: false }
+        ],
+        explanation: "'A magic bullet' là thành ngữ chỉ một giải pháp đơn giản, mầu nhiệm cho một vấn đề phức tạp — nhưng trên thực tế giải pháp thần kỳ đó hoàn toàn không tồn tại."
+      },
+      {
+        id: 3,
+        category: "nutrition",
+        situation: "Theo khảo sát của YouGov được Georgie nhắc tới trong bài, tỷ lệ người trưởng thành tại Vương quốc Anh (UK) ngủ ít hơn mức khuyến nghị 7-9 tiếng là bao nhiêu?",
+        targetPhrase: "35% of UK adults",
+        options: [
+          { text: "15%", correct: false },
+          { text: "25%", correct: false },
+          { text: "35% (khoảng 1/3 dân số người lớn ngủ 6 tiếng hoặc ít hơn mỗi đêm)", correct: true },
+          { text: "50%", correct: false }
+        ],
+        explanation: "Phil đã đoán đúng đáp án c) 35%. Nghiên cứu chỉ ra rằng có tới 35% người trưởng thành ở Anh ngủ từ 6 tiếng trở xuống mỗi đêm."
+      },
+      {
+        id: 4,
+        category: "science",
+        situation: "Khi các chuyên gia y tế khuyên người dân không nên chỉ trông chờ vào một loại quả hay viên uống duy nhất, họ đã dùng cụm từ nào để nhấn mạnh tư duy toàn diện về dinh dưỡng?",
+        targetPhrase: "focusing on our whole diet",
+        options: [
+          { text: "Focusing on our whole diet (tập trung vào bức tranh tổng thể của cả chế độ ăn)", correct: true },
+          { text: "Focusing on taking endless supplements", correct: false },
+          { text: "Focusing on being fed information", correct: false },
+          { text: "Focusing on animal-based foods only", correct: false }
+        ],
+        explanation: "Các chuyên gia khẳng định: 'focusing on our whole diet, rather than one particular fruit or supplement, is going to be the most effective'."
+      },
+      {
+        id: 5,
+        category: "nutrition",
+        situation: "Trong bài nghe, 'Saturated fat' (chất béo bão hòa) được định nghĩa ngắn gọn và dễ hiểu như thế nào?",
+        targetPhrase: "saturated fats",
+        options: [
+          { text: "Là loại chất béo tìm thấy nhiều trong thịt và bơ sữa, được cho là không tốt cho sức khỏe nếu nạp quá nhiều.", correct: true },
+          { text: "Là một loại vitamin có nhiều trong nước ép anh đào chua (tart cherry juice).", correct: false },
+          { text: "Là chất xơ không hòa tan có trong ngũ cốc nguyên hạt (whole grains).", correct: false },
+          { text: "Là khoáng chất giúp não bộ đi vào giấc ngủ sâu nhanh nhất.", correct: false }
+        ],
+        explanation: "Phil định nghĩa: 'Saturated fat is a type of fat mainly found in meat and dairy that's thought to be bad for your health'."
+      },
+      {
+        id: 6,
+        category: "science",
+        situation: "Hiện tượng người dùng liên tục tiếp nhận thụ động các nội dung tiếp thị thổi phồng về thực phẩm chức năng trên mạng xã hội được bác sĩ diễn đạt bằng cụm từ nào?",
+        targetPhrase: "we're fed a lot of these things on social media",
+        options: [
+          { text: "We are fed information / fed a lot of these things (bị nhồi nhét, cho ăn thông tin liên tục)", correct: true },
+          { text: "We are studying in a laboratory", correct: false },
+          { text: "We are doing very well for ourselves", correct: false },
+          { text: "We are lying there for hours", correct: false }
+        ],
+        explanation: "To 'feed information' mang sắc thái ẩn dụ: cung cấp hoặc nhồi nhét một lượng thông tin rất lớn và liên tục một cách thụ động."
+      }
+    ];
+
+    /* SHADOWING DRILLS DATABASE */
+    const shadowingSentences = [
+      {
+        speaker: "Georgie (BBC Presenter)",
+        text: "Many of us will be familiar with that feeling of lying in bed, feeling really tired, but just not being able to go to sleep.",
+        notes: "Ngắt hơi sau 'in bed' và 'really tired'. Hạ nhẹ ngữ điệu khi kết thúc câu."
+      },
+      {
+        speaker: "Phil (BBC Presenter)",
+        text: "If I've had a cup of coffee later than I should, sometimes I can lie there for hours.",
+        notes: "Nhấn giọng vào 'later than I should' và nhấn mạnh cụm 'lie there for hours'."
+      },
+      {
+        speaker: "Professor Marie-Pierre St-Onge",
+        text: "Diets that are higher in fibre and lower in saturated fats are associated with more deep sleep at night.",
+        notes: "Ngắt nhịp đối xứng: 'higher in fibre' [ngắt] 'and lower in saturated fats' [ngắt]."
+      },
+      {
+        speaker: "Georgie (Nutrient Insight)",
+        text: "Experts say that focusing on our whole diet, rather than one particular fruit or supplement, is going to be the most effective.",
+        notes: "Nhấn vào 'whole diet' và làm mờ lướt nhanh cụm 'rather than one particular fruit'."
+      },
+      {
+        speaker: "Dr Allie Hare (Sleep Doctor)",
+        text: "We're fed a lot of these things on social media. And of course, there is no such magic bullet, unfortunately.",
+        notes: "Thể hiện giọng điệu phản biện, dứt khoát ở cụm 'no such magic bullet'."
+      }
+    ];
+
+    /* Danh sách từ mục tiêu cho phòng thu */
+    const targetKeyPhrases = [
+      "struggle to sleep",
+      "lie there for hours",
+      "associated with",
+      "better quality sleep",
+      "Mediterranean pattern",
+      "higher in fibre",
+      "saturated fats",
+      "deep sleep",
+      "supplements",
+      "whole diet",
+      "fed information",
+      "no magic bullet"
+    ];
+
+    /* State variables */
+    let currentActivePhraseId = null;
+    let userQuizScore = 0;
+    let answeredQuestions = new Set();
+    let currentQuizFilter = 'all';
+    let isRecording = false;
+    let speechRecognition = null;
+    let finalTranscribedText = "";
+    let detectedPhrases = new Set();
+    let timerInterval = null;
+    let prepSecondsLeft = 60;
+    let isTimerRunning = false;
+    let isReadingAll = false;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initPhraseClicks();
+      renderScenarioQuizzes();
+      renderShadowingDrills();
+      renderTrackerBadges();
+      setupSpeechRecognition();
+
+      selectPhrase("mediterranean-diet");
+    });
+
+    /* Switch tabs */
+    function switchTab(tabId) {
+      document.getElementById('section-study').classList.add('hidden');
+      document.getElementById('section-practice').classList.add('hidden');
+      document.getElementById('section-speaking').classList.add('hidden');
+
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-blue-50', 'text-blue-600');
+        btn.classList.add('text-slate-600', 'hover:bg-slate-100');
+      });
+
+      const activeNavBtn = document.getElementById(`tabNav-${tabId}`);
+      if (activeNavBtn) {
+        activeNavBtn.classList.add('bg-blue-50', 'text-blue-600');
+        activeNavBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
+      }
+
+      const activeSection = document.getElementById(`section-${tabId}`);
+      if (activeSection) {
+        activeSection.classList.remove('hidden');
+      }
+    }
+
+    /* Sub-tabs inside speaking */
+    function switchSpeakingSubTab(subTab) {
+      document.getElementById('speaking-ielts-view').classList.add('hidden');
+      document.getElementById('speaking-shadowing-view').classList.add('hidden');
+      document.getElementById('speaking-recorder-view').classList.add('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      if (subTab === 'ielts') {
+        document.getElementById('speaking-ielts-view').classList.remove('hidden');
+        document.getElementById('subtab-ielts').classList.add('active');
+      } else if (subTab === 'shadowing') {
+        document.getElementById('speaking-shadowing-view').classList.remove('hidden');
+        document.getElementById('subtab-shadowing').classList.add('active');
+      } else if (subTab === 'recorder') {
+        document.getElementById('speaking-recorder-view').classList.remove('hidden');
+        document.getElementById('subtab-recorder').classList.add('active');
+      }
+    }
+
+    function initPhraseClicks() {
+      const phraseElements = document.querySelectorAll('.phrase-highlight');
+      phraseElements.forEach(el => {
+        el.addEventListener('click', () => {
+          const phraseId = el.getAttribute('data-phrase-id');
+          selectPhrase(phraseId);
+        });
+      });
+    }
+
+    function selectPhrase(phraseId) {
+      const data = phrasesData[phraseId];
+      if (!data) return;
+
+      currentActivePhraseId = phraseId;
+
+      document.querySelectorAll('.phrase-highlight').forEach(el => {
+        if (el.getAttribute('data-phrase-id') === phraseId) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      document.getElementById('emptyDefinitionState').classList.add('hidden');
+      const detailContainer = document.getElementById('phraseDetailContent');
+      detailContainer.classList.remove('hidden');
+
+      document.getElementById('detailPhrase').textContent = data.phrase;
+      document.getElementById('phraseTypeBadge').textContent = data.type;
+      document.getElementById('detailIpa').textContent = data.ipa;
+      document.getElementById('detailVietnamese').textContent = data.vietnamese;
+      document.getElementById('detailEnglish').textContent = data.english;
+
+      const structuresContainer = document.getElementById('detailStructures');
+      structuresContainer.innerHTML = '';
+      data.structures.forEach(st => {
+        const item = document.createElement('div');
+        item.className = "flex items-start gap-1.5 text-slate-700";
+        item.innerHTML = `<span class="text-emerald-600 font-bold">•</span> <span>${st}</span>`;
+        structuresContainer.appendChild(item);
+      });
+
+      document.getElementById('detailSpeakingSample').textContent = `"${data.sample}"`;
+      document.getElementById('detailSpeakingTip').textContent = ` ${data.speakingTip}`;
+
+      const soundBtn = document.getElementById('pronounceBtn');
+      soundBtn.onclick = () => {
+        speakText(data.phrase);
+      };
+    }
+
+    function cycleNextPhrase() {
+      const keys = Object.keys(phrasesData);
+      let currentIndex = keys.indexOf(currentActivePhraseId);
+      let nextIndex = (currentIndex + 1) % keys.length;
+      selectPhrase(keys[nextIndex]);
+    }
+
+    function jumpToPracticeFromPhrase() {
+      switchTab('practice');
+    }
+
+    function speakText(text, rate = 0.9) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-GB';
+        utterance.rate = rate;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    function playAllPodcastSpeech() {
+      const btn = document.getElementById('fullAudioBtnText');
+      if (isReadingAll) {
+        window.speechSynthesis.cancel();
+        isReadingAll = false;
+        btn.textContent = "Nghe đọc tóm lược";
+      } else {
+        const summaryText = "What should you eat for a better night's sleep? Scientists found that a healthier diet, resembling a Mediterranean pattern higher in fibre and lower in saturated fats, is associated with better quality sleep and more deep sleep at night. Sleep doctors caution that while social media promises magic bullets, focusing on our whole diet is the only effective solution.";
+        speakText(summaryText, 0.92);
+        isReadingAll = true;
+        btn.textContent = "Dừng đọc";
+        
+        const checkEnd = setInterval(() => {
+          if (!window.speechSynthesis.speaking) {
+            isReadingAll = false;
+            btn.textContent = "Nghe đọc tóm lược";
+            clearInterval(checkEnd);
+          }
+        }, 500);
+      }
+    }
+
+    function renderScenarioQuizzes() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      const filtered = quizDatabase.filter(q => {
+        if (currentQuizFilter === 'all') return true;
+        return q.category === currentQuizFilter;
+      });
+
+      document.getElementById('totalQuestions').textContent = quizDatabase.length;
+
+      filtered.forEach((q) => {
+        const isAnswered = answeredQuestions.has(q.id);
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-4 flex flex-col justify-between";
+        card.id = `quiz-card-${q.id}`;
+
+        let optionsHtml = q.options.map((opt, optIndex) => `
+          <button 
+            onclick="handleQuizAnswer(${q.id}, ${optIndex})" 
+            id="opt-${q.id}-${optIndex}"
+            class="quiz-option-btn w-full text-left p-3 rounded-xl border border-slate-200 text-xs font-medium hover:bg-slate-50 transition flex items-center justify-between text-slate-700"
+            ${isAnswered ? 'disabled' : ''}
+          >
+            <span>${opt.text}</span>
+            <i class="quiz-check-icon fa-regular fa-circle text-slate-300"></i>
+          </button>
+        `).join('');
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${q.category === 'nutrition' ? 'bg-emerald-50 text-emerald-800' : 'bg-teal-50 text-teal-700'}">
+                ${q.category === 'nutrition' ? 'Dinh dưỡng & Bữa ăn' : 'Khoa học & Thực phẩm chức năng'}
+              </span>
+              <span class="text-xs font-semibold text-slate-400">Tình huống ${q.id}</span>
+            </div>
+            <h4 class="text-xs sm:text-sm font-bold text-slate-800 leading-snug">${q.situation}</h4>
+            <div class="space-y-2 mt-4">
+              ${optionsHtml}
+            </div>
+          </div>
+          <div id="feedback-${q.id}" class="hidden p-3 rounded-xl text-xs font-medium bg-slate-50 border border-slate-200 mt-2">
+            <span class="font-bold text-slate-800">💡 Giải thích chi tiết: </span>
+            <span class="text-slate-600">${q.explanation}</span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleQuizAnswer(questionId, optionIndex) {
+      if (answeredQuestions.has(questionId)) return;
+
+      const question = quizDatabase.find(q => q.id === questionId);
+      if (!question) return;
+
+      answeredQuestions.add(questionId);
+      const isCorrect = question.options[optionIndex].correct;
+
+      const selectedBtn = document.getElementById(`opt-${questionId}-${optionIndex}`);
+      const icon = selectedBtn.querySelector('.quiz-check-icon');
+
+      if (isCorrect) {
+        userQuizScore += 1;
+        document.getElementById('userScore').textContent = userQuizScore;
+        selectedBtn.classList.remove('border-slate-200');
+        selectedBtn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-900', 'font-bold');
+        icon.className = "fa-solid fa-circle-check text-emerald-600";
+      } else {
+        selectedBtn.classList.remove('border-slate-200');
+        selectedBtn.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-900');
+        icon.className = "fa-solid fa-circle-xmark text-rose-600";
+
+        question.options.forEach((opt, idx) => {
+          if (opt.correct) {
+            const correctBtn = document.getElementById(`opt-${questionId}-${idx}`);
+            correctBtn.classList.add('border-emerald-400', 'bg-emerald-50/60');
+          }
+        });
+      }
+
+      const feedbackBox = document.getElementById(`feedback-${questionId}`);
+      feedbackBox.classList.remove('hidden');
+
+      question.options.forEach((_, idx) => {
+        const btn = document.getElementById(`opt-${questionId}-${idx}`);
+        btn.setAttribute('disabled', 'true');
+      });
+    }
+
+    function setQuizFilter(filterName) {
+      currentQuizFilter = filterName;
+      document.querySelectorAll('.quiz-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-slate-900', 'text-white');
+        btn.classList.add('text-slate-600');
+      });
+      document.getElementById(`filter-${filterName}`).classList.add('bg-slate-900', 'text-white');
+      renderScenarioQuizzes();
+    }
+
+    function checkDialogueOption(choiceIndex) {
+      const feedback = document.getElementById('dialogueFeedback');
+      feedback.classList.remove('hidden');
+
+      if (choiceIndex === 0) {
+        feedback.className = "mt-3 p-3.5 rounded-xl text-xs font-medium bg-emerald-50 text-emerald-900 border border-emerald-200";
+        feedback.innerHTML = `
+          <strong>🎉 Hoàn hảo! Bạn phản hồi rất sắc sảo và am hiểu khoa học!</strong><br>
+          Bạn đã dùng chính xác các cụm từ <em>"fed information"</em>, <em>"magic bullet"</em> và <em>"focus on whole diet"</em> để cảnh báo bạn mình tránh lãng phí tiền bạc vào các lời hứa hão huyền trên mạng.
+        `;
+      } else {
+        feedback.className = "mt-3 p-3.5 rounded-xl text-xs font-medium bg-rose-50 text-rose-900 border border-rose-200";
+        feedback.innerHTML = `
+          <strong>Chưa chính xác!</strong> Lời khuyên này đi ngược lại hoàn toàn kết quả nghiên cứu trong bài nghe. Hãy chọn phương án A để xem cách khuyên bạn chuẩn nhất nhé!
+        `;
+      }
+    }
+
+    function resetDialogueRoleplay() {
+      const feedback = document.getElementById('dialogueFeedback');
+      feedback.classList.add('hidden');
+    }
+
+    function renderShadowingDrills() {
+      const container = document.getElementById('shadowingList');
+      container.innerHTML = '';
+
+      shadowingSentences.forEach((s) => {
+        const row = document.createElement('div');
+        row.className = "p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4";
+        
+        row.innerHTML = `
+          <div class="space-y-1 max-w-2xl">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">${s.speaker}</span>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">"${s.text}"</p>
+            <p class="text-xs text-slate-500 italic">💡 Hướng dẫn nhịp điệu: ${s.notes}</p>
+          </div>
+          <div class="flex items-center space-x-2 shrink-0">
+            <button onclick="speakText('${s.text.replace(/'/g, "\'")}', 0.75)" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-emerald-400 text-slate-700 text-xs font-semibold flex items-center gap-1 shadow-2xs">
+              <i class="fa-solid fa-play text-emerald-600"></i> Chậm (0.75x)
+            </button>
+            <button onclick="speakText('${s.text.replace(/'/g, "\'")}', 1.0)" class="px-2.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold flex items-center gap-1 shadow-2xs">
+              <i class="fa-solid fa-forward-step"></i> Chuẩn (1.0x)
+            </button>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function playModelAudio() {
+      const text = "A couple of years ago, I used to struggle to get a good night's sleep. When I realized there is no magic bullet, I decided to focus on my whole diet by adopting a Mediterranean pattern higher in fibre and lower in saturated fats. This dramatically enhanced my restorative deep sleep.";
+      speakText(text, 0.95);
+    }
+
+    function toggleSpeakingTimer() {
+      const btn = document.getElementById('timerToggleBtn');
+      const display = document.getElementById('speakingTimer');
+
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        btn.textContent = "Tiếp tục";
+        btn.className = "text-xs bg-emerald-600 text-white px-2.5 py-1 rounded font-semibold hover:bg-emerald-700 transition";
+      } else {
+        if (prepSecondsLeft <= 0) prepSecondsLeft = 60;
+        isTimerRunning = true;
+        btn.textContent = "Tạm dừng";
+        btn.className = "text-xs bg-rose-600 text-white px-2.5 py-1 rounded font-semibold hover:bg-rose-700 transition";
+
+        timerInterval = setInterval(() => {
+          prepSecondsLeft--;
+          let mins = Math.floor(prepSecondsLeft / 60);
+          let secs = prepSecondsLeft % 60;
+          display.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+          if (prepSecondsLeft <= 0) {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            display.textContent = "Hết 1 phút! Hãy nói ngay!";
+            btn.textContent = "Làm lại (1:00)";
+            btn.className = "text-xs bg-emerald-600 text-white px-2.5 py-1 rounded font-semibold";
+          }
+        }, 1000);
+      }
+    }
+
+    function renderTrackerBadges() {
+      const container = document.getElementById('trackerBadges');
+      container.innerHTML = '';
+
+      targetKeyPhrases.forEach(phrase => {
+        const badge = document.createElement('span');
+        badge.id = `badge-${phrase.replace(/[\s']+/g, '-')}`;
+        badge.className = "px-2.5 py-1 rounded-lg bg-slate-100 text-slate-500 font-medium border border-slate-200 transition text-[11px]";
+        badge.innerHTML = `<i class="fa-regular fa-circle text-[9px] mr-1"></i> ${phrase}`;
+        container.appendChild(badge);
+      });
+    }
+
+    function setupSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        speechRecognition = new SpeechRecognition();
+        speechRecognition.continuous = true;
+        speechRecognition.interimResults = true;
+        speechRecognition.lang = 'en-US';
+
+        speechRecognition.onresult = (event) => {
+          let interimTranscript = '';
+          for (let i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+              finalTranscribedText += event.results[i][0].transcript + ' ';
+            } else {
+              interimTranscript += event.results[i][0].transcript;
+            }
+          }
+
+          const fullText = (finalTranscribedText + interimTranscript).trim();
+          updateLiveTranscriptUI(fullText);
+          analyzeTargetPhrasesInText(fullText.toLowerCase());
+        };
+
+        speechRecognition.onerror = (event) => {
+          console.log("Speech recognition error:", event.error);
+          document.getElementById('recordingStatus').textContent = "Micro chưa được cấp quyền hoặc trình duyệt chặn âm thanh.";
+          stopRecordingUI();
+        };
+
+        speechRecognition.onend = () => {
+          if (isRecording) {
+            stopRecordingUI();
+          }
+        };
+      } else {
+        document.getElementById('recordingStatus').textContent = "Trình duyệt chưa hỗ trợ Web Speech API. Bấm nút mic để chạy bài mẫu mô phỏng.";
+      }
+    }
+
+    function toggleSpeechRecording() {
+      if (!speechRecognition) {
+        simulateSpeakingDemo();
+        return;
+      }
+
+      if (!isRecording) {
+        try {
+          finalTranscribedText = "";
+          detectedPhrases.clear();
+          renderTrackerBadges();
+          speechRecognition.start();
+          isRecording = true;
+          startRecordingUI();
+        } catch (e) {
+          console.error(e);
+          simulateSpeakingDemo();
+        }
+      } else {
+        speechRecognition.stop();
+        isRecording = false;
+        stopRecordingUI();
+      }
+    }
+
+    function startRecordingUI() {
+      const btn = document.getElementById('recordBtn');
+      const label = document.getElementById('recordLabel');
+      const icon = document.getElementById('recordIcon');
+      const status = document.getElementById('recordingStatus');
+
+      btn.classList.add('bg-slate-900', 'animate-pulse');
+      btn.classList.remove('bg-emerald-600');
+      label.textContent = "Đang thu...";
+      icon.className = "fa-solid fa-stop text-2xl text-rose-500";
+      status.textContent = "Đang lắng nghe bài nói tiếng Anh của bạn...";
+      status.className = "text-xs text-emerald-700 font-bold animate-pulse";
+    }
+
+    function stopRecordingUI() {
+      isRecording = false;
+      const btn = document.getElementById('recordBtn');
+      const label = document.getElementById('recordLabel');
+      const icon = document.getElementById('recordIcon');
+      const status = document.getElementById('recordingStatus');
+
+      btn.classList.remove('bg-slate-900', 'animate-pulse');
+      btn.classList.add('bg-emerald-600');
+      label.textContent = "Bắt đầu";
+      icon.className = "fa-solid fa-microphone text-2xl text-white";
+      status.textContent = "Đã hoàn thành lượt nói! Xem đánh giá bên dưới:";
+      status.className = "text-xs text-slate-500 font-medium";
+
+      showRecordingFeedback();
+    }
+
+    function updateLiveTranscriptUI(text) {
+      const box = document.getElementById('recordedTranscript');
+      if (!text) {
+        box.innerHTML = `<span class="text-slate-500 italic">Văn bản nhận diện giọng nói sẽ hiển thị tại đây khi bạn nói...</span>`;
+        return;
+      }
+
+      let highlighted = text;
+      targetKeyPhrases.forEach(kp => {
+        const regex = new RegExp(`(${kp})`, 'gi');
+        highlighted = highlighted.replace(regex, `<mark class="bg-yellow-400 text-slate-900 font-bold px-1 rounded">$1</mark>`);
+      });
+
+      box.innerHTML = highlighted;
+    }
+
+    function analyzeTargetPhrasesInText(cleanLowerText) {
+      targetKeyPhrases.forEach(phrase => {
+        if (cleanLowerText.includes(phrase.toLowerCase())) {
+          detectedPhrases.add(phrase);
+          const badgeId = `badge-${phrase.replace(/[\s']+/g, '-')}`;
+          const badge = document.getElementById(badgeId);
+          if (badge) {
+            badge.className = "px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 text-[11px]";
+            badge.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> ${phrase}`;
+          }
+        }
+      });
+    }
+
+    function showRecordingFeedback() {
+      const feedbackBox = document.getElementById('recordingFeedback');
+      feedbackBox.classList.remove('hidden');
+
+      const count = detectedPhrases.size;
+      let reviewMsg = "";
+
+      if (count >= 5) {
+        reviewMsg = `<strong>Xuất sắc (Band 7.5 - 8.0 Lexical)!</strong> Bạn đã đưa thành công ${count} cụm từ đắt giá vào bài nói một cách rất tự nhiên và thuyết phục.`;
+      } else if (count >= 3) {
+        reviewMsg = `<strong>Rất tốt (Band 6.5 - 7.0)!</strong> Bạn đã dùng được ${count} cụm từ mục tiêu. Hãy thử lồng ghép thêm các cụm như 'Mediterranean pattern' hoặc 'no magic bullet' để bài nói sâu sắc hơn.`;
+      } else {
+        reviewMsg = `Bạn đã sử dụng được ${count} cụm từ mục tiêu. Hãy nhìn danh sách gợi ý và thử nói lại một lượt nữa nhé!`;
+      }
+
+      feedbackBox.innerHTML = `
+        <div class="flex items-center gap-2 mb-1">
+          <i class="fa-solid fa-chart-line text-emerald-600 text-base"></i>
+          <span class="font-bold text-sm">Đánh giá khả năng vận dụng từ vựng:</span>
+        </div>
+        <p>${reviewMsg}</p>
+      `;
+    }
+
+    function clearRecordedText() {
+      finalTranscribedText = "";
+      detectedPhrases.clear();
+      renderTrackerBadges();
+      updateLiveTranscriptUI("");
+      document.getElementById('recordingFeedback').classList.add('hidden');
+    }
+
+    function simulateSpeakingDemo() {
+      startRecordingUI();
+      const mockSpeech = "In the past, I used to struggle to sleep and lie there for hours. I realized there is no magic bullet, so I focused on my whole diet by eating a Mediterranean pattern higher in fibre and lower in saturated fats. This helped me get better quality sleep and much more deep sleep.";
+      
+      let index = 0;
+      const interval = setInterval(() => {
+        index += 18;
+        const currentSlice = mockSpeech.slice(0, index);
+        updateLiveTranscriptUI(currentSlice);
+        analyzeTargetPhrasesInText(currentSlice.toLowerCase());
+
+        if (index >= mockSpeech.length) {
+          clearInterval(interval);
+          setTimeout(() => {
+            stopRecordingUI();
+          }, 800);
+        }
+      }, 300);
+    }
+  </script>
+</body>
+</html>
