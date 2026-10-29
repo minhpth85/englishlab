@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBC 6 Minute English Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F8FAF9;
+      color: #1F2937;
+      padding: 48px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .top-badge {
+      display: inline-block;
+      background-color: #EBF4F0;
+      color: #2D5A43;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #2D5A43;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .sub-title {
+      font-size: 16px;
+      color: #6B7280;
+    }
+    .counter {
+      font-size: 15px;
+      color: #6B7280;
+      white-space: nowrap;
+    }
+    .counter strong {
+      color: #1F2937;
+    }
+
+    /* Filter Bar */
+    .filter-section {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+    }
+    .search-box svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9CA3AF;
+      width: 18px;
+      height: 18px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 13px 16px 13px 44px;
+      font-size: 14.5px;
+      font-family: inherit;
+      border: 1px solid #E5E7EB;
+      background: #FFFFFF;
+      border-radius: 12px;
+      color: #1F2937;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .search-box input:focus {
+      border-color: #2D5A43;
+      box-shadow: 0 0 0 3px rgba(45, 90, 67, 0.12);
+    }
+    .search-box input::placeholder {
+      color: #9CA3AF;
+    }
+
+    .tags-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tag-btn {
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      border: 1px solid #E5E7EB;
+      background: #FFFFFF;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tag-btn:hover {
+      background: #F3F4F6;
+    }
+    .tag-btn.active {
+      background: #2D5A43;
+      color: #FFFFFF;
+      border-color: #2D5A43;
+    }
+
+    /* Grid Lessons */
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 24px;
+    }
+
+    .lesson-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .lesson-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+      border-color: #CBD5E1;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .category-badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+    }
+    /* Các màu tag theo chủ đề */
+    .badge-mindset {
+      background-color: #FEF9EE;
+      color: #B45309;
+      border-color: #FDE68A;
+    }
+    .badge-science {
+      background-color: #ECFDF5;
+      color: #047857;
+      border-color: #A7F3D0;
+    }
+    .badge-habit {
+      background-color: #EFF6FF;
+      color: #1D4ED8;
+      border-color: #BFDBFE;
+    }
+
+    .lesson-no {
+      font-size: 13px;
+      color: #9CA3AF;
+      font-weight: 500;
+    }
+
+    .card-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .card-content p {
+      font-size: 14px;
+      color: #4B5563;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .card-footer {
+      border-top: 1px solid #F3F4F6;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .duration-level {
+      color: #6B7280;
+      font-weight: 500;
+    }
+    .action-link {
+      color: #2D5A43;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Trạng thái không tìm thấy */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 48px;
+      color: #6B7280;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <span class="top-badge">English Speaking Lab</span>
+    <div class="header-row">
+      <div>
+        <h1>BBC 6 Minute English Hub</h1>
+        <p class="sub-title">Danh sách bài luyện tập phản xạ và từ vựng qua podcast.</p>
+      </div>
+      <div class="counter">
+        Tổng số: <strong id="total-count">3</strong> bài học
+      </div>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="filter-section">
+      <div class="search-box">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Tìm bài học theo tiêu đề hoặc từ khóa...">
+      </div>
+      <div class="tags-group">
+        <button class="tag-btn active" data-category="all">Tất cả</button>
+        <button class="tag-btn" data-category="mindset">Tâm lý</button>
+        <button class="tag-btn" data-category="habit">Thói quen</button>
+        <button class="tag-btn" data-category="science">Khoa học</button>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="lessons-grid" id="lessonsGrid">
+      
+      <!-- Bài 01 -->
+      <a href="What-should-you-eat-for-a-better-night'-sleep.html" class="lesson-card" data-category="mindset">
+        <div>
+          <div class="card-top">
+            <span class="category-badge badge-mindset">Mindset</span>
+            <span class="lesson-no">Bài 01</span>
+          </div>
+          <div class="card-content">
+            <h3>How to avoid heartbreak</h3>
+            <p>Học cách chữa lành vết thương lòng và các cụm từ vựng diễn đạt cảm xú...</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="duration-level">6 mins • B1-B2</span>
+          <span class="action-link">Vào học →</span>
+        </div>
+      </a>
+
+      <!-- Bài 02 -->
+      <a href="Why-does-heartbreak-hurt-so-much.html" class="lesson-card" data-category="science">
+        <div>
+          <div class="card-top">
+            <span class="category-badge badge-science">Science</span>
+            <span class="lesson-no">Bài 02</span>
+          </div>
+          <div class="card-content">
+            <h3>The power of sleep</h3>
+            <p>Tại sao giấc ngủ chất lượng giúp tăng cường trí nhớ và phục hồi não bộ.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="duration-level">6 mins • B1-B2</span>
+          <span class="action-link">Vào học →</span>
+        </div>
+      </a>
+
+      <!-- Bài 03 -->
+      <a href="bai-03.html" class="lesson-card" data-category="habit">
+        <div>
+          <div class="card-top">
+            <span class="category-badge badge-habit">Habit</span>
+            <span class="lesson-no">Bài 03</span>
+          </div>
+          <div class="card-content">
+            <h3>Building small daily habits</h3>
+            <p>Sức mạnh của những thói quen siêu nhỏ duy trì bền bỉ mỗi ngày.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="duration-level">6 mins • B1-B2</span>
+          <span class="action-link">Vào học →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const tagBtns = document.querySelectorAll('.tag-btn');
+    const cards = document.querySelectorAll('.lesson-card');
+    const totalCountEl = document.getElementById('total-count');
+
+    let currentCategory = 'all';
+
+    function filterLessons() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+        const cardCategory = card.getAttribute('data-category');
+
+        const matchSearch = title.includes(query) || desc.includes(query);
+        const matchCategory = currentCategory === 'all' || cardCategory === currentCategory;
+
+        if (matchSearch && matchCategory) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      totalCountEl.textContent = visibleCount;
+    }
+
+    // Sự kiện tìm kiếm theo từ khóa
+    searchInput.addEventListener('input', filterLessons);
+
+    // Sự kiện click chọn tag
+    tagBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tagBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-category');
+        filterLessons();
+      });
+    });
+  </script>
+</body>
+</html>
