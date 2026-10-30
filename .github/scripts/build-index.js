@@ -24,6 +24,7 @@ async function callGemini(text) {
       })
     });
     const data = await res.json();
+    if (!data.candidates) console.error("Gemini HTTP " + res.status + ": " + JSON.stringify(data).slice(0, 800));
     const reply = data.candidates[0].content.parts[0].text;
     return JSON.parse(reply);
   } catch (err) {
