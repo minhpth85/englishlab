@@ -1,6 +1,7 @@
 name: Auto Update Index with AI
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '**.html'
