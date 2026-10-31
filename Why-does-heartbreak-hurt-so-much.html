@@ -60,6 +60,15 @@
       color: #2563eb;
       font-weight: 700;
     }
+
+    /* Mobile typography: tăng cỡ chữ cho dễ đọc trên điện thoại (<640px). Dùng 'body' để thắng độ ưu tiên của Tailwind CDN. */
+    @media (max-width: 639px) {
+      body #transcriptBody { font-size: 1rem; line-height: 1.7; }
+      body .text-xs { font-size: 0.875rem; }
+      body .text-xs:not([class*="leading-"]) { line-height: 1.5; }
+      body .text-\[11px\], body .text-\[10px\], body .text-\[9px\] { font-size: 0.75rem; }
+      body .nav-tab-btn, body #backToIndexBtn { font-size: 0.8125rem; }
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
