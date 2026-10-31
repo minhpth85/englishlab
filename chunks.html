@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chunks đã lưu · 6 Minute English</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf5; --surface:#ffffff; --surface-soft:#ebf6ee; --surface-inverse:#17301d;
+  --ink-900:#171c18; --ink-700:#1f2a22; --ink-500:#505e4f;
+  --primary:#32854d; --primary-hover:#317345; --primary-text:#317345; --focus:#4a9b60;
+  --border:#e1eae5; --border-strong:#84968a; --warning-soft:#fbf3e0; --warning-text:#8a6421;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:20px; --radius-full:999px;
+  --shadow-sm:0 1px 2px rgba(23,48,29,.06); --shadow-md:0 8px 24px rgba(23,48,29,.08);
+  --font-sans:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:16px;line-height:24px;color:var(--ink-700);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:var(--radius-sm)}
+.hidden{display:none !important}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 64px}
+
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{font-weight:700;color:var(--ink-900);text-decoration:none;font-size:18px;letter-spacing:-.01em}
+.brand span{color:var(--primary-text)}
+
+.hb-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--radius-md);font:600 15px/22px var(--font-sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;background:none;transition:background .15s}
+.hb-btn:disabled{opacity:.45;cursor:not-allowed}
+.hb-btn--primary{background:var(--primary);color:#fff}
+.hb-btn--primary:hover:not(:disabled){background:var(--primary-hover)}
+.hb-btn--secondary{border-color:var(--border-strong);color:var(--ink-900);background:transparent}
+.hb-btn--secondary:hover:not(:disabled){background:var(--surface-soft)}
+.hb-btn.sm{padding:8px 14px;font-size:14px}
+.link{background:none;border:0;color:var(--ink-500);font:600 14px/20px var(--font-sans);cursor:pointer;text-decoration:underline;padding:4px}
+.link.danger:hover{color:#c2412f}
+
+.hb-eyebrow{font:600 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--primary-text);margin-bottom:12px}
+.hb-title{font:700 36px/42px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900)}
+.hb-title em{font-style:normal;color:var(--primary)}
+.lead{font-size:16px;color:var(--ink-500);margin-top:8px}
+.head{padding:32px 0 24px}
+
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:24px}
+.tabs{display:flex;gap:24px}
+.tab{background:none;border:0;padding:0 0 14px;font:600 15px/22px var(--font-sans);color:var(--ink-500);cursor:pointer;border-bottom:2px solid transparent}
+.tab.active{color:var(--primary-text);border-bottom-color:var(--primary)}
+.tab span{display:inline-block;min-width:22px;padding:0 6px;border-radius:var(--radius-full);background:var(--surface-soft);color:var(--primary-text);font-size:12px;line-height:20px;text-align:center}
+.toolbar .hb-btn{margin-bottom:12px}
+
+.list{list-style:none;display:grid;gap:12px}
+.item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;box-shadow:var(--shadow-sm);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.item h3{font:600 20px/26px var(--font-sans);color:var(--ink-900)}
+.ipa{font:400 13px/18px ui-monospace,Menlo,monospace;color:var(--ink-500);margin-left:8px}
+.vi{font-size:15px;color:var(--ink-700);margin-top:6px}
+.from{font-size:13px;color:var(--ink-500);margin-top:6px}
+.item-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.empty{background:var(--warning-soft);color:var(--ink-700);border-radius:var(--radius-md);padding:20px 24px;font-size:15px}
+
+.review{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-md);margin-bottom:24px;text-align:center}
+.review .small{font-size:13px;color:var(--ink-500)}
+.review h2{font:700 34px/40px var(--font-sans);color:var(--ink-900);margin:12px 0 4px}
+.review .en{font-size:15px;color:var(--ink-500);margin-top:12px}
+.review .sample{font-style:italic;color:var(--ink-700);margin-top:12px}
+.review .flip{margin-top:24px}
+.review .actions{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+.review .close{margin-top:16px}
+
+@media (max-width:640px){
+  .hb-title{font-size:28px;line-height:34px}
+  .review h2{font-size:26px}
+  .item{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html">6 Minute <span>English</span></a>
+    <a class="hb-btn hb-btn--secondary sm" href="index.html">← Về thư viện</a>
+  </nav>
+
+  <header class="head">
+    <p class="hb-eyebrow">Ôn tập</p>
+    <h1 class="hb-title">Chunks <em>đã lưu</em></h1>
+    <p class="lead">Những chunk bạn bấm "Lưu để ôn" trong các bài học. Lưu trên trình duyệt này.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="review">Muốn ôn <span id="cnt-review">0</span></button>
+      <button class="tab" data-tab="mastered">Đã thuộc <span id="cnt-mastered">0</span></button>
+    </div>
+    <button class="hb-btn hb-btn--primary" id="startReview">Ôn ngay</button>
+  </div>
+
+  <section id="reviewPanel" class="review hidden" aria-live="polite">
+    <p class="small" id="flashProgress"></p>
+    <h2 id="flashPhrase"></h2>
+    <p class="small" id="flashIpa"></p>
+    <div id="flashBack" class="hidden">
+      <p class="vi" id="flashVi"></p>
+      <p class="en" id="flashEn"></p>
+      <p class="sample" id="flashSample"></p>
+    </div>
+    <div class="flip" id="flipWrap">
+      <button class="hb-btn hb-btn--secondary" id="flipBtn">Lật để xem nghĩa</button>
+    </div>
+    <div class="actions hidden" id="flashActions">
+      <button class="hb-btn hb-btn--secondary" id="missBtn">Chưa nhớ</button>
+      <button class="hb-btn hb-btn--primary" id="knowBtn">Nhớ rồi</button>
+    </div>
+    <button class="link close" id="closeReview">Đóng ôn tập</button>
+  </section>
+
+  <ul id="list" class="list"></ul>
+  <div id="empty" class="empty hidden"></div>
+</div>
+
+<script src="chunk-list.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+let tab = "review";
+let queue = [];
+let qi = 0;
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function items() {
+  return Object.values(ChunkList.load()).sort((a, b) => a.savedAt - b.savedAt);
+}
+
+function patch(id, changes) {
+  const data = ChunkList.load();
+  if (!data[id]) return;
+  Object.assign(data[id], changes);
+  ChunkList.save(data);
+}
+
+function remove(id) {
+  const data = ChunkList.load();
+  delete data[id];
+  ChunkList.save(data);
+}
+
+function card(x) {
+  const link = encodeURI(x.file) + "?phrase=" + encodeURIComponent(x.phraseId);
+  const moveLabel = x.status === "review" ? "Đã thuộc" : "Ôn lại";
+  return `<li class="item">
+    <div>
+      <h3>${esc(x.phrase)}<span class="ipa">${esc(x.ipa)}</span></h3>
+      <p class="vi">${esc(x.vi)}</p>
+      <p class="from">Từ bài: ${esc(x.lesson)}</p>
+    </div>
+    <div class="item-actions">
+      <a class="hb-btn hb-btn--secondary sm" href="${link}">Xem trong bài</a>
+      <button class="hb-btn hb-btn--secondary sm" data-move="${esc(x.id)}">${moveLabel}</button>
+      <button class="link danger" data-del="${esc(x.id)}">Xóa</button>
+    </div>
+  </li>`;
+}
+
+function render() {
+  const all = items();
+  const review = all.filter(x => x.status === "review");
+  const mastered = all.filter(x => x.status === "mastered");
+  $("cnt-review").textContent = review.length;
+  $("cnt-mastered").textContent = mastered.length;
+  $("startReview").disabled = review.length === 0;
+
+  const list = tab === "review" ? review : mastered;
+  $("list").innerHTML = list.map(card).join("");
+
+  const empty = $("empty");
+  empty.classList.toggle("hidden", list.length > 0);
+  empty.textContent = tab === "review"
+    ? 'Chưa có chunk nào cần ôn. Vào một bài học, chọn cụm từ và bấm "Lưu để ôn".'
+    : "Chưa có chunk nào ở mục Đã thuộc.";
+}
+
+// Ôn ngay: lật thẻ như flashcard
+function showCard() {
+  const current = items().find(x => x.id === queue[qi]);
+  if (!current) return finish();
+  $("flashProgress").textContent = `${qi + 1} / ${queue.length}`;
+  $("flashPhrase").textContent = current.phrase;
+  $("flashIpa").textContent = current.ipa;
+  $("flashVi").textContent = current.vi;
+  $("flashEn").textContent = current.en;
+  $("flashSample").textContent = `"${current.sample}"`;
+  $("flashBack").classList.add("hidden");
+  $("flipWrap").classList.remove("hidden");
+  $("flashActions").classList.add("hidden");
+}
+
+function finish() {
+  $("flashProgress").textContent = "";
+  $("flashPhrase").textContent = "Bạn đã ôn xong các chunk.";
+  $("flashIpa").textContent = "";
+  $("flashBack").classList.add("hidden");
+  $("flipWrap").classList.add("hidden");
+  $("flashActions").classList.add("hidden");
+  render();
+}
+
+function startReview() {
+  queue = items().filter(x => x.status === "review").map(x => x.id);
+  if (queue.length === 0) return;
+  qi = 0;
+  $("reviewPanel").classList.remove("hidden");
+  $("reviewPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+  showCard();
+}
+
+function closeReview() {
+  $("reviewPanel").classList.add("hidden");
+  render();
+}
+
+document.querySelectorAll(".tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    tab = btn.dataset.tab;
+    document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b === btn));
+    render();
+  });
+});
+
+$("list").addEventListener("click", (e) => {
+  const move = e.target.closest("[data-move]");
+  const del = e.target.closest("[data-del]");
+  if (move) {
+    const id = move.dataset.move;
+    const current = items().find(x => x.id === id);
+    if (current) patch(id, { status: current.status === "review" ? "mastered" : "review" });
+    render();
+  }
+  if (del) {
+    remove(del.dataset.del);
+    render();
+  }
+});
+
+$("startReview").addEventListener("click", startReview);
+$("closeReview").addEventListener("click", closeReview);
+
+$("flipBtn").addEventListener("click", () => {
+  $("flashBack").classList.remove("hidden");
+  $("flipWrap").classList.add("hidden");
+  $("flashActions").classList.remove("hidden");
+});
+
+$("missBtn").addEventListener("click", () => {
+  qi = (qi + 1) % queue.length;
+  showCard();
+});
+
+$("knowBtn").addEventListener("click", () => {
+  patch(queue[qi], { status: "mastered" });
+  queue.splice(qi, 1);
+  if (queue.length === 0) return finish();
+  qi = qi % queue.length;
+  showCard();
+});
+
+render();
+</script>
+</body>
+</html>

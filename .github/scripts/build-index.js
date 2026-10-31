@@ -35,7 +35,7 @@ async function callGemini(text) {
 
 async function main() {
   // Lấy tất cả file html trừ index.html
-  const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && f !== "index.html");
+  const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && f !== "index.html" && f !== "chunks.html");
   files.sort();
 
   let cardsHtml = "";
@@ -128,6 +128,8 @@ a{color:inherit}
 .hero .hb-display em{font-style:normal;color:var(--primary)}
 .hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
 
+.review-note{margin-top:16px;font-size:14px;color:var(--primary-text);font-weight:600}
+
 /* Stat band */
 .stats{background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-lg)}
 .stats-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:32px 24px}
@@ -210,8 +212,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
     <div class="hero-actions">
       <a class="hb-btn hb-btn--primary" href="#bai-hoc">Xem bài học →</a>
       <a class="hb-btn hb-btn--secondary" href="#cach-hoc">Cách học</a>
-      <a class="hb-btn hb-btn--secondary" href="#on-lai">Xem lại chunks đã học</a>
+      <a class="hb-btn hb-btn--secondary" href="chunks.html">Xem lại chunks đã học</a>
     </div>
+    <p class="review-note" id="reviewNote"></p>
   </header>
 
   <section class="stats" aria-label="Số liệu">
@@ -300,6 +303,13 @@ ${cardsHtml}
 <script>
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".lesson-card");
+
+// Đếm chunk đang muốn ôn (lưu bởi chunk-list.js trên trình duyệt này)
+try {
+  const saved = Object.values(JSON.parse(localStorage.getItem("6me-chunks-v1")) || {});
+  const due = saved.filter(x => x.status === "review").length;
+  if (due > 0) document.getElementById("reviewNote").textContent = "Bạn đang có " + due + " chunk cần ôn.";
+} catch (e) {}
 
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase().trim();
