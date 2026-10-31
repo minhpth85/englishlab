@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Work Sans', sans-serif;
       background-color: #f8fafc;
       color: #1e293b;
     }
@@ -69,6 +69,474 @@
       body .nav-tab-btn, body #backToIndexBtn { font-size: 0.8125rem; }
     }
   </style>
+<style id="herbloom-overrides">
+body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;background:#fbfaf5 !important}
+.bg-gradient-to-tr,.bg-gradient-to-r,.bg-gradient-to-br,.bg-gradient-to-b,.bg-gradient-to-l{background-image:none !important;background-color:#32854d !important}
+.struct-highlight{background:#EBF6EE;border-bottom:2px dotted #32854d;padding:0 2px;border-radius:4px;cursor:pointer}
+.struct-card.flash{background:#EBF6EE !important}
+.bg-emerald-50{background-color:#EBF6EE !important}
+.hover\:bg-emerald-50:hover{background-color:#EBF6EE !important}
+.text-emerald-50{color:#EBF6EE !important}
+.hover\:text-emerald-50:hover{color:#EBF6EE !important}
+.border-emerald-50{border-color:#EBF6EE !important}
+.hover\:border-emerald-50:hover{border-color:#EBF6EE !important}
+.bg-emerald-100{background-color:#EBF6EE !important}
+.hover\:bg-emerald-100:hover{background-color:#EBF6EE !important}
+.text-emerald-100{color:#EBF6EE !important}
+.hover\:text-emerald-100:hover{color:#EBF6EE !important}
+.border-emerald-100{border-color:#EBF6EE !important}
+.hover\:border-emerald-100:hover{border-color:#EBF6EE !important}
+.bg-emerald-200{background-color:#B8E0C2 !important}
+.hover\:bg-emerald-200:hover{background-color:#B8E0C2 !important}
+.text-emerald-200{color:#B8E0C2 !important}
+.hover\:text-emerald-200:hover{color:#B8E0C2 !important}
+.border-emerald-200{border-color:#B8E0C2 !important}
+.hover\:border-emerald-200:hover{border-color:#B8E0C2 !important}
+.bg-emerald-300{background-color:#B8E0C2 !important}
+.hover\:bg-emerald-300:hover{background-color:#B8E0C2 !important}
+.text-emerald-300{color:#B8E0C2 !important}
+.hover\:text-emerald-300:hover{color:#B8E0C2 !important}
+.border-emerald-300{border-color:#B8E0C2 !important}
+.hover\:border-emerald-300:hover{border-color:#B8E0C2 !important}
+.bg-emerald-400{background-color:#4a9b60 !important}
+.hover\:bg-emerald-400:hover{background-color:#4a9b60 !important}
+.text-emerald-400{color:#4a9b60 !important}
+.hover\:text-emerald-400:hover{color:#4a9b60 !important}
+.border-emerald-400{border-color:#4a9b60 !important}
+.hover\:border-emerald-400:hover{border-color:#4a9b60 !important}
+.bg-emerald-500{background-color:#4a9b60 !important}
+.hover\:bg-emerald-500:hover{background-color:#4a9b60 !important}
+.text-emerald-500{color:#4a9b60 !important}
+.hover\:text-emerald-500:hover{color:#4a9b60 !important}
+.border-emerald-500{border-color:#4a9b60 !important}
+.hover\:border-emerald-500:hover{border-color:#4a9b60 !important}
+.bg-emerald-600{background-color:#32854d !important}
+.hover\:bg-emerald-600:hover{background-color:#32854d !important}
+.text-emerald-600{color:#32854d !important}
+.hover\:text-emerald-600:hover{color:#32854d !important}
+.border-emerald-600{border-color:#32854d !important}
+.hover\:border-emerald-600:hover{border-color:#32854d !important}
+.bg-emerald-700{background-color:#317345 !important}
+.hover\:bg-emerald-700:hover{background-color:#317345 !important}
+.text-emerald-700{color:#317345 !important}
+.hover\:text-emerald-700:hover{color:#317345 !important}
+.border-emerald-700{border-color:#317345 !important}
+.hover\:border-emerald-700:hover{border-color:#317345 !important}
+.bg-emerald-800{background-color:#22482b !important}
+.hover\:bg-emerald-800:hover{background-color:#22482b !important}
+.text-emerald-800{color:#22482b !important}
+.hover\:text-emerald-800:hover{color:#22482b !important}
+.border-emerald-800{border-color:#22482b !important}
+.hover\:border-emerald-800:hover{border-color:#22482b !important}
+.bg-emerald-900{background-color:#17301d !important}
+.hover\:bg-emerald-900:hover{background-color:#17301d !important}
+.text-emerald-900{color:#17301d !important}
+.hover\:text-emerald-900:hover{color:#17301d !important}
+.border-emerald-900{border-color:#17301d !important}
+.hover\:border-emerald-900:hover{border-color:#17301d !important}
+.bg-emerald-950{background-color:#17301d !important}
+.hover\:bg-emerald-950:hover{background-color:#17301d !important}
+.text-emerald-950{color:#17301d !important}
+.hover\:text-emerald-950:hover{color:#17301d !important}
+.border-emerald-950{border-color:#17301d !important}
+.hover\:border-emerald-950:hover{border-color:#17301d !important}
+.bg-teal-50{background-color:#EBF6EE !important}
+.hover\:bg-teal-50:hover{background-color:#EBF6EE !important}
+.text-teal-50{color:#EBF6EE !important}
+.hover\:text-teal-50:hover{color:#EBF6EE !important}
+.border-teal-50{border-color:#EBF6EE !important}
+.hover\:border-teal-50:hover{border-color:#EBF6EE !important}
+.bg-teal-100{background-color:#EBF6EE !important}
+.hover\:bg-teal-100:hover{background-color:#EBF6EE !important}
+.text-teal-100{color:#EBF6EE !important}
+.hover\:text-teal-100:hover{color:#EBF6EE !important}
+.border-teal-100{border-color:#EBF6EE !important}
+.hover\:border-teal-100:hover{border-color:#EBF6EE !important}
+.bg-teal-200{background-color:#B8E0C2 !important}
+.hover\:bg-teal-200:hover{background-color:#B8E0C2 !important}
+.text-teal-200{color:#B8E0C2 !important}
+.hover\:text-teal-200:hover{color:#B8E0C2 !important}
+.border-teal-200{border-color:#B8E0C2 !important}
+.hover\:border-teal-200:hover{border-color:#B8E0C2 !important}
+.bg-teal-300{background-color:#B8E0C2 !important}
+.hover\:bg-teal-300:hover{background-color:#B8E0C2 !important}
+.text-teal-300{color:#B8E0C2 !important}
+.hover\:text-teal-300:hover{color:#B8E0C2 !important}
+.border-teal-300{border-color:#B8E0C2 !important}
+.hover\:border-teal-300:hover{border-color:#B8E0C2 !important}
+.bg-teal-400{background-color:#4a9b60 !important}
+.hover\:bg-teal-400:hover{background-color:#4a9b60 !important}
+.text-teal-400{color:#4a9b60 !important}
+.hover\:text-teal-400:hover{color:#4a9b60 !important}
+.border-teal-400{border-color:#4a9b60 !important}
+.hover\:border-teal-400:hover{border-color:#4a9b60 !important}
+.bg-teal-500{background-color:#4a9b60 !important}
+.hover\:bg-teal-500:hover{background-color:#4a9b60 !important}
+.text-teal-500{color:#4a9b60 !important}
+.hover\:text-teal-500:hover{color:#4a9b60 !important}
+.border-teal-500{border-color:#4a9b60 !important}
+.hover\:border-teal-500:hover{border-color:#4a9b60 !important}
+.bg-teal-600{background-color:#32854d !important}
+.hover\:bg-teal-600:hover{background-color:#32854d !important}
+.text-teal-600{color:#32854d !important}
+.hover\:text-teal-600:hover{color:#32854d !important}
+.border-teal-600{border-color:#32854d !important}
+.hover\:border-teal-600:hover{border-color:#32854d !important}
+.bg-teal-700{background-color:#317345 !important}
+.hover\:bg-teal-700:hover{background-color:#317345 !important}
+.text-teal-700{color:#317345 !important}
+.hover\:text-teal-700:hover{color:#317345 !important}
+.border-teal-700{border-color:#317345 !important}
+.hover\:border-teal-700:hover{border-color:#317345 !important}
+.bg-teal-800{background-color:#22482b !important}
+.hover\:bg-teal-800:hover{background-color:#22482b !important}
+.text-teal-800{color:#22482b !important}
+.hover\:text-teal-800:hover{color:#22482b !important}
+.border-teal-800{border-color:#22482b !important}
+.hover\:border-teal-800:hover{border-color:#22482b !important}
+.bg-teal-900{background-color:#17301d !important}
+.hover\:bg-teal-900:hover{background-color:#17301d !important}
+.text-teal-900{color:#17301d !important}
+.hover\:text-teal-900:hover{color:#17301d !important}
+.border-teal-900{border-color:#17301d !important}
+.hover\:border-teal-900:hover{border-color:#17301d !important}
+.bg-teal-950{background-color:#17301d !important}
+.hover\:bg-teal-950:hover{background-color:#17301d !important}
+.text-teal-950{color:#17301d !important}
+.hover\:text-teal-950:hover{color:#17301d !important}
+.border-teal-950{border-color:#17301d !important}
+.hover\:border-teal-950:hover{border-color:#17301d !important}
+.bg-indigo-50{background-color:#EBF6EE !important}
+.hover\:bg-indigo-50:hover{background-color:#EBF6EE !important}
+.text-indigo-50{color:#EBF6EE !important}
+.hover\:text-indigo-50:hover{color:#EBF6EE !important}
+.border-indigo-50{border-color:#EBF6EE !important}
+.hover\:border-indigo-50:hover{border-color:#EBF6EE !important}
+.bg-indigo-100{background-color:#EBF6EE !important}
+.hover\:bg-indigo-100:hover{background-color:#EBF6EE !important}
+.text-indigo-100{color:#EBF6EE !important}
+.hover\:text-indigo-100:hover{color:#EBF6EE !important}
+.border-indigo-100{border-color:#EBF6EE !important}
+.hover\:border-indigo-100:hover{border-color:#EBF6EE !important}
+.bg-indigo-200{background-color:#B8E0C2 !important}
+.hover\:bg-indigo-200:hover{background-color:#B8E0C2 !important}
+.text-indigo-200{color:#B8E0C2 !important}
+.hover\:text-indigo-200:hover{color:#B8E0C2 !important}
+.border-indigo-200{border-color:#B8E0C2 !important}
+.hover\:border-indigo-200:hover{border-color:#B8E0C2 !important}
+.bg-indigo-300{background-color:#B8E0C2 !important}
+.hover\:bg-indigo-300:hover{background-color:#B8E0C2 !important}
+.text-indigo-300{color:#B8E0C2 !important}
+.hover\:text-indigo-300:hover{color:#B8E0C2 !important}
+.border-indigo-300{border-color:#B8E0C2 !important}
+.hover\:border-indigo-300:hover{border-color:#B8E0C2 !important}
+.bg-indigo-400{background-color:#4a9b60 !important}
+.hover\:bg-indigo-400:hover{background-color:#4a9b60 !important}
+.text-indigo-400{color:#4a9b60 !important}
+.hover\:text-indigo-400:hover{color:#4a9b60 !important}
+.border-indigo-400{border-color:#4a9b60 !important}
+.hover\:border-indigo-400:hover{border-color:#4a9b60 !important}
+.bg-indigo-500{background-color:#4a9b60 !important}
+.hover\:bg-indigo-500:hover{background-color:#4a9b60 !important}
+.text-indigo-500{color:#4a9b60 !important}
+.hover\:text-indigo-500:hover{color:#4a9b60 !important}
+.border-indigo-500{border-color:#4a9b60 !important}
+.hover\:border-indigo-500:hover{border-color:#4a9b60 !important}
+.bg-indigo-600{background-color:#32854d !important}
+.hover\:bg-indigo-600:hover{background-color:#32854d !important}
+.text-indigo-600{color:#32854d !important}
+.hover\:text-indigo-600:hover{color:#32854d !important}
+.border-indigo-600{border-color:#32854d !important}
+.hover\:border-indigo-600:hover{border-color:#32854d !important}
+.bg-indigo-700{background-color:#317345 !important}
+.hover\:bg-indigo-700:hover{background-color:#317345 !important}
+.text-indigo-700{color:#317345 !important}
+.hover\:text-indigo-700:hover{color:#317345 !important}
+.border-indigo-700{border-color:#317345 !important}
+.hover\:border-indigo-700:hover{border-color:#317345 !important}
+.bg-indigo-800{background-color:#22482b !important}
+.hover\:bg-indigo-800:hover{background-color:#22482b !important}
+.text-indigo-800{color:#22482b !important}
+.hover\:text-indigo-800:hover{color:#22482b !important}
+.border-indigo-800{border-color:#22482b !important}
+.hover\:border-indigo-800:hover{border-color:#22482b !important}
+.bg-indigo-900{background-color:#17301d !important}
+.hover\:bg-indigo-900:hover{background-color:#17301d !important}
+.text-indigo-900{color:#17301d !important}
+.hover\:text-indigo-900:hover{color:#17301d !important}
+.border-indigo-900{border-color:#17301d !important}
+.hover\:border-indigo-900:hover{border-color:#17301d !important}
+.bg-indigo-950{background-color:#17301d !important}
+.hover\:bg-indigo-950:hover{background-color:#17301d !important}
+.text-indigo-950{color:#17301d !important}
+.hover\:text-indigo-950:hover{color:#17301d !important}
+.border-indigo-950{border-color:#17301d !important}
+.hover\:border-indigo-950:hover{border-color:#17301d !important}
+.bg-blue-50{background-color:#EBF6EE !important}
+.hover\:bg-blue-50:hover{background-color:#EBF6EE !important}
+.text-blue-50{color:#EBF6EE !important}
+.hover\:text-blue-50:hover{color:#EBF6EE !important}
+.border-blue-50{border-color:#EBF6EE !important}
+.hover\:border-blue-50:hover{border-color:#EBF6EE !important}
+.bg-blue-100{background-color:#EBF6EE !important}
+.hover\:bg-blue-100:hover{background-color:#EBF6EE !important}
+.text-blue-100{color:#EBF6EE !important}
+.hover\:text-blue-100:hover{color:#EBF6EE !important}
+.border-blue-100{border-color:#EBF6EE !important}
+.hover\:border-blue-100:hover{border-color:#EBF6EE !important}
+.bg-blue-200{background-color:#B8E0C2 !important}
+.hover\:bg-blue-200:hover{background-color:#B8E0C2 !important}
+.text-blue-200{color:#B8E0C2 !important}
+.hover\:text-blue-200:hover{color:#B8E0C2 !important}
+.border-blue-200{border-color:#B8E0C2 !important}
+.hover\:border-blue-200:hover{border-color:#B8E0C2 !important}
+.bg-blue-300{background-color:#B8E0C2 !important}
+.hover\:bg-blue-300:hover{background-color:#B8E0C2 !important}
+.text-blue-300{color:#B8E0C2 !important}
+.hover\:text-blue-300:hover{color:#B8E0C2 !important}
+.border-blue-300{border-color:#B8E0C2 !important}
+.hover\:border-blue-300:hover{border-color:#B8E0C2 !important}
+.bg-blue-400{background-color:#4a9b60 !important}
+.hover\:bg-blue-400:hover{background-color:#4a9b60 !important}
+.text-blue-400{color:#4a9b60 !important}
+.hover\:text-blue-400:hover{color:#4a9b60 !important}
+.border-blue-400{border-color:#4a9b60 !important}
+.hover\:border-blue-400:hover{border-color:#4a9b60 !important}
+.bg-blue-500{background-color:#4a9b60 !important}
+.hover\:bg-blue-500:hover{background-color:#4a9b60 !important}
+.text-blue-500{color:#4a9b60 !important}
+.hover\:text-blue-500:hover{color:#4a9b60 !important}
+.border-blue-500{border-color:#4a9b60 !important}
+.hover\:border-blue-500:hover{border-color:#4a9b60 !important}
+.bg-blue-600{background-color:#32854d !important}
+.hover\:bg-blue-600:hover{background-color:#32854d !important}
+.text-blue-600{color:#32854d !important}
+.hover\:text-blue-600:hover{color:#32854d !important}
+.border-blue-600{border-color:#32854d !important}
+.hover\:border-blue-600:hover{border-color:#32854d !important}
+.bg-blue-700{background-color:#317345 !important}
+.hover\:bg-blue-700:hover{background-color:#317345 !important}
+.text-blue-700{color:#317345 !important}
+.hover\:text-blue-700:hover{color:#317345 !important}
+.border-blue-700{border-color:#317345 !important}
+.hover\:border-blue-700:hover{border-color:#317345 !important}
+.bg-blue-800{background-color:#22482b !important}
+.hover\:bg-blue-800:hover{background-color:#22482b !important}
+.text-blue-800{color:#22482b !important}
+.hover\:text-blue-800:hover{color:#22482b !important}
+.border-blue-800{border-color:#22482b !important}
+.hover\:border-blue-800:hover{border-color:#22482b !important}
+.bg-blue-900{background-color:#17301d !important}
+.hover\:bg-blue-900:hover{background-color:#17301d !important}
+.text-blue-900{color:#17301d !important}
+.hover\:text-blue-900:hover{color:#17301d !important}
+.border-blue-900{border-color:#17301d !important}
+.hover\:border-blue-900:hover{border-color:#17301d !important}
+.bg-blue-950{background-color:#17301d !important}
+.hover\:bg-blue-950:hover{background-color:#17301d !important}
+.text-blue-950{color:#17301d !important}
+.hover\:text-blue-950:hover{color:#17301d !important}
+.border-blue-950{border-color:#17301d !important}
+.hover\:border-blue-950:hover{border-color:#17301d !important}
+.bg-sky-50{background-color:#EBF6EE !important}
+.hover\:bg-sky-50:hover{background-color:#EBF6EE !important}
+.text-sky-50{color:#EBF6EE !important}
+.hover\:text-sky-50:hover{color:#EBF6EE !important}
+.border-sky-50{border-color:#EBF6EE !important}
+.hover\:border-sky-50:hover{border-color:#EBF6EE !important}
+.bg-sky-100{background-color:#EBF6EE !important}
+.hover\:bg-sky-100:hover{background-color:#EBF6EE !important}
+.text-sky-100{color:#EBF6EE !important}
+.hover\:text-sky-100:hover{color:#EBF6EE !important}
+.border-sky-100{border-color:#EBF6EE !important}
+.hover\:border-sky-100:hover{border-color:#EBF6EE !important}
+.bg-sky-200{background-color:#B8E0C2 !important}
+.hover\:bg-sky-200:hover{background-color:#B8E0C2 !important}
+.text-sky-200{color:#B8E0C2 !important}
+.hover\:text-sky-200:hover{color:#B8E0C2 !important}
+.border-sky-200{border-color:#B8E0C2 !important}
+.hover\:border-sky-200:hover{border-color:#B8E0C2 !important}
+.bg-sky-300{background-color:#B8E0C2 !important}
+.hover\:bg-sky-300:hover{background-color:#B8E0C2 !important}
+.text-sky-300{color:#B8E0C2 !important}
+.hover\:text-sky-300:hover{color:#B8E0C2 !important}
+.border-sky-300{border-color:#B8E0C2 !important}
+.hover\:border-sky-300:hover{border-color:#B8E0C2 !important}
+.bg-sky-400{background-color:#4a9b60 !important}
+.hover\:bg-sky-400:hover{background-color:#4a9b60 !important}
+.text-sky-400{color:#4a9b60 !important}
+.hover\:text-sky-400:hover{color:#4a9b60 !important}
+.border-sky-400{border-color:#4a9b60 !important}
+.hover\:border-sky-400:hover{border-color:#4a9b60 !important}
+.bg-sky-500{background-color:#4a9b60 !important}
+.hover\:bg-sky-500:hover{background-color:#4a9b60 !important}
+.text-sky-500{color:#4a9b60 !important}
+.hover\:text-sky-500:hover{color:#4a9b60 !important}
+.border-sky-500{border-color:#4a9b60 !important}
+.hover\:border-sky-500:hover{border-color:#4a9b60 !important}
+.bg-sky-600{background-color:#32854d !important}
+.hover\:bg-sky-600:hover{background-color:#32854d !important}
+.text-sky-600{color:#32854d !important}
+.hover\:text-sky-600:hover{color:#32854d !important}
+.border-sky-600{border-color:#32854d !important}
+.hover\:border-sky-600:hover{border-color:#32854d !important}
+.bg-sky-700{background-color:#317345 !important}
+.hover\:bg-sky-700:hover{background-color:#317345 !important}
+.text-sky-700{color:#317345 !important}
+.hover\:text-sky-700:hover{color:#317345 !important}
+.border-sky-700{border-color:#317345 !important}
+.hover\:border-sky-700:hover{border-color:#317345 !important}
+.bg-sky-800{background-color:#22482b !important}
+.hover\:bg-sky-800:hover{background-color:#22482b !important}
+.text-sky-800{color:#22482b !important}
+.hover\:text-sky-800:hover{color:#22482b !important}
+.border-sky-800{border-color:#22482b !important}
+.hover\:border-sky-800:hover{border-color:#22482b !important}
+.bg-sky-900{background-color:#17301d !important}
+.hover\:bg-sky-900:hover{background-color:#17301d !important}
+.text-sky-900{color:#17301d !important}
+.hover\:text-sky-900:hover{color:#17301d !important}
+.border-sky-900{border-color:#17301d !important}
+.hover\:border-sky-900:hover{border-color:#17301d !important}
+.bg-sky-950{background-color:#17301d !important}
+.hover\:bg-sky-950:hover{background-color:#17301d !important}
+.text-sky-950{color:#17301d !important}
+.hover\:text-sky-950:hover{color:#17301d !important}
+.border-sky-950{border-color:#17301d !important}
+.hover\:border-sky-950:hover{border-color:#17301d !important}
+.bg-cyan-50{background-color:#EBF6EE !important}
+.hover\:bg-cyan-50:hover{background-color:#EBF6EE !important}
+.text-cyan-50{color:#EBF6EE !important}
+.hover\:text-cyan-50:hover{color:#EBF6EE !important}
+.border-cyan-50{border-color:#EBF6EE !important}
+.hover\:border-cyan-50:hover{border-color:#EBF6EE !important}
+.bg-cyan-100{background-color:#EBF6EE !important}
+.hover\:bg-cyan-100:hover{background-color:#EBF6EE !important}
+.text-cyan-100{color:#EBF6EE !important}
+.hover\:text-cyan-100:hover{color:#EBF6EE !important}
+.border-cyan-100{border-color:#EBF6EE !important}
+.hover\:border-cyan-100:hover{border-color:#EBF6EE !important}
+.bg-cyan-200{background-color:#B8E0C2 !important}
+.hover\:bg-cyan-200:hover{background-color:#B8E0C2 !important}
+.text-cyan-200{color:#B8E0C2 !important}
+.hover\:text-cyan-200:hover{color:#B8E0C2 !important}
+.border-cyan-200{border-color:#B8E0C2 !important}
+.hover\:border-cyan-200:hover{border-color:#B8E0C2 !important}
+.bg-cyan-300{background-color:#B8E0C2 !important}
+.hover\:bg-cyan-300:hover{background-color:#B8E0C2 !important}
+.text-cyan-300{color:#B8E0C2 !important}
+.hover\:text-cyan-300:hover{color:#B8E0C2 !important}
+.border-cyan-300{border-color:#B8E0C2 !important}
+.hover\:border-cyan-300:hover{border-color:#B8E0C2 !important}
+.bg-cyan-400{background-color:#4a9b60 !important}
+.hover\:bg-cyan-400:hover{background-color:#4a9b60 !important}
+.text-cyan-400{color:#4a9b60 !important}
+.hover\:text-cyan-400:hover{color:#4a9b60 !important}
+.border-cyan-400{border-color:#4a9b60 !important}
+.hover\:border-cyan-400:hover{border-color:#4a9b60 !important}
+.bg-cyan-500{background-color:#4a9b60 !important}
+.hover\:bg-cyan-500:hover{background-color:#4a9b60 !important}
+.text-cyan-500{color:#4a9b60 !important}
+.hover\:text-cyan-500:hover{color:#4a9b60 !important}
+.border-cyan-500{border-color:#4a9b60 !important}
+.hover\:border-cyan-500:hover{border-color:#4a9b60 !important}
+.bg-cyan-600{background-color:#32854d !important}
+.hover\:bg-cyan-600:hover{background-color:#32854d !important}
+.text-cyan-600{color:#32854d !important}
+.hover\:text-cyan-600:hover{color:#32854d !important}
+.border-cyan-600{border-color:#32854d !important}
+.hover\:border-cyan-600:hover{border-color:#32854d !important}
+.bg-cyan-700{background-color:#317345 !important}
+.hover\:bg-cyan-700:hover{background-color:#317345 !important}
+.text-cyan-700{color:#317345 !important}
+.hover\:text-cyan-700:hover{color:#317345 !important}
+.border-cyan-700{border-color:#317345 !important}
+.hover\:border-cyan-700:hover{border-color:#317345 !important}
+.bg-cyan-800{background-color:#22482b !important}
+.hover\:bg-cyan-800:hover{background-color:#22482b !important}
+.text-cyan-800{color:#22482b !important}
+.hover\:text-cyan-800:hover{color:#22482b !important}
+.border-cyan-800{border-color:#22482b !important}
+.hover\:border-cyan-800:hover{border-color:#22482b !important}
+.bg-cyan-900{background-color:#17301d !important}
+.hover\:bg-cyan-900:hover{background-color:#17301d !important}
+.text-cyan-900{color:#17301d !important}
+.hover\:text-cyan-900:hover{color:#17301d !important}
+.border-cyan-900{border-color:#17301d !important}
+.hover\:border-cyan-900:hover{border-color:#17301d !important}
+.bg-cyan-950{background-color:#17301d !important}
+.hover\:bg-cyan-950:hover{background-color:#17301d !important}
+.text-cyan-950{color:#17301d !important}
+.hover\:text-cyan-950:hover{color:#17301d !important}
+.border-cyan-950{border-color:#17301d !important}
+.hover\:border-cyan-950:hover{border-color:#17301d !important}
+.bg-violet-50{background-color:#EBF6EE !important}
+.hover\:bg-violet-50:hover{background-color:#EBF6EE !important}
+.text-violet-50{color:#EBF6EE !important}
+.hover\:text-violet-50:hover{color:#EBF6EE !important}
+.border-violet-50{border-color:#EBF6EE !important}
+.hover\:border-violet-50:hover{border-color:#EBF6EE !important}
+.bg-violet-100{background-color:#EBF6EE !important}
+.hover\:bg-violet-100:hover{background-color:#EBF6EE !important}
+.text-violet-100{color:#EBF6EE !important}
+.hover\:text-violet-100:hover{color:#EBF6EE !important}
+.border-violet-100{border-color:#EBF6EE !important}
+.hover\:border-violet-100:hover{border-color:#EBF6EE !important}
+.bg-violet-200{background-color:#B8E0C2 !important}
+.hover\:bg-violet-200:hover{background-color:#B8E0C2 !important}
+.text-violet-200{color:#B8E0C2 !important}
+.hover\:text-violet-200:hover{color:#B8E0C2 !important}
+.border-violet-200{border-color:#B8E0C2 !important}
+.hover\:border-violet-200:hover{border-color:#B8E0C2 !important}
+.bg-violet-300{background-color:#B8E0C2 !important}
+.hover\:bg-violet-300:hover{background-color:#B8E0C2 !important}
+.text-violet-300{color:#B8E0C2 !important}
+.hover\:text-violet-300:hover{color:#B8E0C2 !important}
+.border-violet-300{border-color:#B8E0C2 !important}
+.hover\:border-violet-300:hover{border-color:#B8E0C2 !important}
+.bg-violet-400{background-color:#4a9b60 !important}
+.hover\:bg-violet-400:hover{background-color:#4a9b60 !important}
+.text-violet-400{color:#4a9b60 !important}
+.hover\:text-violet-400:hover{color:#4a9b60 !important}
+.border-violet-400{border-color:#4a9b60 !important}
+.hover\:border-violet-400:hover{border-color:#4a9b60 !important}
+.bg-violet-500{background-color:#4a9b60 !important}
+.hover\:bg-violet-500:hover{background-color:#4a9b60 !important}
+.text-violet-500{color:#4a9b60 !important}
+.hover\:text-violet-500:hover{color:#4a9b60 !important}
+.border-violet-500{border-color:#4a9b60 !important}
+.hover\:border-violet-500:hover{border-color:#4a9b60 !important}
+.bg-violet-600{background-color:#32854d !important}
+.hover\:bg-violet-600:hover{background-color:#32854d !important}
+.text-violet-600{color:#32854d !important}
+.hover\:text-violet-600:hover{color:#32854d !important}
+.border-violet-600{border-color:#32854d !important}
+.hover\:border-violet-600:hover{border-color:#32854d !important}
+.bg-violet-700{background-color:#317345 !important}
+.hover\:bg-violet-700:hover{background-color:#317345 !important}
+.text-violet-700{color:#317345 !important}
+.hover\:text-violet-700:hover{color:#317345 !important}
+.border-violet-700{border-color:#317345 !important}
+.hover\:border-violet-700:hover{border-color:#317345 !important}
+.bg-violet-800{background-color:#22482b !important}
+.hover\:bg-violet-800:hover{background-color:#22482b !important}
+.text-violet-800{color:#22482b !important}
+.hover\:text-violet-800:hover{color:#22482b !important}
+.border-violet-800{border-color:#22482b !important}
+.hover\:border-violet-800:hover{border-color:#22482b !important}
+.bg-violet-900{background-color:#17301d !important}
+.hover\:bg-violet-900:hover{background-color:#17301d !important}
+.text-violet-900{color:#17301d !important}
+.hover\:text-violet-900:hover{color:#17301d !important}
+.border-violet-900{border-color:#17301d !important}
+.hover\:border-violet-900:hover{border-color:#17301d !important}
+.bg-violet-950{background-color:#17301d !important}
+.hover\:bg-violet-950:hover{background-color:#17301d !important}
+.text-violet-950{color:#17301d !important}
+.hover\:text-violet-950:hover{color:#17301d !important}
+.border-violet-950{border-color:#17301d !important}
+.hover\:border-violet-950:hover{border-color:#17301d !important}
+</style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
@@ -87,7 +555,7 @@
           <h1 class="text-sm sm:text-base font-bold text-slate-800 leading-tight">Is aircon the answer to a heating world?</h1>
           <div class="hidden sm:flex flex-wrap gap-x-3 gap-y-1 text-xs mt-1">
             <a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" rel="noopener" class="text-emerald-700 underline font-semibold">Bài gốc: BBC 6 Minute English</a>
-            <span class="text-slate-400">YouTube: đang cập nhật</span>
+            <a href="https://www.youtube.com/watch?v=npka43vhwNo" target="_blank" rel="noopener" class="text-emerald-700 underline font-semibold">YouTube: nghe video gốc</a>
           </div>
         </div>
       </div>
@@ -112,6 +580,20 @@
   </header>
 
   <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 lg:p-8">
+    <!-- BƯỚC 1: NGHE TRƯỚC -->
+    <section id="listenFirst" class="mb-6 bg-white rounded-2xl border border-emerald-200 shadow-sm p-4 sm:p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Bước 1 · Nghe trước</p>
+          <p class="text-sm text-slate-700 mt-0.5">Nghe đoạn hội thoại một lần trước khi đọc transcript và học cụm từ.</p>
+        </div>
+        <button id="listenBtn" type="button" onclick="openListenFirst()" class="shrink-0 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold">▶ Nghe trước</button>
+      </div>
+      <div id="listenPlayer" class="hidden mt-4 aspect-video rounded-xl overflow-hidden">
+        <iframe class="w-full h-full" src="" data-src="https://www.youtube-nocookie.com/embed/npka43vhwNo" title="Is aircon the answer to a heating world? (BBC 6 Minute English)" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
 
     <!-- TAB 1: STUDY & FULL TRANSCRIPT EXPLORER -->
     <section id="section-study" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -200,7 +682,7 @@
             <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
             </div>
-            <p>No. Extreme heat is a serious health risk too. It is thought that more than 30,000 people across Europe died because of this summer's heat.</p>
+            <p>No. Extreme heat is a serious health risk too. <span class="struct-highlight" data-struct="2">It is thought that more than 30,000 people across Europe died</span> because of this summer's heat.</p>
           </div>
 
           <!-- Turn 9 -->
@@ -208,7 +690,7 @@
             <div class="font-bold text-xs uppercase tracking-wider text-teal-800 mb-1 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-teal-600"></span> Dr Radhika Khosla (BBC The Climate Question)
             </div>
-            <p class="italic text-slate-800">Dr Khosla, a climatologist, says air conditioning is <span class="phrase-highlight" data-phrase-id="life-saving">life-saving</span>. She notes that Singapore's Lee Kuan Yew linked life in the tropics to aircon, and that large parts of the world could not be <span class="phrase-highlight" data-phrase-id="inhabit">inhabited</span> without it.</p>
+            <p class="italic text-slate-800">Dr Khosla, a climatologist, says air conditioning is <span class="phrase-highlight" data-phrase-id="life-saving">life-saving</span>. She notes that Singapore's Lee Kuan Yew linked life in the tropics to aircon, and that large parts of the world could not be inhabited without it.</p>
           </div>
 
           <!-- Turn 10 -->
@@ -248,7 +730,7 @@
             <div class="font-bold text-xs uppercase tracking-wider text-teal-800 mb-1 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-teal-600"></span> Dr Radhika Khosla (BBC The Climate Question)
             </div>
-            <p class="italic text-slate-800">If aircon becomes the first, go-to fix for extreme heat, it puts too much strain on the system. <span class="phrase-highlight" data-phrase-id="the-grid">The grid</span> could collapse and emissions would rise. This creates a <span class="phrase-highlight" data-phrase-id="vicious-cycle">vicious cycle</span>: a warmer world leads to more aircon, which means more energy and emissions, which makes the world warmer still.</p>
+            <p class="italic text-slate-800"><span class="struct-highlight" data-struct="3">If aircon becomes the first, go-to fix for <span class="phrase-highlight" data-phrase-id="extreme-heat">extreme heat</span>, it puts too much strain on the system.</span> <span class="phrase-highlight" data-phrase-id="the-grid">The grid</span> could collapse and emissions would rise. This creates a <span class="phrase-highlight" data-phrase-id="vicious-cycle">vicious cycle</span>: a warmer world leads to more aircon, which means more energy and emissions, which makes the world warmer still.</p>
           </div>
 
           <!-- Turn 15 -->
@@ -256,7 +738,7 @@
             <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 mb-1 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Neil
             </div>
-            <p>Neil explains that <span class="phrase-highlight" data-phrase-id="the-grid">the grid</span> is the network that carries electricity to towns, cities and countries. If demand is too high, you get power cuts.</p>
+            <p>Neil explains that <span class="phrase-highlight" data-phrase-id="the-grid">the grid</span> is the network that carries electricity to towns, cities and countries. If demand is too high, you get <span class="phrase-highlight" data-phrase-id="power-cuts">power cuts</span>.</p>
           </div>
 
           <!-- Turn 16 -->
@@ -280,7 +762,7 @@
             <div class="font-bold text-xs uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Georgie
             </div>
-            <p>Dr Khosla says we should first try <span class="phrase-highlight" data-phrase-id="passive-cooling">passive cooling</span>, which means keeping a space comfortable without using much energy. The first step is to cut <span class="phrase-highlight" data-phrase-id="solar-gain">solar gain</span>, the heat that sunlight brings into a building, mainly through <span class="phrase-highlight" data-phrase-id="shading">shading</span> from trees, curtains or blinds.</p>
+            <p>Dr Khosla says we should first try <span class="phrase-highlight" data-phrase-id="passive-cooling">passive cooling</span>, <span class="struct-highlight" data-struct="1">which means keeping a space comfortable without using much energy</span>. The first step is to cut <span class="phrase-highlight" data-phrase-id="solar-gain">solar gain</span>, the heat that sunlight brings into a building, mainly through shading from trees, curtains or blinds.</p>
           </div>
 
           <!-- Turn 19 -->
@@ -404,6 +886,17 @@
               </div>
             </div>
 
+            <!-- Phát âm và ví dụ đời sống -->
+            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+              <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Phát âm (nối âm, nhấn trọng âm)</p>
+              <p id="detailPronounce" class="text-slate-700 text-xs mt-0.5 leading-relaxed">...</p>
+            </div>
+            <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-xl p-3 text-xs space-y-1">
+              <p class="font-bold text-emerald-800">🧭 Ví dụ trong đời sống của bạn:</p>
+              <p id="detailDailyEn" class="italic text-slate-700">...</p>
+              <p id="detailDailyVi" class="text-slate-600">...</p>
+            </div>
+
             <!-- Speaking Application Box -->
             <div>
               <p class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
@@ -427,9 +920,29 @@
             </button>
           </div>
 
-          <!-- Bottom Summary Indicator -->
+          <!-- 3 cấu trúc câu đáng học -->
+        <div id="structPanel" class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
+          <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">3 cấu trúc câu đáng học</p>
+          <p class="text-xs text-slate-500 mb-3">Các câu có gạch chấm xanh trong bài là những cấu trúc này. Chỉ để học cách viết, không thêm vào danh sách ôn.</p>
+          <div class="space-y-3 text-xs">
+            <div id="struct-card-1" class="struct-card p-3 rounded-lg border border-slate-200">
+              <p class="font-bold text-slate-800">X, which means Y</p>
+              <p class="text-slate-600 mt-1">Dùng để giải thích một khái niệm ngay sau khi nêu nó. Trong bài: "passive cooling, which means keeping a space comfortable..."</p>
+            </div>
+            <div id="struct-card-2" class="struct-card p-3 rounded-lg border border-slate-200">
+              <p class="font-bold text-slate-800">It is thought that + mệnh đề</p>
+              <p class="text-slate-600 mt-1">Dùng khi nói điều được tin là đúng nhưng chưa chắc chắn, giúp câu nói mềm hơn và học thuật hơn.</p>
+            </div>
+            <div id="struct-card-3" class="struct-card p-3 rounded-lg border border-slate-200">
+              <p class="font-bold text-slate-800">If + điều kiện, it puts + gây áp lực lên...</p>
+              <p class="text-slate-600 mt-1">Câu điều kiện nêu một tình huống và hệ quả. Cụm "puts strain on" nghĩa là gây áp lực lên.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Summary Indicator -->
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Đã trích xuất: <strong class="text-slate-700">8 cụm từ học thuật C1/B2</strong></span>
+            <span>Đã trích xuất: <strong class="text-slate-700">8 chunk · nhãn B1–B2</strong></span>
             <button onclick="cycleNextPhrase()" class="text-emerald-700 hover:underline font-semibold flex items-center gap-1">
               <span>Cụm tiếp theo</span> &rarr;
             </button>
@@ -499,13 +1012,13 @@
 
               <div class="space-y-2" id="dialogueOptions">
                 <button onclick="checkDialogueOption(0)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
-                  A. "Khoan đã, thử <strong>passive cooling</strong> và <strong>shading</strong> trước, ví dụ kéo rèm để chặn <strong>solar gain</strong>. Nếu vẫn cần máy lạnh thì chọn loại chạy bằng <strong>sustainable energy</strong>."
+                  A. "Khoan đã, thử <strong>passive cooling</strong> và shading trước, ví dụ kéo rèm để chặn <strong>solar gain</strong>. Nếu vẫn cần máy lạnh thì chọn loại chạy bằng <strong>sustainable energy</strong>."
                 </button>
                 <button onclick="checkDialogueOption(1)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
-                  B. "Mua đi, máy càng mạnh càng tốt, không cần lo gì về <strong>the grid</strong> hay tiền điện."
+                  B. "Mua máy công suất lớn nhất cho chắc, tiền điện tính sau."
                 </button>
                 <button onclick="checkDialogueOption(2)" class="w-full text-left p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-xs font-medium text-slate-700">
-                  C. "Cứ bật máy lạnh hết công suất suốt ngày, không cần che nắng hay làm gì thêm."
+                  C. "Mua loại rẻ nhất rồi bật liên tục, vì tiết kiệm được tiền mua máy."
                 </button>
               </div>
 
@@ -571,7 +1084,8 @@
             </h4>
             <div class="flex flex-wrap gap-1.5 sm:gap-2">
               <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># passive cooling</span>
-              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># shading</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># power cuts</span>
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># extreme heat</span>
               <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># solar gain</span>
               <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># life-saving</span>
               <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100"># vicious cycle</span>
@@ -580,22 +1094,9 @@
             </div>
           </div>
 
-          <!-- IELTS Part 3 Follow-up Questions -->
-          <div class="border-t border-slate-100 pt-3 space-y-2">
-            <h4 class="text-xs sm:text-sm font-bold text-slate-800 flex items-center gap-1.5">
-              <i class="fa-solid fa-comments text-teal-600"></i> Part 3 Discussion Questions (Thảo luận chuyên sâu):
-            </h4>
-            <div class="space-y-2 text-xs">
-              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
-                <p class="font-bold text-slate-800">1. Why do you think more people are installing air conditioning these days?</p>
-                <details class="mt-1"><summary class="cursor-pointer text-emerald-700 font-semibold">Xem gợi ý (thử trả lời trước nhé)</summary><p class="text-slate-600 mt-1 italic">Gợi ý trả lời: Nhắc tới nhiệt độ tăng, các đợt nắng nóng ngày càng thường xuyên, và dự báo số lượng máy lạnh sẽ tăng mạnh trong những năm tới.</p></details>
-              </div>
-              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
-                <p class="font-bold text-slate-800">2. Should governments encourage passive cooling instead of air conditioning?</p>
-                <details class="mt-1"><summary class="cursor-pointer text-emerald-700 font-semibold">Xem gợi ý (thử trả lời trước nhé)</summary><p class="text-slate-600 mt-1 italic">Gợi ý trả lời: Nêu lợi ích tiết kiệm điện và tránh <em>vicious cycle</em>; đồng thời nhìn nhận rằng máy lạnh vẫn <em>life-saving</em> với người già và người bệnh.</p></details>
-              </div>
-            </div>
-          </div>
+          <!-- Danh sách 10 câu hỏi (render từ speakingQuestions) và 3 câu tự đặt -->
+          <div id="speakingQuestions" class="border-t border-slate-100 pt-3 space-y-3"></div>
+          <div id="writingPrompts" class="border-t border-slate-100 pt-3 space-y-3"></div>
         </div>
 
         <!-- Right Side: Model Answer (5 Cols) -->
@@ -613,7 +1114,7 @@
                 "Last summer, my flat became so hot that I <strong>struggled to sleep</strong> for several nights. At first I only used a fan, but it was not enough."
               </p>
               <p>
-                "Then I decided to rely on <strong>passive cooling</strong>. I put up blinds and moved a plant near the window, so the <strong>shading</strong> cut the <strong>solar gain</strong> in the afternoon. The room became noticeably cooler, and I did not need to switch on the aircon as often."
+                "Then I decided to rely on <strong>passive cooling</strong>. I put up blinds and moved a plant near the window, so the shading cut the <strong>solar gain</strong> in the afternoon. The room became noticeably cooler, and I did not need to switch on the aircon as often."
               </p>
               <p>
                 "I think this habit is sensible, because it saves electricity and avoids a <strong>vicious cycle</strong> of more air conditioning and more emissions. Still, for vulnerable people, aircon can be <strong>life-saving</strong>, so I would not dismiss it completely."
@@ -630,7 +1131,7 @@
               • <strong>Diễn đạt tự nhiên:</strong> Dùng <em>"passive cooling"</em> hoặc <em>"a vicious cycle"</em> thay vì lặp lại từ chung chung như <em>"hot"</em> hay <em>"cool"</em>.
             </p>
             <p class="text-slate-600">
-              • <strong>Topic-specific collocations:</strong> Dùng đúng ngữ cảnh <em>"solar gain", "shading", "life-saving", "sustainable energy"</em>.
+              • <strong>Topic-specific collocations:</strong> Dùng đúng ngữ cảnh <em>"solar gain", "power cuts", "life-saving", "sustainable energy"</em>.
             </p>
           </div>
         </div>
@@ -713,112 +1214,163 @@
     const phrasesData = {
       "life-saving": {
         phrase: "life-saving",
-        type: "Adjective (Compound)",
-        ipa: "/ˈlaɪfˌseɪ.vɪŋ/",
-        vietnamese: "Cứu sống người (ngăn người ta khỏi chết)",
+        type: "Compound adjective",
+        level: "B2",
+        ipa: "/ˈlaɪfˌseɪvɪŋ/",
+        vietnamese: "Cứu sống người, rất quan trọng để người ta không bị nguy hiểm đến tính mạng",
         english: "used to describe something that stops people from dying",
         structures: [
           "a life-saving treatment / device",
           "be life-saving for [people] in [places]",
           "life-saving in extreme heat"
         ],
+        pronunciation: "Trọng âm ở LIFE (LIFE-saving). Giữ âm /f/ rõ, đừng đọc thành /laɪs/. Âm 'ving' ngắn và nhẹ.",
         sample: "For older people during a heatwave, a cooling unit can be genuinely life-saving.",
-        speakingTip: "Dùng khi bạn muốn nhấn mạnh tác động lớn của một giải pháp, thay vì chỉ nói 'very important'."
-      },
-      "inhabit": {
-        phrase: "inhabit",
-        type: "Formal Verb",
-        ipa: "/ɪnˈhæb.ɪt/",
-        vietnamese: "Sinh sống, cư trú ở một nơi",
-        english: "to live in a particular place",
-        structures: [
-          "be impossible to inhabit without [something]",
-          "regions inhabited by millions of people"
-        ],
-        sample: "Some regions would be almost impossible to inhabit without cooling in the summer.",
-        speakingTip: "Từ trang trọng hơn 'live in'; hợp khi bạn nói về địa lý và khí hậu trong IELTS Speaking Part 3."
+        speakingTip: "Dùng khi bạn muốn nhấn mạnh tác động lớn của một giải pháp, thay vì chỉ nói 'very important'.",
+        daily: {
+          en: "I use this first-aid guide when I teach beginners, because it is genuinely life-saving.",
+          vi: "Mình dùng tài liệu sơ cứu này khi dạy người mới, vì nó thật sự có thể cứu người."
+        }
       },
       "the-grid": {
         phrase: "the grid",
-        type: "Noun Phrase (Infrastructure)",
+        type: "Noun phrase (infrastructure)",
+        level: "B2",
         ipa: "/ðə ɡrɪd/",
-        vietnamese: "Lưới điện (hệ thống phân phối điện)",
-        english: "the network that distributes electricity across towns, cities and countries",
+        vietnamese: "Lưới điện: hệ thống dây dẫn đưa điện tới thị trấn, thành phố và quốc gia",
+        english: "the network that carries electricity to towns, cities and countries",
         structures: [
-          "the grid can collapse",
+          "the grid could collapse",
           "put strain on the grid",
-          "connect to the grid"
+          "the grid struggles to cope with demand"
         ],
-        sample: "If everyone switches on their air conditioning at once, the grid may struggle to cope.",
-        speakingTip: "Từ khóa khi bàn về năng lượng và hạ tầng; kết hợp với 'put strain on the grid' để nói sâu hơn."
+        pronunciation: "'the' đọc yếu thành /ðə/. Nối 'the grid' thành 'thə-grid'. Âm /r/ nhẹ, không cuốn lưỡi quá.",
+        sample: "If too many people switch on aircon at once, the grid may struggle to cope.",
+        speakingTip: "Dùng 'the grid' khi nói về hệ thống điện chung. Đây là danh từ xác định, nên luôn có 'the'.",
+        daily: {
+          en: "If the grid goes down during a storm, my live lessons get cut off.",
+          vi: "Nếu lưới điện bị sự cố khi có bão, các buổi học trực tiếp của mình sẽ bị gián đoạn."
+        }
       },
       "vicious-cycle": {
         phrase: "vicious cycle",
-        type: "Idiomatic Noun Phrase",
-        ipa: "/ˌvɪʃ.əs ˈsaɪ.kl/",
-        vietnamese: "Vòng luẩn quẩn (giải pháp lại làm vấn đề tệ hơn)",
-        english: "a situation where a solution to one problem makes the original problem even worse",
+        type: "Idiom",
+        level: "B2",
+        ipa: "/ˌvɪʃəs ˈsaɪkl/",
+        vietnamese: "Vòng luẩn quẩn: giải pháp làm vấn đề tệ hơn, rồi lại phải làm nhiều hơn",
+        english: "a situation where a solution to a problem makes the problem even worse",
         structures: [
           "fall into a vicious cycle",
-          "break the vicious cycle",
-          "a vicious cycle of [A] and [B]"
+          "a vicious cycle of [A] and [B]",
+          "break the vicious cycle"
         ],
-        sample: "Relying on air conditioning without cutting emissions can create a vicious cycle.",
-        speakingTip: "Thành ngữ ấn tượng để kết luận một lập luận. Nói 'break the vicious cycle' để đưa ra hướng giải quyết."
+        pronunciation: "Trọng âm ở VI và CY. Đọc 'cycle' là 'sai-kl', âm /l/ cuối nhẹ, không thêm nguyên âm sau /l/.",
+        sample: "Working late to fix my mistakes only created more mistakes. It was a vicious cycle.",
+        speakingTip: "Cụm idiom này giúp câu nói có chiều sâu, rất hữu ích ở IELTS Speaking Part 3.",
+        daily: {
+          en: "I design late at night, feel tired, work slowly the next day, and then stay up even later. It is a vicious cycle.",
+          vi: "Mình thiết kế đến khuya, mệt nên hôm sau làm chậm, rồi lại thức khuya hơn. Đúng là một vòng luẩn quẩn."
+        }
       },
       "passive-cooling": {
         phrase: "passive cooling",
-        type: "Technical Noun Phrase",
-        ipa: "/ˌpæs.ɪv ˈkuː.lɪŋ/",
-        vietnamese: "Làm mát thụ động (làm mát tòa nhà mà không tốn nhiều điện)",
-        english: "making a building cooler without using a lot of energy",
+        type: "Technical noun phrase",
+        level: "B2",
+        ipa: "/ˈpæsɪv ˈkuːlɪŋ/",
+        vietnamese: "Làm mát thụ động: giữ không gian mát mà không tốn nhiều năng lượng",
+        english: "keeping a space comfortable without using much energy",
         structures: [
-          "try passive cooling first",
+          "rely on passive cooling",
           "passive cooling methods such as shading",
-          "rely on passive cooling"
+          "use passive cooling to keep [a room] cool"
         ],
-        sample: "Before buying a unit, we could try passive cooling, like closing the blinds during the day.",
-        speakingTip: "Dùng khi nói về giải pháp bền vững. Cụm này làm câu trả lời có chiều sâu hơn 'keep the house cool'."
-      },
-      "shading": {
-        phrase: "shading",
-        type: "Noun (Gerund)",
-        ipa: "/ˈʃeɪ.dɪŋ/",
-        vietnamese: "Che bóng râm, chặn ánh nắng và nhiệt",
-        english: "blocking the sun's light and heat",
-        structures: [
-          "provide shading",
-          "shading from trees, curtains or blinds",
-          "use shading to cut solar gain"
-        ],
-        sample: "Simple shading from trees or blinds can make a room noticeably cooler.",
-        speakingTip: "Từ đơn giản nhưng cụ thể. Kết hợp với ví dụ 'curtains or blinds' để bài Part 2 sinh động hơn."
-      },
-      "solar-gain": {
-        phrase: "solar gain",
-        type: "Technical Noun Phrase",
-        ipa: "/ˈsəʊ.lə ɡeɪn/",
-        vietnamese: "Lượng nhiệt từ mặt trời hấp thụ vào trong nhà",
-        english: "the heat that a building takes in from sunlight",
-        structures: [
-          "cut solar gain",
-          "reduce solar gain through windows"
-        ],
-        sample: "Installing blinds helps cut solar gain through the windows in the afternoon.",
-        speakingTip: "Thuật ngữ kỹ thuật. Dùng một lần khi nói về kiến trúc để tăng độ chính xác từ vựng."
+        pronunciation: "Trọng âm ở PAS và COOL. Âm /ɪv/ cuối 'passive' ngắn, không kéo dài thành 'pa-si-vơ'.",
+        sample: "I rely on passive cooling first. I close the curtains in the afternoon and open the windows at night.",
+        speakingTip: "Dùng khi bạn nói về giải pháp thay thế cho máy lạnh. Cụm này rõ nghĩa hơn 'cool without aircon'.",
+        daily: {
+          en: "I designed my studio for passive cooling: the windows face the wind, and there are curtains for the afternoon sun.",
+          vi: "Mình thiết kế studio theo hướng làm mát thụ động: cửa sổ đón gió và có rèm che nắng buổi chiều."
+        }
       },
       "sustainable-energy": {
         phrase: "sustainable energy",
         type: "Collocation",
-        ipa: "/səˈsteɪ.nə.bl ˈen.ə.dʒi/",
-        vietnamese: "Năng lượng bền vững (tái tạo, ít gây hại cho môi trường)",
-        english: "energy from sources that can be renewed and do not damage the environment quickly",
+        level: "B1",
+        ipa: "/səˈsteɪnəbl ˈenədʒi/",
+        vietnamese: "Năng lượng bền vững: nguồn năng lượng dùng được lâu dài, ít gây hại cho môi trường",
+        english: "energy from sources that can be used for a long time without harming the environment",
         structures: [
-          "power [something] with sustainable energy",
-          "shift to sustainable energy"
+          "powered by sustainable energy",
+          "switch to sustainable energy",
+          "invest in sustainable energy"
         ],
-        sample: "We should power cooling systems with sustainable energy rather than fossil fuels.",
-        speakingTip: "Collocation tự nhiên khi bàn về môi trường. Dùng thay cho 'green energy' để nghe học thuật hơn."
+        pronunciation: "Trọng âm ở STAIN và EN. '-able' đọc yếu thành /əbl/. 'energy' có ba âm tiết, không đọc thành 'e-nơ-gy'.",
+        sample: "Our office is switching to sustainable energy to cut both costs and emissions.",
+        speakingTip: "Dùng với 'switch to' hoặc 'powered by' để câu tự nhiên hơn.",
+        daily: {
+          en: "I want to choose a course platform whose servers run on sustainable energy.",
+          vi: "Mình muốn chọn nền tảng khóa học có máy chủ chạy bằng năng lượng bền vững."
+        }
+      },
+      "power-cuts": {
+        phrase: "power cuts",
+        type: "Collocation",
+        level: "B1",
+        ipa: "/ˈpaʊə kʌts/",
+        vietnamese: "Cúp điện: điện bị ngắt tạm thời",
+        english: "periods when the electricity supply is stopped",
+        structures: [
+          "cause power cuts",
+          "face power cuts",
+          "power cuts during a heatwave"
+        ],
+        pronunciation: "'power' đọc /ˈpaʊə/. Âm /ts/ cuối 'cuts' nhẹ, đọc gọn và dứt khoát.",
+        sample: "We had power cuts during the storm, so I could not finish the recording.",
+        speakingTip: "Nói 'face power cuts' hoặc 'cause power cuts' tự nhiên hơn 'no electricity'.",
+        daily: {
+          en: "I often record videos in the evening, so power cuts are my biggest worry.",
+          vi: "Mình hay quay video buổi tối, nên cúp điện là nỗi lo lớn nhất."
+        }
+      },
+      "solar-gain": {
+        phrase: "solar gain",
+        type: "Technical noun phrase",
+        level: "B2+ (từ chuyên ngành)",
+        ipa: "/ˈsəʊlə ɡeɪn/",
+        vietnamese: "Nhiệt từ mặt trời: lượng nhiệt ánh sáng mặt trời đưa vào trong tòa nhà",
+        english: "the heat that sunlight brings into a building",
+        structures: [
+          "reduce solar gain",
+          "cut solar gain",
+          "solar gain through the windows"
+        ],
+        pronunciation: "Trọng âm ở SO. 'solar' kết thúc bằng âm /ə/ yếu, nên 'solar gain' nối thành 'sọ-lə-gein'.",
+        sample: "Blinds can cut solar gain in the afternoon, so the room stays much cooler.",
+        speakingTip: "Từ chuyên ngành. Dùng khi nói về nhà ở hoặc kiến trúc để ghi điểm từ vựng chính xác.",
+        daily: {
+          en: "When I shoot product photos for my course, I close the curtains to reduce solar gain, so the light looks softer.",
+          vi: "Khi chụp ảnh sản phẩm cho khóa học, mình kéo rèm để giảm nhiệt từ mặt trời, ánh sáng nhìn dịu hơn."
+        }
+      },
+      "extreme-heat": {
+        phrase: "extreme heat",
+        type: "Collocation",
+        level: "B1",
+        ipa: "/ɪkˈstriːm hiːt/",
+        vietnamese: "Nắng nóng cực đoan: nhiệt độ cao bất thường, gây rủi ro cho sức khỏe",
+        english: "very high temperatures that create a serious health risk",
+        structures: [
+          "protect people from extreme heat",
+          "during extreme heat",
+          "extreme heat waves"
+        ],
+        pronunciation: "Trọng âm ở STREEM. Đọc rõ âm /iː/ dài trong 'extreme'. Giữ 'extreme' và 'heat' tách rõ, không nối.",
+        sample: "Older people are at risk during extreme heat, so cooling must be available to them.",
+        speakingTip: "'Extreme' mạnh hơn 'very hot'. Dùng khi nói về biến đổi khí hậu hoặc sức khỏe cộng đồng.",
+        daily: {
+          en: "Because of extreme heat, I moved my video shoots to early mornings.",
+          vi: "Vì nắng nóng cực đoan, mình chuyển lịch quay video sang sáng sớm."
+        }
       }
     };
 
@@ -879,15 +1431,15 @@
       {
         id: 5,
         category: "nutrition",
-        situation: "Cụm 'shading' trong bài nghĩa là gì, và ví dụ nào đúng?",
-        targetPhrase: "shading",
+        situation: "Trong bài, 'extreme heat' (nắng nóng cực đoan) được nhìn nhận như thế nào?",
+        targetPhrase: "extreme heat",
         options: [
-          { text: "Chặn ánh nắng và nhiệt, ví dụ bằng cây xanh, rèm hoặc mành cửa", correct: true },
-          { text: "Tăng lượng ánh sáng mặt trời vào phòng để sưởi ấm", correct: false },
-          { text: "Một loại điện thoại dùng để đo nhiệt độ", correct: false },
-          { text: "Cách làm lạnh nước bằng đá viên", correct: false }
+          { text: "Một rủi ro nghiêm trọng cho sức khỏe, có thể gây tử vong", correct: true },
+          { text: "Một loại máy lạnh mới rất tiết kiệm điện", correct: false },
+          { text: "Một kiểu quạt đứng dùng trong văn phòng", correct: false },
+          { text: "Một nguồn năng lượng tái tạo", correct: false }
         ],
-        explanation: "Shading là chặn ánh sáng và nhiệt từ mặt trời. Đây là cách giảm solar gain đơn giản và không tốn điện."
+        explanation: "Bài nói nắng nóng cực đoan là rủi ro lớn cho sức khỏe, và người ta ước tính hơn 30.000 người ở châu Âu đã chết vì nắng nóng mùa hè đó."
       }
     ];
 
@@ -910,8 +1462,8 @@
       },
       {
         speaker: "Câu mẫu 4 (do Minh soạn)",
-        text: "Simple shading from trees, curtains or blinds can cut solar gain a lot.",
-        notes: "Nhấn 'shading' và 'cut solar gain'; đọc chậm hơn ở phần liệt kê."
+        text: "Power cuts can happen when extreme heat pushes the grid beyond its limit.",
+        notes: "Nhấn 'power cuts' và 'extreme heat'; đọc chậm ở cụm 'beyond its limit'."
       },
       {
         speaker: "Câu mẫu 5 (do Minh soạn)",
@@ -923,13 +1475,13 @@
     /* Danh sách từ mục tiêu cho phòng thu */
     const targetKeyPhrases = [
       "life-saving",
-      "inhabit",
       "the grid",
       "vicious cycle",
       "passive cooling",
-      "shading",
+      "sustainable energy",
+      "power cuts",
       "solar gain",
-      "sustainable energy"
+      "extreme heat"
     ];
 
     /* State variables */
@@ -1041,10 +1593,13 @@
       }
 
       document.getElementById('detailPhrase').textContent = data.phrase;
-      document.getElementById('phraseTypeBadge').textContent = data.type;
+      document.getElementById('phraseTypeBadge').textContent = data.type + ' · ' + data.level;
       document.getElementById('detailIpa').textContent = data.ipa;
       document.getElementById('detailVietnamese').textContent = data.vietnamese;
       document.getElementById('detailEnglish').textContent = data.english;
+      document.getElementById('detailPronounce').textContent = data.pronunciation;
+      document.getElementById('detailDailyEn').textContent = data.daily.en;
+      document.getElementById('detailDailyVi').textContent = data.daily.vi;
 
       const structuresContainer = document.getElementById('detailStructures');
       structuresContainer.innerHTML = '';
@@ -1522,6 +2077,133 @@
       }, 300);
     }
   </script>
+<script>
+/* 10 câu Speaking: Phần 1 (câu 1-3), Phần 2 là cue card có sẵn (câu 10), Phần 3 (câu 4-9) */
+const speakingQuestions = [
+  {
+    part: "Phần 1 · câu 1",
+    q: "Do you usually feel hot at home in summer?",
+    hint: "Trả lời trực tiếp, rồi thêm một lý do ngắn.",
+    sample: "Yes, quite often. My flat faces west, so it gets very hot in the afternoon."
+  },
+  {
+    part: "Phần 1 · câu 2",
+    q: "How often do you use air conditioning?",
+    hint: "Nói tần suất (every day, a few times a week, rarely) rồi giải thích.",
+    sample: "Not very often. I mostly use a fan, and I only switch on the aircon during extreme heat."
+  },
+  {
+    part: "Phần 1 · câu 3",
+    q: "Do you prefer to be indoors or outdoors when it is hot?",
+    hint: "Chọn một bên, nêu lý do cá nhân.",
+    sample: "Indoors, usually. I find the heat outside hard to handle after noon, so I stay in the shade."
+  },
+  {
+    part: "Phần 3 · câu 4",
+    q: "Why do you think more people are installing air conditioning these days?",
+    hint: "Nhắc tới nhiệt độ tăng, các đợt nắng nóng thường xuyên hơn, và việc máy lạnh ngày càng rẻ.",
+    sample: "I think it is mainly because summers are getting hotter, and people want to feel safe at home. Air conditioners are also cheaper than before, so more families can afford them."
+  },
+  {
+    part: "Phần 3 · câu 5",
+    q: "Should governments encourage passive cooling instead of air conditioning?",
+    hint: "Nêu lợi ích tiết kiệm điện và tránh vicious cycle; đồng thời nhìn nhận máy lạnh vẫn life-saving với người già và người bệnh.",
+    sample: "I think they should encourage both. Passive cooling saves energy and avoids a vicious cycle, but vulnerable people still need aircon to survive extreme heat."
+  },
+  {
+    part: "Phần 3 · câu 6",
+    q: "How can cities protect older people from extreme heat?",
+    hint: "Nêu 2-3 giải pháp: cây xanh, nơi làm mát công cộng, cảnh báo sớm.",
+    sample: "Cities can plant more trees for shading and open cooling centres for people who cannot afford aircon. Early warnings also help, because older people can prepare in advance."
+  },
+  {
+    part: "Phần 3 · câu 7",
+    q: "Should electricity cost more during peak hours?",
+    hint: "Nêu lợi ích giảm tải cho the grid, và nhược điểm với gia đình thu nhập thấp.",
+    sample: "In theory, yes, because it would reduce strain on the grid at busy times. However, it could hurt low-income families, so they would need support."
+  },
+  {
+    part: "Phần 3 · câu 8",
+    q: "What are the environmental costs of air conditioning?",
+    hint: "Nói về năng lượng, khí thải và rủi ro power cuts.",
+    sample: "The main cost is energy use. If the electricity comes from fossil fuels, emissions rise, and this can make the heat worse over time."
+  },
+  {
+    part: "Phần 3 · câu 9",
+    q: "Is it fair that wealthy people can afford more air conditioning than poorer people?",
+    hint: "Trả lời rõ quan điểm, rồi nêu hệ quả với người dễ bị tổn thương.",
+    sample: "Not really. The people who cannot afford it are often the most vulnerable to extreme heat, so this creates a serious inequality."
+  }
+];
+
+/* 3 câu tự đặt: người học viết một câu rồi mở bài mẫu để so sánh */
+const writingPrompts = [
+  {
+    prompt: "Viết một câu về công việc của bạn, dùng 'vicious cycle'.",
+    sample: "When I work late, I feel tired, and my next design takes even longer. It is a vicious cycle."
+  },
+  {
+    prompt: "Viết một câu về nhà hoặc studio của bạn, dùng 'solar gain' hoặc 'power cuts'.",
+    sample: "I put blinds in my studio to cut solar gain, so my laptop does not overheat in the afternoon."
+  },
+  {
+    prompt: "Viết một câu về kiến thức bạn dạy, dùng 'life-saving'.",
+    sample: "Learning basic first aid is genuinely life-saving, so I include it in my beginner course."
+  }
+];
+
+function renderSpeakingPanels() {
+  const box = document.getElementById('speakingQuestions');
+  if (box) {
+    box.innerHTML =
+      '<h4 class="text-xs sm:text-sm font-bold text-slate-800">Câu hỏi luyện Speaking (phần 1 và 3 ở đây, phần 2 ở trên: tổng 10 câu)</h4>' +
+      speakingQuestions.map(x => `
+        <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-700">${x.part}</p>
+          <p class="font-bold text-slate-800 text-xs sm:text-sm mt-1">${x.q}</p>
+          <details class="mt-1"><summary class="cursor-pointer text-emerald-700 font-semibold text-xs">Gợi ý trả lời (thử trả lời trước nhé)</summary><p class="text-xs text-slate-600 mt-1">${x.hint}</p></details>
+          <details class="mt-1"><summary class="cursor-pointer text-emerald-700 font-semibold text-xs">Bài mẫu</summary><p class="italic text-xs text-slate-700 mt-1">${x.sample}</p></details>
+        </div>`).join('');
+  }
+
+  const wbox = document.getElementById('writingPrompts');
+  if (wbox) {
+    wbox.innerHTML =
+      '<h4 class="text-xs sm:text-sm font-bold text-slate-800">Tự đặt câu với chunk (3 câu)</h4>' +
+      writingPrompts.map((x, i) => `
+        <div class="p-3 rounded-lg bg-white border border-slate-200">
+          <p class="text-xs font-bold text-slate-800">${i + 1}. ${x.prompt}</p>
+          <details class="mt-1"><summary class="cursor-pointer text-emerald-700 font-semibold text-xs">Xem câu mẫu sau khi tự viết</summary><p class="italic text-xs text-slate-700 mt-1">${x.sample}</p></details>
+        </div>`).join('');
+  }
+}
+
+/* Nút nghe trước: mở trình phát, rồi đưa người học xuống phần đọc */
+function openListenFirst() {
+  const player = document.getElementById('listenPlayer');
+  const frame = player.querySelector('iframe');
+  if (player.classList.contains('hidden')) {
+    frame.src = frame.dataset.src;
+    player.classList.remove('hidden');
+    document.getElementById('listenBtn').textContent = '✓ Nghe xong, đọc bài';
+  } else {
+    document.getElementById('section-study').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/* Bấm cấu trúc câu trong bài: cuộn tới thẻ giải thích tương ứng */
+document.addEventListener('click', (e) => {
+  const hit = e.target.closest('.struct-highlight');
+  if (!hit) return;
+  const card = document.getElementById('struct-card-' + hit.dataset.struct);
+  if (!card) return;
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  card.classList.add('flash');
+  setTimeout(() => card.classList.remove('flash'), 1200);
+});
+
+renderSpeakingPanels();
+</script>
 <script src="chunk-list.js"></script>
 </body>
 </html>
