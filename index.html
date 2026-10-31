@@ -2,172 +2,270 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BBC 6 Minute English Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 Minute English · Thư viện chunk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: "Work Sans", -apple-system, sans-serif; background-color: #F8FAF9; color: #1F2937; padding: 48px 24px; -webkit-font-smoothing: antialiased; }
-.container { max-width: 1140px; margin: 0 auto; }
-.top-badge { display: inline-block; background-color: #EBF4F0; color: #2D5A43; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
-.header-row { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 36px; }
-h1 { font-size: 34px; font-weight: 700; color: #2D5A43; line-height: 1.2; margin-bottom: 8px; }
-.sub-title { font-size: 16px; color: #6B7280; }
-.counter { font-size: 15px; color: #6B7280; white-space: nowrap; }
-.counter strong { color: #1F2937; }
-.filter-section { display: flex; gap: 16px; align-items: center; margin-bottom: 36px; flex-wrap: wrap; }
-.search-box { position: relative; flex: 1; min-width: 280px; }
-.search-box svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #9CA3AF; width: 18px; height: 18px; }
-.search-box input { width: 100%; padding: 13px 16px 13px 44px; font-size: 14.5px; font-family: inherit; border: 1px solid #E5E7EB; background: #FFFFFF; border-radius: 12px; color: #1F2937; outline: none; transition: all 0.2s; }
-.search-box input:focus { border-color: #2D5A43; box-shadow: 0 0 0 3px rgba(45, 90, 67, 0.12); }
-.search-box input::placeholder { color: #9CA3AF; }
-.tags-group { display: flex; gap: 10px; flex-wrap: wrap; }
-.tag-btn { padding: 12px 22px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: inherit; border: 1px solid #E5E7EB; background: #FFFFFF; color: #374151; cursor: pointer; transition: all 0.2s; }
-.tag-btn:hover { background: #F3F4F6; }
-.tag-btn.active { background: #2D5A43; color: #FFFFFF; border-color: #2D5A43; }
-.lessons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 24px; }
-.lesson-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
-.lesson-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05); border-color: #CBD5E1; }
-.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-.category-badge { font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 8px; border: 1px solid transparent; }
-.badge-mindset { background-color: #FEF9EE; color: #B45309; border-color: #FDE68A; }
-.badge-science { background-color: #ECFDF5; color: #047857; border-color: #A7F3D0; }
-.badge-habit { background-color: #EFF6FF; color: #1D4ED8; border-color: #BFDBFE; }
-.lesson-no { font-size: 13px; color: #9CA3AF; font-weight: 500; }
-.card-content h3 { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 10px; line-height: 1.35; }
-.card-content p { font-size: 14px; color: #4B5563; line-height: 1.5; margin-bottom: 24px; }
-.card-footer { border-top: 1px solid #F3F4F6; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
-.duration-level { color: #6B7280; font-weight: 500; }
-.action-link { color: #2D5A43; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+:root{
+  --white:#ffffff; --bg:#fbfaf5; --bg-alt:#f8f6ea;
+  --surface:#ffffff; --surface-soft:#ebf6ee; --surface-inverse:#17301d;
+  --ink-900:#171c18; --ink-700:#1f2a22; --ink-500:#505e4f;
+  --text-on-inverse:#f4faf6; --text-highlight-inverse:#b8e0c2;
+  --primary:#32854d; --primary-hover:#317345; --primary-text:#317345; --focus:#4a9b60;
+  --warning-soft:#fbf3e0; --warning-text:#8a6421;
+  --green-700:#317345; --green-900:#17301d;
+  --border:#e1eae5; --border-strong:#84968a;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:20px; --radius-xl:32px; --radius-full:999px;
+  --shadow-sm:0 1px 2px rgba(23,48,29,.06);
+  --font-sans:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:16px;line-height:24px;color:var(--ink-700);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:var(--radius-sm)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Header */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{font-weight:700;color:var(--ink-900);text-decoration:none;font-size:18px;letter-spacing:-.01em}
+.brand span{color:var(--primary-text)}
+.nav-links{display:flex;gap:24px;font-size:14px;color:var(--ink-500)}
+.nav-links a{text-decoration:none}
+
+/* Buttons */
+.hb-btn{display:inline-flex;align-items:center;gap:12px;padding:12px 24px;border-radius:var(--radius-md);font:600 16px/24px var(--font-sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .15s}
+.hb-btn--primary{background:var(--primary);color:#fff}
+.hb-btn--primary:hover{background:var(--primary-hover)}
+.hb-btn--secondary{background:transparent;border-color:var(--border-strong);color:var(--ink-900)}
+.hb-btn--secondary:hover{background:var(--surface-soft)}
+
+/* Badge */
+.hb-badge{display:inline-block;padding:4px 12px;border-radius:var(--radius-full);font:500 12px/16px var(--font-sans);background:var(--surface-soft);color:var(--primary-text);align-self:flex-start}
+
+/* Eyebrow + title */
+.hb-eyebrow{font:600 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--primary-text);margin-bottom:12px}
+.hb-title{font:700 32px/38px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900)}
+.hb-title em{font-style:normal;color:var(--primary)}
+.hb-lead{font:400 18px/28px var(--font-sans);color:var(--ink-500);margin-top:16px;max-width:56ch}
+
+/* Hero */
+.hero{padding:64px 0 48px}
+.hero .hb-display{font:700 56px/60px var(--font-sans);letter-spacing:-.03em;color:var(--ink-900)}
+.hero .hb-display em{font-style:normal;color:var(--primary)}
+.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+
+/* Stat band */
+.stats{background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-lg)}
+.stats-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:32px 24px}
+.stat-num{font:600 32px/36px var(--font-sans);letter-spacing:-.02em;color:var(--text-highlight-inverse)}
+.stat-label{font:400 14px/20px var(--font-sans);margin-top:4px;opacity:.85}
+
+/* Sections */
+.section{padding:96px 0}
+.section.alt{background:var(--bg-alt)}
+.section-head{margin-bottom:48px}
+.section-head .hb-title{font-size:32px;line-height:38px}
+.search{margin-top:24px;max-width:420px}
+.search input{width:100%;padding:12px 16px;font:400 15px/20px var(--font-sans);border:1px solid var(--border-strong);background:var(--surface);border-radius:var(--radius-md);color:var(--ink-900);outline:none}
+.search input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(50,133,77,.15)}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hb-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:12px}
+.hb-card-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--surface-soft);color:var(--green-700);display:grid;place-items:center;font-weight:700}
+.hb-card h3{font:600 22px/28px var(--font-sans);letter-spacing:-.01em;color:var(--ink-900)}
+.hb-card p{font:400 14px/20px var(--font-sans);color:var(--ink-500)}
+.hb-card .meta{font:500 12px/16px var(--font-sans);color:var(--ink-500)}
+.hb-card .hb-btn{margin-top:auto;align-self:flex-start;padding:8px 16px;font-size:14px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+.step-num{width:40px;height:40px;border-radius:var(--radius-full);background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:16px}
+.step h3{font:600 22px/28px var(--font-sans);color:var(--ink-900);margin-bottom:8px}
+.step p{font-size:14px;line-height:20px;color:var(--ink-500)}
+
+/* Checklist */
+.checklist{list-style:none;display:grid;gap:8px;margin-top:48px}
+.checklist li{display:flex;gap:12px;align-items:flex-start}
+.checklist li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--surface-soft);color:var(--primary-text);display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px}
+
+/* Note */
+.note{margin-top:32px;display:flex;gap:12px;align-items:flex-start;background:var(--warning-soft);color:var(--ink-700);border-radius:var(--radius-md);padding:16px 24px;font-size:14px;line-height:20px}
+.note strong{color:var(--warning-text)}
+
+/* CTA */
+.cta{background:var(--surface-inverse);color:var(--text-on-inverse);border-radius:var(--radius-xl);padding:64px 48px}
+.cta .hb-title{color:var(--text-on-inverse)}
+.cta .hb-title em{color:var(--text-highlight-inverse)}
+.cta .hb-lead{color:var(--text-on-inverse);opacity:.85}
+.cta .hb-eyebrow{color:var(--text-highlight-inverse)}
+.cta .hb-btn--primary{background:var(--text-highlight-inverse);color:var(--green-900)}
+.cta .hb-btn--primary:hover{background:#a6d6b3}
+
+footer{padding:48px 0;color:var(--ink-500);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+@media (max-width:860px){
+  .grid,.steps{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr;gap:16px}
+  .hero .hb-display{font-size:40px;line-height:44px}
+  .hb-title{font-size:28px;line-height:34px}
+  .section{padding:64px 0}
+  .cta{padding:48px 24px}
+  .nav-links{display:none}
+}
 </style>
 </head>
 <body>
-<div class="container">
-<span class="top-badge">English Speaking Lab</span>
-<div class="header-row">
-<div>
-<h1>BBC 6 Minute English Hub</h1>
-<p class="sub-title">Danh sách bài luyện tập phản xạ và từ vựng qua podcast.</p>
-</div>
-<div class="counter">
-Tổng số: <strong id="total-count">3</strong> bài học
-</div>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="#">6 Minute <span>English</span></a>
+    <div class="nav-links">
+      <a href="#bai-hoc">Bài học</a>
+      <a href="#cach-hoc">Cách học</a>
+      <a href="#bat-dau">Bắt đầu</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="hb-eyebrow">Thư viện chunk từ podcast</p>
+    <h1 class="hb-display">Học <em>chunk</em> để nói tiếng Anh tự nhiên hơn</h1>
+    <p class="hb-lead">Mỗi bài tóm tắt 8–10 cụm từ hay dùng nhất trong 6 Minute English, kèm ví dụ đời sống, ghi chú phát âm và câu hỏi luyện Speaking IELTS.</p>
+    <div class="hero-actions">
+      <a class="hb-btn hb-btn--primary" href="#bai-hoc">Xem bài học →</a>
+      <a class="hb-btn hb-btn--secondary" href="#cach-hoc">Cách học</a>
+      <a class="hb-btn hb-btn--secondary" href="#on-lai">Xem lại chunks đã học</a>
+    </div>
+  </header>
+
+  <section class="stats" aria-label="Số liệu">
+    <div class="stats-inner">
+      <div><div class="stat-num" id="total-count">3</div><div class="stat-label">Bài học đã có</div></div>
+      <div><div class="stat-num">8–10</div><div class="stat-label">Chunk mỗi bài</div></div>
+      <div><div class="stat-num">10</div><div class="stat-label">Câu Speaking mỗi bài</div></div>
+    </div>
+  </section>
 </div>
 
-<div class="filter-section">
-<div class="search-box">
-<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-<input type="text" id="searchInput" placeholder="Tìm bài học theo tiêu đề hoặc từ khóa...">
-</div>
-<div class="tags-group">
-<button class="tag-btn active" data-category="all">Tất cả</button>
-<button class="tag-btn" data-category="mindset">Tâm lý</button>
-<button class="tag-btn" data-category="habit">Thói quen</button>
-<button class="tag-btn" data-category="science">Khoa học</button>
-</div>
-</div>
+<section class="section" id="bai-hoc">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="hb-eyebrow">Thư viện</p>
+      <h2 class="hb-title">Chọn một bài để <em>bắt đầu</em></h2>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Tìm bài theo tiêu đề hoặc từ khóa...">
+      </div>
+    </div>
 
-<div class="lessons-grid" id="lessonsGrid">
+    <div class="grid" id="lessonsGrid">
 
 <!-- Bài 01 -->
-<a href="Is-aircon-the-answer-to-a-heating-world.html" class="lesson-card" data-category="mindset">
-<div>
-<div class="card-top">
-  <span class="category-badge badge-mindset">Mindset</span>
-  <span class="lesson-no">Bài 01</span>
-</div>
-<div class="card-content">
+<article class="hb-card lesson-card">
+  <div class="hb-card-icon">01</div>
+  <span class="hb-badge">Mindset</span>
   <h3>Is aircon the answer to a heating world</h3>
   <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-</div>
-</div>
-<div class="card-footer">
-<span class="duration-level">6 mins • B1-B2</span>
-<span class="action-link">Vào học →</span>
-</div>
-</a>
+  <span class="meta">6 mins • B1–B2</span>
+  <a class="hb-btn hb-btn--primary" href="Is-aircon-the-answer-to-a-heating-world.html">Học bài này</a>
+</article>
 
 <!-- Bài 02 -->
-<a href="What-should-you-eat-for-a-better-night'-sleep.html" class="lesson-card" data-category="mindset">
-<div>
-<div class="card-top">
-  <span class="category-badge badge-mindset">Mindset</span>
-  <span class="lesson-no">Bài 02</span>
-</div>
-<div class="card-content">
+<article class="hb-card lesson-card">
+  <div class="hb-card-icon">02</div>
+  <span class="hb-badge">Mindset</span>
   <h3>What should you eat for a better night' sleep</h3>
   <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-</div>
-</div>
-<div class="card-footer">
-<span class="duration-level">6 mins • B1-B2</span>
-<span class="action-link">Vào học →</span>
-</div>
-</a>
+  <span class="meta">6 mins • B1–B2</span>
+  <a class="hb-btn hb-btn--primary" href="What-should-you-eat-for-a-better-night'-sleep.html">Học bài này</a>
+</article>
 
 <!-- Bài 03 -->
-<a href="Why-does-heartbreak-hurt-so-much.html" class="lesson-card" data-category="mindset">
-<div>
-<div class="card-top">
-  <span class="category-badge badge-mindset">Mindset</span>
-  <span class="lesson-no">Bài 03</span>
-</div>
-<div class="card-content">
+<article class="hb-card lesson-card">
+  <div class="hb-card-icon">03</div>
+  <span class="hb-badge">Mindset</span>
   <h3>Why does heartbreak hurt so much</h3>
   <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-</div>
-</div>
-<div class="card-footer">
-<span class="duration-level">6 mins • B1-B2</span>
-<span class="action-link">Vào học →</span>
-</div>
-</a>
+  <span class="meta">6 mins • B1–B2</span>
+  <a class="hb-btn hb-btn--primary" href="Why-does-heartbreak-hurt-so-much.html">Học bài này</a>
+</article>
 
-</div>
-</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="cach-hoc">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="hb-eyebrow">Cách học</p>
+      <h2 class="hb-title">Ba bước cho <em>mỗi bài</em></h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Đọc chunk</h3>
+        <p>Xem nghĩa tiếng Việt, nghĩa tiếng Anh và câu ví dụ trong bài.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Lật flashcard</h3>
+        <p>Tự nhớ nghĩa trước, rồi lật thẻ để kiểm tra lại.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Nói Speaking</h3>
+        <p>Trả lời câu hỏi IELTS bằng chunk vừa học, rồi so với sample answer.</p>
+      </div>
+    </div>
+
+    <ul class="checklist">
+      <li>Mỗi chunk có ví dụ trong bài và một ví dụ đời sống hằng ngày</li>
+      <li>Ghi chú phát âm cho chỗ nối âm và nuốt âm</li>
+      <li>Tiến độ được lưu trên trình duyệt của bạn</li>
+    </ul>
+
+    <div class="note">
+      <span aria-hidden="true">⚠</span>
+      <div><strong>Lưu ý nội dung:</strong> trang này chỉ hiển thị phần giải thích chunk do mình viết. Bài gốc từ BBC Learning English vẫn thuộc bản quyền của BBC.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bat-dau">
+  <div class="wrap">
+    <div class="cta">
+      <p class="hb-eyebrow">Bắt đầu</p>
+      <h2 class="hb-title">Học xong <em>bài 1</em> trong 15 phút</h2>
+      <p class="hb-lead">Chọn bài đầu tiên, đọc 3 chunk đầu và thử đặt một câu với mỗi chunk.</p>
+      <div class="hero-actions">
+        <a class="hb-btn hb-btn--primary" href="#bai-hoc">Mở bài 1</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 6 Minute English</span>
+    <span>Nội dung bài gốc thuộc BBC Learning English</span>
+  </div>
+</footer>
 
 <script>
 const searchInput = document.getElementById("searchInput");
-const tagBtns = document.querySelectorAll(".tag-btn");
 const cards = document.querySelectorAll(".lesson-card");
-const totalCountEl = document.getElementById("total-count");
 
-let currentCategory = "all";
-
-function filterLessons() {
-const query = searchInput.value.toLowerCase().trim();
-let visibleCount = 0;
-
-cards.forEach(card => {
-const title = card.querySelector("h3").textContent.toLowerCase();
-const desc = card.querySelector("p").textContent.toLowerCase();
-const cardCategory = card.getAttribute("data-category");
-
-const matchSearch = title.includes(query) || desc.includes(query);
-const matchCategory = currentCategory === "all" || cardCategory === currentCategory;
-
-if (matchSearch && matchCategory) {
-card.style.display = "flex";
-visibleCount++;
-} else {
-card.style.display = "none";
-}
-});
-
-totalCountEl.textContent = visibleCount;
-}
-
-searchInput.addEventListener("input", filterLessons);
-
-tagBtns.forEach(btn => {
-btn.addEventListener("click", () => {
-tagBtns.forEach(b => b.classList.remove("active"));
-btn.classList.add("active");
-currentCategory = btn.getAttribute("data-category");
-filterLessons();
-});
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase().trim();
+  cards.forEach(card => {
+    const title = card.querySelector("h3").textContent.toLowerCase();
+    const desc = card.querySelector("p").textContent.toLowerCase();
+    card.style.display = (title.includes(query) || desc.includes(query)) ? "flex" : "none";
+  });
 });
 </script>
 </body>
