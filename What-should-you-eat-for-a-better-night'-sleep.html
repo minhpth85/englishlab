@@ -64,7 +64,7 @@
 <body class="min-h-screen flex flex-col antialiased">
 
   <header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm backdrop-blur-md bg-white/95">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
       <div class="flex items-center space-x-3">
         <a href="index.html" id="backToIndexBtn" title="Quay về danh sách bài học" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition shrink-0">
           <i class="fa-solid fa-arrow-left"></i>
@@ -74,9 +74,9 @@
           <i class="fa-solid fa-moon text-lg"></i>
         </div>
         <div>
-          <span class="text-xs font-bold tracking-wider uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">BBC 6 Minute English (Full Transcript)</span>
+          <span class="hidden sm:inline-block text-xs font-bold tracking-wider uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">BBC 6 Minute English (Full Transcript)</span>
           <h1 class="text-sm sm:text-base font-bold text-slate-800 leading-tight">What should you eat for a better night's sleep?</h1>
-          <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs mt-1">
+          <div class="hidden sm:flex flex-wrap gap-x-3 gap-y-1 text-xs mt-1">
             <a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" rel="noopener" class="text-emerald-700 underline font-semibold">Bài gốc: BBC 6 Minute English</a>
             <a href="https://podwise.ai/episodes/9225504" target="_blank" rel="noopener" class="text-emerald-700 underline font-semibold">Trang tập podcast (22/10/2026)</a>
             <span class="text-slate-400">YouTube: đang cập nhật</span>
@@ -85,7 +85,7 @@
       </div>
       
       <!-- Top Action Navigation -->
-      <nav class="flex items-center space-x-1 sm:space-x-2">
+      <nav class="grid grid-cols-3 gap-1 w-full sm:flex sm:w-auto sm:items-center sm:gap-0 sm:space-x-2 [&>button]:flex-col [&>button]:justify-center [&>button]:text-center [&>button]:leading-tight sm:[&>button]:flex-row sm:[&>button]:text-left">
         <button onclick="switchTab('study')" id="tabNav-study" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-blue-600 bg-blue-50 flex items-center gap-1.5 transition">
           <i class="fa-solid fa-book-open"></i>
           <span>Toàn Văn & Cụm Từ</span>
