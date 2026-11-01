@@ -120,6 +120,13 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
 .target{display:inline-block;margin:4px 6px 0 0;padding:4px 10px;border-radius:var(--radius-full);font-size:13px;background:var(--surface-soft);color:var(--ink-500)}
 .target.got{background:var(--primary);color:#fff}
 
+/* Nói tự nhiên như người bản ngữ */
+.native-item{border-top:1px solid var(--border);padding-top:14px;margin-top:14px}
+.native-item .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:var(--radius-full);background:var(--surface-soft);color:var(--primary-text)}
+.native-item .natural{font-size:16px;font-weight:600;color:var(--ink-900);margin-top:8px}
+.native-item .learner{font-size:14px;color:var(--ink-500);margin-top:6px}
+.native-item .why{font-size:14px;color:var(--ink-700);margin-top:6px}
+
 /* Popup trên điện thoại */
 #phraseModal{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center;background:rgba(23,48,29,.45)}
 #phraseModal.hidden{display:none}
@@ -225,6 +232,7 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
 
   <!-- TAB 3: SPEAKING -->
   <section id="tab-speaking" class="hidden">
+    <div class="card" id="nativeTips" style="margin-bottom:20px"></div>
     <div class="sub" role="tablist">
       <button class="active" data-sub="ielts" type="button">IELTS Speaking</button>
       <button data-sub="shadow" type="button">Shadowing</button>
@@ -670,6 +678,33 @@ const LESSON = {
       }
     ],
 
+  nativeTips: [
+    {
+      type: "Cấu trúc: X, which means Y",
+      natural: "Passive cooling, which means keeping a room cool without much energy.",
+      learnerSays: "Passive cooling. It means keeping a room cool without much energy.",
+      why: "Gộp phần giải thích vào cùng một câu để giữ mạch nói, thay vì tách thành hai câu rời."
+    },
+    {
+      type: "Cấu trúc: It is thought that + mệnh đề",
+      natural: "It is thought that more than 30,000 people died because of the heat.",
+      learnerSays: "More than 30,000 people died because of the heat.",
+      why: "Rào đón khi chưa có số liệu chắc chắn. Cách nói này giúp câu nghe thận trọng và học thuật hơn."
+    },
+    {
+      type: "Cấu trúc: If + điều kiện, it puts strain on…",
+      natural: "If aircon becomes the first fix, it puts too much strain on the system.",
+      learnerSays: "If people use too much aircon, the electricity is very bad.",
+      why: "Chủ ngữ là một giải pháp cụ thể, và 'puts strain on' chính xác hơn 'very bad'."
+    },
+    {
+      type: "Cụm từ: the grid",
+      natural: "the grid",
+      learnerSays: "the electricity system",
+      why: "Ngắn và chuẩn khi nói về hệ thống điện chung."
+    }
+  ],
+
   targets: ["life-saving", "the grid", "vicious cycle", "passive cooling", "sustainable energy", "power cuts", "solar gain", "extreme heat"]
 };
 
@@ -897,6 +932,20 @@ document.querySelectorAll('[data-sub]').forEach(b => b.addEventListener('click',
   ['ielts', 'shadow', 'recorder'].forEach(n => $('sub-' + n).classList.toggle('hidden', n !== b.dataset.sub));
 }));
 
+function renderNativeTips() {
+  const items = LESSON.nativeTips || [];
+  $('nativeTips').innerHTML =
+    '<p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)">Nói tự nhiên như người bản ngữ</p>' +
+    '<p style="font-size:14px;color:var(--ink-500);margin-top:4px">Đọc các lưu ý này trước khi luyện nói. Chú ý cả cấu trúc câu và cụm từ.</p>' +
+    items.map(t => `
+      <div class="native-item">
+        <span class="tag">${esc(t.type)}</span>
+        <p class="natural">${esc(t.natural)}</p>
+        <p class="learner">Người Việt thường nói: ${esc(t.learnerSays)}</p>
+        <p class="why">${esc(t.why)}</p>
+      </div>`).join('');
+}
+
 /* Đồng hồ chuẩn bị 1 phút cho Part 2 */
 let timerLeft = 60, timerId = null;
 $('timerBtn').addEventListener('click', () => {
@@ -972,6 +1021,7 @@ renderTranscript();
 renderStructures();
 renderQuiz();
 renderSpeaking();
+renderNativeTips();
 selectPhrase(LESSON.defaultChunk || Object.keys(phrasesData)[0]);
 </script>
 <script src="chunk-list.js"></script>
