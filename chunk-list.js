@@ -31,6 +31,36 @@
 
   const itemId = (phraseId) => currentFile() + "|" + phraseId;
 
+  // Toàn bộ thông tin của một chunk, dùng cho thẻ flashcard trên trang chunks
+  function snapshot(phraseId) {
+    const p = phrasesData[phraseId];
+    return {
+      phrase: p.phrase,
+      type: p.type,
+      level: p.level || "",
+      ipa: p.ipa,
+      vi: p.vietnamese,
+      en: p.english,
+      structures: p.structures || [],
+      pronunciation: p.pronunciation || "",
+      sample: p.sample,
+      speakingTip: p.speakingTip || "",
+      daily: p.daily || null
+    };
+  }
+
+  // Cập nhật các chunk đã lưu từ bài này (để thẻ có đủ thông tin mới nhất)
+  function refreshSaved() {
+    const data = load();
+    let changed = false;
+    Object.values(data).forEach((item) => {
+      if (item.file !== currentFile() || !phrasesData[item.phraseId]) return;
+      Object.assign(item, snapshot(item.phraseId), { lesson: lessonTitle() });
+      changed = true;
+    });
+    if (changed) save(data);
+  }
+
   function paint(btn, phraseId) {
     const saved = !!load()[itemId(phraseId)];
     btn.className =
@@ -51,21 +81,10 @@
     if (data[id]) {
       delete data[id];
     } else {
-      const p = phrasesData[phraseId];
-      data[id] = {
-        id: id,
-        file: currentFile(),
-        lesson: lessonTitle(),
-        phraseId: phraseId,
-        phrase: p.phrase,
-        type: p.type,
-        ipa: p.ipa,
-        vi: p.vietnamese,
-        en: p.english,
-        sample: p.sample,
-        status: "review",
-        savedAt: Date.now()
-      };
+      data[id] = Object.assign(
+        { id: id, file: currentFile(), lesson: lessonTitle(), phraseId: phraseId, status: "review", savedAt: Date.now() },
+        snapshot(phraseId)
+      );
     }
     save(data);
     paint(btn, phraseId);
@@ -88,6 +107,8 @@
     btn.dataset.phraseId = phraseId;
     paint(btn, phraseId);
   }
+
+  refreshSaved();
 
   // Bọc selectPhrase để mỗi lần đổi cụm từ, nút được cập nhật theo
   const originalSelect = window.selectPhrase;

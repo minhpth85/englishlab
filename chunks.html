@@ -69,6 +69,20 @@ a{color:inherit}
 .review .actions{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
 .review .close{margin-top:16px}
 
+.fullcard-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-md);margin-bottom:24px}
+.fc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.fc-badge{display:inline-block;padding:4px 12px;border-radius:var(--radius-full);font:600 12px/16px var(--font-sans);background:var(--surface-soft);color:var(--primary-text)}
+.fullcard-wrap h2{font:700 34px/40px var(--font-sans);color:var(--ink-900);margin-top:12px}
+.fullcard-wrap .ipa{margin-left:0;display:block;margin-top:4px}
+.fc-sec{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.fc-sec h4{font:700 12px/16px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text);margin-bottom:8px}
+.fc-sec p,.fc-sec li{font-size:15px;line-height:24px;color:var(--ink-700)}
+.fc-sec ul{padding-left:20px;display:grid;gap:4px}
+.fc-sec .it{font-style:italic}
+.fc-daily{background:var(--surface-soft);border-radius:var(--radius-md);padding:14px 16px}
+.fc-note{background:var(--warning-soft);color:var(--warning-text);border-radius:var(--radius-md);padding:10px 14px;font-size:14px;margin-top:16px}
+.fc-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+
 @media (max-width:640px){
   .hb-title{font-size:28px;line-height:34px}
   .review h2{font-size:26px}
@@ -96,6 +110,8 @@ a{color:inherit}
     </div>
     <button class="hb-btn hb-btn--primary" id="startReview">Ôn ngay</button>
   </div>
+
+  <section id="fullCard" class="fullcard-wrap hidden" aria-live="polite"></section>
 
   <section id="reviewPanel" class="review hidden" aria-live="polite">
     <p class="small" id="flashProgress"></p>
@@ -210,14 +226,59 @@ function finish() {
   render();
 }
 
-function openFlash(id) {
-  singleMode = true;
-  queue = [id];
-  qi = 0;
-  $("reviewPanel").classList.remove("hidden");
-  $("reviewPanel").scrollIntoView({ behavior: "smooth", block: "start" });
-  showCard();
+function fullCardHtml(x) {
+  const list = (arr) => (arr || []).map(t => `<li>${esc(t)}</li>`).join("");
+  const note = !x.structures
+    ? `<p class="fc-note">Thẻ này được lưu trước khi có đầy đủ thông tin. Mở lại bài "${esc(x.lesson)}" một lần để cập nhật.</p>`
+    : "";
+  return `
+    <div class="fc-head">
+      <span class="fc-badge">${esc(x.type || "")}${x.level ? " · " + esc(x.level) : ""}</span>
+      <button class="hb-btn hb-btn--secondary sm" data-speak="${esc(x.id)}"><i class="fa-solid fa-volume-high"></i> Nghe phát âm</button>
+    </div>
+    <h2>${esc(x.phrase)}</h2>
+    <p class="ipa">${esc(x.ipa || "")}</p>
+    ${note}
+    <div class="fc-sec"><h4>Ý nghĩa tiếng Việt</h4><p>${esc(x.vi || "")}</p></div>
+    <div class="fc-sec"><h4>English BBC definition</h4><p>${esc(x.en || "")}</p></div>
+    ${x.structures && x.structures.length ? `<div class="fc-sec"><h4>Cấu trúc câu & cụm đi kèm</h4><ul>${list(x.structures)}</ul></div>` : ""}
+    ${x.pronunciation ? `<div class="fc-sec"><h4>Phát âm</h4><p>${esc(x.pronunciation)}</p></div>` : ""}
+    ${x.daily ? `<div class="fc-sec"><h4>Ví dụ trong đời sống</h4><div class="fc-daily"><p class="it">${esc(x.daily.en)}</p><p>${esc(x.daily.vi)}</p></div></div>` : ""}
+    <div class="fc-sec">
+      <h4>Ứng dụng trong Speaking (IELTS & Daily)</h4>
+      ${x.sample ? `<p><strong>Speaking sample:</strong> <span class="it">"${esc(x.sample)}"</span></p>` : ""}
+      ${x.speakingTip ? `<p style="margin-top:8px"><strong>Speaking tip:</strong> ${esc(x.speakingTip)}</p>` : ""}
+    </div>
+    <div class="fc-actions">
+      <a class="hb-btn hb-btn--secondary sm" href="${encodeURI(x.file)}?phrase=${encodeURIComponent(x.phraseId)}">Xem trong bài</a>
+      <button class="link" data-close-full>Đóng thẻ</button>
+    </div>`;
 }
+
+function openFlash(id) {
+  const x = items().find(i => i.id === id);
+  if (!x) return;
+  const box = $("fullCard");
+  box.innerHTML = fullCardHtml(x);
+  box.classList.remove("hidden");
+  box.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function speakPhrase(id) {
+  const x = items().find(i => i.id === id);
+  if (!x || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(x.phrase);
+  u.lang = "en-GB";
+  u.rate = 0.9;
+  window.speechSynthesis.speak(u);
+}
+
+$("fullCard").addEventListener("click", (e) => {
+  if (e.target.closest("[data-close-full]")) $("fullCard").classList.add("hidden");
+  const sp = e.target.closest("[data-speak]");
+  if (sp) speakPhrase(sp.dataset.speak);
+});
 
 function startReview() {
   singleMode = false;
