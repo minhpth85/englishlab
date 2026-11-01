@@ -61,13 +61,17 @@
     if (changed) save(data);
   }
 
+  // Dùng style inline thay vì class Tailwind: bài mới theo template không tải Tailwind
   function paint(btn, phraseId) {
     const saved = !!load()[itemId(phraseId)];
-    btn.className =
-      "w-full mb-4 py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition border " +
-      (saved
-        ? "bg-[#317345] text-white border-[#317345] hover:bg-[#22482b]"
-        : "bg-[#EBF6EE] text-[#317345] border-[#84968a] hover:bg-[#d8efdf]");
+    const base =
+      "width:100%;margin-bottom:16px;padding:8px 12px;border-radius:12px;border:1.5px solid;" +
+      "display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;" +
+      "font:600 13px/20px 'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;";
+    btn.removeAttribute("class");
+    btn.style.cssText = base + (saved
+      ? "background:#317345;color:#fff;border-color:#317345;"
+      : "background:#EBF6EE;color:#317345;border-color:#84968a;");
     btn.innerHTML = saved
       ? '<i class="fa-solid fa-check"></i> Đã lưu để ôn (bấm để bỏ)'
       : '<i class="fa-solid fa-bookmark"></i> Lưu để ôn';
