@@ -74,6 +74,8 @@ body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;backg
 .bg-gradient-to-tr,.bg-gradient-to-r,.bg-gradient-to-br,.bg-gradient-to-b,.bg-gradient-to-l{background-image:none !important;background-color:#32854d !important}
 .struct-highlight{background:#EBF6EE;border-bottom:2px dotted #32854d;padding:0 2px;border-radius:4px;cursor:pointer}
 .struct-card.flash{background:#EBF6EE !important}
+.hidden{display:none !important}
+#phraseModal{position:fixed;inset:0;z-index:60}
 .bg-emerald-50{background-color:#EBF6EE !important}
 .hover\:bg-emerald-50:hover{background-color:#EBF6EE !important}
 .text-emerald-50{color:#EBF6EE !important}
@@ -847,6 +849,9 @@ body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;backg
             </p>
           </div>
 
+          <!-- Chỗ giữ vị trí để trả thẻ về sau khi đóng popup trên điện thoại -->
+          <div id="phraseHome"></div>
+
           <!-- Populated Phrase Detail Content -->
           <div id="phraseDetailContent" class="hidden space-y-4">
             
@@ -1561,11 +1566,12 @@ body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;backg
         // Cho phép dùng bàn phím: Tab để đến cụm từ, Enter để mở giải thích
         el.setAttribute('role', 'button');
         el.setAttribute('tabindex', '0');
-        el.addEventListener('click', () => selectPhrase(phraseId));
+        el.addEventListener('click', () => { selectPhrase(phraseId); openPhraseModal(); });
         el.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             selectPhrase(phraseId);
+            openPhraseModal();
           }
         });
       });
@@ -1589,10 +1595,6 @@ body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;backg
       const detailContainer = document.getElementById('phraseDetailContent');
       detailContainer.classList.remove('hidden');
 
-      // Trên điện thoại, panel nằm dưới bài đọc: tự cuộn tới để người dùng thấy ngay
-      if (window.innerWidth < 1024) {
-        document.getElementById('detailColumn').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
 
       document.getElementById('detailPhrase').textContent = data.phrase;
       document.getElementById('phraseTypeBadge').textContent = data.type + ' · ' + data.level;
@@ -1629,6 +1631,7 @@ body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;backg
     }
 
     function jumpToPracticeFromPhrase() {
+      closePhraseModal();
       switchTab('practice');
     }
 
@@ -2079,6 +2082,17 @@ body{font-family:"Work Sans",system-ui,-apple-system,sans-serif !important;backg
       }, 300);
     }
   </script>
+<!-- Popup flashcard cụm từ (chỉ dùng trên điện thoại) -->
+<div id="phraseModal" class="hidden fixed inset-0 z-[60] flex items-end justify-center" style="background:rgba(23,48,29,.45)" role="dialog" aria-modal="true" aria-label="Flashcard cụm từ">
+  <div class="bg-white w-full max-h-[90vh] rounded-t-2xl flex flex-col shadow-xl">
+    <div class="flex items-center justify-between px-4 py-3 border-b border-slate-100">
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Flashcard cụm từ</span>
+      <button id="phraseModalClose" type="button" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold">Close</button>
+    </div>
+    <div id="phraseModalBody" class="overflow-y-auto p-4"></div>
+  </div>
+</div>
+
 <script>
 /* 10 câu Speaking: Phần 1 (câu 1-3), Phần 2 là cue card có sẵn (câu 10), Phần 3 (câu 4-9) */
 const speakingQuestions = [
@@ -2192,6 +2206,29 @@ function openListenFirst() {
     document.getElementById('section-study').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
+/* Popup flashcard trên điện thoại: chuyển thẻ chi tiết vào popup, đóng thì trả về chỗ cũ */
+function isMobileLayout() {
+  return window.innerWidth < 1024;
+}
+function openPhraseModal() {
+  if (!isMobileLayout()) return;
+  const detail = document.getElementById('phraseDetailContent');
+  if (!detail) return;
+  document.getElementById('phraseModalBody').appendChild(detail);
+  document.getElementById('phraseModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closePhraseModal() {
+  const modal = document.getElementById('phraseModal');
+  if (modal.classList.contains('hidden')) return;
+  const detail = document.getElementById('phraseDetailContent');
+  const home = document.getElementById('phraseHome');
+  home.parentNode.insertBefore(detail, home.nextSibling);
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+document.getElementById('phraseModalClose').addEventListener('click', closePhraseModal);
 
 /* Bật/tắt panel cấu trúc câu */
 function setStructPanel(open) {
