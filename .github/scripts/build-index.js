@@ -7,8 +7,7 @@ async function callGemini(text) {
   const prompt = `Phân tích nội dung bài học tiếng Anh sau và trả về DUY NHẤT một chuỗi JSON hợp lệ (không kèm markdown \`\`\`json):
   {
     "title": "Tiêu đề tiếng Anh ngắn gọn, súc tích",
-    "desc": "Mô tả bài học bằng tiếng Việt đúng 1 câu ngắn gọn (khoảng 15-20 từ)",
-    "category": "Chọn 1 trong các từ: Mindset, Science, Habit"
+    "desc": "Mô tả bài học bằng tiếng Việt đúng 1 câu ngắn gọn (khoảng 15-20 từ)"
   }
 
   Nội dung bài học:
@@ -36,7 +35,10 @@ async function callGemini(text) {
 async function main() {
   // Lấy tất cả file html trừ index.html
   const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && f !== "index.html" && f !== "chunks.html");
-  files.sort();
+  // Sắp xếp theo thời điểm file được thêm vào repo: mới nhất trước
+  const addedAt = f => require("child_process").execSync(
+    `git log --diff-filter=A --format=%aI -- "${f}" | tail -1`, { encoding: "utf8" }).trim();
+  files.sort((a, b) => addedAt(b).localeCompare(addedAt(a)) || b.localeCompare(a));
 
   let cardsHtml = "";
   let count = 0;
@@ -53,7 +55,6 @@ async function main() {
 
     const title = aiData?.title || file.replace(".html", "").replace(/[-_]/g, " ");
     const desc = aiData?.desc || "Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.";
-    const category = aiData?.category || "Mindset";
 
     const lessonNo = String(count).padStart(2, "0");
 
@@ -61,7 +62,6 @@ async function main() {
 <!-- Bài ${lessonNo} -->
 <article class="hb-card lesson-card">
   <div class="hb-card-icon">${lessonNo}</div>
-  <span class="hb-badge">${category}</span>
   <h3>${title}</h3>
   <p>${desc}</p>
   <span class="meta">6 mins • B1–B2</span>
