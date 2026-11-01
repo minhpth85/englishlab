@@ -126,6 +126,7 @@ const $ = (id) => document.getElementById(id);
 let tab = "review";
 let queue = [];
 let qi = 0;
+let singleMode = false;
 
 function esc(s) {
   return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -159,6 +160,7 @@ function card(x) {
     </div>
     <div class="item-actions">
       <a class="hb-btn hb-btn--secondary sm" href="${link}">Xem trong bài</a>
+      <button class="hb-btn hb-btn--secondary sm" data-flash="${esc(x.id)}">Xem flashcard</button>
       <button class="hb-btn hb-btn--secondary sm" data-move="${esc(x.id)}">${moveLabel}</button>
       <button class="link danger" data-del="${esc(x.id)}">Xóa</button>
     </div>
@@ -187,7 +189,7 @@ function render() {
 function showCard() {
   const current = items().find(x => x.id === queue[qi]);
   if (!current) return finish();
-  $("flashProgress").textContent = `${qi + 1} / ${queue.length}`;
+  $("flashProgress").textContent = singleMode ? "Flashcard" : `${qi + 1} / ${queue.length}`;
   $("flashPhrase").textContent = current.phrase;
   $("flashIpa").textContent = current.ipa;
   $("flashVi").textContent = current.vi;
@@ -208,7 +210,17 @@ function finish() {
   render();
 }
 
+function openFlash(id) {
+  singleMode = true;
+  queue = [id];
+  qi = 0;
+  $("reviewPanel").classList.remove("hidden");
+  $("reviewPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+  showCard();
+}
+
 function startReview() {
+  singleMode = false;
   queue = items().filter(x => x.status === "review").map(x => x.id);
   if (queue.length === 0) return;
   qi = 0;
@@ -233,6 +245,8 @@ document.querySelectorAll(".tab").forEach(btn => {
 $("list").addEventListener("click", (e) => {
   const move = e.target.closest("[data-move]");
   const del = e.target.closest("[data-del]");
+  const flash = e.target.closest("[data-flash]");
+  if (flash) openFlash(flash.dataset.flash);
   if (move) {
     const id = move.dataset.move;
     const current = items().find(x => x.id === id);
@@ -251,7 +265,7 @@ $("closeReview").addEventListener("click", closeReview);
 $("flipBtn").addEventListener("click", () => {
   $("flashBack").classList.remove("hidden");
   $("flipWrap").classList.add("hidden");
-  $("flashActions").classList.remove("hidden");
+  $("flashActions").classList.toggle("hidden", singleMode);
 });
 
 $("missBtn").addEventListener("click", () => {
