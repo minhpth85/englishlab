@@ -270,7 +270,7 @@ ${cardsHtml}
     <ul class="checklist">
       <li>Mỗi chunk có ví dụ trong bài và một ví dụ đời sống hằng ngày</li>
       <li>Ghi chú phát âm cho chỗ nối âm và nuốt âm</li>
-      <li>Tiến độ được lưu trên trình duyệt của bạn</li>
+      <li>Tiến độ được lưu theo tài khoản Gmail của bạn</li>
     </ul>
 
     <div class="note">
