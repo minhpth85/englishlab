@@ -100,7 +100,7 @@ a{color:inherit}
   <header class="head">
     <p class="hb-eyebrow">Ôn tập</p>
     <h1 class="hb-title">Chunks <em>đã lưu</em></h1>
-    <p class="lead">Những chunk bạn bấm "Lưu để ôn" trong các bài học. Lưu trên trình duyệt này.</p>
+    <p class="lead">Những chunk bạn bấm "Lưu để ôn" trong các bài học. Lưu theo tài khoản Gmail của bạn.</p>
   </header>
 
   <div class="toolbar">
@@ -320,6 +320,8 @@ $("list").addEventListener("click", (e) => {
   }
 });
 
+// Khi đồng bộ với tài khoản xong, vẽ lại danh sách theo dữ liệu mới nhất
+window.addEventListener("chunklist:synced", () => render());
 $("startReview").addEventListener("click", startReview);
 $("closeReview").addEventListener("click", closeReview);
 
