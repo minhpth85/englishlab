@@ -64,8 +64,8 @@ async function main() {
   <div class="hb-card-icon">${lessonNo}</div>
   <h3>${title}</h3>
   <p>${desc}</p>
-  <span class="meta">6 mins • B1–B2</span>
   <a class="hb-btn hb-btn--primary" href="${file}">Học bài này</a>
+  <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="${file.replace(".html", "")}" aria-pressed="false">Đánh dấu đã học</button>
 </article>
 `;
   }
@@ -318,6 +318,38 @@ searchInput.addEventListener("input", () => {
     const desc = card.querySelector("p").textContent.toLowerCase();
     card.style.display = (title.includes(query) || desc.includes(query)) ? "flex" : "none";
   });
+});
+
+// Tiến độ theo tài khoản: lưu trên server qua /api/progress
+async function loadProgress() {
+  try {
+    const res = await fetch("/api/progress");
+    return res.ok ? await res.json() : {};
+  } catch (e) { return {}; }
+}
+async function saveProgress(lessonId, completed) {
+  const res = await fetch("/api/progress", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ lessonId, completed })
+  });
+  return res.ok;
+}
+function paintDoneButton(btn, done) {
+  btn.setAttribute("aria-pressed", done ? "true" : "false");
+  btn.textContent = done ? "✓ Đã học" : "Đánh dấu đã học";
+}
+const doneButtons = document.querySelectorAll(".done-btn");
+doneButtons.forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const done = btn.getAttribute("aria-pressed") !== "true";
+    paintDoneButton(btn, done);
+    const ok = await saveProgress(btn.dataset.id, done).catch(() => false);
+    if (!ok) paintDoneButton(btn, !done);
+  });
+});
+loadProgress().then(progress => {
+  doneButtons.forEach(btn => paintDoneButton(btn, progress[btn.dataset.id] === true));
 });
 <\/script>
 </body>
