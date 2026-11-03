@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chunks đã lưu · 6 Minute English</title>
+<title>Chunks đã lưu · CHUNKIE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,7 +25,8 @@ a{color:inherit}
 .hidden{display:none !important}
 .wrap{max-width:860px;margin:0 auto;padding:0 24px 64px}
 
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.topbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:860px;margin:0 auto;padding:16px 24px}
 .brand{font-weight:700;color:var(--ink-900);text-decoration:none;font-size:18px;letter-spacing:-.01em}
 .brand span{color:var(--primary-text)}
 
@@ -104,11 +105,13 @@ a{color:inherit}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <nav class="nav">
-    <a class="brand" href="index.html">6 Minute <span>English</span></a>
+<nav class="topbar">
+  <div class="nav">
+    <a class="brand" href="index.html"><span>CHUNKIE</span></a>
     <a class="hb-btn hb-btn--secondary sm" href="index.html">← Về thư viện</a>
-  </nav>
+  </div>
+</nav>
+<div class="wrap">
 
   <header class="head">
     <p class="hb-eyebrow">Ôn tập</p>
