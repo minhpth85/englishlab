@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Is aircon the answer to a heating world? · Bài mẫu</title>
+<title>Tên bài học · CHUNKIE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@ button{font-family:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
 
 /* Thanh trên */
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1120px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px max(20px,calc(50% - 540px));background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(15,23,42,.05)}
 .brand{font-weight:700;color:var(--ink-900);text-decoration:none;font-size:18px;letter-spacing:-.01em}
 .brand span{color:var(--primary-text)}
 .back{font-size:14px;font-weight:600;color:var(--ink-500);text-decoration:none}
@@ -64,6 +64,7 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
 .tabs{display:flex;gap:24px;border-bottom:1px solid var(--border);margin:8px 0 24px;overflow-x:auto}
 .tab{background:none;border:0;padding:12px 0;font:600 15px/22px var(--font-sans);color:var(--ink-500);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
 .tab.active{color:var(--primary-text);border-bottom-color:var(--primary)}
+@media (max-width:600px){.tabs{gap:14px;-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}.tab{font-size:14px}}
 
 /* Trang học: transcript + chi tiết */
 .study{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
@@ -151,7 +152,7 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
 <body>
 
 <header class="topbar">
-  <a class="brand" href="index.html">6 Minute <span>English</span></a>
+  <a class="brand" href="index.html">CHUNKIE</a>
   <a class="back" href="index.html">← Về thư viện</a>
 </header>
 
@@ -175,9 +176,10 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
   </section>
 
   <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="study" type="button">Toàn văn & Cụm từ</button>
+    <button class="tab active" data-tab="study" type="button">Bài học</button>
     <button class="tab" data-tab="quiz" type="button">Tình huống thực tế</button>
     <button class="tab" data-tab="speaking" type="button">Luyện Speaking</button>
+    <button class="tab" data-tab="tips" type="button">Tips</button>
   </nav>
 
   <!-- TAB 1: TOÀN VĂN, CỤM TỪ VÀ CẤU TRÚC -->
@@ -230,9 +232,13 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
     </div>
   </section>
 
+  <!-- TAB 4: TIPS (nói tự nhiên như người bản ngữ) -->
+  <section id="tab-tips" class="hidden">
+    <div class="card" id="nativeTips"></div>
+  </section>
+
   <!-- TAB 3: SPEAKING -->
   <section id="tab-speaking" class="hidden">
-    <div class="card" id="nativeTips" style="margin-bottom:20px"></div>
     <div class="sub" role="tablist">
       <button class="active" data-sub="ielts" type="button">IELTS Speaking</button>
       <button data-sub="shadow" type="button">Shadowing</button>
@@ -299,413 +305,97 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
    - targets: các cụm dùng để đánh dấu trong Phòng thu (phải trùng với phrase của chunk).
    =================================================================== */
 const LESSON = {
-  title: "Is aircon the answer to a heating world?",
+  title: "Tên bài học",
   source: "BBC 6 Minute English",
   sourceUrl: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
-  youtube: "npka43vhwNo",
+  youtube: "ID_VIDEO_YOUTUBE",
   level: "B1–B2",
   listenNote: "Nghe đoạn hội thoại một lần trước khi đọc transcript và học cụm từ.",
-  defaultChunk: "life-saving",
+  defaultChunk: "cum-mau",
 
+  // Thay phần nội dung dưới đây bằng nội dung bài thật. Giữ nguyên cấu trúc các khóa.
   transcript: [
-    { speaker: "Georgie", text: "Georgie opens by asking Neil whether he had air conditioning during the UK's recent hot summer." },
-    { speaker: "Neil", text: "Neil says he had none. He wishes he did, because the heat kept him awake." },
-    { speaker: "Georgie", text: "She had a big fan, which did not always help. Heat records keep falling worldwide, and experts expect ten new air conditioning units to be installed every second for the next 30 years." },
-    { speaker: "Georgie", text: "She sets a quiz: modern air conditioning was invented in 1902, but what was it first used for? Was it a) protecting people in hospitals, b) drying ink, or c) cleaning air?" },
-    { speaker: "Neil", text: "Neil admits he has no idea and guesses c) cleaning air." },
-    { speaker: "Neil", text: "Neil asks whether aircon is only about comfort." },
-    { speaker: "Georgie", text: "No. Extreme heat is a serious health risk too. {{2|It is thought that more than 30,000 people across Europe died}} because of this summer's heat." },
-    { speaker: "Dr Radhika Khosla", text: "Dr Khosla, a climatologist, says air conditioning is [[life-saving|life-saving]]. She notes that large parts of the world could not be inhabited without it." },
-    { speaker: "Georgie", text: "The big downside is how much energy it uses." },
-    { speaker: "Dr Radhika Khosla", text: "{{3|If aircon becomes the first, go-to fix for [[extreme-heat|extreme heat]], it puts too much strain on the system.}} [[the-grid|The grid]] could collapse and emissions would rise. This creates a [[vicious-cycle|vicious cycle]]: a warmer world leads to more aircon, which means more energy and emissions, which makes the world warmer still." },
-    { speaker: "Neil", text: "[[the-grid|The grid]] is the network that carries electricity to towns, cities and countries. If demand is too high, you get [[power-cuts|power cuts]]." },
-    { speaker: "Georgie", text: "She defines a [[vicious-cycle|vicious cycle]] as a situation where a solution to a problem makes the problem even worse." },
-    { speaker: "Georgie", text: "Dr Khosla says we should first try [[passive-cooling|passive cooling]], {{1|which means keeping a space comfortable without using much energy}}. The first step is to cut [[solar-gain|solar gain]], the heat that sunlight brings into a building." },
-    { speaker: "Georgie", text: "We will still need aircon, so it must be powered by [[sustainable-energy|sustainable energy]]." },
-    { speaker: "Georgie", text: "The answer is b) drying ink. Willis Carrier invented it at a printing company in Brooklyn, New York, so Neil's guess was wrong." }
+    { speaker: "Tên người nói", text: "Đây là [[cum-mau|example phrase]] trong câu mẫu. Đây là {{1|cấu trúc mẫu}} trong câu mẫu." }
   ],
 
   structures: [
-    { id: 1, pattern: "X, which means Y", vi: "Dùng để giải thích một khái niệm ngay sau khi nêu nó. Trong bài: “passive cooling, which means keeping a space comfortable…”" },
-    { id: 2, pattern: "It is thought that + mệnh đề", vi: "Dùng khi nói điều được tin là đúng nhưng chưa chắc chắn, giúp câu nói mềm hơn và học thuật hơn." },
-    { id: 3, pattern: "If + điều kiện, it puts + gây áp lực lên…", vi: "Câu điều kiện nêu một tình huống và hệ quả. Cụm “puts strain on” nghĩa là gây áp lực lên." }
+    { id: 1, pattern: "Tên cấu trúc, ví dụ: X, you mean Y", vi: "Giải thích cấu trúc bằng tiếng Việt, kèm một ví dụ trong bài." }
   ],
 
-  part2: {
-    topic: "Staying cool at home",
-    bullets: [
-      "Describe a way you have kept your home cool during a hot period.",
-      "What you did to stay cool",
-      "When you started doing it and how you learned about it",
-      "Whether it was enough on its own, or you needed something else too",
-      "And explain how this approach affects energy use."
-    ],
-    sample: [
-      "Last summer, my flat became so hot that I struggled to sleep for several nights. At first I only used a fan, but it was not enough.",
-      "Then I decided to rely on passive cooling. I put up blinds and moved a plant near the window, so the shading cut the solar gain in the afternoon. The room became noticeably cooler, and I did not need to switch on the aircon as often.",
-      "I think this habit is sensible, because it saves electricity and avoids a vicious cycle of more air conditioning and more emissions. Still, for vulnerable people, aircon can be life-saving, so I would not dismiss it completely."
-    ]
-  },
-
   chunks: {
-      "life-saving": {
-        phrase: "life-saving",
-        type: "Compound adjective",
-        level: "B2",
-        ipa: "/ˈlaɪfˌseɪvɪŋ/",
-        vietnamese: "Cứu sống người, rất quan trọng để người ta không bị nguy hiểm đến tính mạng",
-        english: "used to describe something that stops people from dying",
-        structures: [
-          "a life-saving treatment / device",
-          "be life-saving for [people] in [places]",
-          "life-saving in extreme heat"
-        ],
-        pronunciation: "Trọng âm ở LIFE (LIFE-saving). Giữ âm /f/ rõ, đừng đọc thành /laɪs/. Âm 'ving' ngắn và nhẹ.",
-        sample: "For older people during a heatwave, a cooling unit can be genuinely life-saving.",
-        speakingTip: "Dùng khi bạn muốn nhấn mạnh tác động lớn của một giải pháp, thay vì chỉ nói 'very important'.",
-        daily: {
-          en: "I use this first-aid guide when I teach beginners, because it is genuinely life-saving.",
-          vi: "Mình dùng tài liệu sơ cứu này khi dạy người mới, vì nó thật sự có thể cứu người."
-        }
-      },
-      "the-grid": {
-        phrase: "the grid",
-        type: "Noun phrase (infrastructure)",
-        level: "B2",
-        ipa: "/ðə ɡrɪd/",
-        vietnamese: "Lưới điện: hệ thống dây dẫn đưa điện tới thị trấn, thành phố và quốc gia",
-        english: "the network that carries electricity to towns, cities and countries",
-        structures: [
-          "the grid could collapse",
-          "put strain on the grid",
-          "the grid struggles to cope with demand"
-        ],
-        pronunciation: "'the' đọc yếu thành /ðə/. Nối 'the grid' thành 'thə-grid'. Âm /r/ nhẹ, không cuốn lưỡi quá.",
-        sample: "If too many people switch on aircon at once, the grid may struggle to cope.",
-        speakingTip: "Dùng 'the grid' khi nói về hệ thống điện chung. Đây là danh từ xác định, nên luôn có 'the'.",
-        daily: {
-          en: "If the grid goes down during a storm, my live lessons get cut off.",
-          vi: "Nếu lưới điện bị sự cố khi có bão, các buổi học trực tiếp của mình sẽ bị gián đoạn."
-        }
-      },
-      "vicious-cycle": {
-        phrase: "vicious cycle",
-        type: "Idiom",
-        level: "B2",
-        ipa: "/ˌvɪʃəs ˈsaɪkl/",
-        vietnamese: "Vòng luẩn quẩn: giải pháp làm vấn đề tệ hơn, rồi lại phải làm nhiều hơn",
-        english: "a situation where a solution to a problem makes the problem even worse",
-        structures: [
-          "fall into a vicious cycle",
-          "a vicious cycle of [A] and [B]",
-          "break the vicious cycle"
-        ],
-        pronunciation: "Trọng âm ở VI và CY. Đọc 'cycle' là 'sai-kl', âm /l/ cuối nhẹ, không thêm nguyên âm sau /l/.",
-        sample: "Working late to fix my mistakes only created more mistakes. It was a vicious cycle.",
-        speakingTip: "Cụm idiom này giúp câu nói có chiều sâu, rất hữu ích ở IELTS Speaking Part 3.",
-        daily: {
-          en: "I design late at night, feel tired, work slowly the next day, and then stay up even later. It is a vicious cycle.",
-          vi: "Mình thiết kế đến khuya, mệt nên hôm sau làm chậm, rồi lại thức khuya hơn. Đúng là một vòng luẩn quẩn."
-        }
-      },
-      "passive-cooling": {
-        phrase: "passive cooling",
-        type: "Technical noun phrase",
-        level: "B2",
-        ipa: "/ˈpæsɪv ˈkuːlɪŋ/",
-        vietnamese: "Làm mát thụ động: giữ không gian mát mà không tốn nhiều năng lượng",
-        english: "keeping a space comfortable without using much energy",
-        structures: [
-          "rely on passive cooling",
-          "passive cooling methods such as shading",
-          "use passive cooling to keep [a room] cool"
-        ],
-        pronunciation: "Trọng âm ở PAS và COOL. Âm /ɪv/ cuối 'passive' ngắn, không kéo dài thành 'pa-si-vơ'.",
-        sample: "I rely on passive cooling first. I close the curtains in the afternoon and open the windows at night.",
-        speakingTip: "Dùng khi bạn nói về giải pháp thay thế cho máy lạnh. Cụm này rõ nghĩa hơn 'cool without aircon'.",
-        daily: {
-          en: "I designed my studio for passive cooling: the windows face the wind, and there are curtains for the afternoon sun.",
-          vi: "Mình thiết kế studio theo hướng làm mát thụ động: cửa sổ đón gió và có rèm che nắng buổi chiều."
-        }
-      },
-      "sustainable-energy": {
-        phrase: "sustainable energy",
-        type: "Collocation",
-        level: "B1",
-        ipa: "/səˈsteɪnəbl ˈenədʒi/",
-        vietnamese: "Năng lượng bền vững: nguồn năng lượng dùng được lâu dài, ít gây hại cho môi trường",
-        english: "energy from sources that can be used for a long time without harming the environment",
-        structures: [
-          "powered by sustainable energy",
-          "switch to sustainable energy",
-          "invest in sustainable energy"
-        ],
-        pronunciation: "Trọng âm ở STAIN và EN. '-able' đọc yếu thành /əbl/. 'energy' có ba âm tiết, không đọc thành 'e-nơ-gy'.",
-        sample: "Our office is switching to sustainable energy to cut both costs and emissions.",
-        speakingTip: "Dùng với 'switch to' hoặc 'powered by' để câu tự nhiên hơn.",
-        daily: {
-          en: "I want to choose a course platform whose servers run on sustainable energy.",
-          vi: "Mình muốn chọn nền tảng khóa học có máy chủ chạy bằng năng lượng bền vững."
-        }
-      },
-      "power-cuts": {
-        phrase: "power cuts",
-        type: "Collocation",
-        level: "B1",
-        ipa: "/ˈpaʊə kʌts/",
-        vietnamese: "Cúp điện: điện bị ngắt tạm thời",
-        english: "periods when the electricity supply is stopped",
-        structures: [
-          "cause power cuts",
-          "face power cuts",
-          "power cuts during a heatwave"
-        ],
-        pronunciation: "'power' đọc /ˈpaʊə/. Âm /ts/ cuối 'cuts' nhẹ, đọc gọn và dứt khoát.",
-        sample: "We had power cuts during the storm, so I could not finish the recording.",
-        speakingTip: "Nói 'face power cuts' hoặc 'cause power cuts' tự nhiên hơn 'no electricity'.",
-        daily: {
-          en: "I often record videos in the evening, so power cuts are my biggest worry.",
-          vi: "Mình hay quay video buổi tối, nên cúp điện là nỗi lo lớn nhất."
-        }
-      },
-      "solar-gain": {
-        phrase: "solar gain",
-        type: "Technical noun phrase",
-        level: "B2+ (từ chuyên ngành)",
-        ipa: "/ˈsəʊlə ɡeɪn/",
-        vietnamese: "Nhiệt từ mặt trời: lượng nhiệt ánh sáng mặt trời đưa vào trong tòa nhà",
-        english: "the heat that sunlight brings into a building",
-        structures: [
-          "reduce solar gain",
-          "cut solar gain",
-          "solar gain through the windows"
-        ],
-        pronunciation: "Trọng âm ở SO. 'solar' kết thúc bằng âm /ə/ yếu, nên 'solar gain' nối thành 'sọ-lə-gein'.",
-        sample: "Blinds can cut solar gain in the afternoon, so the room stays much cooler.",
-        speakingTip: "Từ chuyên ngành. Dùng khi nói về nhà ở hoặc kiến trúc để ghi điểm từ vựng chính xác.",
-        daily: {
-          en: "When I shoot product photos for my course, I close the curtains to reduce solar gain, so the light looks softer.",
-          vi: "Khi chụp ảnh sản phẩm cho khóa học, mình kéo rèm để giảm nhiệt từ mặt trời, ánh sáng nhìn dịu hơn."
-        }
-      },
-      "extreme-heat": {
-        phrase: "extreme heat",
-        type: "Collocation",
-        level: "B1",
-        ipa: "/ɪkˈstriːm hiːt/",
-        vietnamese: "Nắng nóng cực đoan: nhiệt độ cao bất thường, gây rủi ro cho sức khỏe",
-        english: "very high temperatures that create a serious health risk",
-        structures: [
-          "protect people from extreme heat",
-          "during extreme heat",
-          "extreme heat waves"
-        ],
-        pronunciation: "Trọng âm ở STREEM. Đọc rõ âm /iː/ dài trong 'extreme'. Giữ 'extreme' và 'heat' tách rõ, không nối.",
-        sample: "Older people are at risk during extreme heat, so cooling must be available to them.",
-        speakingTip: "'Extreme' mạnh hơn 'very hot'. Dùng khi nói về biến đổi khí hậu hoặc sức khỏe cộng đồng.",
-        daily: {
-          en: "Because of extreme heat, I moved my video shoots to early mornings.",
-          vi: "Vì nắng nóng cực đoan, mình chuyển lịch quay video sang sáng sớm."
-        }
+    "cum-mau": {
+      phrase: "example phrase",
+      type: "Loại cụm, ví dụ: Phrasal verb",
+      level: "B2",
+      ipa: "/ɪɡˈzɑːmpl frˈeɪz/",
+      vietnamese: "Nghĩa tiếng Việt của cụm.",
+      english: "English definition of the phrase.",
+      structures: ["cấu trúc đi kèm 1", "cấu trúc đi kèm 2"],
+      pronunciation: "Ghi chú nối âm, nuốt âm, nhấn trọng âm.",
+      sample: "Câu ví dụ lấy từ bài.",
+      speakingTip: "Mẹo khi dùng cụm này trong Speaking.",
+      daily: {
+        en: "A sentence from everyday life that uses the phrase.",
+        vi: "Bản dịch tiếng Việt của câu trên."
       }
-    },
+    }
+  },
 
   speaking: [
-  {
-    part: "Phần 1 · câu 1",
-    q: "Do you usually feel hot at home in summer?",
-    hint: "Trả lời trực tiếp, rồi thêm một lý do ngắn.",
-    sample: "Yes, quite often. My flat faces west, so it gets very hot in the afternoon."
-  },
-  {
-    part: "Phần 1 · câu 2",
-    q: "How often do you use air conditioning?",
-    hint: "Nói tần suất (every day, a few times a week, rarely) rồi giải thích.",
-    sample: "Not very often. I mostly use a fan, and I only switch on the aircon during extreme heat."
-  },
-  {
-    part: "Phần 1 · câu 3",
-    q: "Do you prefer to be indoors or outdoors when it is hot?",
-    hint: "Chọn một bên, nêu lý do cá nhân.",
-    sample: "Indoors, usually. I find the heat outside hard to handle after noon, so I stay in the shade."
-  },
-  {
-    part: "Phần 3 · câu 4",
-    q: "Why do you think more people are installing air conditioning these days?",
-    hint: "Nhắc tới nhiệt độ tăng, các đợt nắng nóng thường xuyên hơn, và việc máy lạnh ngày càng rẻ.",
-    sample: "I think it is mainly because summers are getting hotter, and people want to feel safe at home. Air conditioners are also cheaper than before, so more families can afford them."
-  },
-  {
-    part: "Phần 3 · câu 5",
-    q: "Should governments encourage passive cooling instead of air conditioning?",
-    hint: "Nêu lợi ích tiết kiệm điện và tránh vicious cycle; đồng thời nhìn nhận máy lạnh vẫn life-saving với người già và người bệnh.",
-    sample: "I think they should encourage both. Passive cooling saves energy and avoids a vicious cycle, but vulnerable people still need aircon to survive extreme heat."
-  },
-  {
-    part: "Phần 3 · câu 6",
-    q: "How can cities protect older people from extreme heat?",
-    hint: "Nêu 2-3 giải pháp: cây xanh, nơi làm mát công cộng, cảnh báo sớm.",
-    sample: "Cities can plant more trees for shading and open cooling centres for people who cannot afford aircon. Early warnings also help, because older people can prepare in advance."
-  },
-  {
-    part: "Phần 3 · câu 7",
-    q: "Should electricity cost more during peak hours?",
-    hint: "Nêu lợi ích giảm tải cho the grid, và nhược điểm với gia đình thu nhập thấp.",
-    sample: "In theory, yes, because it would reduce strain on the grid at busy times. However, it could hurt low-income families, so they would need support."
-  },
-  {
-    part: "Phần 3 · câu 8",
-    q: "What are the environmental costs of air conditioning?",
-    hint: "Nói về năng lượng, khí thải và rủi ro power cuts.",
-    sample: "The main cost is energy use. If the electricity comes from fossil fuels, emissions rise, and this can make the heat worse over time."
-  },
-  {
-    part: "Phần 3 · câu 9",
-    q: "Is it fair that wealthy people can afford more air conditioning than poorer people?",
-    hint: "Trả lời rõ quan điểm, rồi nêu hệ quả với người dễ bị tổn thương.",
-    sample: "Not really. The people who cannot afford it are often the most vulnerable to extreme heat, so this creates a serious inequality."
-  }
-],
-
-  writing: [
-  {
-    prompt: "Viết một câu về công việc của bạn, dùng 'vicious cycle'.",
-    sample: "When I work late, I feel tired, and my next design takes even longer. It is a vicious cycle."
-  },
-  {
-    prompt: "Viết một câu về nhà hoặc studio của bạn, dùng 'solar gain' hoặc 'power cuts'.",
-    sample: "I put blinds in my studio to cut solar gain, so my laptop does not overheat in the afternoon."
-  },
-  {
-    prompt: "Viết một câu về kiến thức bạn dạy, dùng 'life-saving'.",
-    sample: "Learning basic first aid is genuinely life-saving, so I include it in my beginner course."
-  }
-],
-
-    quiz: [
-      {
-        id: 1,
-        category: "science",
-        situation: "Máy điều hòa hiện đại được phát minh năm 1902. Theo bài nghe, ban đầu nó được dùng để làm gì?",
-        targetPhrase: "dry ink",
-        options: [
-          { text: "Bảo vệ bệnh nhân trong bệnh viện", correct: false },
-          { text: "Làm khô mực in (dry ink)", correct: true },
-          { text: "Làm sạch không khí trong nhà", correct: false },
-          { text: "Làm mát đường hầm tàu điện ngầm", correct: false }
-        ],
-        explanation: "Willis Carrier phát minh ra máy điều hòa năm 1902 tại một công ty in ở Brooklyn, New York, và nó ban đầu được dùng để làm khô mực in."
-      },
-      {
-        id: 2,
-        category: "science",
-        situation: "Khi một giải pháp cho vấn đề lại khiến vấn đề tệ hơn, người ta gọi tình trạng đó là gì?",
-        targetPhrase: "vicious cycle",
-        options: [
-          { text: "A vicious cycle (vòng luẩn quẩn)", correct: true },
-          { text: "A magic bullet (giải pháp thần kỳ)", correct: false },
-          { text: "A power cut (cúp điện)", correct: false },
-          { text: "Passive cooling (làm mát thụ động)", correct: false }
-        ],
-        explanation: "Vicious cycle là khi giải pháp làm vấn đề tệ hơn, rồi bạn phải làm nhiều hơn và vấn đề lại càng nặng. Ví dụ: nhiều máy lạnh hơn làm thế giới nóng hơn, và rồi lại cần thêm máy lạnh."
-      },
-      {
-        id: 3,
-        category: "nutrition",
-        situation: "Để giữ nhà mát mà không tốn nhiều điện, chuyên gia khuyên nên thử cách nào trước tiên?",
-        targetPhrase: "passive cooling",
-        options: [
-          { text: "Làm mát thụ động (passive cooling): làm mát tòa nhà mà không dùng nhiều năng lượng", correct: true },
-          { text: "Bật máy lạnh hết công suất suốt cả ngày", correct: false },
-          { text: "Bật thật nhiều quạt tản nhiệt mà không che nắng", correct: false },
-          { text: "Mở điều hòa và không quan tâm đến mức tiêu thụ điện", correct: false }
-        ],
-        explanation: "Passive cooling là làm mát tòa nhà mà không tốn nhiều điện. Bước đầu tiên là giảm solar gain, ví dụ bằng shading như cây xanh, rèm hoặc mành."
-      },
-      {
-        id: 4,
-        category: "science",
-        situation: "Trong bài, 'the grid' được hiểu là gì?",
-        targetPhrase: "the grid",
-        options: [
-          { text: "Hệ thống phân phối điện đến thị trấn, thành phố và quốc gia", correct: true },
-          { text: "Một loại máy lạnh công suất lớn dùng cho nhà xưởng", correct: false },
-          { text: "Bản đồ thời tiết của Vương quốc Anh", correct: false },
-          { text: "Lưới chắn côn trùng gắn ngoài cửa sổ", correct: false }
-        ],
-        explanation: "The grid là hệ thống phân phối điện. Nếu nhu cầu điện vượt quá khả năng, lưới điện có thể sụp đổ và gây ra cúp điện (power cuts)."
-      },
-      {
-        id: 5,
-        category: "nutrition",
-        situation: "Trong bài, 'extreme heat' (nắng nóng cực đoan) được nhìn nhận như thế nào?",
-        targetPhrase: "extreme heat",
-        options: [
-          { text: "Một rủi ro nghiêm trọng cho sức khỏe, có thể gây tử vong", correct: true },
-          { text: "Một loại máy lạnh mới rất tiết kiệm điện", correct: false },
-          { text: "Một kiểu quạt đứng dùng trong văn phòng", correct: false },
-          { text: "Một nguồn năng lượng tái tạo", correct: false }
-        ],
-        explanation: "Bài nói nắng nóng cực đoan là rủi ro lớn cho sức khỏe, và người ta ước tính hơn 30.000 người ở châu Âu đã chết vì nắng nóng mùa hè đó."
-      }
-    ],
-
-    shadowing: [
-      {
-        speaker: "Câu mẫu 1 (do Minh soạn)",
-        text: "Air conditioning can be life-saving for older people during a heatwave.",
-        notes: "Nhấn vào 'life-saving' và hạ giọng nhẹ ở cuối câu."
-      },
-      {
-        speaker: "Câu mẫu 2 (do Minh soạn)",
-        text: "If we rely on it too much, the grid may struggle to cope with demand.",
-        notes: "Ngắt nhịp sau 'too much' để tạo cảm giác hệ thống đang căng thẳng."
-      },
-      {
-        speaker: "Câu mẫu 3 (do Minh soạn)",
-        text: "Breaking the vicious cycle means trying passive cooling before we switch on the aircon.",
-        notes: "Nhấn 'vicious cycle' và 'before we switch on'; ngắt nhịp sau 'cycle'."
-      },
-      {
-        speaker: "Câu mẫu 4 (do Minh soạn)",
-        text: "Power cuts can happen when extreme heat pushes the grid beyond its limit.",
-        notes: "Nhấn 'power cuts' và 'extreme heat'; đọc chậm ở cụm 'beyond its limit'."
-      },
-      {
-        speaker: "Câu mẫu 5 (do Minh soạn)",
-        text: "Any cooling system should be powered by sustainable energy if we want a long-term answer.",
-        notes: "Nhấn 'sustainable energy' và 'long-term'; hạ ngữ điệu ở cuối câu."
-      }
-    ],
-
-  nativeTips: [
     {
-      type: "Cấu trúc: X, which means Y",
-      natural: "Passive cooling, which means keeping a room cool without much energy.",
-      learnerSays: "Passive cooling. It means keeping a room cool without much energy.",
-      why: "Gộp phần giải thích vào cùng một câu để giữ mạch nói, thay vì tách thành hai câu rời."
-    },
-    {
-      type: "Cấu trúc: It is thought that + mệnh đề",
-      natural: "It is thought that more than 30,000 people died because of the heat.",
-      learnerSays: "More than 30,000 people died because of the heat.",
-      why: "Rào đón khi chưa có số liệu chắc chắn. Cách nói này giúp câu nghe thận trọng và học thuật hơn."
-    },
-    {
-      type: "Cấu trúc: If + điều kiện, it puts strain on…",
-      natural: "If aircon becomes the first fix, it puts too much strain on the system.",
-      learnerSays: "If people use too much aircon, the electricity is very bad.",
-      why: "Chủ ngữ là một giải pháp cụ thể, và 'puts strain on' chính xác hơn 'very bad'."
-    },
-    {
-      type: "Cụm từ: the grid",
-      natural: "the grid",
-      learnerSays: "the electricity system",
-      why: "Ngắn và chuẩn khi nói về hệ thống điện chung."
+      part: "Phần 1 · câu 1",
+      q: "Câu hỏi IELTS Speaking.",
+      hint: "Gợi ý cách trả lời.",
+      sample: "Bài mẫu trả lời."
     }
   ],
 
-  targets: ["life-saving", "the grid", "vicious cycle", "passive cooling", "sustainable energy", "power cuts", "solar gain", "extreme heat"]
+  writing: [
+    {
+      prompt: "Đề viết một câu dùng cụm mẫu.",
+      sample: "Câu mẫu."
+    }
+  ],
+
+  quiz: [
+    {
+      id: 1,
+      category: "culture",
+      situation: "Câu hỏi tình huống.",
+      targetPhrase: "example phrase",
+      options: [
+        { text: "Đáp án A", correct: false },
+        { text: "Đáp án B", correct: true },
+        { text: "Đáp án C", correct: false }
+      ],
+      explanation: "Giải thích vì sao đáp án đúng."
+    }
+  ],
+
+  shadowing: [
+    {
+      speaker: "Câu mẫu 1",
+      text: "A sample sentence for shadowing.",
+      notes: "Ghi chú về nhấn nhịp."
+    }
+  ],
+
+  nativeTips: [
+    {
+      type: "Cấu trúc hoặc cụm",
+      natural: "Câu nói tự nhiên.",
+      learnerSays: "Cách người Việt thường nói.",
+      why: "Lý do ngắn bằng tiếng Việt."
+    }
+  ],
+
+  part2: {
+    topic: "Chủ đề IELTS Part 2",
+    bullets: ["Ý 1 cần nói", "Ý 2 cần nói", "Ý 3 cần nói"],
+    sample: ["Đoạn bài mẫu Part 2."]
+  },
+
+  targets: ["example phrase"]
 };
 
 /* ===== PHẦN LOGIC HIỂN THỊ: không cần sửa khi thêm bài mới ===== */
@@ -849,7 +539,7 @@ $('listenBtn').addEventListener('click', () => {
 
 /* Tab */
 function switchTab(name) {
-  ['study', 'quiz', 'speaking'].forEach(t => {
+  ['study', 'quiz', 'speaking', 'tips'].forEach(t => {
     $('tab-' + t).classList.toggle('hidden', t !== name);
   });
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
