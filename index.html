@@ -29,10 +29,13 @@ a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
 /* Header */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.topbar{position:sticky;top:0;z-index:40;background:rgba(251,250,245,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
 .brand{font-weight:700;color:var(--ink-900);text-decoration:none;font-size:18px;letter-spacing:-.01em}
 .brand span{color:var(--primary-text)}
-.nav-links{display:flex;gap:24px;font-size:14px;color:var(--ink-500)}
+.nav-links{display:flex;gap:8px}
+.nav-btn{padding:8px 16px;font-size:14px;line-height:20px}
+[id]{scroll-margin-top:72px}
 .nav-links a{text-decoration:none}
 
 /* Buttons */
@@ -149,21 +152,24 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
   .hb-title{font-size:28px;line-height:34px}
   .section{padding:64px 0}
   .cta{padding:48px 24px}
-  .nav-links{display:none}
+  .nav{padding:10px 16px}
+  .nav-btn{padding:6px 10px;font-size:13px}
 }
 </style>
 </head>
 <body>
 
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#">CHUNKIE</a>
+    <nav class="nav-links" aria-label="Điều hướng">
+      <a class="hb-btn hb-btn--secondary nav-btn" href="#bai-hoc">Bài học</a>
+      <a class="hb-btn hb-btn--secondary nav-btn" href="#cach-hoc">Cách học</a>
+      <a class="hb-btn hb-btn--secondary nav-btn" href="#bat-dau">Bắt đầu</a>
+    </nav>
+  </div>
+</header>
 <div class="wrap">
-  <nav class="nav">
-    <a class="brand" href="#">6 Minute <span>English</span></a>
-    <div class="nav-links">
-      <a href="#bai-hoc">Bài học</a>
-      <a href="#cach-hoc">Cách học</a>
-      <a href="#bat-dau">Bắt đầu</a>
-    </div>
-  </nav>
 
   <header class="hero">
     <div class="greeting">
