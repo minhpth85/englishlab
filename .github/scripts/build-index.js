@@ -17,23 +17,31 @@ async function callGemini(text) {
   Nội dung bài học:
   ${text.slice(0, 3000)}`;
 
-  try {
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { responseMimeType: "application/json" }
-      })
-    });
-    const data = await res.json();
-    if (!data.candidates) console.error("Gemini HTTP " + res.status + ": " + JSON.stringify(data).slice(0, 800));
-    const reply = data.candidates[0].content.parts[0].text;
-    return JSON.parse(reply);
-  } catch (err) {
-    console.error("AI Error:", err.message);
-    return null;
+  // Thử lại tối đa 3 lần khi Gemini quá tải (503) hoặc lỗi tạm thời
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { responseMimeType: "application/json" }
+        })
+      });
+      const data = await res.json();
+      if (!data.candidates) {
+        console.error("Gemini HTTP " + res.status + " (lần " + attempt + "): " + JSON.stringify(data).slice(0, 300));
+        await new Promise(r => setTimeout(r, attempt * 10000));
+        continue;
+      }
+      const reply = data.candidates[0].content.parts[0].text;
+      return JSON.parse(reply);
+    } catch (err) {
+      console.error("AI Error (lần " + attempt + "):", err.message);
+      await new Promise(r => setTimeout(r, attempt * 10000));
+    }
   }
+  return null;
 }
 
 async function main() {
