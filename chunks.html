@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{
   --bg:#fbfaf5; --surface:#ffffff; --surface-soft:#ebf6ee; --surface-inverse:#17301d;
@@ -38,11 +39,16 @@ a{color:inherit}
 .link{background:none;border:0;color:var(--ink-500);font:600 14px/20px var(--font-sans);cursor:pointer;text-decoration:underline;padding:4px}
 .link.danger:hover{color:#c2412f}
 
+.speak{background:none;border:1.5px solid var(--border-strong);border-radius:var(--radius-full);color:var(--primary-text);cursor:pointer;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;margin-right:10px;vertical-align:middle;flex-shrink:0}
+.speak:hover{background:var(--surface-soft)}
+.speak.big{width:44px;height:44px;font-size:18px}
+
 .hb-eyebrow{font:600 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--primary-text);margin-bottom:12px}
 .hb-title{font:700 36px/42px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900)}
 .hb-title em{font-style:normal;color:var(--primary)}
 .lead{font-size:16px;color:var(--ink-500);margin-top:8px}
 .head{padding:32px 0 24px}
+.summary{font-size:15px;color:var(--ink-700);margin-top:12px;font-weight:600}
 
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:24px}
 .tabs{display:flex;gap:24px}
@@ -50,6 +56,7 @@ a{color:inherit}
 .tab.active{color:var(--primary-text);border-bottom-color:var(--primary)}
 .tab span{display:inline-block;min-width:22px;padding:0 6px;border-radius:var(--radius-full);background:var(--surface-soft);color:var(--primary-text);font-size:12px;line-height:20px;text-align:center}
 .toolbar .hb-btn{margin-bottom:12px}
+.next-note{font-size:14px;color:var(--ink-500);margin-bottom:12px}
 
 .list{list-style:none;display:grid;gap:12px}
 .item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;box-shadow:var(--shadow-sm);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -57,6 +64,7 @@ a{color:inherit}
 .ipa{font:400 13px/18px ui-monospace,Menlo,monospace;color:var(--ink-500);margin-left:8px}
 .vi{font-size:15px;color:var(--ink-700);margin-top:6px}
 .from{font-size:13px;color:var(--ink-500);margin-top:6px}
+.status{font-size:13px;color:var(--primary-text);font-weight:600;margin-top:6px}
 .item-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .empty{background:var(--warning-soft);color:var(--ink-700);border-radius:var(--radius-md);padding:20px 24px;font-size:15px}
 
@@ -68,6 +76,12 @@ a{color:inherit}
 .review .flip{margin-top:24px}
 .review .actions{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
 .review .close{margin-top:16px}
+.review .section-label{font:700 12px/16px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text);margin-top:20px}
+
+.daily-list{list-style:none;display:grid;gap:8px;margin-top:10px;text-align:left}
+.daily-list li{background:var(--surface-soft);border-radius:var(--radius-md);padding:10px 14px}
+.daily-list .d-en{font-style:italic;color:var(--ink-900);display:block}
+.daily-list .d-vi{font-size:14px;color:var(--ink-500);display:block;margin-top:2px}
 
 .fullcard-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-md);margin-bottom:24px}
 .fc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
@@ -79,7 +93,6 @@ a{color:inherit}
 .fc-sec p,.fc-sec li{font-size:15px;line-height:24px;color:var(--ink-700)}
 .fc-sec ul{padding-left:20px;display:grid;gap:4px}
 .fc-sec .it{font-style:italic}
-.fc-daily{background:var(--surface-soft);border-radius:var(--radius-md);padding:14px 16px}
 .fc-note{background:var(--warning-soft);color:var(--warning-text);border-radius:var(--radius-md);padding:10px 14px;font-size:14px;margin-top:16px}
 .fc-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
 
@@ -100,15 +113,20 @@ a{color:inherit}
   <header class="head">
     <p class="hb-eyebrow">Ôn tập</p>
     <h1 class="hb-title">Chunks <em>đã lưu</em></h1>
-    <p class="lead">Những chunk bạn bấm "Lưu để ôn" trong các bài học. Lưu theo tài khoản Gmail của bạn.</p>
+    <p class="lead">Những chunk bạn bấm "Lưu để ôn" trong các bài học. Lịch ôn: 1 – 3 – 7 ngày, lưu theo tài khoản Gmail của bạn.</p>
+    <p class="summary" id="summary"></p>
   </header>
 
   <div class="toolbar">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="review">Muốn ôn <span id="cnt-review">0</span></button>
-      <button class="tab" data-tab="mastered">Đã thuộc <span id="cnt-mastered">0</span></button>
+      <button class="tab active" role="tab" aria-selected="true" data-tab="today">Hôm nay <span id="cnt-today">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="upcoming">Sắp tới <span id="cnt-upcoming">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="mastered">Đã thuộc <span id="cnt-mastered">0</span></button>
     </div>
-    <button class="hb-btn hb-btn--primary" id="startReview">Ôn ngay</button>
+    <div>
+      <p class="next-note" id="nextNote"></p>
+      <button class="hb-btn hb-btn--primary" id="startReview">Ôn hôm nay (0)</button>
+    </div>
   </div>
 
   <section id="fullCard" class="fullcard-wrap hidden" aria-live="polite"></section>
@@ -116,11 +134,16 @@ a{color:inherit}
   <section id="reviewPanel" class="review hidden" aria-live="polite">
     <p class="small" id="flashProgress"></p>
     <h2 id="flashPhrase"></h2>
-    <p class="small" id="flashIpa"></p>
+    <p class="small">
+      <button class="speak big" id="flashSpeak" type="button" aria-label="Nghe phát âm"><i class="fa-solid fa-volume-high"></i></button>
+      <span id="flashIpa"></span>
+    </p>
     <div id="flashBack" class="hidden">
       <p class="vi" id="flashVi"></p>
       <p class="en" id="flashEn"></p>
       <p class="sample" id="flashSample"></p>
+      <p class="section-label">Ví dụ đời sống</p>
+      <ol class="daily-list" id="flashDaily"></ol>
     </div>
     <div class="flip" id="flipWrap">
       <button class="hb-btn hb-btn--secondary" id="flipBtn">Lật để xem nghĩa</button>
@@ -132,85 +155,138 @@ a{color:inherit}
     <button class="link close" id="closeReview">Đóng ôn tập</button>
   </section>
 
-  <ul id="list" class="list"></ul>
+  <ul id="list" class="list" role="list"></ul>
   <div id="empty" class="empty hidden"></div>
 </div>
 
 <script src="chunk-list.js"></script>
 <script>
 const $ = (id) => document.getElementById(id);
-let tab = "review";
+let tab = "today";
 let queue = [];
 let qi = 0;
-let singleMode = false;
+
+const fmtDate = (iso) => {
+  const [y, m, d] = iso.split("-");
+  return `${d}/${m}/${y}`;
+};
 
 function esc(s) {
   return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
 function items() {
-  return Object.values(ChunkList.load()).sort((a, b) => a.savedAt - b.savedAt);
+  return Object.values(ChunkList.load()).sort((a, b) =>
+    (a.due || "").localeCompare(b.due || "") || a.savedAt - b.savedAt);
 }
 
-function patch(id, changes) {
+function patch(id, fn) {
   const data = ChunkList.load();
   if (!data[id]) return;
-  Object.assign(data[id], changes);
+  fn(data[id]);
   ChunkList.save(data);
 }
 
-function remove(id) {
+function removeItem(id) {
   const data = ChunkList.load();
   delete data[id];
   ChunkList.save(data);
 }
 
-function card(x) {
+// Phát âm bằng giọng Anh-Anh của trình duyệt
+function speak(text) {
+  if (!text || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-GB";
+  u.rate = 0.9;
+  window.speechSynthesis.speak(u);
+}
+
+function statusText(x, t) {
+  if (x.status === "mastered") return "Đã thuộc";
+  const mocThu = `Mốc ${x.stage + 1}/3`;
+  if (x.due <= t) return `Hôm nay · ${mocThu}`;
+  return `Còn ${ChunkList.daysBetween(t, x.due)} ngày · ${mocThu}`;
+}
+
+function card(x, t) {
   const link = encodeURI(x.file) + "?phrase=" + encodeURIComponent(x.phraseId);
-  const moveLabel = x.status === "review" ? "Đã thuộc" : "Ôn lại";
   return `<li class="item">
     <div>
-      <h3>${esc(x.phrase)}<span class="ipa">${esc(x.ipa)}</span></h3>
+      <h3><button class="speak" type="button" data-speak="${esc(x.phrase)}" aria-label="Nghe ${esc(x.phrase)}"><i class="fa-solid fa-volume-high"></i></button>${esc(x.phrase)}<span class="ipa">${esc(x.ipa)}</span></h3>
       <p class="vi">${esc(x.vi)}</p>
       <p class="from">Từ bài: ${esc(x.lesson)}</p>
+      <p class="status">${esc(statusText(x, t))}</p>
     </div>
     <div class="item-actions">
       <a class="hb-btn hb-btn--secondary sm" href="${link}">Xem trong bài</a>
       <button class="hb-btn hb-btn--secondary sm" data-flash="${esc(x.id)}">Xem flashcard</button>
-      <button class="hb-btn hb-btn--secondary sm" data-move="${esc(x.id)}">${moveLabel}</button>
+      ${x.status === "mastered" ? `<button class="hb-btn hb-btn--secondary sm" data-restart="${esc(x.id)}">Ôn lại</button>` : ""}
       <button class="link danger" data-del="${esc(x.id)}">Xóa</button>
     </div>
   </li>`;
 }
 
 function render() {
+  const t = ChunkList.today();
   const all = items();
-  const review = all.filter(x => x.status === "review");
   const mastered = all.filter(x => x.status === "mastered");
-  $("cnt-review").textContent = review.length;
-  $("cnt-mastered").textContent = mastered.length;
-  $("startReview").disabled = review.length === 0;
+  const due = all.filter(x => x.status !== "mastered" && x.due <= t);
+  const upcoming = all.filter(x => x.status !== "mastered" && x.due > t);
 
-  const list = tab === "review" ? review : mastered;
-  $("list").innerHTML = list.map(card).join("");
+  $("cnt-today").textContent = due.length;
+  $("cnt-upcoming").textContent = upcoming.length;
+  $("cnt-mastered").textContent = mastered.length;
+  $("summary").textContent = `Hôm nay cần ôn: ${due.length} · Sắp tới: ${upcoming.length} · Đã thuộc: ${mastered.length}`;
+
+  $("startReview").textContent = `Ôn hôm nay (${due.length})`;
+  $("startReview").disabled = due.length === 0;
+
+  const nextDay = upcoming.length ? upcoming[0].due : "";
+  $("nextNote").textContent = due.length === 0 && nextDay
+    ? `Hôm nay bạn đã ôn xong ✓. Lần ôn tiếp theo: ${fmtDate(nextDay)}`
+    : "";
+
+  const lists = { today: due, upcoming, mastered };
+  const list = lists[tab];
+  $("list").innerHTML = list.map(x => card(x, t)).join("");
 
   const empty = $("empty");
   empty.classList.toggle("hidden", list.length > 0);
-  empty.textContent = tab === "review"
-    ? 'Chưa có chunk nào cần ôn. Vào một bài học, chọn cụm từ và bấm "Lưu để ôn".'
-    : "Chưa có chunk nào ở mục Đã thuộc.";
+  empty.textContent = {
+    today: "Hôm nay không có chunk nào đến hạn. Bạn có thể xem mục Sắp tới.",
+    upcoming: "Chưa có chunk nào đang chờ ôn. Vào một bài học, chọn cụm từ và bấm \"Lưu để ôn\".",
+    mastered: "Chưa có chunk nào ở mục Đã thuộc."
+  }[tab];
 }
 
-// Ôn ngay: lật thẻ như flashcard
+// Ôn hôm nay: lật thẻ như flashcard
+function startReview() {
+  const t = ChunkList.today();
+  queue = items().filter(x => x.status !== "mastered" && x.due <= t).map(x => x.id);
+  if (queue.length === 0) return;
+  qi = 0;
+  $("reviewPanel").classList.remove("hidden");
+  $("reviewPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+  showCard();
+}
+
+function dailyHtml(list) {
+  return (list || []).map(d => `<li><span class="d-en">${esc(d.en)}</span><span class="d-vi">${esc(d.vi)}</span></li>`).join("");
+}
+
 function showCard() {
   const current = items().find(x => x.id === queue[qi]);
   if (!current) return finish();
-  $("flashProgress").textContent = singleMode ? "Flashcard" : `${qi + 1} / ${queue.length}`;
+  $("flashProgress").textContent = `${qi + 1} / ${queue.length}`;
   $("flashPhrase").textContent = current.phrase;
-  $("flashIpa").textContent = current.ipa;
-  $("flashVi").textContent = current.vi;
-  $("flashEn").textContent = current.en;
-  $("flashSample").textContent = `"${current.sample}"`;
+  $("flashIpa").textContent = current.ipa || "";
+  $("flashSpeak").dataset.speak = current.phrase;
+  $("flashVi").textContent = current.vi || "";
+  $("flashEn").textContent = current.en || "";
+  $("flashSample").textContent = current.sample ? `"${current.sample}"` : "";
+  $("flashDaily").innerHTML = dailyHtml(current.daily);
   $("flashBack").classList.add("hidden");
   $("flipWrap").classList.remove("hidden");
   $("flashActions").classList.add("hidden");
@@ -218,7 +294,7 @@ function showCard() {
 
 function finish() {
   $("flashProgress").textContent = "";
-  $("flashPhrase").textContent = "Bạn đã ôn xong các chunk.";
+  $("flashPhrase").textContent = "Bạn đã ôn xong hôm nay ✓";
   $("flashIpa").textContent = "";
   $("flashBack").classList.add("hidden");
   $("flipWrap").classList.add("hidden");
@@ -227,23 +303,22 @@ function finish() {
 }
 
 function fullCardHtml(x) {
-  const list = (arr) => (arr || []).map(t => `<li>${esc(t)}</li>`).join("");
   const note = !x.structures
     ? `<p class="fc-note">Thẻ này được lưu trước khi có đầy đủ thông tin. Mở lại bài "${esc(x.lesson)}" một lần để cập nhật.</p>`
     : "";
+  const list = (arr) => (arr || []).map(t => `<li>${esc(t)}</li>`).join("");
   return `
     <div class="fc-head">
       <span class="fc-badge">${esc(x.type || "")}${x.level ? " · " + esc(x.level) : ""}</span>
-      <button class="hb-btn hb-btn--secondary sm" data-speak="${esc(x.id)}"><i class="fa-solid fa-volume-high"></i> Nghe phát âm</button>
     </div>
-    <h2>${esc(x.phrase)}</h2>
+    <h2><button class="speak big" type="button" data-speak="${esc(x.phrase)}" aria-label="Nghe phát âm"><i class="fa-solid fa-volume-high"></i></button>${esc(x.phrase)}</h2>
     <p class="ipa">${esc(x.ipa || "")}</p>
     ${note}
     <div class="fc-sec"><h4>Ý nghĩa tiếng Việt</h4><p>${esc(x.vi || "")}</p></div>
     <div class="fc-sec"><h4>English BBC definition</h4><p>${esc(x.en || "")}</p></div>
     ${x.structures && x.structures.length ? `<div class="fc-sec"><h4>Cấu trúc câu & cụm đi kèm</h4><ul>${list(x.structures)}</ul></div>` : ""}
     ${x.pronunciation ? `<div class="fc-sec"><h4>Phát âm</h4><p>${esc(x.pronunciation)}</p></div>` : ""}
-    ${x.daily ? `<div class="fc-sec"><h4>Ví dụ trong đời sống</h4><div class="fc-daily"><p class="it">${esc(x.daily.en)}</p><p>${esc(x.daily.vi)}</p></div></div>` : ""}
+    ${x.daily && x.daily.length ? `<div class="fc-sec"><h4>Ví dụ đời sống</h4><ol class="daily-list">${dailyHtml(x.daily)}</ol></div>` : ""}
     <div class="fc-sec">
       <h4>Ứng dụng trong Speaking (IELTS & Daily)</h4>
       ${x.sample ? `<p><strong>Speaking sample:</strong> <span class="it">"${esc(x.sample)}"</span></p>` : ""}
@@ -264,85 +339,72 @@ function openFlash(id) {
   box.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function speakPhrase(id) {
-  const x = items().find(i => i.id === id);
-  if (!x || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(x.phrase);
-  u.lang = "en-GB";
-  u.rate = 0.9;
-  window.speechSynthesis.speak(u);
-}
+// Một chỗ xử lý icon loa cho mọi nơi trên trang
+document.addEventListener("click", (e) => {
+  const sp = e.target.closest("[data-speak]");
+  if (sp) speak(sp.dataset.speak);
+});
 
 $("fullCard").addEventListener("click", (e) => {
   if (e.target.closest("[data-close-full]")) $("fullCard").classList.add("hidden");
-  const sp = e.target.closest("[data-speak]");
-  if (sp) speakPhrase(sp.dataset.speak);
 });
-
-function startReview() {
-  singleMode = false;
-  queue = items().filter(x => x.status === "review").map(x => x.id);
-  if (queue.length === 0) return;
-  qi = 0;
-  $("reviewPanel").classList.remove("hidden");
-  $("reviewPanel").scrollIntoView({ behavior: "smooth", block: "start" });
-  showCard();
-}
-
-function closeReview() {
-  $("reviewPanel").classList.add("hidden");
-  render();
-}
 
 document.querySelectorAll(".tab").forEach(btn => {
   btn.addEventListener("click", () => {
     tab = btn.dataset.tab;
-    document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b === btn));
+    document.querySelectorAll(".tab").forEach(b => {
+      const on = b === btn;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-selected", on ? "true" : "false");
+    });
     render();
   });
 });
 
 $("list").addEventListener("click", (e) => {
-  const move = e.target.closest("[data-move]");
-  const del = e.target.closest("[data-del]");
   const flash = e.target.closest("[data-flash]");
+  const restart = e.target.closest("[data-restart]");
+  const del = e.target.closest("[data-del]");
   if (flash) openFlash(flash.dataset.flash);
-  if (move) {
-    const id = move.dataset.move;
-    const current = items().find(x => x.id === id);
-    if (current) patch(id, { status: current.status === "review" ? "mastered" : "review" });
+  if (restart) {
+    patch(restart.dataset.restart, (x) => ChunkList.restart(x));
     render();
   }
   if (del) {
-    remove(del.dataset.del);
+    if (!confirm("Xóa chunk này khỏi danh sách?")) return;
+    removeItem(del.dataset.del);
     render();
   }
 });
 
-// Khi đồng bộ với tài khoản xong, vẽ lại danh sách theo dữ liệu mới nhất
-window.addEventListener("chunklist:synced", () => render());
 $("startReview").addEventListener("click", startReview);
-$("closeReview").addEventListener("click", closeReview);
+$("closeReview").addEventListener("click", () => {
+  $("reviewPanel").classList.add("hidden");
+  render();
+});
 
 $("flipBtn").addEventListener("click", () => {
   $("flashBack").classList.remove("hidden");
   $("flipWrap").classList.add("hidden");
-  $("flashActions").classList.toggle("hidden", singleMode);
+  $("flashActions").classList.remove("hidden");
 });
 
 $("missBtn").addEventListener("click", () => {
+  patch(queue[qi], (x) => ChunkList.markMissed(x));
   qi = (qi + 1) % queue.length;
   showCard();
 });
 
 $("knowBtn").addEventListener("click", () => {
-  patch(queue[qi], { status: "mastered" });
+  patch(queue[qi], (x) => ChunkList.markKnown(x));
   queue.splice(qi, 1);
   if (queue.length === 0) return finish();
   qi = qi % queue.length;
   showCard();
 });
+
+// Khi đồng bộ với tài khoản xong, vẽ lại danh sách theo dữ liệu mới nhất
+window.addEventListener("chunklist:synced", () => render());
 
 render();
 </script>
