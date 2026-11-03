@@ -9,6 +9,58 @@
   const MIGRATED_KEY = "6me-chunks-migrated"; // "1" = đã đồng bộ lần đầu với tài khoản
   const REMOTE = "/api/chunks";
 
+  // ---- Lịch ôn 1–3–7 ngày ----
+  // Mỗi chunk có "stage" (0, 1, 2 = mốc 1/3, 2/3, 3/3) và "due" (ngày ôn, YYYY-MM-DD).
+  // Hết mốc 3 mà "Nhớ rồi" thì chuyển sang "Đã thuộc" (status = "mastered").
+  const TZ = "Asia/Bangkok";
+  const WAIT_FIRST = 1;              // vừa lưu: ôn sau 1 ngày
+  const WAIT_AFTER_KNOW = [3, 7];    // "Nhớ rồi" ở mốc 1 → chờ 3 ngày; ở mốc 2 → chờ 7 ngày
+  const WAIT_AFTER_MISS = 1;         // "Chưa nhớ": quay về mốc 1, ôn lại ngày mai
+
+  function today() {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
+  }
+  function addDays(day, n) {
+    const d = new Date(day + "T00:00:00Z");
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  }
+  function daysBetween(from, to) {
+    return Math.round((new Date(to + "T00:00:00Z") - new Date(from + "T00:00:00Z")) / 86400000);
+  }
+  // Dữ liệu cũ chưa có mốc/ngày ôn: gán mốc 1 và hẹn ôn hôm nay (để không mất chunk nào)
+  function normalize(item) {
+    if (item.status === "mastered") return item;
+    if (typeof item.stage !== "number") item.stage = 0;
+    if (!item.due) item.due = today();
+    return item;
+  }
+  function normalizeAll(data) {
+    Object.values(data).forEach(normalize);
+    return data;
+  }
+  function markKnown(item) {
+    if (item.stage >= 2) {
+      item.status = "mastered";
+    } else {
+      item.due = addDays(today(), WAIT_AFTER_KNOW[item.stage]);
+      item.stage += 1;
+    }
+    return item;
+  }
+  function markMissed(item) {
+    item.status = "review";
+    item.stage = 0;
+    item.due = addDays(today(), WAIT_AFTER_MISS);
+    return item;
+  }
+  function restart(item) {
+    item.status = "review";
+    item.stage = 0;
+    item.due = today();
+    return item;
+  }
+
   function parse(raw) {
     try {
       return JSON.parse(raw) || {};
@@ -16,7 +68,7 @@
       return {};
     }
   }
-  const load = () => parse(localStorage.getItem(KEY));
+  const load = () => normalizeAll(parse(localStorage.getItem(KEY)));
   const base = () => parse(localStorage.getItem(BASE_KEY));
 
   // Phần khác nhau giữa bản đã đồng bộ (old) và bản hiện tại (cur)
@@ -106,7 +158,7 @@
     return decodeURIComponent(location.pathname.split("/").pop() || "");
   }
 
-  window.ChunkList = { KEY, load, save, sync };
+  window.ChunkList = { KEY, load, save, sync, today, addDays, daysBetween, markKnown, markMissed, restart };
 
   const ready = sync();
 
@@ -134,8 +186,14 @@
       pronunciation: p.pronunciation || "",
       sample: p.sample,
       speakingTip: p.speakingTip || "",
-      daily: p.daily || null
+      daily: toDailyList(p.daily)
     };
+  }
+
+  // Ví dụ đời sống: cho phép 1 ví dụ (dạng cũ) hoặc danh sách tối đa 3 ví dụ
+  function toDailyList(d) {
+    if (!d) return [];
+    return (Array.isArray(d) ? d : [d]).slice(0, 3);
   }
 
   // Cập nhật các chunk đã lưu từ bài này (để thẻ có đủ thông tin mới nhất)
@@ -175,7 +233,10 @@
       delete data[id];
     } else {
       data[id] = Object.assign(
-        { id: id, file: currentFile(), lesson: lessonTitle(), phraseId: phraseId, status: "review", savedAt: Date.now() },
+        {
+          id: id, file: currentFile(), lesson: lessonTitle(), phraseId: phraseId,
+          status: "review", stage: 0, due: addDays(today(), WAIT_FIRST), savedAt: Date.now()
+        },
         snapshot(phraseId)
       );
     }
