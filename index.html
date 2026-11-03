@@ -22,6 +22,7 @@
   --font-sans:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
 body{font-family:var(--font-sans);font-size:16px;line-height:24px;color:var(--ink-700);background:var(--bg);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:var(--radius-sm)}
@@ -36,6 +37,7 @@ a{color:inherit}
 
 /* Buttons */
 .hb-btn{display:inline-flex;align-items:center;gap:12px;padding:12px 24px;border-radius:var(--radius-md);font:600 16px/24px var(--font-sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .15s}
+.hb-btn:disabled{opacity:.6;cursor:wait}
 .hb-btn--primary{background:var(--primary);color:#fff}
 .hb-btn--primary:hover{background:var(--primary-hover)}
 .hb-btn--secondary{background:transparent;border-color:var(--border-strong);color:var(--ink-900)}
@@ -44,11 +46,25 @@ a{color:inherit}
 /* Badge */
 .hb-badge{display:inline-block;padding:4px 12px;border-radius:var(--radius-full);font:500 12px/16px var(--font-sans);background:var(--surface-soft);color:var(--primary-text);align-self:flex-start}
 
+/* Trạng thái học trên thẻ */
+.status{font:600 12px/16px var(--font-sans);padding:4px 10px;border-radius:var(--radius-full);white-space:nowrap}
+.status--new{background:#eef1ec;color:var(--ink-500)}
+.status--review{background:var(--warning-soft);color:var(--warning-text)}
+.status--done{background:var(--primary);color:#fff}
+
 /* Eyebrow + title */
 .hb-eyebrow{font:600 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--primary-text);margin-bottom:12px}
 .hb-title{font:700 32px/38px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900)}
 .hb-title em{font-style:normal;color:var(--primary)}
 .hb-lead{font:400 18px/28px var(--font-sans);color:var(--ink-500);margin-top:16px;max-width:56ch}
+
+/* Lời chào */
+.greeting{margin-bottom:24px}
+.greeting-line{font:600 18px/28px var(--font-sans);color:var(--ink-900)}
+.greeting-date{font:400 15px/22px var(--font-sans);color:var(--ink-500)}
+.name-form{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.name-form input{padding:8px 12px;font:400 15px/20px var(--font-sans);border:1px solid var(--border-strong);border-radius:var(--radius-md);min-width:220px;color:var(--ink-900)}
+.name-form .hb-btn{padding:8px 16px;font-size:14px}
 
 /* Hero */
 .hero{padding:64px 0 48px}
@@ -72,15 +88,33 @@ a{color:inherit}
 .search{margin-top:24px;max-width:420px}
 .search input{width:100%;padding:12px 16px;font:400 15px/20px var(--font-sans);border:1px solid var(--border-strong);background:var(--surface);border-radius:var(--radius-md);color:var(--ink-900);outline:none}
 .search input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(50,133,77,.15)}
+.no-results{margin-top:24px;color:var(--ink-500)}
+
+/* Tiến độ tổng */
+.progress{margin-top:24px;max-width:560px}
+.progress-text{font:600 15px/22px var(--font-sans);color:var(--ink-900)}
+.progress-track{margin-top:8px;height:8px;border-radius:var(--radius-full);background:var(--border);overflow:hidden}
+.progress-fill{height:100%;width:0;background:var(--primary);transition:width .3s}
+.login-btn{margin-top:12px}
+
+/* Thông báo ngắn */
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--surface-inverse);color:var(--text-on-inverse);padding:12px 20px;border-radius:var(--radius-md);font-size:14px;line-height:20px;box-shadow:0 8px 24px rgba(23,48,29,.2);opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
+.toast.show{opacity:1}
 
 /* Cards */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.hb-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:12px}
+.hb-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:12px;transition:border-color .15s,background .15s}
+.hb-card.is-done{border-color:var(--primary);background:#f6fbf7}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .hb-card-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--surface-soft);color:var(--green-700);display:grid;place-items:center;font-weight:700}
+.hb-card.is-done .hb-card-icon{background:var(--primary);color:#fff}
 .hb-card h3{font:600 22px/28px var(--font-sans);letter-spacing:-.01em;color:var(--ink-900)}
-.hb-card p{font:400 14px/20px var(--font-sans);color:var(--ink-500)}
-.hb-card .meta{font:500 12px/16px var(--font-sans);color:var(--ink-500)}
-.hb-card .hb-btn{margin-top:auto;align-self:flex-start;padding:8px 16px;font-size:14px}
+.hb-card .topic{font:400 14px/20px var(--font-sans);color:var(--ink-500)}
+.hb-card .topic strong{font-weight:600;color:var(--ink-700)}
+.chunk-list{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.chunk-list li{font:500 13px/18px var(--font-sans);padding:4px 10px;border-radius:var(--radius-full);background:var(--bg-alt);border:1px solid var(--border);color:var(--ink-700)}
+.card-actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
+.card-actions .hb-btn{padding:8px 16px;font-size:14px;margin-top:0;align-self:auto}
 
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -134,6 +168,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
   </nav>
 
   <header class="hero">
+    <div class="greeting">
+      <p class="greeting-line" id="greetingLine" hidden></p>
+      <p class="greeting-date" id="greetingDate"></p>
+      <form class="name-form" id="nameForm" hidden>
+        <input type="text" id="nameInput" maxlength="40" aria-label="Tên của bạn" placeholder="Tên của bạn">
+        <button class="hb-btn hb-btn--secondary" type="submit">Lưu tên</button>
+      </form>
+    </div>
     <p class="hb-eyebrow">Thư viện chunk từ podcast</p>
     <h1 class="hb-display">Học <em>chunk</em> để nói tiếng Anh tự nhiên hơn</h1>
     <p class="hb-lead">Mỗi bài tóm tắt 8–10 cụm từ hay dùng nhất trong 6 Minute English, kèm ví dụ đời sống, ghi chú phát âm và câu hỏi luyện Speaking IELTS.</p>
@@ -160,49 +202,96 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
       <p class="hb-eyebrow">Thư viện</p>
       <h2 class="hb-title">Chọn một bài để <em>bắt đầu</em></h2>
       <div class="search">
-        <input type="text" id="searchInput" placeholder="Tìm bài theo tiêu đề hoặc từ khóa...">
+        <input type="text" id="searchInput" aria-label="Tìm bài học" placeholder="Tìm bài theo tiêu đề, chủ đề hoặc chunk...">
+      </div>
+      <div class="progress" aria-live="polite">
+        <p class="progress-text" id="progressText">Đang tải tiến độ…</p>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+        <button class="hb-btn hb-btn--primary login-btn" id="loginBtn" type="button" hidden>Đăng nhập để lưu tiến độ</button>
       </div>
     </div>
 
     <div class="grid" id="lessonsGrid">
 
+
 <!-- Bài 01 -->
 <article class="hb-card lesson-card">
-  <div class="hb-card-icon">01</div>
+  <div class="card-top">
+    <div class="hb-card-icon">01</div>
+    <span class="status status--new">Chưa học</span>
+  </div>
   <h3>Making 'mum friends'</h3>
-  <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-  <a class="hb-btn hb-btn--primary" href="Making-'mum-friends'.html">Học bài này</a>
-  <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="Making-'mum-friends'" aria-pressed="false">Đánh dấu đã học</button>
+  <p class="topic"><strong>Chủ đề:</strong> Chủ đề đang được cập nhật</p>
+  <ul class="chunk-list" aria-label="3 chunk trong bài">
+      <li lang="en">click with</li>
+      <li lang="en">fit into</li>
+      <li lang="en">down to luck</li>
+  </ul>
+  <div class="card-actions">
+    <a class="hb-btn hb-btn--primary" href="Making-'mum-friends'.html">Học bài này</a>
+    <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="Making-'mum-friends'" aria-pressed="false">Đánh dấu đã học</button>
+  </div>
 </article>
 
 <!-- Bài 02 -->
 <article class="hb-card lesson-card">
-  <div class="hb-card-icon">02</div>
+  <div class="card-top">
+    <div class="hb-card-icon">02</div>
+    <span class="status status--new">Chưa học</span>
+  </div>
   <h3>Is aircon the answer to a heating world</h3>
-  <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-  <a class="hb-btn hb-btn--primary" href="Is-aircon-the-answer-to-a-heating-world.html">Học bài này</a>
-  <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="Is-aircon-the-answer-to-a-heating-world" aria-pressed="false">Đánh dấu đã học</button>
+  <p class="topic"><strong>Chủ đề:</strong> Chủ đề đang được cập nhật</p>
+  <ul class="chunk-list" aria-label="3 chunk trong bài">
+      <li lang="en">life-saving</li>
+      <li lang="en">the grid</li>
+      <li lang="en">vicious cycle</li>
+  </ul>
+  <div class="card-actions">
+    <a class="hb-btn hb-btn--primary" href="Is-aircon-the-answer-to-a-heating-world.html">Học bài này</a>
+    <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="Is-aircon-the-answer-to-a-heating-world" aria-pressed="false">Đánh dấu đã học</button>
+  </div>
 </article>
 
 <!-- Bài 03 -->
 <article class="hb-card lesson-card">
-  <div class="hb-card-icon">03</div>
+  <div class="card-top">
+    <div class="hb-card-icon">03</div>
+    <span class="status status--new">Chưa học</span>
+  </div>
   <h3>Why does heartbreak hurt so much</h3>
-  <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-  <a class="hb-btn hb-btn--primary" href="Why-does-heartbreak-hurt-so-much.html">Học bài này</a>
-  <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="Why-does-heartbreak-hurt-so-much" aria-pressed="false">Đánh dấu đã học</button>
+  <p class="topic"><strong>Chủ đề:</strong> Chủ đề đang được cập nhật</p>
+  <ul class="chunk-list" aria-label="3 chunk trong bài">
+      <li lang="en">think back to</li>
+      <li lang="en">have one's heart broken</li>
+      <li lang="en">a couple of years ago</li>
+  </ul>
+  <div class="card-actions">
+    <a class="hb-btn hb-btn--primary" href="Why-does-heartbreak-hurt-so-much.html">Học bài này</a>
+    <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="Why-does-heartbreak-hurt-so-much" aria-pressed="false">Đánh dấu đã học</button>
+  </div>
 </article>
 
 <!-- Bài 04 -->
 <article class="hb-card lesson-card">
-  <div class="hb-card-icon">04</div>
+  <div class="card-top">
+    <div class="hb-card-icon">04</div>
+    <span class="status status--new">Chưa học</span>
+  </div>
   <h3>What should you eat for a better night' sleep</h3>
-  <p>Luyện tập phản xạ, từ vựng và shadowing theo chủ đề.</p>
-  <a class="hb-btn hb-btn--primary" href="What-should-you-eat-for-a-better-night'-sleep.html">Học bài này</a>
-  <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="What-should-you-eat-for-a-better-night'-sleep" aria-pressed="false">Đánh dấu đã học</button>
+  <p class="topic"><strong>Chủ đề:</strong> Chủ đề đang được cập nhật</p>
+  <ul class="chunk-list" aria-label="3 chunk trong bài">
+      <li lang="en">struggle to get a good night's sleep</li>
+      <li lang="en">lie there for hours</li>
+      <li lang="en">be familiar with (that feeling)</li>
+  </ul>
+  <div class="card-actions">
+    <a class="hb-btn hb-btn--primary" href="What-should-you-eat-for-a-better-night'-sleep.html">Học bài này</a>
+    <button class="hb-btn hb-btn--secondary done-btn" type="button" data-id="What-should-you-eat-for-a-better-night'-sleep" aria-pressed="false">Đánh dấu đã học</button>
+  </div>
 </article>
 
     </div>
+    <p class="no-results" id="noResults" hidden>Không tìm thấy bài nào. Thử từ khóa khác nhé.</p>
   </div>
 </section>
 
@@ -251,7 +340,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
       <h2 class="hb-title">Học xong <em>bài 1</em> trong 15 phút</h2>
       <p class="hb-lead">Chọn bài đầu tiên, đọc 3 chunk đầu và thử đặt một câu với mỗi chunk.</p>
       <div class="hero-actions">
-        <a class="hb-btn hb-btn--primary" href="#bai-hoc">Mở bài 1</a>
+        <a class="hb-btn hb-btn--primary" href="Making-'mum-friends'.html">Mở bài 1</a>
       </div>
     </div>
   </div>
@@ -264,57 +353,198 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
   </div>
 </footer>
 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".lesson-card");
+const doneButtons = document.querySelectorAll(".done-btn");
+const noResults = document.getElementById("noResults");
+const progressText = document.getElementById("progressText");
+const progressFill = document.getElementById("progressFill");
+const loginBtn = document.getElementById("loginBtn");
+const toastEl = document.getElementById("toast");
 
-// Đếm chunk đang muốn ôn (lưu bởi chunk-list.js trên trình duyệt này)
-try {
-  const saved = Object.values(JSON.parse(localStorage.getItem("6me-chunks-v1")) || {});
-  const due = saved.filter(x => x.status === "review").length;
-  if (due > 0) document.getElementById("reviewNote").textContent = "Bạn đang có " + due + " chunk cần ôn.";
-} catch (e) {}
+// Chunk đã lưu trên máy (chunk-list.js ghi vào localStorage)
+function savedChunks() {
+  try { return Object.values(JSON.parse(localStorage.getItem("6me-chunks-v1")) || {}); }
+  catch (e) { return []; }
+}
 
+// Đếm chunk đang muốn ôn
+const due = savedChunks().filter(x => x.status === "review").length;
+if (due > 0) document.getElementById("reviewNote").textContent = "Bạn đang có " + due + " chunk cần ôn.";
+
+// Bài có chunk đang ôn không (mỗi chunk lưu kèm tên file bài)
+function safeDecode(s) { try { return decodeURIComponent(s); } catch (e) { return s; } }
+function lessonHasReview(id) {
+  const file = id + ".html";
+  return savedChunks().some(x => x.status === "review" && safeDecode(x.file || "") === file);
+}
+
+// Thông báo ngắn
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove("show"), 3500);
+}
+
+// Tìm kiếm theo tiêu đề, chủ đề và chunk
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase().trim();
+  let shown = 0;
   cards.forEach(card => {
-    const title = card.querySelector("h3").textContent.toLowerCase();
-    const desc = card.querySelector("p").textContent.toLowerCase();
-    card.style.display = (title.includes(query) || desc.includes(query)) ? "flex" : "none";
+    const match = card.textContent.toLowerCase().includes(query);
+    card.style.display = match ? "flex" : "none";
+    if (match) shown++;
   });
+  noResults.hidden = shown > 0;
 });
 
-// Tiến độ theo tài khoản: lưu trên server qua /api/progress
-async function loadProgress() {
-  try {
-    const res = await fetch("/api/progress");
-    return res.ok ? await res.json() : {};
-  } catch (e) { return {}; }
-}
-async function saveProgress(lessonId, completed) {
-  const res = await fetch("/api/progress", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ lessonId, completed })
-  });
-  return res.ok;
-}
-function paintDoneButton(btn, done) {
+// Vẽ lại một thẻ theo trạng thái: Đã học > Đang ôn > Chưa học
+function renderCard(btn, done) {
+  const card = btn.closest(".lesson-card");
+  const badge = card.querySelector(".status");
+  const state = done ? "done" : lessonHasReview(btn.dataset.id) ? "review" : "new";
+  const labels = { new: "Chưa học", review: "Đang ôn", done: "✓ Đã học" };
+  badge.className = "status status--" + state;
+  badge.textContent = labels[state];
+  card.classList.toggle("is-done", done);
   btn.setAttribute("aria-pressed", done ? "true" : "false");
   btn.textContent = done ? "✓ Đã học" : "Đánh dấu đã học";
 }
-const doneButtons = document.querySelectorAll(".done-btn");
+
+// Dòng tổng kết: Đã học X/Y bài
+function updateSummary() {
+  const total = doneButtons.length;
+  const done = [...doneButtons].filter(b => b.getAttribute("aria-pressed") === "true").length;
+  progressText.textContent = "Đã học " + done + "/" + total + " bài";
+  progressFill.style.width = (total ? (done / total) * 100 : 0) + "%";
+}
+
+// Tiến độ theo tài khoản: lưu trên server qua /api/progress
+// Trả về dữ liệu, "login" (chưa đăng nhập) hoặc "error" (lỗi mạng/server)
+async function loadProgress() {
+  try {
+    const res = await fetch("/api/progress");
+    if (res.status === 401) return "login";
+    if (!res.ok) return "error";
+    return await res.json();
+  } catch (e) { return "error"; }
+}
+// Trả về "ok", "login" hoặc "error"
+async function saveProgress(lessonId, completed) {
+  try {
+    const res = await fetch("/api/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lessonId, completed })
+    });
+    if (res.ok) return "ok";
+    return res.status === 401 ? "login" : "error";
+  } catch (e) { return "error"; }
+}
+
+loginBtn.addEventListener("click", () => location.reload());
+
 doneButtons.forEach(btn => {
   btn.addEventListener("click", async () => {
     const done = btn.getAttribute("aria-pressed") !== "true";
-    paintDoneButton(btn, done);
-    const ok = await saveProgress(btn.dataset.id, done).catch(() => false);
-    if (!ok) paintDoneButton(btn, !done);
+    btn.disabled = true;
+    renderCard(btn, done);
+    updateSummary();
+
+    const status = await saveProgress(btn.dataset.id, done);
+    btn.disabled = false;
+
+    if (status !== "ok") {
+      // Lưu thất bại: trả thẻ về trạng thái cũ và báo cho người học
+      renderCard(btn, !done);
+      updateSummary();
+      if (status === "login") {
+        showToast("Chưa lưu được vì bạn chưa đăng nhập.");
+        loginBtn.hidden = false;
+      } else {
+        showToast("Chưa lưu được, thử lại nhé.");
+      }
+    }
   });
 });
-loadProgress().then(progress => {
-  doneButtons.forEach(btn => paintDoneButton(btn, progress[btn.dataset.id] === true));
+
+// Lời chào: tên lấy từ /api/me, ngày lấy từ trình duyệt
+const greetingLine = document.getElementById("greetingLine");
+const greetingDate = document.getElementById("greetingDate");
+const nameForm = document.getElementById("nameForm");
+const nameInput = document.getElementById("nameInput");
+
+function renderGreetingDate() {
+  const today = new Date().toLocaleDateString("vi-VN", {
+    weekday: "long", day: "2-digit", month: "2-digit", year: "numeric"
+  });
+  greetingDate.textContent = "Hôm nay là " + today + ".";
+}
+
+function renderGreetingLine(name) {
+  const who = name ? "Chào " + name + "!" : "Chào bạn!";
+  greetingLine.textContent = who + " Chúc bạn một ngày học thật vui và hiệu quả.";
+  greetingLine.hidden = false;
+}
+
+async function loadMe() {
+  try {
+    const res = await fetch("/api/me");
+    return res.ok ? await res.json() : null;
+  } catch (e) { return null; }
+}
+
+nameForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = nameInput.value.trim();
+  if (!name) return;
+  let ok = false;
+  try {
+    const res = await fetch("/api/me", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name })
+    });
+    ok = res.ok;
+  } catch (err) { ok = false; }
+  if (ok) {
+    nameForm.hidden = true;
+    renderGreetingLine(name);
+    showToast("Đã lưu tên của bạn.");
+  } else {
+    showToast("Chưa lưu được tên, thử lại nhé.");
+  }
 });
+
+(async function init() {
+  // Hiện ngay trạng thái theo chunk trên máy, rồi cập nhật theo tài khoản
+  doneButtons.forEach(btn => renderCard(btn, false));
+  updateSummary();
+
+  renderGreetingDate();
+  const me = await loadMe();
+  if (me) {
+    renderGreetingLine(me.name);
+    nameForm.hidden = !!me.name;
+  }
+
+  const progress = await loadProgress();
+  if (progress === "login") {
+    progressText.textContent = "Chưa đăng nhập nên tiến độ chưa được lưu";
+    loginBtn.hidden = false;
+  } else if (progress === "error") {
+    progressText.textContent = "Chưa tải được tiến độ";
+    showToast("Chưa tải được tiến độ, thử tải lại trang nhé.");
+  } else {
+    doneButtons.forEach(btn => renderCard(btn, progress[btn.dataset.id] === true));
+    updateSummary();
+  }
+})();
 </script>
 </body>
 </html>
