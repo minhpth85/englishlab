@@ -65,9 +65,6 @@ a{color:inherit}
 .greeting{margin-bottom:24px}
 .greeting-line{font:600 18px/28px var(--font-sans);color:var(--ink-900)}
 .greeting-date{font:400 15px/22px var(--font-sans);color:var(--ink-500)}
-.name-form{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-.name-form input{padding:8px 12px;font:400 15px/20px var(--font-sans);border:1px solid var(--border-strong);border-radius:var(--radius-md);min-width:220px;color:var(--ink-900)}
-.name-form .hb-btn{padding:8px 16px;font-size:14px}
 
 /* Hero */
 .hero{padding:64px 0 48px}
@@ -175,10 +172,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
     <div class="greeting">
       <p class="greeting-line" id="greetingLine" hidden></p>
       <p class="greeting-date" id="greetingDate"></p>
-      <form class="name-form" id="nameForm" hidden>
-        <input type="text" id="nameInput" maxlength="40" aria-label="Tên của bạn" placeholder="Tên của bạn">
-        <button class="hb-btn hb-btn--secondary" type="submit">Lưu tên</button>
-      </form>
     </div>
     <p class="hb-eyebrow">Thư viện chunk từ podcast</p>
     <h1 class="hb-display">Học <em>chunk</em> để nói tiếng Anh tự nhiên hơn</h1>
@@ -476,8 +469,6 @@ doneButtons.forEach(btn => {
 // Lời chào: tên lấy từ /api/me, ngày lấy từ trình duyệt
 const greetingLine = document.getElementById("greetingLine");
 const greetingDate = document.getElementById("greetingDate");
-const nameForm = document.getElementById("nameForm");
-const nameInput = document.getElementById("nameInput");
 
 function renderGreetingDate() {
   const today = new Date().toLocaleDateString("vi-VN", {
@@ -499,28 +490,6 @@ async function loadMe() {
   } catch (e) { return null; }
 }
 
-nameForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const name = nameInput.value.trim();
-  if (!name) return;
-  let ok = false;
-  try {
-    const res = await fetch("/api/me", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name })
-    });
-    ok = res.ok;
-  } catch (err) { ok = false; }
-  if (ok) {
-    nameForm.hidden = true;
-    renderGreetingLine(name);
-    showToast("Đã lưu tên của bạn.");
-  } else {
-    showToast("Chưa lưu được tên, thử lại nhé.");
-  }
-});
-
 (async function init() {
   // Hiện ngay trạng thái theo chunk trên máy, rồi cập nhật theo tài khoản
   doneButtons.forEach(btn => renderCard(btn, false));
@@ -530,7 +499,6 @@ nameForm.addEventListener("submit", async (e) => {
   const me = await loadMe();
   if (me) {
     renderGreetingLine(me.name);
-    nameForm.hidden = !!me.name;
   }
 
   const progress = await loadProgress();
