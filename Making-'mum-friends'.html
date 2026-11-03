@@ -64,6 +64,7 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
 .tabs{display:flex;gap:24px;border-bottom:1px solid var(--border);margin:8px 0 24px;overflow-x:auto}
 .tab{background:none;border:0;padding:12px 0;font:600 15px/22px var(--font-sans);color:var(--ink-500);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
 .tab.active{color:var(--primary-text);border-bottom-color:var(--primary)}
+@media (max-width:600px){.tabs{gap:14px;-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}.tab{font-size:14px}}
 
 /* Trang học: transcript + chi tiết */
 .study{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
@@ -178,6 +179,7 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
     <button class="tab active" data-tab="study" type="button">Toàn văn & Cụm từ</button>
     <button class="tab" data-tab="quiz" type="button">Tình huống thực tế</button>
     <button class="tab" data-tab="speaking" type="button">Luyện Speaking</button>
+    <button class="tab" data-tab="tips" type="button">Tips</button>
   </nav>
 
   <!-- TAB 1: TOÀN VĂN, CỤM TỪ VÀ CẤU TRÚC -->
@@ -230,9 +232,13 @@ h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900
     </div>
   </section>
 
+  <!-- TAB 4: TIPS (nói tự nhiên như người bản ngữ) -->
+  <section id="tab-tips" class="hidden">
+    <div class="card" id="nativeTips"></div>
+  </section>
+
   <!-- TAB 3: SPEAKING -->
   <section id="tab-speaking" class="hidden">
-    <div class="card" id="nativeTips" style="margin-bottom:20px"></div>
     <div class="sub" role="tablist">
       <button class="active" data-sub="ielts" type="button">IELTS Speaking</button>
       <button data-sub="shadow" type="button">Shadowing</button>
@@ -865,7 +871,7 @@ $('listenBtn').addEventListener('click', () => {
 
 /* Tab */
 function switchTab(name) {
-  ['study', 'quiz', 'speaking'].forEach(t => {
+  ['study', 'quiz', 'speaking', 'tips'].forEach(t => {
     $('tab-' + t).classList.toggle('hidden', t !== name);
   });
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
