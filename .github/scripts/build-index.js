@@ -10,8 +10,7 @@ async function callGemini(text) {
 
   const prompt = `Phân tích nội dung bài học tiếng Anh sau và trả về DUY NHẤT một chuỗi JSON hợp lệ (không kèm markdown \`\`\`json):
   {
-    "title": "Tiêu đề tiếng Anh ngắn gọn, súc tích",
-    "topic": "Chủ đề bài học bằng tiếng Việt, ngắn gọn (khoảng 4-8 từ)"
+    "title": "Tiêu đề tiếng Anh ngắn gọn, súc tích"
   }
 
   Nội dung bài học:
@@ -58,7 +57,6 @@ async function main() {
     const aiData = await callGemini(cleanText);
 
     const title = aiData?.title || file.replace(".html", "").replace(/[-_]/g, " ");
-    const topic = aiData?.topic || "Chủ đề đang được cập nhật";
 
     // 3 chunk đầu tiên: lấy đúng các cụm (phrase) đã khai báo trong bài
     const phrases = [...content.matchAll(/^\s*phrase: "([^"]+)"/gm)].map(m => m[1]).slice(0, 3);
@@ -73,7 +71,6 @@ async function main() {
     <span class="status status--new">Chưa học</span>
   </div>
   <h3>${escapeHtml(title)}</h3>
-  <p class="topic"><strong>Chủ đề:</strong> ${escapeHtml(topic)}</p>
   <ul class="chunk-list" aria-label="3 chunk trong bài">
 ${chunkItems}
   </ul>
@@ -196,8 +193,6 @@ a{color:inherit}
 .hb-card-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:var(--surface-soft);color:var(--green-700);display:grid;place-items:center;font-weight:700}
 .hb-card.is-done .hb-card-icon{background:var(--primary);color:#fff}
 .hb-card h3{font:600 22px/28px var(--font-sans);letter-spacing:-.01em;color:var(--ink-900)}
-.hb-card .topic{font:400 14px/20px var(--font-sans);color:var(--ink-500)}
-.hb-card .topic strong{font-weight:600;color:var(--ink-700)}
 .chunk-list{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
 .chunk-list li{font:500 13px/18px var(--font-sans);padding:4px 10px;border-radius:var(--radius-full);background:var(--bg-alt);border:1px solid var(--border);color:var(--ink-700)}
 .card-actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
