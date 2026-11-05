@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dreaming of being a chef · CHUNKIE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf5; --bg-alt:#f8f6ea; --surface:#ffffff; --surface-soft:#ebf6ee; --surface-inverse:#17301d;
+  --ink-900:#171c18; --ink-700:#1f2a22; --ink-500:#505e4f;
+  --primary:#32854d; --primary-hover:#317345; --primary-text:#317345; --focus:#4a9b60;
+  --border:#e1eae5; --border-strong:#84968a;
+  --warning:#c2923d; --warning-soft:#fbf3e0; --warning-text:#8a6421;
+  --danger:#c2412f; --danger-soft:#fdece8;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:20px; --radius-full:999px;
+  --shadow-sm:0 1px 2px rgba(23,48,29,.06); --shadow-md:0 8px 24px rgba(23,48,29,.08);
+  --font-sans:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);font-size:16px;line-height:24px;color:var(--ink-700);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:var(--radius-sm)}
+.hidden{display:none !important}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+
+/* Thanh trên */
+.topbar{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px max(20px,calc(50% - 540px));background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.brand{font-weight:700;color:var(--ink-900);text-decoration:none;font-size:18px;letter-spacing:-.01em}
+.brand span{color:var(--primary-text)}
+.back{font-size:14px;font-weight:600;color:var(--ink-500);text-decoration:none}
+
+/* Tiêu đề và thẻ */
+.eyebrow{font:600 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--primary-text);margin-bottom:10px}
+h1{font:700 30px/36px var(--font-sans);letter-spacing:-.02em;color:var(--ink-900)}
+.meta{font-size:14px;color:var(--ink-500);margin-top:8px}
+.meta a{color:var(--primary-text);font-weight:600}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm)}
+.intro{padding:24px 0 16px}
+.listen{margin-bottom:20px}
+.listen .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.listen .step{font:700 12px/16px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)}
+.listen p{font-size:14px;color:var(--ink-500);margin-top:4px}
+.player{margin-top:16px;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:#000}
+.player iframe{width:100%;height:100%;border:0}
+
+/* Nút */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:var(--radius-md);font:600 14px/20px var(--font-sans);border:1.5px solid transparent;cursor:pointer;background:none;text-decoration:none;color:var(--ink-900);transition:background .15s}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-secondary{border-color:var(--border-strong);background:transparent}
+.btn-secondary:hover{background:var(--surface-soft)}
+.btn-soft{background:var(--surface-soft);color:var(--primary-text);border-color:var(--border-strong)}
+.btn-soft:hover{background:#d8efdf}
+.btn-sm{padding:7px 12px;font-size:13px}
+.btn-full{width:100%;justify-content:center}
+.link{background:none;border:0;color:var(--ink-500);font:600 14px/20px var(--font-sans);cursor:pointer;text-decoration:underline;padding:4px}
+
+/* Tab */
+.tabs{display:flex;gap:24px;border-bottom:1px solid var(--border);margin:8px 0 24px;overflow-x:auto}
+.tab{background:none;border:0;padding:12px 0;font:600 15px/22px var(--font-sans);color:var(--ink-500);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.active{color:var(--primary-text);border-bottom-color:var(--primary)}
+@media (max-width:600px){.tabs{gap:14px;-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}.tab{font-size:14px}}
+
+/* Trang học: transcript + chi tiết */
+.study{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
+.transcript .line{font-size:16px;line-height:26px;margin-bottom:14px}
+.speaker{display:inline-block;font-size:12px;font-weight:700;color:var(--primary-text);margin-right:6px}
+.phrase-highlight{background:var(--warning-soft);color:var(--warning-text);border-bottom:2px solid var(--warning);padding:0 2px;border-radius:4px;cursor:pointer;font-weight:600}
+.phrase-highlight:hover,.phrase-highlight.active{background:var(--warning);color:#fff}
+.struct-highlight{background:var(--surface-soft);border-bottom:2px dotted var(--primary);padding:0 2px;border-radius:4px;cursor:pointer}
+.detail-col{position:sticky;top:16px;display:grid;gap:12px}
+.empty{text-align:center;color:var(--ink-500);padding:32px 20px}
+.empty h3{font:600 18px/24px var(--font-sans);color:var(--ink-900);margin-bottom:6px}
+.badge{display:inline-block;padding:4px 12px;border-radius:var(--radius-full);font:600 12px/16px var(--font-sans);background:var(--surface-soft);color:var(--primary-text)}
+.detail-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+#detailPhrase{font:700 28px/34px var(--font-sans);color:var(--ink-900);margin-top:10px}
+.ipa{font:400 13px/18px ui-monospace,Menlo,monospace;color:var(--ink-500);margin-top:4px}
+.sec{margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.sec h4{font:700 12px/16px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text);margin-bottom:6px}
+.sec p,.sec .li{font-size:15px;line-height:23px;color:var(--ink-700)}
+.sec .li{margin-top:4px}
+.box{background:var(--surface-soft);border-radius:var(--radius-md);padding:12px 14px;margin-top:8px}
+.it{font-style:italic}
+.detail-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:18px}
+.struct-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:12px 14px;margin-top:10px;transition:background .3s}
+.struct-card.flash{background:var(--surface-soft)}
+.struct-card strong{color:var(--ink-900)}
+.struct-card p{font-size:14px;color:var(--ink-500);margin-top:4px}
+
+/* Quiz */
+.quiz{margin-bottom:16px}
+.quiz h3{font:600 17px/24px var(--font-sans);color:var(--ink-900);margin-bottom:12px}
+.opt{display:block;width:100%;text-align:left;padding:10px 14px;margin-top:8px;border:1px solid var(--border-strong);border-radius:var(--radius-md);background:var(--surface);cursor:pointer;font-size:15px}
+.opt:hover{background:var(--surface-soft)}
+.opt.right{background:var(--surface-soft);border-color:var(--primary)}
+.opt.wrong{background:var(--danger-soft);border-color:var(--danger)}
+.explain{margin-top:10px;font-size:14px;color:var(--ink-500)}
+.score{font:700 18px/24px var(--font-sans);color:var(--ink-900);margin-bottom:16px}
+
+/* Speaking */
+.sub{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.sub button{background:none;border:0;padding:6px 0;font:600 14px/20px var(--font-sans);color:var(--ink-500);cursor:pointer;border-bottom:2px solid transparent}
+.sub button.active{color:var(--primary-text);border-bottom-color:var(--primary)}
+.speak-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:start}
+.cue{font-size:15px;margin-top:8px}
+.cue li{margin:4px 0 4px 18px}
+.timer{font:700 28px/32px ui-monospace,Menlo,monospace;color:var(--ink-900);margin:12px 0}
+.qcard{border:1px solid var(--border);border-radius:var(--radius-md);padding:14px;margin-bottom:12px;background:var(--surface)}
+.qcard .part{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)}
+.qcard .q{font-weight:600;color:var(--ink-900);margin-top:4px}
+.qcard details{margin-top:8px;font-size:14px}
+.qcard summary{cursor:pointer;color:var(--primary-text);font-weight:600}
+.qcard details p{margin-top:6px;color:var(--ink-700)}
+.rec-status{font-size:14px;color:var(--ink-500);margin-top:10px}
+.rec-live{margin-top:12px;min-height:48px;font-size:15px;color:var(--ink-700)}
+.target{display:inline-block;margin:4px 6px 0 0;padding:4px 10px;border-radius:var(--radius-full);font-size:13px;background:var(--surface-soft);color:var(--ink-500)}
+.target.got{background:var(--primary);color:#fff}
+
+/* Nói tự nhiên như người bản ngữ */
+.native-item{border-top:1px solid var(--border);padding-top:14px;margin-top:14px}
+.native-item .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:var(--radius-full);background:var(--surface-soft);color:var(--primary-text)}
+.native-item .natural{font-size:16px;font-weight:600;color:var(--ink-900);margin-top:8px}
+.native-item .learner{font-size:14px;color:var(--ink-500);margin-top:6px}
+.native-item .why{font-size:14px;color:var(--ink-700);margin-top:6px}
+
+/* Popup trên điện thoại */
+#phraseModal{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center;background:rgba(23,48,29,.45)}
+#phraseModal.hidden{display:none}
+.modal-box{background:#fff;width:100%;max-height:90vh;border-radius:var(--radius-lg) var(--radius-lg) 0 0;display:flex;flex-direction:column;box-shadow:0 -8px 32px rgba(23,48,29,.2)}
+.modal-top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border)}
+.modal-top span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)}
+#phraseModalBody{overflow-y:auto;padding:16px}
+
+@media (max-width:1023px){
+  .study,.speak-grid{grid-template-columns:1fr}
+  .detail-col{display:none}
+  h1{font-size:26px;line-height:32px}
+}
+@media (min-width:1024px){
+  #phraseModal{display:none !important}
+}
+@media (max-width:640px){
+  #detailPhrase{font-size:24px;line-height:30px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">CHUNKIE</a>
+  <a class="back" href="index.html">← Về thư viện</a>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <p class="eyebrow" id="sourceEyebrow"></p>
+    <h1 id="lessonTitle"></h1>
+    <p class="meta" id="lessonMeta"></p>
+  </section>
+
+  <!-- Bước 1: nghe trước -->
+  <section class="card listen" id="listenFirst">
+    <div class="row">
+      <div>
+        <p class="step">Bước 1 · Nghe trước</p>
+        <p id="listenNote"></p>
+      </div>
+      <button class="btn btn-primary" id="listenBtn" type="button">▶ Nghe trước</button>
+    </div>
+    <div class="player hidden" id="listenPlayer"><iframe src="" data-src="" title="" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="study" type="button">Bài học</button>
+    <button class="tab" data-tab="quiz" type="button">Tình huống thực tế</button>
+    <button class="tab" data-tab="speaking" type="button">Luyện Speaking</button>
+    <button class="tab" data-tab="tips" type="button">Tips</button>
+  </nav>
+
+  <!-- TAB 1: TOÀN VĂN, CỤM TỪ VÀ CẤU TRÚC -->
+  <section id="tab-study" class="study">
+    <div class="card transcript" id="transcript"></div>
+
+    <aside class="detail-col">
+      <button class="btn btn-soft btn-full" id="structToggleBtn" type="button" aria-expanded="false" aria-controls="structPanel">Xem 3 cấu trúc câu đáng học</button>
+      <div class="card hidden" id="structPanel"></div>
+
+      <div class="card empty" id="emptyDetail">
+        <h3>Chạm vào bất kỳ cụm từ màu vàng nào</h3>
+        <p>Cụm từ đã được giải nghĩa kèm phát âm, cấu trúc, ví dụ đời sống và cách dùng trong IELTS Speaking.</p>
+      </div>
+
+      <!-- Chỗ giữ vị trí để trả thẻ về sau khi đóng popup trên điện thoại -->
+      <div id="phraseHome"></div>
+
+      <div class="card hidden" id="phraseDetailContent">
+        <div class="detail-head">
+          <span class="badge" id="detailType"></span>
+          <button class="btn btn-secondary btn-sm" id="pronounceBtn" type="button"><i class="fa-solid fa-volume-high"></i> Nghe</button>
+        </div>
+        <h2 id="detailPhrase"></h2>
+        <p class="ipa" id="detailIpa"></p>
+
+        <div class="sec"><h4>Ý nghĩa tiếng Việt</h4><p id="detailVi"></p></div>
+        <div class="sec"><h4>English BBC definition</h4><p id="detailEn"></p></div>
+        <div class="sec"><h4>Cấu trúc câu & cụm đi kèm</h4><div id="detailStructures"></div></div>
+        <div class="sec"><h4>Phát âm (nối âm, nhấn trọng âm)</h4><p id="detailPronounce"></p></div>
+        <div class="sec"><h4>Ví dụ trong đời sống</h4><div class="box"><p class="it" id="detailDailyEn"></p><p id="detailDailyVi"></p></div></div>
+        <div class="sec">
+          <h4>Ứng dụng trong Speaking (IELTS & Daily)</h4>
+          <p><strong>Speaking sample:</strong> <span class="it" id="detailSample"></span></p>
+          <p style="margin-top:8px"><strong>Speaking tip:</strong> <span id="detailTip"></span></p>
+        </div>
+        <div class="detail-actions">
+          <button class="btn btn-primary btn-sm" id="practiceBtn" type="button">Thực hành tình huống với cụm từ này</button>
+          <button class="link" id="nextPhraseBtn" type="button">Cụm tiếp theo →</button>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- TAB 2: TÌNH HUỐNG -->
+  <section id="tab-quiz" class="hidden">
+    <div class="card">
+      <p class="score" id="quizScore"></p>
+      <div id="quizList"></div>
+    </div>
+  </section>
+
+  <!-- TAB 4: TIPS (nói tự nhiên như người bản ngữ) -->
+  <section id="tab-tips" class="hidden">
+    <div class="card" id="nativeTips"></div>
+  </section>
+
+  <!-- TAB 3: SPEAKING -->
+  <section id="tab-speaking" class="hidden">
+    <div class="sub" role="tablist">
+      <button class="active" data-sub="ielts" type="button">IELTS Speaking</button>
+      <button data-sub="shadow" type="button">Shadowing</button>
+      <button data-sub="recorder" type="button">Phòng thu</button>
+    </div>
+
+    <!-- IELTS -->
+    <div id="sub-ielts" class="speak-grid">
+      <div class="card">
+        <p class="badge">IELTS Speaking Part 2</p>
+        <h3 id="part2Topic" style="font:600 18px/24px var(--font-sans);color:var(--ink-900);margin-top:10px"></h3>
+        <ul class="cue" id="part2Bullets"></ul>
+        <p class="timer" id="timer">01:00</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-primary btn-sm" id="timerBtn" type="button">Bắt đầu 1 phút chuẩn bị</button>
+          <button class="btn btn-secondary btn-sm" id="part2SampleBtn" type="button">Xem bài mẫu</button>
+        </div>
+        <div class="box hidden" id="part2Sample"></div>
+      </div>
+      <div>
+        <div id="speakingQuestions"></div>
+        <div id="writingPrompts" style="margin-top:20px"></div>
+      </div>
+    </div>
+
+    <!-- Shadowing -->
+    <div id="sub-shadow" class="hidden" style="display:grid;gap:12px" ></div>
+
+    <!-- Phòng thu -->
+    <div id="sub-recorder" class="hidden">
+      <div class="card">
+        <p class="sec" style="border:0;margin:0"><strong>Nói về một chủ đề trong bài</strong> trong khoảng 1–2 phút. Ứng dụng sẽ đánh dấu các cụm mục tiêu nếu bạn nói đúng.</p>
+        <div id="recTargets" style="margin-top:12px"></div>
+        <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-primary" id="recBtn" type="button"><i class="fa-solid fa-microphone"></i> Bắt đầu nói</button>
+          <button class="btn btn-secondary" id="recClearBtn" type="button">Xóa làm lại</button>
+        </div>
+        <p class="rec-status" id="recStatus"></p>
+        <p class="rec-live" id="recLive"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Popup flashcard cụm từ (chỉ dùng trên điện thoại) -->
+<div id="phraseModal" class="hidden" role="dialog" aria-modal="true" aria-label="Flashcard cụm từ">
+  <div class="modal-box">
+    <div class="modal-top">
+      <span>Flashcard cụm từ</span>
+      <button id="phraseModalClose" type="button" class="btn btn-primary btn-sm">Close</button>
+    </div>
+    <div id="phraseModalBody"></div>
+  </div>
+</div>
+
+<script>
+/* ===================================================================
+   HƯỚNG DẪN: chỉ sửa nội dung trong khối LESSON dưới đây.
+   - transcript: mỗi dòng là một lượt thoại. Đánh dấu cụm bằng [[id|chữ]],
+     đánh dấu cấu trúc câu bằng {{n|chữ}} (n = 1, 2, 3 khớp với structures).
+   - chunks: mỗi chunk có id trùng với id trong [[...]]. Có thể có tối đa 10 chunk.
+   - speaking: 9 câu (Phần 1 và Phần 3); Phần 2 là cue card trong part2.
+   - quiz và shadowing: mỗi mục là một câu hỏi hoặc một câu mẫu.
+   - targets: các cụm dùng để đánh dấu trong Phòng thu (phải trùng với phrase của chunk).
+   =================================================================== */
+const LESSON = {
+  title: "Dreaming of being a chef",
+  source: "BBC 6 Minute English",
+  sourceUrl: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
+  youtube: "nx2BboYL2Y0",
+  level: "B1–B2",
+  listenNote: "Nghe đoạn hội thoại một lần trước khi đọc transcript và học cụm từ.",
+  defaultChunk: "aim-high",
+
+  transcript: [
+    { speaker: "Neil", text: "Welcome to 6 Minute English. Today we talk about cooking, and what it takes to become a professional chef." },
+    { speaker: "Becca", text: "Most of us can boil an egg, but a top chef needs passion, dedication and hard work. Many chefs work very long hours in stressful kitchens." },
+    { speaker: "Neil", text: "This episode features a South African chef who opened her own award-winning restaurant in France, the home of fine dining." },
+    { speaker: "Becca", text: "First, a question for you, Neil. Which chef has won the most Michelin stars? Is it a) Enrico Bartolini, b) Joël Robuchon or c) Gordon Ramsay?" },
+    { speaker: "Neil", text: "I’ll go with Enrico Bartolini. I visited Italy recently, and the food was amazing!" },
+    { speaker: "Becca", text: "We’ll find out later. Chantel Dartnall was born in South Africa, but her career began at a three-Michelin-star restaurant in London. Here she explains how it started." },
+    { speaker: "Chantel Dartnall", text: "After college I sent my [[cv|CV]] to every three-Michelin-star restaurant I could find. I [[aim-high|aimed high]], and I thought, {{1|the worst I can do is hear no}}, so why not try?" },
+    { speaker: "Ruth Alexander", text: "So you were ambitious from the start." },
+    { speaker: "Chantel Dartnall", text: "Yes. Then chef Paul Rhodes called and asked when I could start. That [[catapult-career|catapulted my career]]." },
+    { speaker: "Becca", text: "Chantel’s [[cv|CV]] {{3|is short for curriculum vitae}}, a document listing your education, qualifications and work experience. In American English it is called a résumé." },
+    { speaker: "Neil", text: "Chantel had a simple attitude: [[worst-case-say-no|the worst they can do is say no]]. You shouldn’t be scared to try, because the worst outcome is rejection." },
+    { speaker: "Becca", text: "Luckily, the answer was yes. Working in a top London restaurant [[catapult-career|catapulted]] her career forward." },
+    { speaker: "Neil", text: "At 26, Chantel went home to open her own restaurant, Mosaic, near Pretoria. Her food was inspired by botanical cuisine, which uses edible flowers and herbs. She said: “I wanted something diners had not seen, and I wanted my own [[signature|signature]] to [[stand-out|stand out]].”" },
+    { speaker: "Becca", text: "A [[signature|signature]] dish is one a chef is famous for. Chantel’s restaurant is now in northern France and is listed among the top 200 restaurants in the world. In 2017 she was named Best Female Chef in the World. These achievements help her [[stand-out|stand out]] from other chefs." },
+    { speaker: "Neil", text: "Chantel is still waiting for Michelin stars, but [[only-a-matter-of-time|it’s only a matter of time]] before she wins them. [[speaking-of-which|Speaking of which]], what was the answer to your question, Becca?" },
+    { speaker: "Becca", text: "The answer is b) Joël Robuchon, the French chef with 31 stars, the most decorated chef in history. Chantel is [[known-for|known for]] cooking botanical food, and that is her signature." },
+    { speaker: "Neil", text: "So be patient and keep working. {{2|It’s only a matter of time until}} your hard work pays off." }
+  ],
+
+  structures: [
+    { id: 1, pattern: "The worst I can do is + V (bare)", vi: "Nói về tình huống xấu nhất có thể xảy ra, thường để tự trấn an trước khi thử. Ví dụ: The worst I can do is hear no." },
+    { id: 2, pattern: "It’s only a matter of time until + S + V", vi: "Khẳng định một việc chắc chắn sẽ xảy ra, chỉ chưa biết khi nào. Ví dụ: It’s only a matter of time until people notice your work." },
+    { id: 3, pattern: "X is short for Y", vi: "Dùng để giải thích một từ viết tắt hoặc tên rút gọn. Ví dụ: CV is short for curriculum vitae." }
+  ],
+
+  chunks: {
+    "aim-high": {
+      phrase: "aim high",
+      type: "Idiom",
+      level: "B2",
+      ipa: "/eɪm haɪ/",
+      vietnamese: "Đặt mục tiêu cao, có tham vọng lớn.",
+      english: "To be ambitious and set high goals.",
+      structures: ["aim high (for/in + lĩnh vực)", "aim high + to-V"],
+      pronunciation: "Trọng âm rơi vào ‘high’ (aim HIGH). Đọc liền ‘aim high’ thành /eɪ.mhaɪ/, không ngắt giữa hai từ.",
+      sample: "Chantel aimed high and sent her CV to the best restaurants.",
+      speakingTip: "Dùng khi nói về mục tiêu lớn: “I always aim high when I start a project.”",
+      daily: {
+        en: "I want to aim high with my first online course, so I’ll design it for 500 learners.",
+        vi: "Mình muốn đặt mục tiêu cao cho khóa online đầu tiên, nên sẽ thiết kế cho 500 học viên."
+      }
+    },
+    "worst-case-say-no": {
+      phrase: "the worst they can do is say no",
+      type: "Phrase (idiom)",
+      level: "B2",
+      ipa: "/ðə wɜːst ðeɪ kæn duː ɪz seɪ nəʊ/",
+      vietnamese: "Tệ nhất thì họ chỉ từ chối thôi. Đừng sợ thử vì bị từ chối là kết quả xấu nhất.",
+      english: "Don't be afraid of trying to do something, because the worst outcome is rejection.",
+      structures: ["The worst + S + can do + is + say no", "What’s the worst that can happen?"],
+      pronunciation: "‘worst’ đọc nhanh, gần như nuốt âm /t/ cuối. ‘do is say’ nối thành ‘doo-iz-say’.",
+      sample: "Chantel said the worst they could do was say no, so she sent her CV anyway.",
+      speakingTip: "Dùng khi bạn muốn khuyến khích ai đó thử: “Send the proposal. The worst they can do is say no.”",
+      daily: {
+        en: "I’ll send my portfolio to that client. The worst they can do is say no.",
+        vi: "Mình sẽ gửi portfolio cho khách hàng đó. Tệ nhất thì họ chỉ từ chối thôi."
+      }
+    },
+    "stand-out": {
+      phrase: "stand out",
+      type: "Phrasal verb",
+      level: "B1",
+      ipa: "/stænd aʊt/",
+      vietnamese: "Nổi bật, khác biệt so với những thứ tương tự.",
+      english: "To be more noticeable or better than other similar things.",
+      structures: ["stand out from + danh từ", "make sb/sth stand out"],
+      pronunciation: "Âm /d/ cuối của ‘stand’ nối với ‘out’ thành ‘stan-daʊt’. Nhấn vào ‘out’.",
+      sample: "I wanted to have my own signature and to stand out.",
+      speakingTip: "Dùng để nói điều gì làm bạn khác biệt: “My style helps me stand out from other designers.”",
+      daily: {
+        en: "My design has to stand out in a crowded feed, so I use one bold colour.",
+        vi: "Thiết kế của mình phải nổi bật giữa feed đông đúc, nên mình chỉ dùng một màu đậm."
+      }
+    },
+    "catapult-career": {
+      phrase: "catapult your career",
+      type: "Verb collocation",
+      level: "B2",
+      ipa: "/ˈkæt.ə.pʌlt/",
+      vietnamese: "Đẩy sự nghiệp tiến lên nhanh chóng, bứt phá đột ngột.",
+      english: "To suddenly accelerate or launch something forward.",
+      structures: ["catapult + sb/sth + to + vị trí/tình trạng", "X catapulted my career"],
+      pronunciation: "Nhấn âm đầu: CAT-a-pult. Âm /t/ cuối gần như không bật hơi.",
+      sample: "Learning in a top London restaurant catapulted her career.",
+      speakingTip: "Dùng khi kể về bước ngoặt: “That project really catapulted my career.”",
+      daily: {
+        en: "Speaking at that conference catapulted my course into the spotlight.",
+        vi: "Bài nói ở hội thảo đó đưa khóa học của mình lên sân khấu."
+      }
+    },
+    "signature": {
+      phrase: "signature",
+      type: "Noun (collocation)",
+      level: "B1",
+      ipa: "/ˈsɪɡ.nə.tʃər/",
+      vietnamese: "Dấu ấn riêng, đặc trưng của một người hoặc một nơi.",
+      english: "Something typical of, or strongly associated with, a particular person or place.",
+      structures: ["my/her/his signature + danh từ", "signature dish/style/item"],
+      pronunciation: "Nhấn âm đầu: SIG-na-ture. Đuôi ‘-ture’ đọc là /tʃər/, không đọc thành ‘tua’.",
+      sample: "Chantel’s signature is cooking botanical food.",
+      speakingTip: "Dùng khi nói về phong cách của bạn: “Soft colours are my signature.”",
+      daily: {
+        en: "Soft pastel colours are my signature in every design I make.",
+        vi: "Gam màu pastel nhẹ là dấu ấn của mình trong mọi thiết kế."
+      }
+    },
+    "cv": {
+      phrase: "CV",
+      type: "Abbreviation",
+      level: "B1",
+      ipa: "/ˌsiː ˈviː/",
+      vietnamese: "Sơ yếu lý lịch (curriculum vitae).",
+      english: "A document listing someone’s education, qualifications and work experience, used when looking for a job.",
+      structures: ["send/update your CV", "CV is short for curriculum vitae"],
+      pronunciation: "Đọc từng chữ cái: /ˌsiː ˈviː/. Nhấn đều cả hai chữ.",
+      sample: "Chantel sent her CV to all the three-Michelin-star restaurants.",
+      speakingTip: "Ở Mỹ người ta gọi là résumé. Nếu nói chuyện với người Mỹ, nên dùng ‘résumé’.",
+      daily: {
+        en: "I update my CV every year to add new projects, like my design course.",
+        vi: "Mình cập nhật CV mỗi năm để thêm các dự án mới, như khóa học thiết kế."
+      }
+    },
+    "only-a-matter-of-time": {
+      phrase: "only a matter of time",
+      type: "Idiom",
+      level: "B2",
+      ipa: "/ˈəʊnli ə ˈmætə əv taɪm/",
+      vietnamese: "Chuyện đó chắc chắn sẽ xảy ra, chỉ là lúc nào thôi.",
+      english: "Something will certainly happen; it is just a question of when.",
+      structures: ["It’s only a matter of time until + S + V", "It’s only a matter of time before + V-ing"],
+      pronunciation: "Nối ‘only a’ thành ‘on-li-a’. Nhấn vào ‘MAT-ter’. Âm /tə/ trong ‘matter of’ rất nhẹ.",
+      sample: "It’s only a matter of time until she wins those coveted Michelin stars.",
+      speakingTip: "Dùng để động viên: “Keep posting. It’s only a matter of time before people find you.”",
+      daily: {
+        en: "Your course is good, so it’s only a matter of time before people find it.",
+        vi: "Khóa học của bạn tốt, nên chỉ là vấn đề thời gian trước khi mọi người tìm thấy nó."
+      }
+    },
+    "speaking-of-which": {
+      phrase: "speaking of which",
+      type: "Discourse marker",
+      level: "B1",
+      ipa: "/ˈspiːkɪŋ əv wɪtʃ/",
+      vietnamese: "Nhân tiện nói về chuyện đó…",
+      english: "Used to introduce a related topic that has just been mentioned.",
+      structures: ["Speaking of which, + mệnh đề", "Speaking of X, + mệnh đề"],
+      pronunciation: "Nối ‘speaking of’ thành ‘speakin-go-v’. ‘which’ đọc nhẹ, không nhấn mạnh.",
+      sample: "Speaking of which, what was the answer to your question, Becca?",
+      speakingTip: "Dùng để chuyển chủ đề mượt: “Speaking of design, have you seen the new Herbloom palette?”",
+      daily: {
+        en: "Speaking of which, have you finished the lesson draft for Chunkie?",
+        vi: "Nhân tiện nói về chuyện đó, bạn đã làm xong bản nháp bài học cho Chunkie chưa?"
+      }
+    },
+    "known-for": {
+      phrase: "known for",
+      type: "Collocation",
+      level: "B1",
+      ipa: "/nəʊn fɔː/",
+      vietnamese: "Được biết đến nhờ điều gì đó.",
+      english: "Famous or recognised because of a particular quality or activity.",
+      structures: ["be known for + danh từ/V-ing", "be known as + danh từ"],
+      pronunciation: "‘known for’: âm /n/ cuối của ‘known’ nối với /f/. Nhấn vào ‘known’.",
+      sample: "Chantel is known for cooking botanical food.",
+      speakingTip: "Dùng khi nói về điểm mạnh của bạn: “I’m known for clean, simple designs.”",
+      daily: {
+        en: "I’m known for my clean, nature-inspired designs.",
+        vi: "Mình được biết đến nhờ những thiết kế tối giản lấy cảm hứng từ thiên nhiên."
+      }
+    }
+  },
+
+  speaking: [
+    {
+      part: "Phần 1 · câu 1",
+      q: "Do you enjoy cooking?",
+      hint: "Trả lời có hoặc không, rồi thêm lý do và một ví dụ cụ thể.",
+      sample: "Yes, I do. I find it quite relaxing, especially after a busy day at work."
+    },
+    {
+      part: "Phần 1 · câu 2",
+      q: "What do you do for work or study?",
+      hint: "Nói ngắn gọn nghề nghiệp hoặc ngành học, rồi thêm một chi tiết về công việc hằng ngày.",
+      sample: "I work as a freelance designer. Most of my projects are brand identities and design systems."
+    },
+    {
+      part: "Phần 1 · câu 3",
+      q: "Do you like trying new things?",
+      hint: "Trả lời có, nêu một ví dụ gần đây bạn đã thử điều mới.",
+      sample: "Yes, I do. I’m always testing new tools for design, and I like to aim high with each project."
+    },
+    {
+      part: "Phần 3 · câu 1",
+      q: "Why do some people want to become professional chefs?",
+      hint: "Nêu lý do chính, rồi nói về mặt khó khăn để có quan điểm cân bằng.",
+      sample: "I think people want to be chefs because they enjoy creating food that makes others happy. It’s also a creative outlet, although the hours are very long and demanding."
+    },
+    {
+      part: "Phần 3 · câu 2",
+      q: "Do you think it's important to take risks in your career?",
+      hint: "Đưa ra quan điểm, rồi giải thích bằng lập luận và ví dụ.",
+      sample: "Yes, I think so. If you never try, you never learn what you can achieve. The worst they can do is say no, so it’s usually worth trying."
+    },
+    {
+      part: "Phần 3 · câu 3",
+      q: "How can people stand out in their jobs?",
+      hint: "Nêu hai đến ba cách, mỗi cách một lý do ngắn.",
+      sample: "I think the best way is to build a signature skill and be consistent. When people think of that skill, they think of you."
+    },
+    {
+      part: "Phần 3 · câu 4",
+      q: "Is it better to specialise in one area or to have many skills?",
+      hint: "Có thể trình bày cả hai mặt, rồi đưa ra quan điểm của bạn.",
+      sample: "I’d say specialising helps you stand out, but having some general skills helps you adapt when things change."
+    },
+    {
+      part: "Phần 3 · câu 5",
+      q: "What qualities do people need to succeed in a competitive job?",
+      hint: "Nêu ba phẩm chất, mỗi phẩm chất kèm một lý do ngắn.",
+      sample: "Passion, discipline and patience, I think. If you keep working hard, it’s only a matter of time before your efforts pay off."
+    },
+    {
+      part: "Phần 3 · câu 6",
+      q: "How important is a CV when applying for a job?",
+      hint: "Nói về vai trò của CV, rồi nêu điều làm CV hiệu quả.",
+      sample: "It’s very important, because it’s usually the first thing employers see. A good CV should be short, clear and show your key achievements."
+    }
+  ],
+
+  part2: {
+    topic: "Describe a time when you tried something difficult and were not sure you could succeed.",
+    bullets: [
+      "What the task or challenge was",
+      "When and where it happened",
+      "Why you decided to try it",
+      "How it ended and what you learned from it"
+    ],
+    sample: [
+      "A few years ago, I decided to launch my first online design course, even though I had never taught before. The task felt huge, and I wasn’t sure anyone would sign up. Still, I thought, the worst they can do is say no, so I started anyway.",
+      "I prepared the course in my spare time over three months, after work and on weekends. The hardest part was recording videos, because I felt nervous in front of the camera. I practised a lot and asked friends to give honest feedback.",
+      "In the end, the course reached more than 200 students, and several of them told me it helped them stand out in their own jobs. I learned that it’s only a matter of time before progress shows up if you keep going, even when you feel unsure."
+    ]
+  },
+
+  writing: [
+    {
+      prompt: "Viết một câu dùng “aim high” nói về mục tiêu của bạn trong năm nay.",
+      sample: "This year I want to aim high and launch my own online course."
+    },
+    {
+      prompt: "Viết một câu dùng “stand out” khi nói về công việc của bạn.",
+      sample: "In a crowded market, my designs stand out because of their soft, nature-inspired colours."
+    },
+    {
+      prompt: "Viết một câu dùng “known for” nói về điều bạn được biết đến.",
+      sample: "I’m known for making complicated ideas simple and easy to understand."
+    }
+  ],
+
+  quiz: [
+    {
+      id: 1,
+      category: "work",
+      situation: "Bạn đang lên kế hoạch cho khóa học mới và muốn nói rằng mình đặt mục tiêu lớn. Câu nào tự nhiên nhất?",
+      targetPhrase: "aim high",
+      options: [
+        { text: "I want to aim high, so I’ll set a goal of 500 students.", correct: true },
+        { text: "I want to aim low this time, so 50 students is fine.", correct: false },
+        { text: "I’m aiming at the building next door.", correct: false },
+        { text: "I aim high because my teacher likes me.", correct: false }
+      ],
+      explanation: "“Aim high” nghĩa là đặt mục tiêu lớn. Đáp án B là ngược nghĩa, C dùng sai nghĩa của ‘aim at’, D không đúng ngữ cảnh."
+    },
+    {
+      id: 2,
+      category: "work",
+      situation: "Bạn muốn gửi đề xuất cho một khách hàng lớn nhưng đang lo bị từ chối. Bạn nói với bạn mình để khích lệ:",
+      targetPhrase: "the worst they can do is say no",
+      options: [
+        { text: "The worst they can do is say no, so let’s send it.", correct: true },
+        { text: "The worst they can do is say yes, so let’s send it.", correct: false },
+        { text: "The worst they can do is go to the shop.", correct: false },
+        { text: "The worst they can do is sell the proposal.", correct: false }
+      ],
+      explanation: "Cụm này nghĩa là tệ nhất họ cũng chỉ từ chối. Đáp án B sai logic vì ‘say yes’ không phải kết quả xấu nhất."
+    },
+    {
+      id: 3,
+      category: "work",
+      situation: "Một nhà tuyển dụng hỏi bạn có CV không. Bạn muốn giải thích CV là gì. Câu nào đúng nhất?",
+      targetPhrase: "CV",
+      options: [
+        { text: "CV is short for curriculum vitae, a document about your education and work experience.", correct: true },
+        { text: "CV is short for cover letter, a document about your hobbies.", correct: false },
+        { text: "CV is a type of coffee popular in London.", correct: false },
+        { text: "CV is short for creative video about your holiday.", correct: false }
+      ],
+      explanation: "CV là viết tắt của curriculum vitae, tức sơ yếu lý lịch. Các đáp án còn lại đưa ra nghĩa sai."
+    },
+    {
+      id: 4,
+      category: "work",
+      situation: "Bạn đang giới thiệu portfolio với một khách hàng và muốn nói rằng portfolio của mình nổi bật giữa các ứng viên khác.",
+      targetPhrase: "stand out",
+      options: [
+        { text: "My portfolio really stands out because of its bold colours.", correct: true },
+        { text: "My portfolio really goes under the table.", correct: false },
+        { text: "My portfolio really hides in the back.", correct: false },
+        { text: "My portfolio stands on the table in the end.", correct: false }
+      ],
+      explanation: "“Stand out” nghĩa là nổi bật, khác biệt. Đáp án B và C mang nghĩa trái ngược, D không đúng nghĩa thành ngữ."
+    },
+    {
+      id: 5,
+      category: "life",
+      situation: "Đồng nghiệp của bạn làm việc rất chăm chỉ và bạn tin cô ấy sẽ thành công sớm thôi. Bạn muốn động viên cô ấy.",
+      targetPhrase: "only a matter of time",
+      options: [
+        { text: "It’s only a matter of time until you succeed.", correct: true },
+        { text: "It’s only a matter of cake until you succeed.", correct: false },
+        { text: "It’s only a matter of luck, so you’ll never try again.", correct: false },
+        { text: "It’s only a matter of shoes until you succeed.", correct: false }
+      ],
+      explanation: "“Only a matter of time” nghĩa là chắc chắn sẽ xảy ra, chỉ là lúc nào. Các đáp án còn lại không có nghĩa hợp lý."
+    }
+  ],
+
+  shadowing: [
+    {
+      speaker: "Câu mẫu 1",
+      text: "I always aim high when I start a new project.",
+      notes: "Nhấn vào ‘aim’ và ‘high’. Cuối câu hạ giọng xuống để thể hiện sự chắc chắn."
+    },
+    {
+      speaker: "Câu mẫu 2",
+      text: "The worst they can do is say no.",
+      notes: "Đọc nhanh ‘worst’ và nuốt nhẹ âm /t/. Ngắt nhẹ sau ‘can do’."
+    },
+    {
+      speaker: "Câu mẫu 3",
+      text: "My design needs to stand out in a busy feed.",
+      notes: "Nhấn ‘stand’ và ‘out’. Nối ‘stand out’ thành một nhịp."
+    },
+    {
+      speaker: "Câu mẫu 4",
+      text: "Speaking of which, have you sent your CV yet?",
+      notes: "Đọc ‘speaking of which’ thành một cụm nhẹ, sau đó ngắt nhẹ trước ‘have you’."
+    },
+    {
+      speaker: "Câu mẫu 5",
+      text: "It’s only a matter of time until people discover your course.",
+      notes: "Nối ‘only a’ và ‘matter of’. Nhấn nhẹ hơn ở ‘time’ và ‘discover’."
+    }
+  ],
+
+  nativeTips: [
+    {
+      type: "Cấu trúc: The worst … can do is …",
+      natural: "The worst they can do is say no, so it’s worth a try.",
+      learnerSays: "“Nếu họ không đồng ý thì cũng không sao, mình cứ thử đi.”",
+      why: "Cấu trúc này gọn và có sức nặng hơn cách nói dài dòng. Người bản ngữ dùng nó để khích lệ người khác thử."
+    },
+    {
+      type: "Cấu trúc: X is short for Y",
+      natural: "CV is short for curriculum vitae, so you can use it in any job interview.",
+      learnerSays: "“CV là curriculum vitae.”",
+      why: "Đúng nghĩa nhưng nghe như định nghĩa từ điển. ‘is short for’ giải thích viết tắt tự nhiên hơn trong hội thoại."
+    },
+    {
+      type: "Cấu trúc: It’s only a matter of time until …",
+      natural: "Keep going. It’s only a matter of time until people notice your work.",
+      learnerSays: "“Cố lên, sớm muộn gì mọi người cũng sẽ thấy việc bạn làm.”",
+      why: "Ý đúng nhưng câu dài. Cấu trúc này nói ngắn gọn và tự tin hơn, giống cách người bản ngữ động viên bạn bè."
+    },
+    {
+      type: "Cụm từ: speaking of which",
+      natural: "Speaking of which, have you updated your portfolio?",
+      learnerSays: "“Nói về việc đó, bạn đã cập nhật portfolio chưa?”",
+      why: "Dịch từng chữ nghe không tự nhiên. ‘Speaking of which’ là cách chuyển chủ đề mượt khi bạn vừa nhớ ra điều liên quan."
+    }
+  ],
+
+  targets: ["aim high", "the worst they can do is say no", "stand out", "catapult your career", "signature", "CV", "only a matter of time", "speaking of which", "known for"]
+};
+
+/* ===== PHẦN LOGIC HIỂN THỊ: không cần sửa khi thêm bài mới ===== */
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const phrasesData = LESSON.chunks;          // chunk-list.js đọc biến này
+let currentActivePhraseId = null;           // chunk-list.js đọc biến này
+
+function speak(text, rate = 0.9) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-GB'; u.rate = rate;
+  window.speechSynthesis.speak(u);
+}
+
+/* Đánh dấu cụm [[id|chữ]] và cấu trúc {{n|chữ}} trong transcript */
+function markup(t) {
+  let h = esc(t);
+  h = h.replace(/\[\[([a-z0-9-]+)\|([^\]]+)\]\]/g, (m, id, txt) =>
+    phrasesData[id] ? `<span class="phrase-highlight" data-phrase-id="${id}" role="button" tabindex="0">${txt}</span>` : txt);
+  h = h.replace(/\{\{(\d+)\|([^}]+)\}\}/g, (m, n, txt) =>
+    `<span class="struct-highlight" data-struct="${n}">${txt}</span>`);
+  return h;
+}
+
+function renderHeader() {
+  document.title = LESSON.title;
+  $('sourceEyebrow').textContent = LESSON.source;
+  $('lessonTitle').textContent = LESSON.title;
+  $('lessonMeta').innerHTML = `${esc(LESSON.level)} · <a href="${esc(LESSON.sourceUrl)}" target="_blank" rel="noopener">Bài gốc BBC</a> · <a href="https://www.youtube.com/watch?v=${esc(LESSON.youtube)}" target="_blank" rel="noopener">YouTube</a>`;
+  $('listenNote').textContent = LESSON.listenNote;
+  const frame = $('listenPlayer').querySelector('iframe');
+  frame.dataset.src = 'https://www.youtube-nocookie.com/embed/' + LESSON.youtube;
+  frame.title = LESSON.title;
+}
+
+function renderTranscript() {
+  $('transcript').innerHTML = LESSON.transcript.map(l =>
+    `<p class="line"><span class="speaker">${esc(l.speaker)}</span>${markup(l.text)}</p>`).join('');
+}
+
+function renderStructures() {
+  $('structPanel').innerHTML =
+    '<p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)">Cấu trúc câu đáng học</p>' +
+    '<p style="font-size:13px;color:var(--ink-500);margin-top:4px">Các câu có gạch chấm xanh trong bài là những cấu trúc này. Chỉ để học cách viết, không thêm vào danh sách ôn.</p>' +
+    LESSON.structures.map(s => `
+      <div class="struct-card" id="struct-card-${s.id}">
+        <strong>${esc(s.pattern)}</strong>
+        <p>${esc(s.vi)}</p>
+      </div>`).join('');
+}
+
+function setStructPanel(open) {
+  $('structPanel').classList.toggle('hidden', !open);
+  $('structToggleBtn').setAttribute('aria-expanded', String(open));
+  $('structToggleBtn').textContent = open ? 'Ẩn cấu trúc câu' : 'Xem 3 cấu trúc câu đáng học';
+}
+
+/* Chi tiết một cụm từ */
+function selectPhrase(id) {
+  const d = phrasesData[id];
+  if (!d) return;
+  currentActivePhraseId = id;
+  document.querySelectorAll('.phrase-highlight').forEach(el =>
+    el.classList.toggle('active', el.dataset.phraseId === id));
+  $('emptyDetail').classList.add('hidden');
+  $('phraseDetailContent').classList.remove('hidden');
+  $('detailType').textContent = d.type + (d.level ? ' · ' + d.level : '');
+  $('detailPhrase').textContent = d.phrase;
+  $('detailIpa').textContent = d.ipa || '';
+  $('detailVi').textContent = d.vietnamese || '';
+  $('detailEn').textContent = d.english || '';
+  $('detailStructures').innerHTML = (d.structures || []).map(x => `<div class="li">• ${esc(x)}</div>`).join('');
+  $('detailPronounce').textContent = d.pronunciation || '';
+  $('detailDailyEn').textContent = d.daily ? d.daily.en : '';
+  $('detailDailyVi').textContent = d.daily ? d.daily.vi : '';
+  $('detailSample').textContent = d.sample ? `"${d.sample}"` : '';
+  $('detailTip').textContent = d.speakingTip || '';
+  $('pronounceBtn').onclick = () => speak(d.phrase);
+}
+
+function isMobileLayout() { return window.innerWidth < 1024; }
+function openPhraseModal() {
+  if (!isMobileLayout()) return;
+  $('phraseModalBody').appendChild($('phraseDetailContent'));
+  $('phraseModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closePhraseModal() {
+  if ($('phraseModal').classList.contains('hidden')) return;
+  const home = $('phraseHome');
+  home.parentNode.insertBefore($('phraseDetailContent'), home.nextSibling);
+  $('phraseModal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+$('phraseModalClose').addEventListener('click', closePhraseModal);
+
+/* Tương tác với cụm từ và cấu trúc trong transcript */
+document.addEventListener('click', e => {
+  const p = e.target.closest('.phrase-highlight');
+  if (p) { selectPhrase(p.dataset.phraseId); openPhraseModal(); return; }
+  const s = e.target.closest('.struct-highlight');
+  if (s) {
+    setStructPanel(true);
+    const card = $('struct-card-' + s.dataset.struct);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('flash');
+      setTimeout(() => card.classList.remove('flash'), 1200);
+    }
+  }
+});
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.phrase-highlight')) {
+    e.preventDefault();
+    selectPhrase(e.target.dataset.phraseId);
+    openPhraseModal();
+  }
+});
+
+$('structToggleBtn').addEventListener('click', () => setStructPanel($('structPanel').classList.contains('hidden')));
+$('practiceBtn').addEventListener('click', () => { closePhraseModal(); switchTab('quiz'); });
+$('nextPhraseBtn').addEventListener('click', () => {
+  const keys = Object.keys(phrasesData);
+  selectPhrase(keys[(keys.indexOf(currentActivePhraseId) + 1) % keys.length]);
+});
+
+$('listenBtn').addEventListener('click', () => {
+  const player = $('listenPlayer');
+  const frame = player.querySelector('iframe');
+  if (player.classList.contains('hidden')) {
+    frame.src = frame.dataset.src;
+    player.classList.remove('hidden');
+    $('listenBtn').textContent = '✓ Nghe xong, đọc bài';
+  } else {
+    $('tab-study').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+
+/* Tab */
+function switchTab(name) {
+  ['study', 'quiz', 'speaking', 'tips'].forEach(t => {
+    $('tab-' + t).classList.toggle('hidden', t !== name);
+  });
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  closePhraseModal();
+}
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+
+/* Bài tập tình huống */
+let quizScore = 0;
+let quizAnswered = 0;
+function renderQuiz() {
+  $('quizList').innerHTML = LESSON.quiz.map((q, qi) => `
+    <div class="quiz" data-q="${qi}">
+      <h3>${qi + 1}. ${esc(q.situation)}</h3>
+      ${q.options.map((o, oi) => `<button class="opt" type="button" data-q="${qi}" data-o="${oi}">${esc(o.text)}</button>`).join('')}
+      <p class="explain hidden" id="explain-${qi}">${esc(q.explanation)}</p>
+    </div>`).join('');
+  updateScore();
+}
+function updateScore() {
+  $('quizScore').textContent = `Điểm: ${quizScore} / ${LESSON.quiz.length}`;
+}
+$('quizList').addEventListener('click', e => {
+  const b = e.target.closest('.opt');
+  if (!b) return;
+  const qi = +b.dataset.q, oi = +b.dataset.o;
+  const group = [...document.querySelectorAll(`.opt[data-q="${qi}"]`)];
+  if (group.some(x => x.disabled)) return;
+  group.forEach(x => x.disabled = true);
+  const correct = LESSON.quiz[qi].options[oi].correct;
+  b.classList.add(correct ? 'right' : 'wrong');
+  group.forEach((x, i) => { if (LESSON.quiz[qi].options[i].correct) x.classList.add('right'); });
+  $('explain-' + qi).classList.remove('hidden');
+  quizAnswered++;
+  if (correct) quizScore++;
+  updateScore();
+});
+
+/* Speaking */
+function renderSpeaking() {
+  $('part2Topic').textContent = LESSON.part2.topic;
+  $('part2Bullets').innerHTML = LESSON.part2.bullets.map(x => `<li>${esc(x)}</li>`).join('');
+  $('part2Sample').innerHTML = LESSON.part2.sample.map(p => `<p style="margin-bottom:8px">${esc(p)}</p>`).join('');
+
+  $('speakingQuestions').innerHTML =
+    `<p style="font-size:14px;font-weight:700;color:var(--ink-900);margin-bottom:10px">Câu hỏi luyện (Phần 1 và 3; Phần 2 ở bên trái)</p>` +
+    LESSON.speaking.map(x => `
+      <div class="qcard">
+        <p class="part">${esc(x.part)}</p>
+        <p class="q">${esc(x.q)}</p>
+        <details><summary>Gợi ý trả lời</summary><p>${esc(x.hint)}</p></details>
+        <details><summary>Bài mẫu</summary><p class="it">${esc(x.sample)}</p></details>
+      </div>`).join('');
+
+  $('writingPrompts').innerHTML =
+    `<p style="font-size:14px;font-weight:700;color:var(--ink-900);margin-bottom:10px">Tự đặt câu với chunk</p>` +
+    LESSON.writing.map((x, i) => `
+      <div class="qcard">
+        <p class="q">${i + 1}. ${esc(x.prompt)}</p>
+        <details><summary>Xem câu mẫu sau khi tự viết</summary><p class="it">${esc(x.sample)}</p></details>
+      </div>`).join('');
+
+  $('sub-shadow').innerHTML = LESSON.shadowing.map((x, i) => `
+    <div class="card">
+      <p class="part" style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)">Câu mẫu ${i + 1}</p>
+      <p style="font-size:17px;margin-top:6px;color:var(--ink-900)">${esc(x.text)}</p>
+      <p style="font-size:14px;color:var(--ink-500);margin-top:6px">${esc(x.notes)}</p>
+      <button class="btn btn-soft btn-sm" style="margin-top:10px" type="button" data-speak="${i}"><i class="fa-solid fa-volume-high"></i> Nghe mẫu</button>
+    </div>`).join('');
+
+  $('recTargets').innerHTML = LESSON.targets.map(t => `<span class="target" data-target="${esc(t)}">${esc(t)}</span>`).join('');
+}
+$('sub-shadow').addEventListener('click', e => {
+  const b = e.target.closest('[data-speak]');
+  if (b) speak(LESSON.shadowing[+b.dataset.speak].text);
+});
+
+document.querySelectorAll('[data-sub]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-sub]').forEach(x => x.classList.toggle('active', x === b));
+  ['ielts', 'shadow', 'recorder'].forEach(n => $('sub-' + n).classList.toggle('hidden', n !== b.dataset.sub));
+}));
+
+function renderNativeTips() {
+  const items = LESSON.nativeTips || [];
+  $('nativeTips').innerHTML =
+    '<p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-text)">Nói tự nhiên như người bản ngữ</p>' +
+    '<p style="font-size:14px;color:var(--ink-500);margin-top:4px">Đọc các lưu ý này trước khi luyện nói. Chú ý cả cấu trúc câu và cụm từ.</p>' +
+    items.map(t => `
+      <div class="native-item">
+        <span class="tag">${esc(t.type)}</span>
+        <p class="natural">${esc(t.natural)}</p>
+        <p class="learner">Người Việt thường nói: ${esc(t.learnerSays)}</p>
+        <p class="why">${esc(t.why)}</p>
+      </div>`).join('');
+}
+
+/* Đồng hồ chuẩn bị 1 phút cho Part 2 */
+let timerLeft = 60, timerId = null;
+$('timerBtn').addEventListener('click', () => {
+  if (timerId) { clearInterval(timerId); timerId = null; $('timerBtn').textContent = 'Bắt đầu 1 phút chuẩn bị'; return; }
+  timerLeft = 60;
+  $('timerBtn').textContent = 'Dừng';
+  timerId = setInterval(() => {
+    timerLeft--;
+    $('timer').textContent = '00:' + String(timerLeft).padStart(2, '0');
+    if (timerLeft <= 0) { clearInterval(timerId); timerId = null; $('timerBtn').textContent = 'Bắt đầu 1 phút chuẩn bị'; }
+  }, 1000);
+});
+$('part2SampleBtn').addEventListener('click', () => {
+  $('part2Sample').classList.toggle('hidden');
+});
+
+/* Phòng thu: nhận diện giọng nói, đánh dấu cụm mục tiêu */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, recording = false, finalText = '';
+const found = new Set();
+function markTargets(text) {
+  const low = text.toLowerCase();
+  LESSON.targets.forEach(t => {
+    if (low.includes(t.toLowerCase())) {
+      found.add(t);
+      const el = document.querySelector(`.target[data-target="${CSS.escape(t)}"]`);
+      if (el) el.classList.add('got');
+    }
+  });
+}
+if (!SR) {
+  $('recStatus').textContent = 'Trình duyệt này không hỗ trợ nhận diện giọng nói. Hãy mở bằng Chrome trên máy tính hoặc Chrome trên Android.';
+  $('recBtn').disabled = true;
+} else {
+  rec = new SR();
+  rec.lang = 'en-GB';
+  rec.continuous = true;
+  rec.interimResults = true;
+  rec.onresult = e => {
+    let interim = '';
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      const t = e.results[i][0].transcript;
+      if (e.results[i].isFinal) finalText += t + ' '; else interim += t;
+    }
+    $('recLive').textContent = finalText + interim;
+    markTargets(finalText + interim);
+  };
+  rec.onerror = () => { $('recStatus').textContent = 'Không nghe rõ. Thử lại trong môi trường yên tĩnh hơn.'; };
+  rec.onend = () => { if (recording) rec.start(); };
+}
+$('recBtn').addEventListener('click', () => {
+  if (!rec) return;
+  if (recording) {
+    recording = false; rec.stop();
+    $('recBtn').innerHTML = '<i class="fa-solid fa-microphone"></i> Bắt đầu nói';
+    $('recStatus').textContent = `Bạn đã dùng ${found.size} / ${LESSON.targets.length} cụm mục tiêu.`;
+  } else {
+    recording = true; rec.start();
+    $('recBtn').innerHTML = '<i class="fa-solid fa-stop"></i> Dừng';
+    $('recStatus').textContent = 'Đang nghe... Nói tiếng Anh vào micro.';
+  }
+});
+$('recClearBtn').addEventListener('click', () => {
+  finalText = ''; found.clear();
+  $('recLive').textContent = '';
+  $('recStatus').textContent = '';
+  document.querySelectorAll('.target').forEach(el => el.classList.remove('got'));
+});
+
+/* Khởi tạo */
+renderHeader();
+renderTranscript();
+renderStructures();
+renderQuiz();
+renderSpeaking();
+renderNativeTips();
+selectPhrase(LESSON.defaultChunk || Object.keys(phrasesData)[0]);
+</script>
+<script src="chunk-list.js"></script>
+</body>
+</html>
