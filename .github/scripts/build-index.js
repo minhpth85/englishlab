@@ -510,7 +510,7 @@ async function loadMe() {
   renderGreetingDate();
   const me = await loadMe();
   if (me) {
-    renderGreetingLine(me.name);
+    renderGreetingLine();
   }
 
   const progress = await loadProgress();
